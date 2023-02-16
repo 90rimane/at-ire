@@ -29,5 +29,25 @@
   "editor.tabSize": 2,
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
-  "files.trimTrailingWhitespace": true
+  "files.trimTrailingWhitespace": true,
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#53c360",
+    "activityBar.background": "#53c360",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#665ac5",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "commandCenter.border": "#e7e7e799",
+    "sash.hoverBorder": "#53c360",
+    "statusBar.background": "#3ba847",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#53c360",
+    "statusBarItem.remoteBackground": "#3ba847",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#3ba847",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#3ba84799",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#3ba847"
 }
