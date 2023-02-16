@@ -8,6 +8,6 @@
     <li>Anna</li>
     <li>Björn</li>
     <li>Hemanta</li>
-    <li>.</li>
+    <li>Jovan</li>
   </ol>
 </template>
