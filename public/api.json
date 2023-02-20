@@ -1,0 +1,384 @@
+{
+  "data": [
+    {
+      "id": "01",
+      "category": "Tops",
+      "subcategory": "Hoodies and Sweatshirts",
+      "name": "Women's Premium Hoodie",
+      "description": "AS Colour 4120 Women’s Premium Hoodie",
+      "colors": ["Black", "Grey-Marble", "Mauve"],
+      "price": "100SEK",
+      "img": "/public/bilder/id01black.png",
+      "material": {
+        "cotton": "15%",
+        "organic-coton": "75%",
+        "polyester": "10%"
+      },
+      "star": "4",
+      "packet-front": true,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "sleeve-long": true
+    },
+    {
+      "id": "02",
+      "category": "Tops",
+      "subcategory": "Hoodies and Sweatshirts",
+      "name": "Men's Zip Hood",
+      "description": "AS Colour 5103 Men's Official Zip Hood",
+      "colors": ["Black", "Navy", "White"],
+      "price": "100SEK",
+      "img": "/public/bilder/id02black.png",
+      "material": {
+        "cotton": "15%",
+        "organic-coton": "75%",
+        "polyester": "10%"
+      },
+      "star": "4",
+      "packet-front": true,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "sleeve-long": true
+    },
+    {
+      "id": "03",
+      "category": "Tops",
+      "subcategory": "Hoodies and Sweatshirts",
+      "name": "Slammer Heavy Hoodie",
+      "description": "Stanley/Stella Slammer Heavy Hoodie",
+      "colors": ["Black", "Natural Raw", "French Navy"],
+      "price": "100SEK",
+      "img": "/public/bilder/id03black.png",
+      "material": {
+        "cotton": "15%",
+        "organic-coton": "75%",
+        "polyester": "10%"
+      },
+      "star": "4",
+      "packet-front": true,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "sleeve-long": true
+    },
+    {
+      "id": "04",
+      "category": "Tops",
+      "subcategory": "Hoodies and Sweatshirts",
+      "name": "Crewneck Sweatshirt",
+      "description": "Champion S149 Reverse Weave Crewneck Sweatshirt",
+      "colors": ["Black", "Cardinal", "Silver-Grey"],
+      "price": "100SEK",
+      "img": "/public/bilder/id04black.png",
+      "material": {
+        "cotton": "15%",
+        "organic-coton": "75%",
+        "polyester": "10%"
+      },
+      "star": "4",
+      "packet-front": true,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "sleeve-long": true
+    },
+    {
+      "id": "05",
+      "category": "Tops",
+      "subcategory": "Hoodies and Sweatshirts",
+      "name": "Hammer Crew Sweatshirt",
+      "description": "Gildan HF000 Hammer Crew Sweatshirt",
+      "colors": ["Black", "Ash", "Graphite-Heather"],
+      "price": "100SEK",
+      "img": "/public/bilder/id05black.png",
+      "material": {
+        "cotton": "15%",
+        "organic-coton": "75%",
+        "polyester": "10%"
+      },
+      "star": "4",
+      "packet-front": true,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "sleeve-long": true
+    },
+    {
+      "id": "06",
+      "category": "Tops",
+      "subcategory": "Hoodies and Sweatshirts",
+      "name": "Heavy Fleece Sweatshirt",
+      "description": "Los Angeles Apparel HF-07 Heavy Fleece Sweatshirt",
+      "colors": ["Black", "White", "Ash"],
+      "price": "100SEK",
+      "img": "/public/bilder/id06black.png",
+      "material": {
+        "cotton": "15%",
+        "organic-coton": "75%",
+        "polyester": "10%"
+      },
+      "star": "4",
+      "packet-front": true,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "sleeve-long": true
+    },
+    {
+      "id": "07",
+      "category": "Tops",
+      "subcategory": "T-Shirts and Tops",
+      "name": "Pocket T-Shirt",
+      "description": "American Apparel 2406 Fine Jersey Pocket T-Shirt",
+      "colors": ["Black", "Asphalt", "Truffle"],
+      "price": "100SEK",
+      "img": "/public/bilder/id07black.png",
+      "material": {
+        "cotton": "15%",
+        "organic-coton": "75%",
+        "polyester": "10%"
+      },
+      "star": "4",
+      "packet-front": true,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "sleeve-long": true
+    },
+    {
+      "id": "08",
+      "category": "Tops",
+      "subcategory": "T-Shirts and Tops",
+      "name": "Triblend Streak T-Shirt",
+      "description": "Anvil 6750ID Triblend Streak T-Shirt",
+      "colors": ["Black", "ID-Orion", "Maroon"],
+      "price": "100SEK",
+      "img": "/public/bilder/id08black.png",
+      "material": {
+        "cotton": "15%",
+        "organic-coton": "75%",
+        "polyester": "10%"
+      },
+      "star": "4",
+      "packet-front": true,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "sleeve-long": true
+    },
+    {
+      "id": "09",
+      "category": "Tops",
+      "subcategory": "T-Shirts and Tops",
+      "name": "Triblend Henley Shirt",
+      "description": "Bella + Canvas 3125 Triblend Henley Shirt",
+      "colors": ["Black", "Navy-Triblend", "Grey-Triblend"],
+      "price": "100SEK",
+      "img": "/public/bilder/id09black.png",
+      "material": {
+        "cotton": "15%",
+        "organic-coton": "75%",
+        "polyester": "10%"
+      },
+      "star": "4",
+      "packet-front": true,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "sleeve-long": true
+    },
+    {
+      "id": "10",
+      "category": "Tops",
+      "subcategory": "T-Shirts and Tops",
+      "name": "Tank Top",
+      "description": "Comfort Colors 9360 Adult Tank Top",
+      "colors": ["Black", "Violet", "Boysenberry"],
+      "price": "100SEK",
+      "img": "/public/bilder/id10black.png",
+      "material": {
+        "cotton": "15%",
+        "organic-coton": "75%",
+        "polyester": "10%"
+      },
+      "star": "4",
+      "packet-front": true,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "sleeve-long": true
+    },
+    {
+      "id": "11",
+      "category": "Tops",
+      "subcategory": "T-Shirts and Tops",
+      "name": "Crop Tank",
+      "description": "Los Angeles Apparel 4318 Sporty Baby Rip Crop Tank",
+      "colors": ["Black", "Creme", "Brown", ""],
+      "price": "100SEK",
+      "img": "/public/bilder/id11black.png",
+      "material": {
+        "cotton": "15%",
+        "organic-coton": "75%",
+        "polyester": "10%"
+      },
+      "star": "4",
+      "packet-front": true,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "sleeve-long": true
+    },
+    {
+      "id": "12",
+      "category": "Tops",
+      "subcategory": "T-Shirts and Tops",
+      "name": "Muscle Tank Top",
+      "description": "Bella + Canvas Flowy Scoop Muscle Tank",
+      "colors": ["Black", "Olive-Slub", "Heather-Deep-Teal"],
+      "price": "100SEK",
+      "img": "/public/bilder/id12black.png",
+      "material": {
+        "cotton": "15%",
+        "organic-coton": "75%",
+        "polyester": "10%"
+      },
+      "star": "4",
+      "packet-front": true,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "sleeve-long": true
+    },
+    {
+      "id": "13",
+      "category": "Bottoms",
+      "subcategory": "Pants",
+      "name": "Jogger Sweatpants",
+      "description": "Bella + Canvas 3727 Unisex Jogger Sweatpants",
+      "colors": ["Black", "Athletic-Heather", "Dark-Grey-Heather"],
+      "price": "100SEK",
+      "img": "/public/bilder/id13black.png",
+      "material": {
+        "cotton": "15%",
+        "organic-coton": "75%",
+        "polyester": "10%"
+      },
+      "star": "4",
+      "packet-front": true,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "sleeve-long": true
+    },
+    {
+      "id": "14",
+      "category": "Bottoms",
+      "subcategory": "Pants",
+      "name": "High Waist Sweatpants",
+      "description": "Los Angeles Apparel F384 High Waist Sweatpants",
+      "colors": ["Black", "Asphalt", "Gold"],
+      "price": "100SEK",
+      "img": "/public/bilder/id14black.png",
+      "material": {
+        "cotton": "15%",
+        "organic-coton": "75%",
+        "polyester": "10%"
+      },
+      "star": "4",
+      "packet-front": true,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "sleeve-long": true
+    },
+    {
+      "id": "15",
+      "category": "Bottoms",
+      "subcategory": "Shorts",
+      "name": "Jersey Shorts",
+      "description": "Los Angeles Apparel 1241GD Heavy Jersey Shorts",
+      "colors": ["Black", "Atlantic-Green", "Off-White"],
+      "price": "100SEK",
+      "img": "/public/bilder/id15black.png",
+      "material": {
+        "cotton": "15%",
+        "organic-coton": "75%",
+        "polyester": "10%"
+      },
+      "star": "4",
+      "packet-front": true,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "sleeve-long": true
+    },
+    {
+      "id": "16",
+      "category": "Bottoms",
+      "subcategory": "Shorts",
+      "name": "Fleece Shorts",
+      "description": "Independent IND20SRT Midweight Fleece Shorts",
+      "colors": ["Black", "Red", "Royal"],
+      "price": "100SEK",
+      "img": "/public/bilder/id16black.png",
+      "material": {
+        "cotton": "15%",
+        "organic-coton": "75%",
+        "polyester": "10%"
+      },
+      "star": "4",
+      "packet-front": true,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "sleeve-long": true
+    },
+    {
+      "id": "17",
+      "category": "Accessories",
+      "subcategory": "Hats",
+      "name": "Cap",
+      "description": "Yupoong 6007 Classic Fitted Cap",
+      "colors": ["Black", "Grey", "Navy"],
+      "price": "100SEK",
+      "img": "/public/bilder/id17black.png",
+      "material": {
+        "cotton": "15%",
+        "organic-coton": "75%",
+        "polyester": "10%"
+      },
+      "star": "4",
+      "packet-front": true,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "sleeve-long": true
+    },
+    {
+      "id": "18",
+      "category": "Accessories",
+      "subcategory": "Hats",
+      "name": "Beanie",
+      "description": "Los Angeles Apparel Classic Cuff Beanie",
+      "colors": ["Black", "Neon-Green", "Autumn"],
+      "price": "100SEK",
+      "img": "/public/bilder/id18black.png",
+      "material": {
+        "cotton": "15%",
+        "organic-coton": "75%",
+        "polyester": "10%"
+      },
+      "star": "4",
+      "packet-front": true,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "sleeve-long": true
+    },
+    {
+      "id": "19",
+      "category": "Accessories",
+      "subcategory": "Bags",
+      "name": "Tote Bag",
+      "description": "AS Colour 1001 Carrie Tote Bag",
+      "colors": ["Black", "Graphite", "Army"],
+      "price": "100SEK",
+      "img": "/public/bilder/id19black.png",
+      "material": {
+        "cotton": "15%",
+        "organic-coton": "75%",
+        "polyester": "10%"
+      },
+      "star": "4",
+      "packet-front": true,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "sleeve-long": true
+    },
+    {
+      "id": "20",
+      "category": "Accessories",
+      "subcategory": "Bags",
+      "name": "Duffel Bag",
+      "description": "Independent INDDUFBAG Duffel Bag",
+      "colors": ["Black", "Beige", "Orange", ""],
+      "price": "100SEK",
+      "img": "/public/bilder/id20black.png",
+      "material": {
+        "cotton": "15%",
+        "organic-coton": "75%",
+        "polyester": "10%"
+      },
+      "star": "4",
+      "packet-front": true,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "sleeve-long": true
+    }
+  ]
+}

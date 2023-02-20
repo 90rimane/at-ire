@@ -1,22 +1,27 @@
 <script>
   export default {
     created() {
-      fetch('https://avancera.app/cities/')
+      fetch('api.json')
         .then((response) => response.json())
-        .then((cities) => {
-          this.cities = cities
+        .then((result) => {
+          this.products = result.data
         })
     },
     data() {
       return {
-        cities: null
+        products: null
       }
     }
   }
 </script>
 
 <template>
+  <h1>List of @ire's products</h1>
   <ol>
-    <li :key="city.id" v-for="city in cities">{{ city.name }}</li>
+    <li :key="product.id" v-for="product in products">
+      Category: {{ product.category }} | Subcategory:
+      {{ product.subcategory }} | Name:
+      {{ product.name }}
+    </li>
   </ol>
 </template>
