@@ -80,9 +80,14 @@
     right: 90%;
     top: 14px;
     bottom: 95.25%;
-    color: #000000;
     background: #ecc8b2;
+    color: #000000;
   }
+
+  /* LÄGG IN EN "NAV-LINK" I APP.VUE
+  .bi-bi-list :hover:focus:active {
+    background-color: antiquewhite;
+  } */
 
   .bi-bi-heart-fill {
     position: absolute;
