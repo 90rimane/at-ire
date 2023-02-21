@@ -2,12 +2,14 @@
   import CitiesList from './components/CitiesList.vue'
   import CounterButton from './components/CounterButton.vue'
   import HelloWorld from './components/HelloWorld.vue'
+  import Landing from './views/Landing.vue'
 
   export default {
     components: {
       CitiesList,
       CounterButton,
-      HelloWorld
+      HelloWorld,
+      Landing
     }
   }
 </script>
@@ -24,11 +26,16 @@
       <li>
         <RouterLink to="/contact">#</RouterLink>
       </li>
+      <li>
+        <RouterLink to="/Home">#</RouterLink>
+      </li>
     </ul>
   </nav>
   <HelloWorld msg="Hello World!" />
   <CitiesList />
   <CounterButton />
+  <Landing/>
+
   <main>
     <RouterView />
   </main>
