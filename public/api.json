@@ -7,8 +7,12 @@
       "name": "Women's Premium Hoodie",
       "description": "AS Colour 4120 Women’s Premium Hoodie",
       "colors": ["Black", "Grey-Marble", "Mauve"],
-      "price": "100SEK",
-      "img": "/public/bilder/id01black.png",
+      "price": "795",
+      "img": {
+        "Black": "/public/bilder/id01black.png",
+        "Grey-Marble": "/public/bilder/id01greymarble.png",
+        "Mauve": "/public/bilder/id01mauve.png"
+      },
       "material": {
         "cotton": "15%",
         "organic-coton": "75%",
@@ -26,8 +30,12 @@
       "name": "Men's Zip Hood",
       "description": "AS Colour 5103 Men's Official Zip Hood",
       "colors": ["Black", "Navy", "White"],
-      "price": "100SEK",
-      "img": "/public/bilder/id02black.png",
+      "price": "895",
+      "img": {
+        "Black": "/public/bilder/id02black.png",
+        "Navy": "/public/bilder/id02navy.png",
+        "White": "/public/bilder/id02white.png"
+      },
       "material": {
         "cotton": "15%",
         "organic-coton": "75%",
@@ -45,8 +53,12 @@
       "name": "Slammer Heavy Hoodie",
       "description": "Stanley/Stella Slammer Heavy Hoodie",
       "colors": ["Black", "Natural Raw", "French Navy"],
-      "price": "100SEK",
-      "img": "/public/bilder/id03black.png",
+      "price": "995",
+      "img": {
+        "Black": "/public/bilder/id03black.png",
+        "Natural Raw": "/public/bilder/id03frenchnavy.png",
+        "French Navy": "/public/bilder/id03naturalraw.png"
+      },
       "material": {
         "cotton": "15%",
         "organic-coton": "75%",
@@ -64,8 +76,12 @@
       "name": "Crewneck Sweatshirt",
       "description": "Champion S149 Reverse Weave Crewneck Sweatshirt",
       "colors": ["Black", "Cardinal", "Silver-Grey"],
-      "price": "100SEK",
-      "img": "/public/bilder/id04black.png",
+      "price": "795",
+      "img": {
+        "Black": "/public/bilder/id04black.png",
+        "Cardinal": "/public/bilder/id04cardinal.png",
+        "Silver-Grey": "/public/bilder/id04silvergrey.png"
+      },
       "material": {
         "cotton": "15%",
         "organic-coton": "75%",
@@ -83,8 +99,12 @@
       "name": "Hammer Crew Sweatshirt",
       "description": "Gildan HF000 Hammer Crew Sweatshirt",
       "colors": ["Black", "Ash", "Graphite-Heather"],
-      "price": "100SEK",
-      "img": "/public/bilder/id05black.png",
+      "price": "895",
+      "img": {
+        "Black": "/public/bilder/id05black.png",
+        "Ash": "/public/bilder/id05ash.png",
+        "Graphite-Heather": "/public/bilder/id05graphiteheather.png"
+      },
       "material": {
         "cotton": "15%",
         "organic-coton": "75%",
@@ -102,8 +122,12 @@
       "name": "Heavy Fleece Sweatshirt",
       "description": "Los Angeles Apparel HF-07 Heavy Fleece Sweatshirt",
       "colors": ["Black", "White", "Ash"],
-      "price": "100SEK",
-      "img": "/public/bilder/id06black.png",
+      "price": "895",
+      "img": {
+        "Black": "/public/bilder/id06black.png",
+        "White": "/public/bilder/id06white.png",
+        "Ash": "/public/bilder/id06ash.png"
+      },
       "material": {
         "cotton": "15%",
         "organic-coton": "75%",
@@ -121,8 +145,12 @@
       "name": "Pocket T-Shirt",
       "description": "American Apparel 2406 Fine Jersey Pocket T-Shirt",
       "colors": ["Black", "Asphalt", "Truffle"],
-      "price": "100SEK",
-      "img": "/public/bilder/id07black.png",
+      "price": "395",
+      "img": {
+        "Black": "/public/bilder/id07black.png",
+        "Asphalt": "/public/bilder/id07asphalt.png",
+        "Truffle": "/public/bilder/id07truffle.png"
+      },
       "material": {
         "cotton": "15%",
         "organic-coton": "75%",
@@ -131,7 +159,7 @@
       "star": "4",
       "packet-front": true,
       "sizes": ["XS", "S", "M", "L", "XL"],
-      "sleeve-long": true
+      "sleeve-long": false
     },
     {
       "id": "08",
@@ -140,8 +168,12 @@
       "name": "Triblend Streak T-Shirt",
       "description": "Anvil 6750ID Triblend Streak T-Shirt",
       "colors": ["Black", "ID-Orion", "Maroon"],
-      "price": "100SEK",
-      "img": "/public/bilder/id08black.png",
+      "price": "495",
+      "img": {
+        "Black": "/public/bilder/id08black.png",
+        "ID-Orion": "/public/bilder/id08idorion.png",
+        "Maroon": "/public/bilder/id08maroon.png"
+      },
       "material": {
         "cotton": "15%",
         "organic-coton": "75%",
@@ -150,7 +182,7 @@
       "star": "4",
       "packet-front": true,
       "sizes": ["XS", "S", "M", "L", "XL"],
-      "sleeve-long": true
+      "sleeve-long": false
     },
     {
       "id": "09",
@@ -159,8 +191,12 @@
       "name": "Triblend Henley Shirt",
       "description": "Bella + Canvas 3125 Triblend Henley Shirt",
       "colors": ["Black", "Navy-Triblend", "Grey-Triblend"],
-      "price": "100SEK",
-      "img": "/public/bilder/id09black.png",
+      "price": "495",
+      "img": {
+        "Black": "/public/bilder/id09black.png",
+        "Navy-Triblend": "/public/bilder/id09navytriblend.png",
+        "Grey-Triblend": "/public/bilder/id09greytriblend.png"
+      },
       "material": {
         "cotton": "15%",
         "organic-coton": "75%",
@@ -169,7 +205,7 @@
       "star": "4",
       "packet-front": true,
       "sizes": ["XS", "S", "M", "L", "XL"],
-      "sleeve-long": true
+      "sleeve-long": false
     },
     {
       "id": "10",
@@ -178,8 +214,12 @@
       "name": "Tank Top",
       "description": "Comfort Colors 9360 Adult Tank Top",
       "colors": ["Black", "Violet", "Boysenberry"],
-      "price": "100SEK",
-      "img": "/public/bilder/id10black.png",
+      "price": "295",
+      "img": {
+        "Black": "/public/bilder/id10black.png",
+        "Violet": "/public/bilder/id10violet.png",
+        "Boysenberry": "/public/bilder/id10boysenberry.png"
+      },
       "material": {
         "cotton": "15%",
         "organic-coton": "75%",
@@ -188,7 +228,7 @@
       "star": "4",
       "packet-front": true,
       "sizes": ["XS", "S", "M", "L", "XL"],
-      "sleeve-long": true
+      "sleeve-long": false
     },
     {
       "id": "11",
@@ -197,8 +237,12 @@
       "name": "Crop Tank",
       "description": "Los Angeles Apparel 4318 Sporty Baby Rip Crop Tank",
       "colors": ["Black", "Creme", "Brown", ""],
-      "price": "100SEK",
-      "img": "/public/bilder/id11black.png",
+      "price": "295",
+      "img": {
+        "Black": "/public/bilder/id11black.png",
+        "Creme": "/public/bilder/id11creme.png",
+        "Brown": "/public/bilder/id11brown.png"
+      },
       "material": {
         "cotton": "15%",
         "organic-coton": "75%",
@@ -207,7 +251,7 @@
       "star": "4",
       "packet-front": true,
       "sizes": ["XS", "S", "M", "L", "XL"],
-      "sleeve-long": true
+      "sleeve-long": false
     },
     {
       "id": "12",
@@ -216,8 +260,12 @@
       "name": "Muscle Tank Top",
       "description": "Bella + Canvas Flowy Scoop Muscle Tank",
       "colors": ["Black", "Olive-Slub", "Heather-Deep-Teal"],
-      "price": "100SEK",
-      "img": "/public/bilder/id12black.png",
+      "price": "295",
+      "img": {
+        "Black": "/public/bilder/id12black.png",
+        "Olive-Slub": "/public/bilder/id12oliveslub.png",
+        "Heather-Deep-Teal": "/public/bilder/id12heatherdeepteal.png"
+      },
       "material": {
         "cotton": "15%",
         "organic-coton": "75%",
@@ -226,7 +274,7 @@
       "star": "4",
       "packet-front": true,
       "sizes": ["XS", "S", "M", "L", "XL"],
-      "sleeve-long": true
+      "sleeve-long": false
     },
     {
       "id": "13",
@@ -235,8 +283,12 @@
       "name": "Jogger Sweatpants",
       "description": "Bella + Canvas 3727 Unisex Jogger Sweatpants",
       "colors": ["Black", "Athletic-Heather", "Dark-Grey-Heather"],
-      "price": "100SEK",
-      "img": "/public/bilder/id13black.png",
+      "price": "795",
+      "img": {
+        "Black": "/public/bilder/id13black.png",
+        "Athletic-Heather": "/public/bilder/id13athleticheather.png",
+        "Dark-Grey-Heather": "/public/bilder/id13darkreyheather.png"
+      },
       "material": {
         "cotton": "15%",
         "organic-coton": "75%",
@@ -254,8 +306,12 @@
       "name": "High Waist Sweatpants",
       "description": "Los Angeles Apparel F384 High Waist Sweatpants",
       "colors": ["Black", "Asphalt", "Gold"],
-      "price": "100SEK",
-      "img": "/public/bilder/id14black.png",
+      "price": "695",
+      "img": {
+        "Black": "/public/bilder/id14black.png",
+        "Asphalt": "/public/bilder/id14asphalt.png",
+        "Gold": "/public/bilder/id1gold.png"
+      },
       "material": {
         "cotton": "15%",
         "organic-coton": "75%",
@@ -273,8 +329,12 @@
       "name": "Jersey Shorts",
       "description": "Los Angeles Apparel 1241GD Heavy Jersey Shorts",
       "colors": ["Black", "Atlantic-Green", "Off-White"],
-      "price": "100SEK",
-      "img": "/public/bilder/id15black.png",
+      "price": "395",
+      "img": {
+        "Black": "/public/bilder/id15black.png",
+        "Atlantic-Green": "/public/bilder/id15atlanticgreen.png",
+        "Off-White": "/public/bilder/id15offwhite.png"
+      },
       "material": {
         "cotton": "15%",
         "organic-coton": "75%",
@@ -283,7 +343,7 @@
       "star": "4",
       "packet-front": true,
       "sizes": ["XS", "S", "M", "L", "XL"],
-      "sleeve-long": true
+      "sleeve-long": false
     },
     {
       "id": "16",
@@ -292,8 +352,12 @@
       "name": "Fleece Shorts",
       "description": "Independent IND20SRT Midweight Fleece Shorts",
       "colors": ["Black", "Red", "Royal"],
-      "price": "100SEK",
-      "img": "/public/bilder/id16black.png",
+      "price": "495",
+      "img": {
+        "Black": "/public/bilder/id16black.png",
+        "Red": "/public/bilder/id16red.png",
+        "Royal": "/public/bilder/id16royal.png"
+      },
       "material": {
         "cotton": "15%",
         "organic-coton": "75%",
@@ -302,7 +366,7 @@
       "star": "4",
       "packet-front": true,
       "sizes": ["XS", "S", "M", "L", "XL"],
-      "sleeve-long": true
+      "sleeve-long": false
     },
     {
       "id": "17",
@@ -311,8 +375,12 @@
       "name": "Cap",
       "description": "Yupoong 6007 Classic Fitted Cap",
       "colors": ["Black", "Grey", "Navy"],
-      "price": "100SEK",
-      "img": "/public/bilder/id17black.png",
+      "price": "695",
+      "img": {
+        "Black": "/public/bilder/id17black.png",
+        "Grey": "/public/bilder/id17grey.png",
+        "Navy": "/public/bilder/id17navy.png"
+      },
       "material": {
         "cotton": "15%",
         "organic-coton": "75%",
@@ -321,7 +389,7 @@
       "star": "4",
       "packet-front": true,
       "sizes": ["XS", "S", "M", "L", "XL"],
-      "sleeve-long": true
+      "sleeve-long": false
     },
     {
       "id": "18",
@@ -330,8 +398,12 @@
       "name": "Beanie",
       "description": "Los Angeles Apparel Classic Cuff Beanie",
       "colors": ["Black", "Neon-Green", "Autumn"],
-      "price": "100SEK",
-      "img": "/public/bilder/id18black.png",
+      "price": "495",
+      "img": {
+        "Black": "/public/bilder/id18black.png",
+        "Neon-Green": "/public/bilder/id18neongreen.png",
+        "Autumn": "/public/bilder/id18autumn.png"
+      },
       "material": {
         "cotton": "15%",
         "organic-coton": "75%",
@@ -340,7 +412,7 @@
       "star": "4",
       "packet-front": true,
       "sizes": ["XS", "S", "M", "L", "XL"],
-      "sleeve-long": true
+      "sleeve-long": false
     },
     {
       "id": "19",
@@ -349,8 +421,12 @@
       "name": "Tote Bag",
       "description": "AS Colour 1001 Carrie Tote Bag",
       "colors": ["Black", "Graphite", "Army"],
-      "price": "100SEK",
-      "img": "/public/bilder/id19black.png",
+      "price": "495",
+      "img": {
+        "Black": "/public/bilder/id19black.png",
+        "Graphite": "/public/bilder/id19graphite.png",
+        "Army": "/public/bilder/id19army.png"
+      },
       "material": {
         "cotton": "15%",
         "organic-coton": "75%",
@@ -368,8 +444,12 @@
       "name": "Duffel Bag",
       "description": "Independent INDDUFBAG Duffel Bag",
       "colors": ["Black", "Beige", "Orange", ""],
-      "price": "100SEK",
-      "img": "/public/bilder/id20black.png",
+      "price": "95",
+      "img": {
+        "Black": "/public/bilder/id20black.png",
+        "Beige": "/public/bilder/id20beige.png",
+        "Orange": "/public/bilder/id20orange.png"
+      },
       "material": {
         "cotton": "15%",
         "organic-coton": "75%",
@@ -378,7 +458,7 @@
       "star": "4",
       "packet-front": true,
       "sizes": ["XS", "S", "M", "L", "XL"],
-      "sleeve-long": true
+      "sleeve-long": false
     }
   ]
 }

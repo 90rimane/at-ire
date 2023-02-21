@@ -35,7 +35,7 @@
       <button id="join-button">JOIN</button>
     </div>
 
-    <div class="footer-bar" />
+    <div class="footer-bar">#</div>
   </div>
 </template>
 
