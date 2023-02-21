@@ -1,7 +1,6 @@
 <script>
   import HeaderHead from './components/HeaderHead.vue'
   import CitiesList from './components/CitiesList.vue'
-  import HelloWorld from './components/HelloWorld.vue'
   import CarouselSlide from './components/CarouselSlide.vue'
   import Landing from './views/Landing.vue'
   import FooterComponent from './components/FooterComponent.vue'
@@ -11,8 +10,7 @@
     components: {
       HeaderHead,
       CitiesList,
-      HelloWorld,
-      CarouselSlide
+      CarouselSlide,
       Landing,
       FooterComponent,
       SearchBar
