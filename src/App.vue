@@ -2,12 +2,14 @@
   import CitiesList from './components/CitiesList.vue'
   import CounterButton from './components/CounterButton.vue'
   import HelloWorld from './components/HelloWorld.vue'
+  import CarouselSlide from './components/CarouselSlide.vue'
 
   export default {
     components: {
       CitiesList,
       CounterButton,
-      HelloWorld
+      HelloWorld,
+      CarouselSlide
     }
   }
 </script>
@@ -27,6 +29,7 @@
     </ul>
   </nav>
   <HelloWorld msg="Hello World!" />
+  <CarouselSlide />
   <CitiesList />
   <CounterButton />
   <main>
