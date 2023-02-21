@@ -1,12 +1,12 @@
 <script>
+  import HeaderHead from './components/HeaderHead.vue'
   import CitiesList from './components/CitiesList.vue'
-  import CounterButton from './components/CounterButton.vue'
   import HelloWorld from './components/HelloWorld.vue'
 
   export default {
     components: {
+      HeaderHead,
       CitiesList,
-      CounterButton,
       HelloWorld
     }
   }
@@ -27,8 +27,8 @@
     </ul>
   </nav>
   <HelloWorld msg="Hello World!" />
+  <HeaderHead />
   <CitiesList />
-  <CounterButton />
   <main>
     <RouterView />
   </main>
