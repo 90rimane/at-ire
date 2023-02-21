@@ -1,15 +1,17 @@
 <script>
+  import HeaderHead from './components/HeaderHead.vue'
   import CitiesList from './components/CitiesList.vue'
-  import CounterButton from './components/CounterButton.vue'
-  import HelloWorld from './components/HelloWorld.vue'
   import Landing from './views/Landing.vue'
+  import FooterComponent from './components/FooterComponent.vue'
+  import SearchBar from './components/SearchBar.vue'
 
   export default {
     components: {
+      HeaderHead,
       CitiesList,
-      CounterButton,
-      HelloWorld,
-      Landing
+      Landing,
+      FooterComponent,
+      SearchBar
     }
   }
 </script>
@@ -24,21 +26,23 @@
         <RouterLink to="/about">#</RouterLink>
       </li>
       <li>
-        <RouterLink to="/contact">#</RouterLink>
+        <RouterLink to="/contact">Contact</RouterLink>
       </li>
       <li>
         <RouterLink to="/Home">#</RouterLink>
       </li>
     </ul>
   </nav>
-  <HelloWorld msg="Hello World!" />
+  <SearchBar />
+  <HeaderHead />
   <CitiesList />
-  <CounterButton />
   <Landing/>
 
   <main>
     <RouterView />
   </main>
+
+  <FooterComponent />
 </template>
 
 <style>
