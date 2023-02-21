@@ -1,14 +1,16 @@
 <script>
   import HeaderHead from './components/HeaderHead.vue'
   import CitiesList from './components/CitiesList.vue'
-  import HelloWorld from './components/HelloWorld.vue'
+  import Landing from './views/Landing.vue'
+  import FooterComponent from './components/FooterComponent.vue'
   import SearchBar from './components/SearchBar.vue'
 
   export default {
     components: {
       HeaderHead,
       CitiesList,
-      HelloWorld,
+      Landing,
+      FooterComponent,
       SearchBar
     }
   }
@@ -38,15 +40,21 @@
       <li>
         <RouterLink to="/contact">Contact</RouterLink>
       </li>
+      <li>
+        <RouterLink to="/Home">#</RouterLink>
+      </li>
     </ul>
   </nav>
   <SearchBar />
-  <HelloWorld msg="Hello World!" />
   <HeaderHead />
   <CitiesList />
+  <Landing/>
+
   <main>
     <RouterView />
   </main>
+
+  <FooterComponent />
 </template>
 
 <style>
