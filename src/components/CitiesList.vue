@@ -22,6 +22,7 @@
       Category: {{ product.category }} | Subcategory:
       {{ product.subcategory }} | Name:
       {{ product.name }}
+      <img :src="product.img.Black" alt="" style="width: 40px" />
     </li>
   </ol>
 </template>
