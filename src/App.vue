@@ -1,31 +1,23 @@
 <script>
-    import HeaderHead from './components/HeaderHead.vue'
-    import CitiesList from './components/CitiesList.vue'
-  <<<<<<< HEAD
-    import CounterButton from './components/CounterButton.vue'
-    import HelloWorld from './components/HelloWorld.vue'
-    import CarouselSlide from './components/CarouselSlide.vue'
-  =======
-    import Landing from './views/Landing.vue'
-    import FooterComponent from './components/FooterComponent.vue'
-    import SearchBar from './components/SearchBar.vue'
-  >>>>>>> c08bae0ff40358a8161137231271a5dd8f2eddef
+  import HeaderHead from './components/HeaderHead.vue'
+  import CitiesList from './components/CitiesList.vue'
+  import HelloWorld from './components/HelloWorld.vue'
+  import CarouselSlide from './components/CarouselSlide.vue'
+  import Landing from './views/Landing.vue'
+  import FooterComponent from './components/FooterComponent.vue'
+  import SearchBar from './components/SearchBar.vue'
 
-    export default {
-      components: {
-        HeaderHead,
-        CitiesList,
-  <<<<<<< HEAD
-        CounterButton,
-        HelloWorld,
-        CarouselSlide
-  =======
-        Landing,
-        FooterComponent,
-        SearchBar
-  >>>>>>> c08bae0ff40358a8161137231271a5dd8f2eddef
-      }
+  export default {
+    components: {
+      HeaderHead,
+      CitiesList,
+      HelloWorld,
+      CarouselSlide
+      Landing,
+      FooterComponent,
+      SearchBar
     }
+  }
 </script>
 
 <template>
