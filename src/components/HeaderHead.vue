@@ -10,12 +10,11 @@
       width="16"
       height="16"
       fill="currentColor"
-      class="bi-bi-list"
+      class="bi-bi-filter-left"
       viewBox="0 0 16 16"
     >
       <path
-        fill-rule="evenodd"
-        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+        d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"
       />
     </svg>
     <svg
@@ -63,7 +62,7 @@
     height: 28px;
     left: 150px;
     top: 14px;
-    font-family: 'Karla';
+    font-family: 'Karla', roboto, sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
@@ -72,16 +71,17 @@
     color: #000000;
   }
 
-  .bi-bi-list {
+  .bi-bi-filter-left {
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     left: 3.33%;
     right: 90%;
     top: 14px;
     bottom: 95.25%;
     background: #ecc8b2;
     color: #000000;
+    cursor: pointer;
   }
 
   /* LÄGG IN EN "NAV-LINK" I APP.VUE
@@ -99,6 +99,7 @@
     bottom: 95.75%;
     background: #ecc8b2;
     color: #000000;
+    cursor: pointer;
   }
 
   .bi-bi-cart-fill {
@@ -109,5 +110,6 @@
     top: 14px;
     background: #ecc8b2;
     color: #000000;
+    cursor: pointer;
   }
 </style>
