@@ -16,13 +16,13 @@
   <nav>
     <ul>
       <li>
-        <RouterLink to="/">Hem</RouterLink>
+        <RouterLink to="/">#</RouterLink>
       </li>
       <li>
-        <RouterLink to="/about">Om</RouterLink>
+        <RouterLink to="/about">#</RouterLink>
       </li>
       <li>
-        <RouterLink to="/contact">Kontakt</RouterLink>
+        <RouterLink to="/contact">#</RouterLink>
       </li>
     </ul>
   </nav>
@@ -33,3 +33,11 @@
     <RouterView />
   </main>
 </template>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    background-color: #fff5ef;
+  }
+</style>
