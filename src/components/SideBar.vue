@@ -52,11 +52,17 @@
       Changed by Jovan
     -->
 
-    <div class="menu bottom-menu">
+    <div v-if="$store.state.activeUser == null" class="menu bottom-menu">
       <router-link to="/login" class="button">
         <span class="material-symbols-outlined">login</span>
         <span class="text">Login</span>
       </router-link>
+    </div>
+    <div v-else class="menu bottom-menu">
+      <a @click="$store.dispatch('logout')" class="button">
+        <span class="material-symbols-outlined">logout</span>
+        <span class="text">Logout</span>
+      </a>
     </div>
 
     <!--
