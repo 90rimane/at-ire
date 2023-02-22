@@ -45,7 +45,10 @@
   </div>
 </template>
 
-<style>
+<style scoped>
+
+/* @media Temporary added by Ali */
+@media (max-width: 370px) {
   .header {
     position: absolute;
     width: 360px;
@@ -112,4 +115,6 @@
     color: #000000;
     cursor: pointer;
   }
+
+}
 </style>

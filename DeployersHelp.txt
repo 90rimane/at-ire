@@ -1,0 +1,10 @@
+# Packages used for SideBar
+## 2023-03-21
+
+npm add -D sass
+npm i vue-router
+
+extention:
+Vetur / from Pine Wu
+
+Google font/icon

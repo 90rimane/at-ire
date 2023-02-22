@@ -1,6 +1,6 @@
 <template>
   <main class="home-pages">
-    <h1>About page</h1>
-    <p>This is About</p>
+    <h1>Favorite</h1>
+    <p>Make list of favorites here</p>
   </main>
   </template>
