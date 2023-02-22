@@ -2,7 +2,7 @@
   import HeaderHead from './components/HeaderHead.vue'
   import CitiesList from './components/CitiesList.vue'
   import CarouselSlide from './components/CarouselSlide.vue'
-  import Landing from './views/Landing.vue'
+  import LandingView from './views/LandingView.vue'
   import FooterComponent from './components/FooterComponent.vue'
   import SearchBar from './components/SearchBar.vue'
 
@@ -13,7 +13,7 @@
       HeaderHead,
       CitiesList,
       CarouselSlide,
-      Landing,
+      LandingView,
       FooterComponent,
       SearchBar,
       SideBar
@@ -50,7 +50,7 @@
   <SearchBar />
   <HeaderHead />
   <CitiesList />
-  <Landing />
+  <LandingView />
 
   <FooterComponent />
 </template>
