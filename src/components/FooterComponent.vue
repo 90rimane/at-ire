@@ -13,14 +13,14 @@
       </div>
     </div>
     <div class="margin-top">
-      <div class="box">
-        <h1 id="support-text">SUPPORT</h1>
-        <button><span id="plus">&#43;</span></button>
-      </div>
-      <div id="border-box">
-        <h1 id="support-text">OM @IRE</h1>
-        <button><span id="plus">&#43;</span></button>
-      </div>
+      <ul class="wrapper">
+      <li v-for="(item, index) in list" :key="'item'+index">
+        <div class="title" @click="item.open = !item.open">
+          {{ item.title }}
+        </div>
+        <ListItem :list="item" />
+      </li>
+    </ul>
     </div>
 
     <div class="register">
@@ -31,8 +31,8 @@
         </p>
       </div>
 
-      <input type="email" id="email-input" />
-      <button id="join-button">JOIN</button>
+      <input type="email" v-model="email" id="email-input" />
+      <button @click="join" id="join-button">JOIN</button>
     </div>
 
     <div class="footer-bar">#</div>
@@ -40,10 +40,42 @@
 </template>
 
 <script>
-  export default {}
+  import ListItem from './ListItem.vue';
+
+    export default {
+      data: () => {
+        return {
+          email: '',
+          list: [
+            {
+              title: "SUPPORT",
+              open: false,
+              sublist: [
+                "Contact Us", "Return", "Terms", "Delivery"
+              ]
+            },
+            {
+              title: "OM @IRE",
+              open: false,
+              sublist: [ "Brand", "Collections" ]
+            },
+          ]
+        };
+      },
+      components: {
+        ListItem
+      },
+
+      methods : {
+        join() {
+        console.log('New E-mail', this.email);
+        // Ide!: Logic to send data to the back end, to get 20% discount
+    }
+      }
+    };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   * {
     color: #282828;
   }
@@ -88,23 +120,7 @@
   .margin-top {
     margin-top: 20px;
   }
-  .box {
-    height: 35px;
-    border-top: 1px solid #282828;
-    border-bottom: 1px solid #282828;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  #border-box {
-    height: 35px;
-    border-bottom: 1px solid #282828;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
+  
   h2 {
     font-size: 16px;
   }
@@ -164,4 +180,21 @@
     height: 30px;
     background-color: #ecc8b2;
   }
+
+  .wrapper {
+      list-style: none;
+      background-color: #ffffff;
+      border-radius: 4px;
+      overflow: hidden;
+      li {
+        position: relative;
+        color: #282828;
+        border-top: 1px solid #dedede;
+        cursor: pointer;
+        .title {
+          padding: 10px 0;
+          text-indent: 20px;
+        }
+      }
+    }
 </style>
