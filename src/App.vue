@@ -30,7 +30,9 @@
     <SideBar />
 
     <RouterView />
+
   </div>
+  <FooterComponent />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -45,14 +47,13 @@
     rel="stylesheet"
   />
 
-  <HelloWorld msg="Hello World!" />
   <CarouselSlide />
   <SearchBar />
   <HeaderHead />
   <CitiesList />
   <LandingView />
 
-  <FooterComponent />
+
 </template>
 
 <style lang="scss">
@@ -67,7 +68,7 @@
     --dark-alt: #334155;
     --dark: #1e293b;
     --darker: #020202;
-    --light: #ffffff;
+    --light: #fcf9f9;
     --lightB: #fff5ef;
     --lightB-darker: #ebd5c9;
     --orange: #f39256;

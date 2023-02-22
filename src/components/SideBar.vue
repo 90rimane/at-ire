@@ -94,6 +94,8 @@
     transition: 0.2s ease-in-out;
     box-shadow: 1px 0 3px var(--grey-light);
 
+    position: fixed;
+    z-index: 1;
     .logo {
       margin-bottom: 1rem;
       img {
