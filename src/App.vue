@@ -6,7 +6,7 @@
   import FooterComponent from './components/FooterComponent.vue'
   import SearchBar from './components/SearchBar.vue'
 
-  import SideBar from "./components/Sidebar.vue";
+  import SideBar from './components/Sidebar.vue'
 
   export default {
     components: {
@@ -17,6 +17,9 @@
       FooterComponent,
       SearchBar,
       SideBar
+    },
+    created() {
+      this.$store.dispatch('getProducts')
     }
   }
 </script>
@@ -52,52 +55,48 @@
   <FooterComponent />
 </template>
 
-
-
 <style lang="scss">
-
   @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&display=swap');
 
   @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
 
-
   // Sidebar scss
   :root {
-  --grey-light: #a19595;
-	--grey: #64748b;
-	--dark-alt: #334155;
-	--dark: #1e293b;
-  --darker: #020202;
-	--light: #ffffff;
-  --lightB: #fff5ef;
-  --lightB-darker: #ebd5c9;
-  --orange: #f39256;
-	--sidebar-width: 300px;
-}
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Karla', Fira sans, sans-serif, roboto ;
-}
-body {
-	background: var(--light);
-}
-button {
-	cursor: pointer;
-	appearance: none;
-	border: none;
-	outline: none;
-	background: none;
-}
-.app {
-	display: flex;
-	main {
-		flex: 1 1 0;
-		padding: 2rem;
-		@media (max-width: 1024px) {
-			padding-left: 6rem;
-		}
-	}
-}
+    --grey-light: #a19595;
+    --grey: #64748b;
+    --dark-alt: #334155;
+    --dark: #1e293b;
+    --darker: #020202;
+    --light: #ffffff;
+    --lightB: #fff5ef;
+    --lightB-darker: #ebd5c9;
+    --orange: #f39256;
+    --sidebar-width: 300px;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Karla', Fira sans, sans-serif, roboto;
+  }
+  body {
+    background: var(--light);
+  }
+  button {
+    cursor: pointer;
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+  }
+  .app {
+    display: flex;
+    main {
+      flex: 1 1 0;
+      padding: 2rem;
+      @media (max-width: 1024px) {
+        padding-left: 6rem;
+      }
+    }
+  }
 </style>
