@@ -1,7 +1,7 @@
 <template>
     <div class="grid-container">
       <div class="grid-item">
-        <img src="https://i.pinimg.com/564x/90/e5/0f/90e50f08fa452356d5d98fe37dc10431.jpg" alt="image1">
+        <img src="https://i.pinimg.com/564x/90/e5/0f/90e50f08fa452356d5d98fe37dc10431.jpg" alt="image1" />
         <div class="grid-text">
             <h2>Tops</h2>
             <button class="shop-button">SHOP HERE</button>
@@ -9,7 +9,7 @@
       </div>
 
       <div class="grid-item">
-        <img src="https://i.pinimg.com/564x/90/e5/0f/90e50f08fa452356d5d98fe37dc10431.jpg" alt="image2">
+        <img src="https://i.pinimg.com/564x/90/e5/0f/90e50f08fa452356d5d98fe37dc10431.jpg" alt="image2" />
         <div class="grid-text">
             <h2>Bottoms</h2>
             <button class="shop-button">SHOP HERE</button>
@@ -18,7 +18,7 @@
       </div>
 
       <div class="grid-item">
-        <img src="https://i.pinimg.com/564x/93/28/01/9328012b820344ee38d86e2ea4416257.jpg" alt="image3">
+        <img src="https://i.pinimg.com/564x/93/28/01/9328012b820344ee38d86e2ea4416257.jpg" alt="image3" />
         <div class="grid-text">
             <h2>Accessories</h2>
             <button class="shop-button">SHOP HERE</button>
@@ -27,7 +27,7 @@
       </div>
 
       <div class="grid-item">
-        <img src="https://i.pinimg.com/564x/43/c2/a5/43c2a55207dd738d37dd3db5edffcc55.jpg" alt="image4">
+        <img src="https://i.pinimg.com/564x/43/c2/a5/43c2a55207dd738d37dd3db5edffcc55.jpg" alt="image4" />
         <div class="grid-text">
             <h2>Pants</h2>
         <button class="shop-button">SHOP HERE</button>
