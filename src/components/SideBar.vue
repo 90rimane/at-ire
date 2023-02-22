@@ -92,6 +92,7 @@
     min-height: 100vh;
     padding: 1rem;
     transition: 0.2s ease-in-out;
+    box-shadow: 1px 0 3px var(--grey-light);
 
     .logo {
       margin-bottom: 1rem;
@@ -163,6 +164,7 @@
         &.router-link-exact-active {
           background-color: var(--grey-light);
           border-right: 5px solid var(--orange);
+          box-shadow: 1px 1px 2px var(--lightB-darker);
           .material-symbols-outlined,
           .text {
             color: var(--dark);
