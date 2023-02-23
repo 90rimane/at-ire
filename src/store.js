@@ -25,7 +25,10 @@ const mutations = {
       fetch('api.json')
         .then((response) => response.json())
         .then((result) => {
-          commit('SET_PRODUCTS', result.data)
+          //Simulating 1/10 of a second delay
+          setTimeout(() => {
+            commit('SET_PRODUCTS', result.data)
+          }, 100)
         })
     },
     getLogged({ commit }) {
@@ -50,6 +53,7 @@ const mutations = {
       commit('SET_OUT')
 
       sessionStorage.removeItem('activeUser')
+      localStorage.removeItem('rememberUser')
     }
   }
 
