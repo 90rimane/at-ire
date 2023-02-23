@@ -3,7 +3,8 @@
     data() {
       return {
         user: '',
-        password: ''
+        password: '',
+        checked: false
       }
     },
     methods: {
@@ -35,6 +36,12 @@
             )
 
             this.$store.dispatch('getLogged')
+
+            // If Remember me checkbox is checked then send the user "id"
+            // as a reference when retrieving the remembered user on page load
+            if (this.checked) {
+              localStorage.setItem('rememberUser', indexOfUser)
+            }
 
             //Redirects user to homepage after successfully login
             this.$router.push('/')
@@ -76,7 +83,10 @@
         />
 
         <button @click="login()" type="button">Login</button>
-        <label> <input type="checkbox" name="remember" /> Remember me </label>
+        <label>
+          <input type="checkbox" name="remember" v-model="checked" />
+          Remember me
+        </label>
         <span class="psw"
           >Dont have an account?
           <RouterLink to="/signup" class="nav-link"> Sign up! </RouterLink>

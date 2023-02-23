@@ -1,23 +1,44 @@
 <script>
   import HeaderHead from './components/HeaderHead.vue'
-  import CarouselSlide from './components/CarouselSlide.vue'
   import FooterComponent from './components/FooterComponent.vue'
   import SearchBar from './components/SearchBar.vue'
+<<<<<<< HEAD
   import FeatureMedia from './components/FeatureMedia.vue'
+=======
+>>>>>>> 41b61360862249e24c2560085a899c049479aad5
 
   import SideBar from './components/Sidebar.vue'
 
   export default {
     components: {
       HeaderHead,
+<<<<<<< HEAD
       CarouselSlide,
+=======
+>>>>>>> 41b61360862249e24c2560085a899c049479aad5
       FooterComponent,
       SearchBar,
       SideBar,
       FeatureMedia
     },
     created() {
+      // dispatch vuex to fetch products,
+      // use this.$store.state.allProducts to access global variabel
       this.$store.dispatch('getProducts')
+
+      if (localStorage.getItem('rememberUser') != null) {
+        const parsed = JSON.parse(localStorage.getItem('allUsers'))
+        const indexOfUser = localStorage.getItem('rememberUser')
+
+        // Set the remembered user to activeUser, logging them in on page load
+        sessionStorage.setItem(
+          'activeUser',
+          JSON.stringify(parsed[indexOfUser])
+        )
+
+        // This is to update the vuex state
+        this.$store.dispatch('getLogged')
+      }
     }
   }
 </script>
@@ -44,10 +65,17 @@
     rel="stylesheet"
   />
 
+<<<<<<< HEAD
   <CarouselSlide />
   <FeatureMedia/>
   <SearchBar />
   <HeaderHead />
+=======
+  <SearchBar />
+  <HeaderHead />
+  <HeaderHead />
+  <SearchBar />
+>>>>>>> 41b61360862249e24c2560085a899c049479aad5
 </template>
 
 <style lang="scss">
@@ -57,6 +85,7 @@
 
   // Sidebar scss
   :root {
+    --green-dark: #568885;
     --grey-light: #a19595;
     --grey: #64748b;
     --dark-alt: #334155;
