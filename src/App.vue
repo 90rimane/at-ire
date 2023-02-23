@@ -47,12 +47,7 @@
   <CarouselSlide />
   <SearchBar />
   <HeaderHead />
-<<<<<<< HEAD
-  <CitiesList />
   <HomeView/>
-=======
-  <LandingView />
->>>>>>> b8f237fa9afc8291f36f0ec0d756e4d0629958fe
 </template>
 
 <style lang="scss">
