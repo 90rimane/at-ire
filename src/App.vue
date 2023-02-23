@@ -60,8 +60,6 @@
   <HeaderHead />
   <HeaderHead />
   <SearchBar />
-
-  <CitiesList />
 </template>
 
 <style lang="scss">
