@@ -1,11 +1,65 @@
 <script>
-  export default {}
+  export default {
+    created() {
+      fetch('api.json')
+        .then((response) => response.json())
+        .then((result) => {
+          this.products = result.data
+        })
+    },
+    data() {
+      return {
+        products: null,
+        search: ''
+      }
+    },
+    computed: {
+      searchResult() {
+        if (this.search) {
+          return this.products.filter((item) => {
+            return this.search
+              .toLowerCase()
+              .split(' ')
+              .every((v) => item.description.toLowerCase().includes(v))
+          })
+        } else {
+          return this.products
+        }
+      }
+    }
+  }
 </script>
 
 <template>
   <div class="header-mobile">
-    <h3>@IRE</h3>
-    <!-- <svg
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      fill="currentColor"
+      class="bi-bi-search-mobile"
+      viewBox="0 0 16 16"
+    >
+      <path
+        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+      />
+    </svg>
+    <input
+      class="search-bar"
+      type="text"
+      v-model="search"
+      placeholder="Search products"
+    />
+    <div>
+      <ul v-if="search" class="dropdown">
+        <li v-for="item in searchResult" :key="item.id">
+          <a href="this.item.name"> {{ item.description }} </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- <h3>@IRE</h3>
+     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="16"
       height="16"
@@ -16,7 +70,7 @@
       <path
         d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"
       />
-    </svg> -->
+    </svg>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="16"
@@ -30,7 +84,7 @@
       />
     </svg>
     <span class="material-symbols-outlined">shopping_cart_checkout</span>
-  </div>
+  </div> -->
   <div class="header-desktop">
     <h2>@IRE</h2>
     <svg
@@ -38,7 +92,7 @@
       width="16"
       height="16"
       fill="currentColor"
-      class="bi-bi-search"
+      class="bi-bi-search-desktop"
       viewBox="0 0 16 16"
     >
       <path
@@ -74,20 +128,48 @@
 </template>
 
 <style scoped>
-  /* @media Temporary added by Ali */
-  @media (max-width: 370px) {
-    .header-mobile {
-      position: absolute;
-      width: 360px;
-      height: 56px;
-      left: 0px;
-      top: 0px;
-      background: #ecc8b2;
-      margin-left: 60px;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    }
+  .header-mobile {
+    position: fixed;
+    width: 360px;
+    height: 56px;
+    left: 0px;
+    top: 0px;
+    background: #ecc8b2;
+    margin-left: 65px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
 
-    h3 {
+  .bi-bi-search-mobile {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    left: 100px;
+    top: 13px;
+  }
+
+  .dropdown li,
+  .dropdown a {
+    background-color: #efded4;
+    width: 100%;
+  }
+
+  .dropdown {
+    position: fixed;
+    padding: 10px;
+  }
+
+  .search-bar {
+    position: fixed;
+    width: 167px;
+    height: 29px;
+    left: 170px;
+    top: 14px;
+
+    background: #fff5ef;
+    border-radius: 13px;
+  }
+
+  /* h3 {
       position: absolute;
       width: 62px;
       height: 28px;
@@ -102,7 +184,7 @@
       color: #000000;
     }
 
-    /* .bi-bi-filter-left-mobile {
+     .bi-bi-filter-left-mobile {
       position: absolute;
       width: 30px;
       height: 30px;
@@ -113,12 +195,12 @@
       background: #ecc8b2;
       color: #000000;
       cursor: pointer;
-    } */
+    }
 
-    /* LÄGG IN EN "NAV-LINK" I APP.VUE
+     LÄGG IN EN "NAV-LINK" I APP.VUE
   .bi-bi-list :hover:focus:active {
     background-color: antiquewhite;
-  } */
+  }
 
     .bi-bi-heart-mobile {
       position: absolute;
@@ -143,9 +225,9 @@
       color: #000000;
       cursor: pointer;
     }
-  }
+    */
 
-  @media (min-width: 371px) {
+  @media (min-width: 1000px) {
     .header-desktop {
       box-sizing: border-box;
 
@@ -171,7 +253,6 @@
       font-weight: 700;
       font-size: 24px;
       line-height: 28px;
-      /* identical to box height */
 
       color: #000000;
     }
@@ -181,7 +262,7 @@
     background-color: antiquewhite;
   } */
 
-    .bi-bi-search {
+    .bi-bi-search-desktop {
       position: absolute;
       width: 30px;
       height: 30px;

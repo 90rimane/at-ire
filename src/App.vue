@@ -1,6 +1,5 @@
 <script>
   import HeaderHead from './components/HeaderHead.vue'
-  // import CarouselSlide from './components/CarouselSlide.vue'
   import FooterComponent from './components/FooterComponent.vue'
   import SearchBar from './components/SearchBar.vue'
 
@@ -9,13 +8,28 @@
   export default {
     components: {
       HeaderHead,
-      // CarouselSlide,
       FooterComponent,
       SearchBar,
       SideBar
     },
     created() {
+      // dispatch vuex to fetch products,
+      // use this.$store.state.allProducts to access global variabel
       this.$store.dispatch('getProducts')
+
+      if (localStorage.getItem('rememberUser') != null) {
+        const parsed = JSON.parse(localStorage.getItem('allUsers'))
+        const indexOfUser = localStorage.getItem('rememberUser')
+
+        // Set the remembered user to activeUser, logging them in on page load
+        sessionStorage.setItem(
+          'activeUser',
+          JSON.stringify(parsed[indexOfUser])
+        )
+
+        // This is to update the vuex state
+        this.$store.dispatch('getLogged')
+      }
     }
   }
 </script>
@@ -41,10 +55,19 @@
     href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap"
     rel="stylesheet"
   />
+  <<<<<<< HEAD
 
   <!-- <CarouselSlide /> -->
   <SearchBar />
   <HeaderHead />
+  =======
+  <HeaderHead />
+  <CarouselSlide />
+  <SearchBar />
+
+  <CitiesList />
+  <LandingView />
+  >>>>>>> eb5f5f7da5b2459a454d833ba578bc83d0f4c3bf
 </template>
 
 <style lang="scss">
