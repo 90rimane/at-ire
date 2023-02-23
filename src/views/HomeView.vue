@@ -98,6 +98,7 @@
     grid-template-rows: repeat(2, 1fr);
     gap: 10px;
     margin-bottom: 60px;
+    padding-left: 64px;
   }
   .grid-item {
     position: relative;
