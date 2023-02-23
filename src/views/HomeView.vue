@@ -1,4 +1,8 @@
 <template>
+  <div>
+    <CarouselSlide v-show="allProducts" :images="allProducts" />
+  </div>
+
   <div class="grid-container">
     <div class="grid-item">
       <img
@@ -74,7 +78,18 @@
 </template>
 
 <script>
-  export default {}
+  import CarouselSlide from '../components/CarouselSlide.vue'
+
+  export default {
+    components: {
+      CarouselSlide
+    },
+    computed: {
+      allProducts() {
+        return this.$store.state.allProducts
+      }
+    }
+  }
 </script>
 
 <style>

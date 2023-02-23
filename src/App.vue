@@ -1,17 +1,15 @@
 <script>
   import HeaderHead from './components/HeaderHead.vue'
-  import CarouselSlide from './components/CarouselSlide.vue'
+  // import CarouselSlide from './components/CarouselSlide.vue'
   import FooterComponent from './components/FooterComponent.vue'
   import SearchBar from './components/SearchBar.vue'
-  import HomeView from './views/HomeView.vue'
 
   import SideBar from './components/Sidebar.vue'
 
   export default {
     components: {
       HeaderHead,
-      CarouselSlide,
-      HomeView,
+      // CarouselSlide,
       FooterComponent,
       SearchBar,
       SideBar
@@ -44,10 +42,9 @@
     rel="stylesheet"
   />
 
-  <CarouselSlide />
+  <!-- <CarouselSlide /> -->
   <SearchBar />
   <HeaderHead />
-  <HomeView/>
 </template>
 
 <style lang="scss">
