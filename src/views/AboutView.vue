@@ -11,48 +11,61 @@
 </script>
 
 <template>
-  <div class="about-section">
-      <h1>About @ire</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In mollitia ex
-        soluta numquam assumenda officia velit reprehenderit natus ab. Neque quos
-        at ad mollitia commodi qui repudiandae molestias id sint.
-        </p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dolor
-        minus magni necessitatibus accusamus nostrum eos in? Omnis, eum
-        perspiciatis et quae laudantium ab, voluptatibus harum, laborum
-        expedita voluptas quo!
+  <main>
+  <header class="about-section">
+    <h1>About @ire</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In mollitia ex
+      soluta numquam assumenda officia velit reprehenderit natus ab. Neque quos
+      at ad mollitia commodi qui repudiandae molestias id sint.
       </p>
-  </div>
-      <h2 style="text-align:center">Our Team</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dolor
+      minus magni necessitatibus accusamus nostrum eos in? Omnis, eum
+      perspiciatis et quae laudantium ab, voluptatibus harum, laborum
+      expedita voluptas quo!
+    </p>
+  </header>
 
-    <div class="row" v-for="user in users" :key="user.id">
-      <div class="column">
-        <div class="card">
-          <img src="/w3images/team1.jpg" alt="developers photo" style="width:100%" />
-          <div class="container">
-            <h2>{{ user.name }}</h2>
-            <p class="title"> {{ user.role }}</p>
-            <p>{{ user.description }}</p>
-            <p>{{ user.email }}</p>
-            <p><button class="button">Contact</button></p>
-          </div>
+  <h2 class="main-title">Our Team</h2>
+  <div class="row" v-for="user in users" :key="user.id">
+
+    <div class="column">
+      <div class="card">
+        <img class="dev-img" :src="user.img" alt="developers photo" />
+        <div class="container">
+          <h2>{{ user.name }}</h2>
+          <p class="title"> {{ user.role }}</p>
+          <p>{{ user.description }}</p>
+          <p>{{ user.email }}</p>
+          <p><button class="button">Contact</button></p>
         </div>
       </div>
     </div>
-
+  </div>
+</main>
 </template>
 
-  <style scoped>
-body{
-    margin-left: 2em;
-  }
-  *, *:before, *:after {
+<style lang="scss" scoped>
+  /* *, *:before, *:after {
     box-sizing: inherit;
+  } */
+  .about-section {
+    padding: 5em 4em 5em 6em;
+    text-align: center;
+    background-color: var(--green-dark);
+    color: var(--light);
+    h1{
+      color: var(--orange);
+    }
   }
-
-.row{
-  margin-left: 10em;
-}
+  .row{
+    margin-left: 10em;
+    display: flex;
+  }
+  .main-title{
+    text-align: center;
+    color: var(--darker);
+    padding: 3em;
+  }
   .column {
     float: left;
     width: 33.3%;
@@ -65,12 +78,7 @@ body{
     margin: 8px;
   }
 
-  .about-section {
-    padding: 50px;
-    text-align: center;
-    background-color: #474e5d;
-    color: white;
-  }
+
 
   .container {
     padding: 0 16px;
