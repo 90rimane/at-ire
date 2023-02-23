@@ -3,13 +3,15 @@
   import FooterComponent from './components/FooterComponent.vue'
   import SideBar from './components/Sidebar.vue'
   import FeatureMedia from './components/FeatureMedia.vue'
+  import ContactButton from './components/ContactButton.vue'
 
   export default {
     components: {
       HeaderHead,
       FooterComponent,
       SideBar,
-      FeatureMedia
+      FeatureMedia,
+      ContactButton
     },
 
     created() {
@@ -39,7 +41,7 @@
   <div class="app">
     <SideBar />
     <HeaderHead />
-
+    <ContactButton />
     <RouterView class="main" />
     <FooterComponent class="main" />
   </div>
