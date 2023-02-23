@@ -4,15 +4,15 @@
     "name": "Jakko",
     "description": " Jaakko is Lorem ipsum dolor sit  amet consectetur",
     "email": "jakoo@mail.com",
-    "img": "link to photo",
-    "role": "UX and Frontend Developer"
+    "img": "./assets/avatar/avatar-man.jpg",
+    "role": "UX and JavaScript Developer"
   },
   {
     "id": "02",
     "name": "Andrea",
     "description": " Andrea is Lorem ipsum dolor sit amet consectetur ",
     "email": "andrea@mail.com",
-    "img": "link to photo",
+    "img": "./assets/avatar/avatar-woman.jpg",
     "role": "UX and Frontend Developer"
   },
   {
@@ -20,15 +20,15 @@
     "name": "Ali",
     "description": " Ali is Lorem ipsum dolor sit amet consectetur ",
     "email": "ali@mail.com",
-    "img": "link to photo",
-    "role": "UX and Frontend Developer"
+    "img": "./assets/avatar/avatar-man.jpg",
+    "role": "UX and JavaScript Developer"
   },
   {
     "id": "04",
     "name": "Jovan",
     "description": "Jovan is Lorem ipsum dolor sit amet consectetur adipisicing elit",
     "email": "jovan@mail.com",
-    "img": "link to photo",
+    "img": "./assets/avatar/avatar-man.jpg",
     "role": "UX and Frontend Developer"
   },
   {
@@ -36,7 +36,7 @@
     "name": "Anna",
     "description": " Anna is Lorem ipsum dolor sit amet consectetur ",
     "email": "anna@mail.com",
-    "img": "link to photo",
+    "img": "./assets/avatar/avatar-woman.jpg",
     "role": "UX and Frontend Developer"
   },
   {
@@ -44,15 +44,15 @@
     "name": "Björn",
     "description": "Björn is Lorem ipsum dolor sit amet consectetur",
     "email": "bjorn@mail.com",
-    "img": "link to photo",
+    "img": "./assets/avatar/avatar-man.jpg",
     "role": "UX and Frontend Developer"
   },
   {
     "id": "05",
-    "name": "Anna",
+    "name": "Vanja",
     "description": "Lorem ipsum dolor sit amet consectetur ",
-    "email": "anna@mail.com",
-    "img": "link to photo",
+    "email": "vanja@mail.com",
+    "img": "./assets/avatar/avatar-man.jpg",
     "role": "UX and Frontend Developer"
   }
 ]
