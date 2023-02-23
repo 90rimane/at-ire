@@ -1,9 +1,9 @@
 <script>
   import HeaderHead from './components/HeaderHead.vue'
   import CarouselSlide from './components/CarouselSlide.vue'
-  import LandingView from './views/LandingView.vue'
   import FooterComponent from './components/FooterComponent.vue'
   import SearchBar from './components/SearchBar.vue'
+  import HomeView from './views/HomeView.vue'
 
   import SideBar from './components/Sidebar.vue'
 
@@ -11,7 +11,7 @@
     components: {
       HeaderHead,
       CarouselSlide,
-      LandingView,
+      HomeView,
       FooterComponent,
       SearchBar,
       SideBar
@@ -48,7 +48,7 @@
   <SearchBar />
   <HeaderHead />
   <CitiesList />
-  <LandingView />
+  <HomeView/>
 </template>
 
 <style lang="scss">
