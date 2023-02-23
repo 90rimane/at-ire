@@ -2,7 +2,6 @@
   import HeaderHead from './components/HeaderHead.vue'
   import CarouselSlide from './components/CarouselSlide.vue'
   import FooterComponent from './components/FooterComponent.vue'
-  import SearchBar from './components/SearchBar.vue'
   import SideBar from './components/Sidebar.vue'
   import FeatureMedia from './components/FeatureMedia.vue'
 
@@ -11,7 +10,6 @@
       HeaderHead,
       CarouselSlide,
       FooterComponent,
-      SearchBar,
       SideBar,
       FeatureMedia
     },
@@ -42,6 +40,7 @@
   <!--Sidebar-->
   <div class="app">
     <SideBar />
+    <HeaderHead />
 
     <RouterView class="main" />
     <FooterComponent class="main" />
@@ -62,8 +61,6 @@
 
   <CarouselSlide />
   <FeatureMedia />
-  <SearchBar />
-  <HeaderHead />
 </template>
 
 <style lang="scss">
