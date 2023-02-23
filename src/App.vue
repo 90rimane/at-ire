@@ -2,15 +2,18 @@
   import HeaderHead from './components/HeaderHead.vue'
   import FooterComponent from './components/FooterComponent.vue'
   import SearchBar from './components/SearchBar.vue'
+  import FeatureMedia from './components/FeatureMedia.vue'
 
   import SideBar from './components/Sidebar.vue'
 
   export default {
     components: {
       HeaderHead,
+      CarouselSlide,
       FooterComponent,
       SearchBar,
-      SideBar
+      SideBar,
+      FeatureMedia
     },
     created() {
       // dispatch vuex to fetch products,
@@ -56,10 +59,10 @@
     rel="stylesheet"
   />
 
+  <CarouselSlide />
+  <FeatureMedia />
   <SearchBar />
   <HeaderHead />
-  <HeaderHead />
-  <SearchBar />
 </template>
 
 <style lang="scss">
