@@ -1,10 +1,10 @@
 <script>
   import HeaderHead from './components/HeaderHead.vue'
+  import CarouselSlide from './components/CarouselSlide.vue'
   import FooterComponent from './components/FooterComponent.vue'
   import SearchBar from './components/SearchBar.vue'
-  import FeatureMedia from './components/FeatureMedia.vue'
   import SideBar from './components/Sidebar.vue'
-  import CarouselSlide from './components/CarouselSlide.vue'
+  import FeatureMedia from './components/FeatureMedia.vue'
 
   export default {
     components: {
@@ -15,6 +15,7 @@
       SideBar,
       FeatureMedia
     },
+
     created() {
       // dispatch vuex to fetch products,
       // use this.$store.state.allProducts to access global variabel
