@@ -47,7 +47,7 @@
   <CarouselSlide />
   <SearchBar />
   <HeaderHead />
-  <HomeView/>
+  <HomeView />
 </template>
 
 <style lang="scss">
