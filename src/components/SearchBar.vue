@@ -2,18 +2,18 @@
   export default {
     data() {
       return {
-        products: this.$store.state.allProducts,
+        products: null,
         search: ''
       }
     },
     computed: {
       searchResult() {
         if (this.search) {
-          return this.products.filter((item) => {
+          return this.$store.state.allProducts.filter((i) => {
             return this.search
               .toLowerCase()
               .split(' ')
-              .every((v) => item.description.toLowerCase().includes(v))
+              .every((v) => i.description.toLowerCase().includes(v))
           })
         } else {
           return this.products
@@ -33,6 +33,7 @@
   .dropdown {
     position: absolute;
     padding: 10px;
+    z-index: 1;
   }
 </style>
 
