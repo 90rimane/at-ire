@@ -47,7 +47,6 @@
   <CarouselSlide />
   <SearchBar />
   <HeaderHead />
-  <CitiesList />
   <LandingView />
 </template>
 
@@ -98,5 +97,6 @@
   }
   .main {
     margin-left: calc(2rem + 32px);
+    margin-top: 56px;
   }
 </style>
