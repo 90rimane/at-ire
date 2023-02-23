@@ -1,6 +1,5 @@
 <script>
   import HeaderHead from './components/HeaderHead.vue'
-  import CarouselSlide from './components/CarouselSlide.vue'
   import FooterComponent from './components/FooterComponent.vue'
   import SideBar from './components/Sidebar.vue'
   import FeatureMedia from './components/FeatureMedia.vue'
@@ -8,7 +7,6 @@
   export default {
     components: {
       HeaderHead,
-      CarouselSlide,
       FooterComponent,
       SideBar,
       FeatureMedia
@@ -59,7 +57,6 @@
     rel="stylesheet"
   />
 
-  <CarouselSlide />
   <FeatureMedia />
 </template>
 
