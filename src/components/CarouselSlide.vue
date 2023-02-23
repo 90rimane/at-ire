@@ -39,8 +39,8 @@
     },
 
     created() {
-      console.log('this.images alt', this.images[0].description)
-      console.log('this.images One', this.images[0].img.Black)
+      // console.log('this.images alt', this.images[0].description)
+      // console.log('this.images One', this.images[0].img.Black)
       this.startAutoplay()
     },
 
@@ -55,8 +55,8 @@
         this.timer = null
       },
       moveToNextImage() {
-        console.log('this.images alt', this.images[0].description)
-        console.log('this.images One', this.images[0].img.Black)
+        // console.log('this.images alt', this.images[0].description)
+        // console.log('this.images One', this.images[0].img.Black)
         this.currentIndex = (this.currentIndex + 1) % this.images.length
       },
       moveToPreviousImage() {
