@@ -47,8 +47,12 @@
   <CarouselSlide />
   <SearchBar />
   <HeaderHead />
+<<<<<<< HEAD
   <CitiesList />
   <HomeView/>
+=======
+  <LandingView />
+>>>>>>> b8f237fa9afc8291f36f0ec0d756e4d0629958fe
 </template>
 
 <style lang="scss">
@@ -98,5 +102,6 @@
   }
   .main {
     margin-left: calc(2rem + 32px);
+    margin-top: 56px;
   }
 </style>
