@@ -55,19 +55,13 @@
     href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap"
     rel="stylesheet"
   />
-  <<<<<<< HEAD
 
-  <!-- <CarouselSlide /> -->
   <SearchBar />
   <HeaderHead />
-  =======
   <HeaderHead />
-  <CarouselSlide />
   <SearchBar />
 
   <CitiesList />
-  <LandingView />
-  >>>>>>> eb5f5f7da5b2459a454d833ba578bc83d0f4c3bf
 </template>
 
 <style lang="scss">

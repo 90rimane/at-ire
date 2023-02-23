@@ -59,6 +59,6 @@
 
 <style scooped>
   img {
-    width: 100vw;
+    width: 50vw;
   }
 </style>
