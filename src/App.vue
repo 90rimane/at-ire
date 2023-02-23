@@ -3,8 +3,8 @@
   import FooterComponent from './components/FooterComponent.vue'
   import SearchBar from './components/SearchBar.vue'
   import FeatureMedia from './components/FeatureMedia.vue'
-
   import SideBar from './components/Sidebar.vue'
+  import CarouselSlide from './components/CarouselSlide.vue'
 
   export default {
     components: {
