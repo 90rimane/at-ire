@@ -30,7 +30,7 @@
 
     <div class="column">
       <div class="card">
-        <img class="dev-img" :src="user.img" alt="developers photo" />
+        <img class="dev-img" :src="user.img" alt="developers photo" style="width: 100%;" />
         <div class="container">
           <h2>{{ user.name }}</h2>
           <p class="title"> {{ user.role }}</p>

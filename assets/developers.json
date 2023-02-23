@@ -5,7 +5,7 @@
     "description": " Jaakko is Lorem ipsum dolor sit  amet consectetur",
     "email": "jakoo@mail.com",
     "img": "./assets/avatar/avatar-man.jpg",
-    "role": "UX and Frontend Developer"
+    "role": "UX and JavaScript Developer"
   },
   {
     "id": "02",
@@ -21,7 +21,7 @@
     "description": " Ali is Lorem ipsum dolor sit amet consectetur ",
     "email": "ali@mail.com",
     "img": "./assets/avatar/avatar-man.jpg",
-    "role": "UX and Frontend Developer"
+    "role": "UX and JavaScript Developer"
   },
   {
     "id": "04",
@@ -49,9 +49,9 @@
   },
   {
     "id": "05",
-    "name": "Anna",
+    "name": "Vanja",
     "description": "Lorem ipsum dolor sit amet consectetur ",
-    "email": "anna@mail.com",
+    "email": "vanja@mail.com",
     "img": "./assets/avatar/avatar-man.jpg",
     "role": "UX and Frontend Developer"
   }
