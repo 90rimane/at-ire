@@ -29,10 +29,9 @@
   <div class="app">
     <SideBar />
 
-    <RouterView />
-
+    <RouterView class="main" />
+    <FooterComponent class="main" />
   </div>
-  <FooterComponent />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -52,8 +51,6 @@
   <HeaderHead />
   <CitiesList />
   <LandingView />
-
-
 </template>
 
 <style lang="scss">
@@ -92,6 +89,7 @@
   }
   .app {
     display: flex;
+    flex-direction: column;
     main {
       flex: 1 1 0;
       padding: 2rem;
@@ -99,5 +97,8 @@
         padding-left: 6rem;
       }
     }
+  }
+  .main {
+    margin-left: calc(2rem + 32px);
   }
 </style>
