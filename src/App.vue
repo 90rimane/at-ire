@@ -2,20 +2,14 @@
   import HeaderHead from './components/HeaderHead.vue'
   import FooterComponent from './components/FooterComponent.vue'
   import SearchBar from './components/SearchBar.vue'
-<<<<<<< HEAD
   import FeatureMedia from './components/FeatureMedia.vue'
-=======
->>>>>>> 41b61360862249e24c2560085a899c049479aad5
 
   import SideBar from './components/Sidebar.vue'
 
   export default {
     components: {
       HeaderHead,
-<<<<<<< HEAD
       CarouselSlide,
-=======
->>>>>>> 41b61360862249e24c2560085a899c049479aad5
       FooterComponent,
       SearchBar,
       SideBar,
@@ -65,17 +59,10 @@
     rel="stylesheet"
   />
 
-<<<<<<< HEAD
   <CarouselSlide />
-  <FeatureMedia/>
+  <FeatureMedia />
   <SearchBar />
   <HeaderHead />
-=======
-  <SearchBar />
-  <HeaderHead />
-  <HeaderHead />
-  <SearchBar />
->>>>>>> 41b61360862249e24c2560085a899c049479aad5
 </template>
 
 <style lang="scss">
