@@ -16,7 +16,23 @@
       SideBar
     },
     created() {
+      // dispatch vuex to fetch products,
+      // use this.$store.state.allProducts to access global variabel
       this.$store.dispatch('getProducts')
+
+      if (localStorage.getItem('rememberUser') != null) {
+        const parsed = JSON.parse(localStorage.getItem('allUsers'))
+        const indexOfUser = localStorage.getItem('rememberUser')
+
+        // Set the remembered user to activeUser, logging them in on page load
+        sessionStorage.setItem(
+          'activeUser',
+          JSON.stringify(parsed[indexOfUser])
+        )
+
+        // This is to update the vuex state
+        this.$store.dispatch('getLogged')
+      }
     }
   }
 </script>
