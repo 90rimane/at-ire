@@ -1,8 +1,6 @@
 <script>
   import HeaderHead from './components/HeaderHead.vue'
-  import CitiesList from './components/CitiesList.vue'
   import CarouselSlide from './components/CarouselSlide.vue'
-  import LandingView from './views/LandingView.vue'
   import FooterComponent from './components/FooterComponent.vue'
   import SearchBar from './components/SearchBar.vue'
 
@@ -11,15 +9,30 @@
   export default {
     components: {
       HeaderHead,
-      CitiesList,
       CarouselSlide,
-      LandingView,
+      // HomeView,
       FooterComponent,
       SearchBar,
       SideBar
     },
     created() {
+      // dispatch vuex to fetch products,
+      // use this.$store.state.allProducts to access global variabel
       this.$store.dispatch('getProducts')
+
+      if (localStorage.getItem('rememberUser') != null) {
+        const parsed = JSON.parse(localStorage.getItem('allUsers'))
+        const indexOfUser = localStorage.getItem('rememberUser')
+
+        // Set the remembered user to activeUser, logging them in on page load
+        sessionStorage.setItem(
+          'activeUser',
+          JSON.stringify(parsed[indexOfUser])
+        )
+
+        // This is to update the vuex state
+        this.$store.dispatch('getLogged')
+      }
     }
   }
 </script>
@@ -48,6 +61,7 @@
   <HeaderHead />
   <CarouselSlide />
   <SearchBar />
+
   <CitiesList />
   <LandingView />
 </template>
@@ -99,5 +113,6 @@
   }
   .main {
     margin-left: calc(2rem + 32px);
+    margin-top: 56px;
   }
 </style>
