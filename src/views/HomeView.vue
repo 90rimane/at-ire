@@ -1,6 +1,6 @@
 <template>
   <div>
-    <CarouselSlide v-show="allProducts" :images="allProducts" />
+    <CarouselSlide v-if="allProducts" :images="allProducts" />
   </div>
 
   <div class="grid-container">

@@ -1,11 +1,23 @@
 <template>
-  <div>
+  <div id="carousel">
     <img
       :src="images[currentIndex].img.Black"
       :alt="images[currentIndex].description"
     />
-    <button @click="moveToPreviousImage()">Previous</button>
-    <button @click="moveToNextImage()">Next</button>
+    <button
+      id="carousel-button-prev"
+      class="material-symbols-outlined"
+      @click="moveToPreviousImage()"
+    >
+      chevron_left
+    </button>
+    <button
+      id="carousel-button-next"
+      class="material-symbols-outlined"
+      @click="moveToNextImage()"
+    >
+      chevron_right
+    </button>
   </div>
 </template>
 
@@ -17,25 +29,27 @@
         required: true
       }
     },
+
     data() {
       return {
         currentIndex: 0,
         timer: null,
-        autoplayInterval: 1000
+        autoplayInterval: 3000
       }
     },
+
     mounted() {
       console.log('this.images alt', this.images[0].description)
       console.log('this.images One', this.images[0].img.Black)
       this.startAutoplay()
     },
+
     methods: {
       startAutoplay() {
         this.timer = setInterval(() => {
           this.moveToNextImage()
         }, this.autoplayInterval)
       },
-      // kolla upp och jämför med hur jag har formulerat setInterval i Farstun
       stopAutoplay() {
         clearInterval(this.timer)
         this.timer = null
@@ -48,6 +62,7 @@
           (this.currentIndex + this.images.length - 1) % this.images.length
       }
     },
+
     watch: {
       currentIndex() {
         this.stopAutoplay()
@@ -59,6 +74,30 @@
 
 <style scooped>
   img {
-    width: 50vw;
+    width: 70vw;
+  }
+
+  #carousel {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding-top: 10vh;
+    padding-left: 15vw;
+  }
+
+  #carousel-button-prev,
+  #carousel-button-next {
+    position: absolute;
+    background-color: #fff5ef;
+  }
+
+  #carousel-button-prev {
+    left: 22vw;
+  }
+
+  #carousel-button-next {
+    right: 7vw;
   }
 </style>
