@@ -3,7 +3,6 @@
   import CarouselSlide from './components/CarouselSlide.vue'
   import FooterComponent from './components/FooterComponent.vue'
   import SearchBar from './components/SearchBar.vue'
-  import HomeView from './views/HomeView.vue'
 
   import SideBar from './components/Sidebar.vue'
 
@@ -11,13 +10,29 @@
     components: {
       HeaderHead,
       CarouselSlide,
-      HomeView,
+      // HomeView,
       FooterComponent,
       SearchBar,
       SideBar
     },
     created() {
+      // dispatch vuex to fetch products,
+      // use this.$store.state.allProducts to access global variabel
       this.$store.dispatch('getProducts')
+
+      if (localStorage.getItem('rememberUser') != null) {
+        const parsed = JSON.parse(localStorage.getItem('allUsers'))
+        const indexOfUser = localStorage.getItem('rememberUser')
+
+        // Set the remembered user to activeUser, logging them in on page load
+        sessionStorage.setItem(
+          'activeUser',
+          JSON.stringify(parsed[indexOfUser])
+        )
+
+        // This is to update the vuex state
+        this.$store.dispatch('getLogged')
+      }
     }
   }
 </script>
@@ -47,7 +62,6 @@
   <CarouselSlide />
   <SearchBar />
   <HeaderHead />
-  <HomeView />
 </template>
 
 <style lang="scss">
