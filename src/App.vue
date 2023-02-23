@@ -1,6 +1,5 @@
 <script>
   import HeaderHead from './components/HeaderHead.vue'
-  import CitiesList from './components/CitiesList.vue'
   import CarouselSlide from './components/CarouselSlide.vue'
   import LandingView from './views/LandingView.vue'
   import FooterComponent from './components/FooterComponent.vue'
@@ -11,7 +10,6 @@
   export default {
     components: {
       HeaderHead,
-      CitiesList,
       CarouselSlide,
       LandingView,
       FooterComponent,

@@ -1,15 +1,8 @@
 <script>
   export default {
-    created() {
-      fetch('api.json')
-        .then((response) => response.json())
-        .then((result) => {
-          this.products = result.data
-        })
-    },
     data() {
       return {
-        products: null,
+        products: this.$store.state.allProducts,
         search: ''
       }
     },
