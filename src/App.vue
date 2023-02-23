@@ -71,6 +71,7 @@
 
   // Sidebar scss
   :root {
+    --green-dark: #568885;
     --grey-light: #a19595;
     --grey: #64748b;
     --dark-alt: #334155;
