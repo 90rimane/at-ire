@@ -100,8 +100,4 @@
   #carousel-button-next {
     right: 7vw;
   }
-
-  /* @media (min-width: 1000px) {
-
-  } */
 </style>
