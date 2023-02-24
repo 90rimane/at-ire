@@ -33,16 +33,16 @@ import developers from '../../assets/developers.json';
         <img class="dev-img" :src="user.img" alt="developers photo" />
         <div class="container">
           <h2>{{ user.name }}</h2>
-          <p> {{ user.role }}</p>
+          <p id="p-role"> {{ user.role }}</p>
           <p id="description">{{ user.description }}</p>
           <p id="email">{{ user.email }}</p>
-          <p><button class="button">Contact</button></p>
         </div>
       </div>
     </div>
   </div>
   <footer>
-      <div class="photos">
+    <h3>Sponsors</h3>
+      <div class="photos-sponsor">
         <img class="sponsors-img" src="../../assets/sponsors/amazon.png" alt="" />
         <img class="sponsors-img" src="../../assets/sponsors/ebay.png" alt="" />
         <img class="sponsors-img" src="../../assets/sponsors/klarna.png" alt="" />
@@ -54,9 +54,6 @@ import developers from '../../assets/developers.json';
 </template>
 
 <style lang="scss" scoped>
-  /* *, *:before, *:after {
-    box-sizing: inherit;
-  } */
   .about-section {
     padding: 5em 4em 5em 6em;
     margin: 5em;
@@ -100,11 +97,21 @@ import developers from '../../assets/developers.json';
         }
         .container {
           padding: 1em;
+          display: flex;
+          flex-direction: column;
+          align-items: first baseline;
+          font-weight: bold;
           p{
             padding: 2px 0;
+            margin: 0.5em 0;
+          }
+          #p-role{
+            color: var(--green-dark);
           }
           #email{
             font-weight: bold;
+            align-self: center;
+            font-size: 1.3em;
           }
           #description{
             width: fit-content;
@@ -115,7 +122,7 @@ import developers from '../../assets/developers.json';
             outline: 0;
             display: inline-block;
             padding: 5px;
-            color: white;
+            color: var(--light);
             background-color: var(--green-dark);
             text-align: center;
             cursor: pointer;
@@ -132,11 +139,15 @@ import developers from '../../assets/developers.json';
     }
   }
   footer{
-    margin: 5em 0;
-    border-top: solid 1px var(--grey);
-    border-bottom: solid 1px var(--grey);
+    margin: 20em 0 5em 0;
+    border-top: solid 1px var(--lightB-darker);
+    border-bottom: solid 1px var(--lightB-darker);
 
-    .photos{
+    h3{
+      padding: 1em;
+      text-align: center;
+    }
+    .photos-sponsor{
       display: flex;
       justify-content: center;
       flex-flow: row wrap;
