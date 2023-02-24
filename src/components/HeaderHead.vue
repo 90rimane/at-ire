@@ -237,7 +237,10 @@
     .header-desktop {
       box-sizing: border-box;
       position: absolute;
+      width: 100%;
+      /* Changed by ALi
       width: 1440px;
+      */
       height: 56px;
       left: 0px;
       top: 0px;
@@ -245,6 +248,7 @@
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       transition: ease-in-out 1s;
       cursor: pointer;
+      z-index: 1; /* Added by Ali */
     }
 
     .header-desktop :hover {
