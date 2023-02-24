@@ -155,7 +155,6 @@
         .text {
           color: var(--darker);
           transition: 0.2s ease-in-out;
-          font-size: 1.5rem;
         }
         &:hover {
           background-color: var(--lightB-darker);
