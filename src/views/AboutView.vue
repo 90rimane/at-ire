@@ -41,6 +41,15 @@ import developers from '../../assets/developers.json';
       </div>
     </div>
   </div>
+  <footer>
+      <div class="photos">
+        <img class="sponsors-img" src="../../assets/sponsors/amazon.png" alt="" />
+        <img class="sponsors-img" src="../../assets/sponsors/ebay.png" alt="" />
+        <img class="sponsors-img" src="../../assets/sponsors/klarna.png" alt="" />
+        <img class="sponsors-img" src="../../assets/sponsors/paypal.png" alt="" />
+        <img class="sponsors-img" src="../../assets/sponsors/visa-master.png" alt="" />
+      </div>
+  </footer>
 </main>
 </template>
 
@@ -62,6 +71,7 @@ import developers from '../../assets/developers.json';
       line-height: 2;
       font-size: large;
       letter-spacing: 1px;
+      overflow-wrap: break-word;
     }
   }
   .main-title{
@@ -115,12 +125,31 @@ import developers from '../../assets/developers.json';
           }
           .button:hover {
             background-color: var(--grey);
+            flex-flow: row wrap;
           }
         }
       }
     }
   }
+  footer{
+    margin: 5em 0;
+    border-top: solid 1px var(--grey);
+    border-bottom: solid 1px var(--grey);
 
+    .photos{
+      display: flex;
+      justify-content: center;
+      flex-flow: row wrap;
+      height: auto;
+      margin: 5em 0;
+
+      img {
+        width: 6em ;
+        max-height: 6em ;
+        align-self: flex-end;
+      }
+    }
+  }
   @media screen and (max-width: 650px) {
     .about-section {
       padding: 1em;
