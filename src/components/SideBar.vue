@@ -95,7 +95,7 @@
     box-shadow: 1px 0 5px var(--grey-light);
 
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     .logo {
       margin-bottom: 1rem;
       img {
@@ -146,15 +146,16 @@
         align-items: center;
         text-decoration: none;
         transition: 0.2s ease-in-out;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 0.9rem;
         .material-symbols-outlined {
-          font-size: 2rem;
+          font-size: 2.5rem;
           color: var(--darker);
           transition: 0.2s ease-in-out;
         }
         .text {
           color: var(--darker);
           transition: 0.2s ease-in-out;
+          font-size: 1.5rem;
         }
         &:hover {
           background-color: var(--lightB-darker);
