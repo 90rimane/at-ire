@@ -2,7 +2,7 @@
   {
     "id": "01",
     "name": "Jaakko",
-    "description": " Jaakko is Lorem ipsum dolor sit  amet consectetur",
+    "description": " Jaakko is Lorem ipsum dolor sit  amet consectetur adipisicing elit",
     "email": "jaakko@mail.com",
     "img": "./assets/avatar/avatar-man.jpg",
     "role": "UX and JavaScript Developer"
@@ -10,7 +10,7 @@
   {
     "id": "02",
     "name": "Andrea",
-    "description": " Andrea is Lorem ipsum dolor sit amet consectetur ",
+    "description": " Andrea is Lorem ipsum dolor sit amet consectetur adipisicing elit",
     "email": "andrea@mail.com",
     "img": "./assets/avatar/avatar-woman.jpg",
     "role": "UX and Frontend Developer"
@@ -18,7 +18,7 @@
   {
     "id": "03",
     "name": "Ali",
-    "description": " Ali is Lorem ipsum dolor sit amet consectetur ",
+    "description": " Ali is Lorem ipsum dolor sit amet consectetur adipisicing elit",
     "email": "ali@mail.com",
     "img": "./assets/avatar/avatar-man.jpg",
     "role": "UX and JavaScript Developer"
@@ -26,7 +26,7 @@
   {
     "id": "04",
     "name": "Jovan",
-    "description": "Jovan is Lorem ipsum dolor sit amet consectetur",
+    "description": "Jovan is Lorem ipsum dolor sit amet consectetur adipisicing elit",
     "email": "jovan@mail.com",
     "img": "./assets/avatar/avatar-man.jpg",
     "role": "UX and Frontend Developer"
@@ -34,7 +34,7 @@
   {
     "id": "05",
     "name": "Anna",
-    "description": " Anna is Lorem ipsum dolor sit amet consectetur ",
+    "description": " Anna is Lorem ipsum dolor sit amet consectetur adipisicing elit",
     "email": "anna@mail.com",
     "img": "./assets/avatar/avatar-woman.jpg",
     "role": "UX and Frontend Developer"
@@ -42,7 +42,7 @@
   {
     "id": "06",
     "name": "Björn",
-    "description": "Björn is Lorem ipsum dolor sit amet consectetur",
+    "description": "Björn is Lorem ipsum dolor sit amet consectetur adipisicing elit",
     "email": "bjorn@mail.com",
     "img": "./assets/avatar/avatar-man.jpg",
     "role": "UX and Frontend Developer"
@@ -50,7 +50,7 @@
   {
     "id": "05",
     "name": "Vanja",
-    "description": "Lorem ipsum dolor sit amet consectetur ",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
     "email": "vanja@mail.com",
     "img": "./assets/avatar/avatar-man.jpg",
     "role": "UX and Frontend Developer"
