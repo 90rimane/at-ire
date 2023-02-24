@@ -34,7 +34,7 @@ import developers from '../../assets/developers.json';
         <div class="container">
           <h2>{{ user.name }}</h2>
           <p> {{ user.role }}</p>
-          <p>{{ user.description }}</p>
+          <p id="description">{{ user.description }}</p>
           <p id="email">{{ user.email }}</p>
           <p><button class="button">Contact</button></p>
         </div>
@@ -75,12 +75,13 @@ import developers from '../../assets/developers.json';
     list-style: none;
     .column {
       float: left;
-      width: 33.3%;
+      width: 25%;
       margin-bottom: 16px;
       padding: 0 8px;
       .card {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         margin: 8px;
+        height: auto;
         .dev-img{
           width: 100%;
           height: auto;
@@ -93,18 +94,22 @@ import developers from '../../assets/developers.json';
           #email{
             font-weight: bold;
           }
+          #description{
+            width: fit-content;
+
+          }
           .button {
             border: none;
             outline: 0;
             display: inline-block;
-            padding: 8px;
+            padding: 5px;
             color: white;
             background-color: var(--green-dark);
             text-align: center;
             cursor: pointer;
             width: 100%;
             height: 3em;
-            margin-top: 2em;
+            margin-top: 0.5em;
           }
           .button:hover {
             background-color: var(--grey);
