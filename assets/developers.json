@@ -26,7 +26,7 @@
   {
     "id": "04",
     "name": "Jovan",
-    "description": "Jovan is Lorem ipsum dolor sit amet consectetur adipisicing elit",
+    "description": "Jovan is Lorem ipsum dolor sit amet consectetur",
     "email": "jovan@mail.com",
     "img": "./assets/avatar/avatar-man.jpg",
     "role": "UX and Frontend Developer"
