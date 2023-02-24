@@ -1,5 +1,5 @@
 <script>
-  import developers from '../../assets/developers.json';
+import developers from '../../assets/developers.json';
 
   export default {
     data(){
@@ -26,16 +26,16 @@
   </header>
 
   <h2 class="main-title">Our Team</h2>
-  <div class="row" v-for="user in users" :key="user.id">
 
-    <div class="column">
+  <div class="row">
+    <div class="column" v-for="user in users" :key="user.id">
       <div class="card">
         <img class="dev-img" :src="user.img" alt="developers photo" />
         <div class="container">
           <h2>{{ user.name }}</h2>
-          <p class="title"> {{ user.role }}</p>
-          <p>{{ user.description }}</p>
-          <p>{{ user.email }}</p>
+          <p> {{ user.role }}</p>
+          <p id="description">{{ user.description }}</p>
+          <p id="email">{{ user.email }}</p>
           <p><button class="button">Contact</button></p>
         </div>
       </div>
@@ -50,67 +50,83 @@
   } */
   .about-section {
     padding: 5em 4em 5em 6em;
+    margin: 5em;
     text-align: center;
     background-color: var(--green-dark);
     color: var(--light);
     h1{
       color: var(--orange);
+      margin-bottom: 1em;
     }
-  }
-  .row{
-    margin-left: 10em;
-    display: flex;
+    p{
+      line-height: 2;
+    }
   }
   .main-title{
     text-align: center;
     color: var(--darker);
-    padding: 3em;
+    padding: 2em;
   }
-  .column {
-    float: left;
-    width: 33.3%;
-    margin-bottom: 16px;
-    padding: 0 8px;
-  }
+  .row{
+    margin: auto 5em;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    list-style: none;
+    .column {
+      float: left;
+      width: 25%;
+      margin-bottom: 16px;
+      padding: 0 8px;
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        margin: 8px;
+        height: auto;
+        .dev-img{
+          width: 100%;
+          height: auto;
+        }
+        .container {
+          padding: 1em;
+          p{
+            padding: 2px 0;
+          }
+          #email{
+            font-weight: bold;
+          }
+          #description{
+            width: fit-content;
 
-  .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    margin: 8px;
-  }
-
-
-
-  .container {
-    padding: 0 16px;
-  }
-
-  .container::after, .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-
-  .title {
-    color: grey;
-  }
-
-  .button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-  }
-
-  .button:hover {
-    background-color: #555;
+          }
+          .button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 5px;
+            color: white;
+            background-color: var(--green-dark);
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            height: 3em;
+            margin-top: 0.5em;
+          }
+          .button:hover {
+            background-color: var(--grey);
+          }
+        }
+      }
+    }
   }
 
   @media screen and (max-width: 650px) {
+    .about-section {
+      padding: 1em;
+      margin: auto;
+    }
+    .row{
+      flex-flow: column wrap;
+    }
     .column {
       width: 100%;
       display: block;

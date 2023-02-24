@@ -1,5 +1,5 @@
 <template>
-    <transition 
+    <transition
       name="expand"
       @enter="enter"
       @after-enter="afterEnter"
@@ -28,7 +28,7 @@
           getComputedStyle(el);
           setTimeout(() => {
             el.style.height = height;
-          });        
+          });
         },
         afterEnter(el) {
           el.style.height = 'auto';
@@ -43,7 +43,7 @@
       }
     };
   </script>
-  
+
   <style lang="scss" scoped>
     .lista-av-items {
       list-style: none;

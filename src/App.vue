@@ -1,20 +1,19 @@
 <script>
   import HeaderHead from './components/HeaderHead.vue'
   import FooterComponent from './components/FooterComponent.vue'
-  import SearchBar from './components/SearchBar.vue'
   import SideBar from './components/Sidebar.vue'
   import FeatureMedia from './components/FeatureMedia.vue'
+  import ContactButton from './components/ContactButton.vue'
 
   export default {
     components: {
       HeaderHead,
-      CarouselSlide,
       FooterComponent,
-      SearchBar,
       SideBar,
-      HomeView,
-      FeatureMedia
+      FeatureMedia,
+      ContactButton
     },
+
     created() {
       // dispatch vuex to fetch products,
       // use this.$store.state.allProducts to access global variabel
@@ -41,7 +40,8 @@
   <!--Sidebar-->
   <div class="app">
     <SideBar />
-
+    <HeaderHead />
+    <ContactButton class="main" />
     <RouterView class="main" />
     <FooterComponent class="main" />
   </div>
@@ -59,7 +59,7 @@
     rel="stylesheet"
   />
 
-  <CarouselSlide />
+  <FeatureMedia />
 </template>
 
 <style lang="scss">
