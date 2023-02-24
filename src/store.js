@@ -1,9 +1,6 @@
 import { createStore } from 'vuex'
 
 const mutations = {
-    increment(state) {
-      state.counter += 1
-    },
     SET_PRODUCTS(state, products) {
       state.allProducts = products
     },
@@ -16,7 +13,6 @@ const mutations = {
     }
   },
   state = {
-    counter: 0,
     allProducts: null,
     activeUser: null
   },
@@ -44,7 +40,7 @@ const mutations = {
             break
           }
         }
-        console.log(indexOfUser)
+
         allUsers[indexOfUser] = currentUser
         localStorage.setItem('allUsers', JSON.stringify(allUsers))
       }
