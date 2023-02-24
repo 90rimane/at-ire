@@ -1,9 +1,9 @@
 [
   {
     "id": "01",
-    "name": "Jakko",
+    "name": "Jaakko",
     "description": " Jaakko is Lorem ipsum dolor sit  amet consectetur",
-    "email": "jakoo@mail.com",
+    "email": "jaakko@mail.com",
     "img": "./assets/avatar/avatar-man.jpg",
     "role": "UX and JavaScript Developer"
   },
