@@ -60,6 +60,8 @@ import developers from '../../assets/developers.json';
     }
     p{
       line-height: 2;
+      font-size: large;
+      letter-spacing: 1px;
     }
   }
   .main-title{
