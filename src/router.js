@@ -8,7 +8,7 @@ import FavoriteView from './views/FavoriteView.vue'
 import HelpView from './views/HelpView.vue'
 import MyPageView from './views/MyPageView.vue'
 import LoginView from './views/LoginPage.vue'
-import SignView from './views/SignUpPage.vue'
+import SignupView from './views/SignupPage.vue'
 
 export default createRouter({
   history: createWebHashHistory(),
@@ -46,8 +46,8 @@ export default createRouter({
       path: '/login'
     },
     {
-      component: SignView,
-      path: '/Signup'
+      component: SignupView,
+      path: '/signup'
     }
   ]
 })

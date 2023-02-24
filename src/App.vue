@@ -41,7 +41,7 @@
   <div class="app">
     <SideBar />
     <HeaderHead />
-    <ContactButton class="main" />
+    <ContactButton />
     <RouterView class="main" />
     <FooterComponent class="main" />
   </div>

@@ -1,5 +1,12 @@
 <script>
   export default {
+    created() {
+      fetch('api.json')
+        .then((response) => response.json())
+        .then((result) => {
+          this.products = result.data
+        })
+    },
     data() {
       return {
         products: null,
@@ -9,11 +16,11 @@
     computed: {
       searchResult() {
         if (this.search) {
-          return this.$store.state.allProducts.filter((i) => {
+          return this.products.filter((item) => {
             return this.search
               .toLowerCase()
               .split(' ')
-              .every((v) => i.description.toLowerCase().includes(v))
+              .every((v) => item.description.toLowerCase().includes(v))
           })
         } else {
           return this.products
@@ -41,7 +48,7 @@
       class="search-bar"
       type="text"
       v-model="search"
-      placeholder="Search products..."
+      placeholder="Search products"
     />
     <div>
       <ul v-if="search" class="dropdown">
@@ -121,58 +128,45 @@
 </template>
 
 <style scoped>
-  @media (max-width: 999px) {
-    .header-mobile {
-      position: fixed;
-      width: 100%;
-      height: 56px;
-      left: 0px;
-      top: 0px;
-      background: #ecc8b2;
-      /* margin-left: 64px; */
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      transition: ease-in-out 1s;
-    }
+  .header-mobile {
+    position: fixed;
+    width: 360px;
+    height: 56px;
+    left: 0px;
+    top: 0px;
+    background: #ecc8b2;
+    margin-left: 65px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
 
-    .bi-bi-search-mobile {
-      position: fixed;
-      width: 30px;
-      height: 30px;
-      left: 130px;
-      top: 13px;
-    }
+  .bi-bi-search-mobile {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    left: 100px;
+    top: 13px;
+  }
 
-    .dropdown li,
-    .dropdown a {
-      background-color: #efded4;
-      width: 100%;
-      color: black;
-      margin-bottom: 1px;
-      border-radius: 5px;
-      padding-left: 1px;
-      list-style-type: none;
-    }
+  .dropdown li,
+  .dropdown a {
+    background-color: #efded4;
+    width: 100%;
+  }
 
-    .dropdown {
-      position: fixed;
-      padding: 10px;
-      margin-top: 47px;
-      width: fit-content;
-      cursor: pointer;
-      margin-left: 64px;
-    }
+  .dropdown {
+    position: fixed;
+    padding: 10px;
+  }
 
-    .search-bar {
-      position: fixed;
-      width: 167px;
-      height: 29px;
-      left: 170px;
-      top: 14px;
-      background: #fff5ef;
-      border-radius: 13px;
-      padding-left: 10px;
-      border: 1px;
-    }
+  .search-bar {
+    position: fixed;
+    width: 167px;
+    height: 29px;
+    left: 170px;
+    top: 14px;
+
+    background: #fff5ef;
+    border-radius: 13px;
   }
 
   /* h3 {
@@ -236,23 +230,15 @@
   @media (min-width: 1000px) {
     .header-desktop {
       box-sizing: border-box;
+
       position: absolute;
-      width: 100%;
-      /* Changed by ALi
       width: 1440px;
-      */
       height: 56px;
       left: 0px;
       top: 0px;
+
       background: #ecc8b2;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      transition: ease-in-out 1s;
-      cursor: pointer;
-      z-index: 1; /* Added by Ali */
-    }
-
-    .header-desktop :hover {
-      color: #fff5ef;
     }
 
     h2 {
