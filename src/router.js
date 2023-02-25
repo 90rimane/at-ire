@@ -9,6 +9,7 @@ import HelpView from './views/HelpView.vue'
 import MyPageView from './views/MyPageView.vue'
 import LoginView from './views/LoginPage.vue'
 import SignupView from './views/SignupPage.vue'
+import ProductView from './views/ProductView.vue'
 
 export default createRouter({
   history: createWebHashHistory(),
@@ -48,6 +49,10 @@ export default createRouter({
     {
       component: SignupView,
       path: '/signup'
+    },
+    {
+      component: ProductView,
+      path: '/product'
     }
   ]
 })

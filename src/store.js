@@ -10,11 +10,16 @@ const mutations = {
     },
     SET_OUT(state) {
       state.activeUser = null
+    },
+    SET_ONEPRODUCT(state, item) {
+      state.oneProduct = item
+      console.log('item', item)
     }
   },
   state = {
     allProducts: null,
-    activeUser: null
+    activeUser: null,
+    oneProduct: null
   },
   actions = {
     getProducts({ commit }) {

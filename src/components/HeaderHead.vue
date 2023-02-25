@@ -26,7 +26,15 @@
           return this.products
         }
       }
+    },
+    // add by Anna -->
+    methods: {
+      selectItem(item) {
+        this.$store.commit('SET_ONEPRODUCT', item)
+        this.search = ''
+      }
     }
+    // <-- add by Anna
   }
 </script>
 
@@ -52,8 +60,12 @@
     />
     <div>
       <ul v-if="search" class="dropdown">
-        <li v-for="item in searchResult" :key="item.id">
-          <a href="this.item.name"> {{ item.description }} </a>
+        <li
+          v-for="item in searchResult"
+          :key="item.id"
+          @click="selectItem(item)"
+        >
+          <router-link to="/product"> {{ item.description }} </router-link>
         </li>
       </ul>
     </div>
@@ -151,18 +163,11 @@
   .dropdown a {
     background-color: #efded4;
     width: 100%;
-    padding: 2px;
   }
 
   .dropdown {
     position: fixed;
     padding: 10px;
-    top: 46px;
-    left: 100px;
-  }
-
-  .dropdown li {
-    list-style: none;
   }
 
   .search-bar {
