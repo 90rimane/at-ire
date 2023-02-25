@@ -214,8 +214,10 @@
       }
     }
     @media (max-width: 1024px) {
-      position: absolute;
-      z-index: 99;
+      aside{
+        position: absolute;
+        z-index: 99;
+      }
     }
   }
 </style>
