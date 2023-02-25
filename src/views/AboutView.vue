@@ -58,8 +58,8 @@ import developers from '../../assets/developers.json';
     padding: 5em 4em 5em 6em;
     margin: 5em;
     text-align: center;
-    background-color: var(--green-dark);
-    color: var(--light);
+    background-color: var(--lightB-darker);
+    color: var(--darker);
     h1{
       color: var(--orange);
       margin-bottom: 1em;
@@ -144,21 +144,85 @@ import developers from '../../assets/developers.json';
       }
     }
   }
-  // @media screen and (max-width: 1250px){
-  //   .column {
-
-  //     background-color: aqua;}
-  // }
   @media screen and (max-width: 1300px) {
-    .about-section {
-      padding: 1em;
-      margin: 5em 0em 1em 0;
-    }
-    .row{
-      background-color: rgb(212, 178, 134);
-      .column{
-        width: 25%;
+      .about-section {
+        padding: 1em;
+        margin: 5em 0em 1em 0;
+      }
+      .row{
+      margin: auto 1em;
+      .column {
+        width: 33.3%;
+        .card {
+          .container {
+            #email{
+              font-size: 1.2em;
+            }
+          }
+        }
       }
     }
   }
-  </style>
+  @media screen and (max-width: 1000px) {
+      .about-section {
+        padding: 1em;
+        margin: 2em 0em 1em -3.5em;
+      }
+      .row{
+      margin: auto 0 2em -3.5em;
+      .column {
+        width: 33.3%;
+        .card {
+          .container {
+            #email{
+              font-size: 1em;
+              font-weight: bold;
+              border-top: 1px solid;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 750px) {
+      .row{
+      .column {
+        width: 50%;
+      }
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .about-section {
+      background-color: var(--lightB);
+      margin: auto -2em 2em -6em;
+      p{
+        text-justify: inter-word;
+      }
+    }
+    .row{
+      .column {
+        width: 100%;
+      }
+    }
+    .photos-sponsor{
+      display: flex;
+      justify-content: center;
+      flex-flow: row wrap;
+      height: auto;
+      margin: 2em 0;
+    }
+    footer{
+    margin: 10em 0 5em -5em;
+    .photos-sponsor{
+      flex-flow: column wrap;
+      margin: 2em 0;
+      img {
+        margin-top: 1em;
+        width: 8em ;
+        max-height: 8em ;
+        align-self: center;
+      }
+    }
+  }
+}
+ </style>
