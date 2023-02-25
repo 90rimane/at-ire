@@ -49,10 +49,10 @@
   },
   {
     "id": "05",
-    "name": "Vanja",
+    "name": "Hamanta",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-    "email": "vanja@mail.com",
-    "img": "./assets/avatar/avatar-vanja.jpg",
+    "email": "hamanta@mail.com",
+    "img": "./assets/avatar/avatar-hamanta.jpg",
     "role": "UX and Frontend Developer"
   }
 ]

@@ -117,23 +117,6 @@ import developers from '../../assets/developers.json';
             width: fit-content;
 
           }
-          .button {
-            border: none;
-            outline: 0;
-            display: inline-block;
-            padding: 5px;
-            color: var(--light);
-            background-color: var(--green-dark);
-            text-align: center;
-            cursor: pointer;
-            width: 100%;
-            height: 3em;
-            margin-top: 0.5em;
-          }
-          .button:hover {
-            background-color: var(--grey);
-            flex-flow: row wrap;
-          }
         }
       }
     }
@@ -161,17 +144,21 @@ import developers from '../../assets/developers.json';
       }
     }
   }
-  @media screen and (max-width: 650px) {
+  // @media screen and (max-width: 1250px){
+  //   .column {
+
+  //     background-color: aqua;}
+  // }
+  @media screen and (max-width: 1300px) {
     .about-section {
       padding: 1em;
-      margin: auto;
+      margin: 5em 0em 1em 0;
     }
     .row{
-      flex-flow: column wrap;
-    }
-    .column {
-      width: 100%;
-      display: block;
+      background-color: rgb(212, 178, 134);
+      .column{
+        width: 25%;
+      }
     }
   }
   </style>
