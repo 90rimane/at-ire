@@ -151,11 +151,18 @@
   .dropdown a {
     background-color: #efded4;
     width: 100%;
+    padding: 2px;
   }
 
   .dropdown {
     position: fixed;
     padding: 10px;
+    top: 46px;
+    left: 100px;
+  }
+
+  .dropdown li {
+    list-style: none;
   }
 
   .search-bar {
