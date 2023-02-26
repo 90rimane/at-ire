@@ -30,7 +30,7 @@
     // add by Anna -->
     methods: {
       selectItem(item) {
-        this.$store.commit('SET_ONEPRODUCT', item)
+        this.$store.dispatch('setOneProduct', item)
         this.search = ''
       }
     }

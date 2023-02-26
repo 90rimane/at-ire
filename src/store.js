@@ -55,6 +55,9 @@ const mutations = {
 
       sessionStorage.removeItem('activeUser')
       localStorage.removeItem('rememberUser')
+    },
+    setOneProduct({ commit }, item) {
+      commit('SET_ONEPRODUCT', item)
     }
   }
 
