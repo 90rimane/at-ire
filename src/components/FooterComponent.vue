@@ -35,7 +35,6 @@
       <button @click="join" id="join-button">JOIN</button>
     </div>
 
-    <div class="footer-bar">#</div>
   </div>
 </template>
 
@@ -195,6 +194,13 @@
           padding: 10px 0;
           text-indent: 20px;
         }
+      }
+    }
+
+    @media (min-width:1024px){
+      .footer {
+        display: flex;
+        justify-content: space-around;
       }
     }
 </style>
