@@ -50,7 +50,7 @@
   {
     "id": "05",
     "name": "Hamanta",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+    "description": "Hamanta is Lorem ipsum dolor sit amet consectetur adipisicing elit",
     "email": "hamanta@mail.com",
     "img": "./assets/avatar/avatar-hamanta.jpg",
     "role": "UX and Frontend Developer"
