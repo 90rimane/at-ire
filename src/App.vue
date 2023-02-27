@@ -17,19 +17,19 @@
       this.$store.dispatch('getProducts')
     },
     data() {
-    return {
-      isMobile: false,
-    };
-  },
-  mounted() {
-    this.checkScreenSize();
-    window.addEventListener('resize', this.checkScreenSize);
-  },
-  methods: {
-    checkScreenSize() {
-      this.isMobile = window.innerWidth < 1024;
+      return {
+        isMobile: false
+      }
     },
-  },
+    mounted() {
+      this.checkScreenSize()
+      window.addEventListener('resize', this.checkScreenSize)
+    },
+    methods: {
+      checkScreenSize() {
+        this.isMobile = window.innerWidth < 1024
+      }
+    }
   }
 </script>
 
@@ -55,7 +55,6 @@
   />
 
   <HelloWorld msg="Hello World!" />
-  <CarouselSlide />
   <SearchBar />
   <HeaderHead />
   <Landing />
