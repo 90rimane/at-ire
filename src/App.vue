@@ -3,14 +3,19 @@
   import FooterComponent from './components/FooterComponent.vue'
   import FooterDesktop from './components/FooterDesktop.vue'
   import SideBar from './components/Sidebar.vue'
+<<<<<<< HEAD
   import HomeViewVue from './views/HomeView.vue'
+=======
+  import ContactButton from './components/ContactButton.vue'
+>>>>>>> e432fcb13efd3dbbcb6eb1b12d53e3f22ed0e8a5
 
   export default {
     components: {
       HeaderHead,
       FooterComponent,
       SideBar,
-      FooterDesktop
+      FooterDesktop,
+      ContactButton
     },
     created() {
       this.$store.dispatch('getProducts')
@@ -26,7 +31,7 @@
     },
     methods: {
       checkScreenSize() {
-        this.isMobile = window.innerWidth < 1024
+        this.isMobile = window.innerWidth < 980
       }
     }
   }
@@ -41,6 +46,7 @@
   </div>
 
   <HeaderHead />
+  <ContactButton />
 
   <FooterComponent v-if="isMobile" />
   <FooterDesktop v-else />
