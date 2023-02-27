@@ -4,6 +4,7 @@
   import FooterComponent from './components/FooterComponent.vue'
   import FooterDesktop from './components/FooterDesktop.vue'
   import SideBar from './components/Sidebar.vue'
+  import HomeViewVue from './views/HomeView.vue'
 
   export default {
     components: {
