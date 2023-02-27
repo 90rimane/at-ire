@@ -1,6 +1,5 @@
 <script>
   import HeaderHead from './components/HeaderHead.vue'
-  import CarouselSlide from './components/CarouselSlide.vue'
   import FooterComponent from './components/FooterComponent.vue'
   import FooterDesktop from './components/FooterDesktop.vue'
   import SideBar from './components/Sidebar.vue'
@@ -9,7 +8,6 @@
   export default {
     components: {
       HeaderHead,
-      CarouselSlide,
       FooterComponent,
       SideBar,
       FooterDesktop
@@ -18,19 +16,19 @@
       this.$store.dispatch('getProducts')
     },
     data() {
-    return {
-      isMobile: false,
-    };
-  },
-  mounted() {
-    this.checkScreenSize();
-    window.addEventListener('resize', this.checkScreenSize);
-  },
-  methods: {
-    checkScreenSize() {
-      this.isMobile = window.innerWidth < 1024;
+      return {
+        isMobile: false
+      }
     },
-  },
+    mounted() {
+      this.checkScreenSize()
+      window.addEventListener('resize', this.checkScreenSize)
+    },
+    methods: {
+      checkScreenSize() {
+        this.isMobile = window.innerWidth < 1024
+      }
+    }
   }
 </script>
 
@@ -55,11 +53,7 @@
     rel="stylesheet"
   />
 
-  <HelloWorld msg="Hello World!" />
-  <CarouselSlide />
-  <SearchBar />
   <HeaderHead />
-  <Landing />
 
   <FooterComponent v-if="isMobile" />
   <FooterDesktop v-else />

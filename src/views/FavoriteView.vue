@@ -8,7 +8,7 @@
       testproducts() {
         // slice method to only display 4 items at once
         if (this.$store.state.allProducts) {
-          return this.$store.state.allProducts.slice(0, 4)
+          return this.$store.state.allProducts.slice(0, 20)
         }
         return null
       },
