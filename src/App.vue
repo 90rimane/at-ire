@@ -1,6 +1,5 @@
 <script>
   import HeaderHead from './components/HeaderHead.vue'
-  import CarouselSlide from './components/CarouselSlide.vue'
   import FooterComponent from './components/FooterComponent.vue'
   import FooterDesktop from './components/FooterDesktop.vue'
   import SideBar from './components/Sidebar.vue'
@@ -8,7 +7,6 @@
   export default {
     components: {
       HeaderHead,
-      CarouselSlide,
       FooterComponent,
       SideBar,
       FooterDesktop
@@ -54,10 +52,7 @@
     rel="stylesheet"
   />
 
-  <HelloWorld msg="Hello World!" />
-  <SearchBar />
   <HeaderHead />
-  <Landing />
 
   <FooterComponent v-if="isMobile" />
   <FooterDesktop v-else />
