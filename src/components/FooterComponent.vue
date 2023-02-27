@@ -14,13 +14,13 @@
     </div>
     <div class="margin-top">
       <ul class="wrapper">
-      <li v-for="(item, index) in list" :key="'item'+index">
-        <div class="title" @click="item.open = !item.open">
-          {{ item.title }}
-        </div>
-        <ListItem :list="item" />
-      </li>
-    </ul>
+        <li v-for="(item, index) in list" :key="'item' + index">
+          <div class="title" @click="item.open = !item.open">
+            {{ item.title }}
+          </div>
+          <ListItem :list="item" />
+        </li>
+      </ul>
     </div>
 
     <div class="register">
@@ -34,44 +34,41 @@
       <input type="email" v-model="email" id="email-input" />
       <button @click="join" id="join-button">JOIN</button>
     </div>
-
   </div>
 </template>
 
 <script>
-  import ListItem from './ListItem.vue';
+  import ListItem from './ListItem.vue'
 
-    export default {
-      data: () => {
-        return {
-          email: '',
-          list: [
-            {
-              title: "SUPPORT",
-              open: false,
-              sublist: [
-                "Contact Us", "Return", "Terms", "Delivery"
-              ]
-            },
-            {
-              title: "OM @IRE",
-              open: false,
-              sublist: [ "Brand", "Collections" ]
-            },
-          ]
-        };
-      },
-      components: {
-        ListItem
-      },
-
-      methods : {
-        join() {
-        console.log('New E-mail', this.email);
-        // Ide!: Logic to send data to the back end, to get 20% discount
-    }
+  export default {
+    data: () => {
+      return {
+        email: '',
+        list: [
+          {
+            title: 'SUPPORT',
+            open: false,
+            sublist: ['Contact Us', 'Return', 'Terms', 'Delivery']
+          },
+          {
+            title: 'OM @IRE',
+            open: false,
+            sublist: ['Brand', 'Collections']
+          }
+        ]
       }
-    };
+    },
+    components: {
+      ListItem
+    },
+
+    methods: {
+      join() {
+        console.log('New E-mail', this.email)
+        // Ide!: Logic to send data to the back end, to get 20% discount
+      }
+    }
+  }
 </script>
 
 <style lang="scss" scoped>
@@ -119,7 +116,7 @@
   .margin-top {
     margin-top: 20px;
   }
-  
+
   h2 {
     font-size: 16px;
   }
@@ -137,7 +134,7 @@
 
   .register {
     margin-top: 30px;
-    margin-left: 100px;
+    margin-left: 50px;
   }
 
   #offer {
@@ -148,8 +145,8 @@
   #email-input {
     background-color: transparent;
     border: 1px solid black;
-    height: 25px;
-    width: 160px;
+    height: 28px;
+    width: 221px;
     color: black;
     padding-left: 5px;
   }
@@ -169,8 +166,9 @@
     display: inline-block;
     text-decoration: none;
     cursor: pointer;
-    width: 25px;
-    height: 20px;
+    width: 66px;
+    height: 21px;
+    text-align: center;
   }
 
   .footer-bar {
@@ -181,26 +179,26 @@
   }
 
   .wrapper {
-      list-style: none;
-      background-color: #ffffff;
-      border-radius: 4px;
-      overflow: hidden;
-      li {
-        position: relative;
-        color: #282828;
-        border-top: 1px solid #dedede;
-        cursor: pointer;
-        .title {
-          padding: 10px 0;
-          text-indent: 20px;
-        }
+    list-style: none;
+    background-color: #ffffff;
+    border-radius: 4px;
+    overflow: hidden;
+    li {
+      position: relative;
+      color: #282828;
+      border-top: 1px solid #dedede;
+      cursor: pointer;
+      .title {
+        padding: 10px 0;
+        text-indent: 20px;
       }
     }
+  }
 
-    @media (min-width:1024px){
-      .footer {
-        display: flex;
-        justify-content: space-around;
-      }
+  @media (min-width: 980px) {
+    .footer {
+      display: flex;
+      justify-content: space-around;
     }
+  }
 </style>
