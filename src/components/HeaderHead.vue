@@ -20,8 +20,12 @@
     />
     <div>
       <ul v-if="search" class="dropdown">
-        <li v-for="item in searchResult" :key="item.id">
-          <a href="this.item.name"> {{ item.description }} </a>
+        <li
+          v-for="item in searchResult"
+          :key="item.id"
+          @click="selectItem(item)"
+        >
+          <router-link to="/product"> {{ item.description }} </router-link>
         </li>
       </ul>
     </div>
