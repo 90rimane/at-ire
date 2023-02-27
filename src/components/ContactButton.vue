@@ -4,7 +4,7 @@
   </RouterLink>
 </template>
 
-<style scooped>
+<style scoped>
   #contact-icon {
     position: fixed;
     top: 92vh;
