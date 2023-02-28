@@ -41,36 +41,11 @@
     <RouterView />
   </div>
 
-  <<<<<<< HEAD
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- <CarouselSlide /> -->
-  <SearchBar />
-  <HeaderHead />
-  <HeaderHead />
-  <CarouselSlide />
-  <SearchBar />
-
-  <CitiesList />
-  <LandingView />
-  =======
   <HeaderHead />
   <ContactButton />
 
   <FooterComponent v-if="isMobile" />
   <FooterDesktop v-else />
-  >>>>>>> d7a27e07d6a2af6357cdc8d78d9744537bb3ad08
 </template>
 
 <style lang="scss">
