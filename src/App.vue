@@ -58,8 +58,6 @@
   <CarouselSlide />
   <SearchBar />
   <HeaderHead />
-  <Landing />
-
   <FooterComponent v-if="isMobile" />
   <FooterDesktop v-else />
 </template>
