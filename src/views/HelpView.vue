@@ -3,6 +3,7 @@ import AgoraRTM from 'agora-rtm-sdk';
 import { v4 as uuidv4 } from 'uuid';
 import { ref, onMounted, nextTick, defineExpose } from 'vue';
 
+
 const APP_ID = '452f99a0814b44d29d9a446ec20356fc';
 // const APP_ID = '766b26b8564f4d22a1c6cc908547fd8f';
 const CHANNEL = 'atire'; //uniq key for each user
@@ -38,7 +39,7 @@ function sendMessage() {
   if (text.value === '') return;
   channel.sendMessage({ text: text.value, type: 'text' });
   appendMessage({
-    text: 'YOU:'+' '+ text.value,
+    text: text.value,
     uid,
   });
   text.value = '';
@@ -47,12 +48,13 @@ function sendMessage() {
 
 <template>
   <main>
+    <h1>Help Center</h1>
     <div class="panel">
       <div class="panel-title">
       <span class="material-symbols-outlined support-logo">forum</span>
         <h2>@ire forum</h2>
       </div>
-      <p>Here you can talk about your favorites</p>
+      <p>Here you can chat to other users about products</p>
       <div class="messages" ref="messagesRef">
         <div class="inner">
           <div
@@ -61,9 +63,9 @@ function sendMessage() {
             class="message"
           >
             <div v-if="message.uid === uid" class="user-self">
-              &nbsp;
+              You:&nbsp;
             </div>
-            <div v-else class="user-them">_&nbsp;</div>
+            <div v-else class="user-them">Others:&nbsp;</div>
             <div class="text">{{ message.text }}</div>
           </div>
         </div>
@@ -91,13 +93,17 @@ function sendMessage() {
       var(--lightB) 53%,
       var(--lightB-darker) 100%
     );
+    h1{
+      text-align: left;
+      margin: 1em 5em;
+    }
   }
 
   .panel {
     display: flex;
     flex-direction: column;
     padding: 1em;
-    margin: 12em auto;
+    margin: 5em auto;
     max-width: 25em;
     height: 30em;
     background: var(--lightB-darker);
