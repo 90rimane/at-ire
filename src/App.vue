@@ -12,6 +12,7 @@
       FooterComponent,
       SideBar,
       FooterDesktop
+      FooterDesktop
     },
     created() {
       this.$store.dispatch('getProducts')
@@ -101,6 +102,7 @@
   .app {
     display: flex;
     flex-direction: column;
+
     main {
       flex: 1 1 0;
       padding: 2rem;
