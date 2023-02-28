@@ -1,11 +1,11 @@
 import { createStore } from 'vuex'
 
 const mutations = {
-    increment(state) {
-      state.counter += 1
-    },
     SET_PRODUCTS(state, products) {
-      state.allProducts = products
+      state.allProducts = products.map((item) => ({
+        ...item,
+        quantity: 1
+      }))
     },
     SET_ACTIVEUSER(state) {
       state.activeUser =
@@ -13,12 +13,16 @@ const mutations = {
     },
     SET_OUT(state) {
       state.activeUser = null
+    },
+    SET_ONEPRODUCT(state, item) {
+      state.oneProduct = item
+      console.log('item', item)
     }
   },
   state = {
-    counter: 0,
     allProducts: null,
-    activeUser: null
+    activeUser: null,
+    oneProduct: null
   },
   actions = {
     getProducts({ commit }) {
@@ -44,7 +48,7 @@ const mutations = {
             break
           }
         }
-        console.log(indexOfUser)
+
         allUsers[indexOfUser] = currentUser
         localStorage.setItem('allUsers', JSON.stringify(allUsers))
       }
@@ -54,6 +58,9 @@ const mutations = {
 
       sessionStorage.removeItem('activeUser')
       localStorage.removeItem('rememberUser')
+    },
+    setOneProduct({ commit }, item) {
+      commit('SET_ONEPRODUCT', item)
     }
   }
 

@@ -10,6 +10,7 @@
         error2: false
       }
     },
+    emits: ['page-change'],
     methods: {
       makeUser() {
         if (this.user != '' && this.password != '') {
@@ -32,9 +33,10 @@
               // Trigger notification for successful login
               this.status = true
 
-              // Redirects user to login page after creating an account
+              // Redirects user to login after creating an account
+              // and sending the used username
               setTimeout(() => {
-                this.$router.push('/login')
+                this.$emit('page-change', this.user)
               }, 1200)
             } else {
               this.error = true
@@ -49,6 +51,9 @@
             }, 2500)
           }
         }
+      },
+      pageChange() {
+        this.$emit('page-change', null)
       }
     }
   }
@@ -110,7 +115,7 @@
 
       <span class="psw"
         >Already have an account?
-        <RouterLink to="/login" class="nav-link"> login! </RouterLink>
+        <a @click="pageChange()" class="login-btn"> login! </a>
       </span>
     </form>
   </div>

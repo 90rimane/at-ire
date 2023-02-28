@@ -13,13 +13,21 @@
       </div>
     </div>
     <div class="margin-top">
-      <ul class="wrapper">
-        <li v-for="(item, index) in list" :key="'item' + index">
-          <div class="title" @click="item.open = !item.open">
-            {{ item.title }}
-          </div>
-          <ListItem :list="item" />
-        </li>
+      <h3 class="title-list">SUPPORT</h3>
+      <ul>
+        <li><a href="#">CONTACT US</a></li>
+        <li><a href="#">RETURNS</a></li>
+        <li><a href="#">TERMS</a></li>
+        <li><a href="#">DELIVERY</a></li>
+      </ul>
+    </div>
+
+    <div class="margin-top">
+      <h3 class="title-list">OM @IRE</h3>
+      <ul>
+        <li><a href="#">COLLECTIONS</a></li>
+        <li><a href="#">BRAND</a></li>
+        <li><a href="#">WORK WITH US</a></li>
       </ul>
     </div>
 
@@ -31,44 +39,14 @@
         </p>
       </div>
 
-      <input type="email" v-model="email" id="email-input" />
+      <input type="email" id="email-input" />
       <button @click="join" id="join-button">JOIN</button>
     </div>
   </div>
 </template>
 
 <script>
-  import ListItem from './ListItem.vue'
-
-  export default {
-    data: () => {
-      return {
-        email: '',
-        list: [
-          {
-            title: 'SUPPORT',
-            open: false,
-            sublist: ['Contact Us', 'Return', 'Terms', 'Delivery']
-          },
-          {
-            title: 'OM @IRE',
-            open: false,
-            sublist: ['Brand', 'Collections']
-          }
-        ]
-      }
-    },
-    components: {
-      ListItem
-    },
-
-    methods: {
-      join() {
-        console.log('New E-mail', this.email)
-        // Ide!: Logic to send data to the back end, to get 20% discount
-      }
-    }
-  }
+  export default {}
 </script>
 
 <style lang="scss" scoped>
@@ -77,6 +55,11 @@
   }
   .footer {
     width: 100%;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    color: #282828;
   }
 
   #at-ire {
@@ -118,7 +101,7 @@
   }
 
   h2 {
-    font-size: 16px;
+    font-size: 11px;
   }
 
   button {
@@ -134,19 +117,19 @@
 
   .register {
     margin-top: 30px;
-    margin-left: 50px;
+    margin-left: 100px;
   }
 
   #offer {
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 10px;
   }
 
   #email-input {
     background-color: transparent;
     border: 1px solid black;
-    height: 28px;
-    width: 221px;
+    height: 25px;
+    width: 160px;
     color: black;
     padding-left: 5px;
   }
@@ -166,9 +149,8 @@
     display: inline-block;
     text-decoration: none;
     cursor: pointer;
-    width: 66px;
-    height: 21px;
-    text-align: center;
+    width: 25px;
+    height: 15px;
   }
 
   .footer-bar {
@@ -178,19 +160,30 @@
     background-color: #ecc8b2;
   }
 
-  .wrapper {
+  .title-list {
+    font-size: 11px;
+  }
+
+  ul {
     list-style: none;
-    border-radius: 4px;
-    overflow: hidden;
-    li {
-      position: relative;
-      color: #282828;
-      border-top: 1px solid #dedede;
-      cursor: pointer;
-      .title {
-        padding: 10px 0;
-        text-indent: 20px;
-      }
+    margin-top: 10px;
+  }
+
+  li {
+    padding-top: 5px;
+    opacity: 80%;
+    font-size: 10px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  @media (min-width: 980px) {
+    .footer {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
     }
   }
 </style>

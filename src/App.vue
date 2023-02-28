@@ -1,33 +1,33 @@
 <script>
   import HeaderHead from './components/HeaderHead.vue'
   import FooterComponent from './components/FooterComponent.vue'
-  import SearchBar from './components/SearchBar.vue'
+  import FooterDesktop from './components/FooterDesktop.vue'
   import SideBar from './components/Sidebar.vue'
+  import ContactButton from './components/ContactButton.vue'
 
   export default {
     components: {
       HeaderHead,
       FooterComponent,
-      SearchBar,
-      SideBar
+      SideBar,
+      FooterDesktop,
+      ContactButton
     },
     created() {
-      // dispatch vuex to fetch products,
-      // use this.$store.state.allProducts to access global variabel
       this.$store.dispatch('getProducts')
-
-      if (localStorage.getItem('rememberUser') != null) {
-        const parsed = JSON.parse(localStorage.getItem('allUsers'))
-        const indexOfUser = localStorage.getItem('rememberUser')
-
-        // Set the remembered user to activeUser, logging them in on page load
-        sessionStorage.setItem(
-          'activeUser',
-          JSON.stringify(parsed[indexOfUser])
-        )
-
-        // This is to update the vuex state
-        this.$store.dispatch('getLogged')
+    },
+    data() {
+      return {
+        isMobile: false
+      }
+    },
+    mounted() {
+      this.checkScreenSize()
+      window.addEventListener('resize', this.checkScreenSize)
+    },
+    methods: {
+      checkScreenSize() {
+        this.isMobile = window.innerWidth < 980
       }
     }
   }
@@ -38,10 +38,10 @@
   <div class="app">
     <SideBar />
 
-    <RouterView class="main" />
-    <FooterComponent class="main" />
+    <RouterView />
   </div>
 
+  <<<<<<< HEAD
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -64,6 +64,13 @@
 
   <CitiesList />
   <LandingView />
+  =======
+  <HeaderHead />
+  <ContactButton />
+
+  <FooterComponent v-if="isMobile" />
+  <FooterDesktop v-else />
+  >>>>>>> d7a27e07d6a2af6357cdc8d78d9744537bb3ad08
 </template>
 
 <style lang="scss">
@@ -78,7 +85,7 @@
     --dark-alt: #334155;
     --dark: #1e293b;
     --darker: #020202;
-    --light: #fcf9f9;
+    --light: #ffffff;
     --lightB: #fff5ef;
     --lightB-darker: #ebd5c9;
     --orange: #f39256;
@@ -102,7 +109,6 @@
   }
   .app {
     display: flex;
-    flex-direction: column;
     main {
       flex: 1 1 0;
       padding: 2rem;
@@ -110,9 +116,5 @@
         padding-left: 6rem;
       }
     }
-  }
-  .main {
-    margin-left: calc(2rem + 32px);
-    margin-top: 56px;
   }
 </style>

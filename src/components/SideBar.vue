@@ -54,13 +54,13 @@
 
     <div v-if="$store.state.activeUser == null" class="menu bottom-menu">
       <router-link to="/login" class="button">
-        <span class="material-symbols-outlined">login</span>
+        <span class="material-symbols-outlined" style="color:forestgreen;">login</span>
         <span class="text">Login</span>
       </router-link>
     </div>
     <div v-else class="menu bottom-menu">
       <a @click="$store.dispatch('logout')" class="button">
-        <span class="material-symbols-outlined">logout</span>
+        <span class="material-symbols-outlined" style="color:brown;">logout</span>
         <span class="text">Logout</span>
       </a>
     </div>
@@ -74,6 +74,7 @@
 <script setup>
   import { ref } from 'vue'
   import logoURL from '../../assets/logo-black.png'
+
   const is_expanded = ref(localStorage.getItem('is_expanded') === 'true')
   const ToggleMenu = () => {
     is_expanded.value = !is_expanded.value
@@ -92,10 +93,10 @@
     min-height: 100vh;
     padding: 1rem;
     transition: 0.2s ease-in-out;
-    box-shadow: 1px 0 3px var(--grey-light);
+    box-shadow: 1px 0 5px var(--grey-light);
 
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     .logo {
       margin-bottom: 1rem;
       img {
@@ -146,9 +147,9 @@
         align-items: center;
         text-decoration: none;
         transition: 0.2s ease-in-out;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 0.9rem;
         .material-symbols-outlined {
-          font-size: 2rem;
+          font-size: 2.5rem;
           color: var(--darker);
           transition: 0.2s ease-in-out;
         }
@@ -214,8 +215,10 @@
       }
     }
     @media (max-width: 1024px) {
-      position: absolute;
-      z-index: 99;
+      aside{
+        position: absolute;
+        z-index: 99;
+      }
     }
   }
 </style>

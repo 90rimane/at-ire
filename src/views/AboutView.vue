@@ -1,5 +1,5 @@
 <script>
-  import developers from '../../assets/developers.json';
+import developers from '../../assets/developers.json';
 
   export default {
     data(){
@@ -11,101 +11,220 @@
 </script>
 
 <template>
-  <div class="about-section">
-      <h1>About @ire</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In mollitia ex
-        soluta numquam assumenda officia velit reprehenderit natus ab. Neque quos
-        at ad mollitia commodi qui repudiandae molestias id sint.
-        </p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dolor
-        minus magni necessitatibus accusamus nostrum eos in? Omnis, eum
-        perspiciatis et quae laudantium ab, voluptatibus harum, laborum
-        expedita voluptas quo!
+  <main>
+  <header class="about-section">
+    <h1>About @ire</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In mollitia ex
+      soluta numquam assumenda officia velit reprehenderit natus ab. Neque quos
+      at ad mollitia commodi qui repudiandae molestias id sint.
       </p>
-  </div>
-      <h2 style="text-align:center">Our Team</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dolor
+      minus magni necessitatibus accusamus nostrum eos in? Omnis, eum
+      perspiciatis et quae laudantium ab, voluptatibus harum, laborum
+      expedita voluptas quo!
+    </p>
+  </header>
 
-    <div class="row" v-for="user in users" :key="user.id">
-      <div class="column">
-        <div class="card">
-          <img src="/w3images/team1.jpg" alt="developers photo" style="width:100%" />
-          <div class="container">
-            <h2>{{ user.name }}</h2>
-            <p class="title"> {{ user.role }}</p>
-            <p>{{ user.description }}</p>
-            <p>{{ user.email }}</p>
-            <p><button class="button">Contact</button></p>
-          </div>
+  <h2 class="main-title">Our Team</h2>
+
+  <div class="row">
+    <div class="column" v-for="user in users" :key="user.id">
+      <div class="card">
+        <img class="dev-img" :src="user.img" alt="developers photo" />
+        <div class="container">
+          <h2>{{ user.name }}</h2>
+          <p id="p-role"> {{ user.role }}</p>
+          <p id="description">{{ user.description }}</p>
+          <p id="email">{{ user.email }}</p>
         </div>
       </div>
     </div>
-
+  </div>
+  <footer>
+    <h3>Sponsors</h3>
+      <div class="photos-sponsor">
+        <img class="sponsors-img" src="../../assets/sponsors/amazon.png" alt="" />
+        <img class="sponsors-img" src="../../assets/sponsors/ebay.png" alt="" />
+        <img class="sponsors-img" src="../../assets/sponsors/klarna.png" alt="" />
+        <img class="sponsors-img" src="../../assets/sponsors/paypal.png" alt="" />
+        <img class="sponsors-img" src="../../assets/sponsors/visa-master.png" alt="" />
+      </div>
+  </footer>
+</main>
 </template>
 
-  <style scoped>
-body{
-    margin-left: 2em;
-  }
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-
-.row{
-  margin-left: 10em;
-}
-  .column {
-    float: left;
-    width: 33.3%;
-    margin-bottom: 16px;
-    padding: 0 8px;
-  }
-
-  .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    margin: 8px;
-  }
-
+<style lang="scss" scoped>
   .about-section {
-    padding: 50px;
+    padding: 5em 4em 5em 6em;
+    margin: 5em;
     text-align: center;
-    background-color: #474e5d;
-    color: white;
-  }
-
-  .container {
-    padding: 0 16px;
-  }
-
-  .container::after, .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-
-  .title {
-    color: grey;
-  }
-
-  .button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-  }
-
-  .button:hover {
-    background-color: #555;
-  }
-
-  @media screen and (max-width: 650px) {
-    .column {
-      width: 100%;
-      display: block;
+    background-color: var(--lightB-darker);
+    color: var(--darker);
+    h1{
+      color: var(--orange);
+      margin-bottom: 1em;
+    }
+    p{
+      line-height: 2;
+      font-size: large;
+      letter-spacing: 1px;
+      overflow-wrap: break-word;
     }
   }
-  </style>
+  .main-title{
+    text-align: center;
+    color: var(--darker);
+    padding: 2em;
+  }
+  .row{
+    margin: auto 5em;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    list-style: none;
+    .column {
+      float: left;
+      width: 25%;
+      margin-bottom: 16px;
+      padding: 0 8px;
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        margin: 8px;
+        height: auto;
+        .dev-img{
+          width: 100%;
+          height: auto;
+        }
+        .container {
+          padding: 1em;
+          display: flex;
+          flex-direction: column;
+          align-items: first baseline;
+          font-weight: bold;
+          p{
+            padding: 2px 0;
+            margin: 0.5em 0;
+          }
+          #p-role{
+            color: var(--green-dark);
+          }
+          #email{
+            font-weight: bold;
+            align-self: center;
+            font-size: 1.3em;
+          }
+          #description{
+            width: fit-content;
+
+          }
+        }
+      }
+    }
+  }
+  footer{
+    margin: 20em 0 5em 0;
+    border-top: solid 1px var(--lightB-darker);
+    border-bottom: solid 1px var(--lightB-darker);
+
+    h3{
+      padding: 1em;
+      text-align: center;
+    }
+    .photos-sponsor{
+      display: flex;
+      justify-content: center;
+      flex-flow: row wrap;
+      height: auto;
+      margin: 5em 0;
+
+      img {
+        width: 6em ;
+        max-height: 6em ;
+        align-self: flex-end;
+      }
+    }
+  }
+  @media screen and (max-width: 1300px) {
+      .about-section {
+        padding: 1em;
+        margin: 5em 0em 1em 3em;
+      }
+      .row{
+      margin: auto 1em;
+      .column {
+        width: 33.3%;
+        .card {
+          .container {
+            #email{
+              font-size: 1.2em;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 1000px) {
+      .about-section {
+        padding: 1em;
+        margin: 5em 0em 1em 0;
+      }
+      .row{
+      margin: auto 0 2em -3.5em;
+      .column {
+        width: 33.3%;
+        .card {
+          .container {
+            #email{
+              font-size: 1em;
+              font-weight: bold;
+              border-top: 1px solid;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 750px) {
+      .row{
+      .column {
+        width: 50%;
+      }
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .about-section {
+      background-color: var(--lightB);
+      margin: 2em -1em 3em -1em;
+      p{
+        text-justify: inter-word;
+      }
+    }
+    .row{
+      .column {
+        width: 100%;
+        margin-left: 2em;
+        margin-right: -1em;
+      }
+    }
+    .photos-sponsor{
+      display: flex;
+      justify-content: center;
+      flex-flow: row wrap;
+      height: auto;
+      margin: 2em 0;
+    }
+    footer{
+    margin: 10em 0 5em -5em;
+    .photos-sponsor{
+      flex-flow: column wrap;
+      margin: 2em -1em 2em 3em;
+      img {
+        margin-top: 1em;
+        width: 8em ;
+        max-height: 8em ;
+        align-self: center;
+      }
+    }
+  }
+}
+ </style>

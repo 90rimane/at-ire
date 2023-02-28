@@ -1,5 +1,10 @@
 <script>
   export default {
+    created() {
+      if (this.name) {
+        this.user = this.name
+      }
+    },
     data() {
       return {
         user: '',
@@ -7,6 +12,13 @@
         checked: false,
         error: false,
         loading: false
+      }
+    },
+    emits: ['page-change'],
+    props: {
+      name: {
+        type: String,
+        default: null
       }
     },
     methods: {
@@ -60,6 +72,9 @@
             }, 2500)
           }
         }
+      },
+      pageChange() {
+        this.$emit('page-change', null)
       }
     }
   }
@@ -104,7 +119,7 @@
 
       <div class="signup">
         <span>Don't have an account?</span>
-        <RouterLink to="/signup" class="nav-link"> Sign up! </RouterLink>
+        <a @click="pageChange()" class="sign-btn"> Sign up! </a>
       </div>
     </form>
   </div>
