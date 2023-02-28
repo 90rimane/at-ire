@@ -197,6 +197,7 @@ import developers from '../../assets/developers.json';
       margin: 2em -1em 3em -1em;
       p{
         text-justify: inter-word;
+        text-align: justify
       }
     }
     .row{

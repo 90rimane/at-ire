@@ -34,26 +34,8 @@
 </script>
 
 <template>
-  <!--Sidebar-->
-
-  <div class="app">
-    <SideBar />
-    <RouterView />
-  </div>
-
-  <!-- <link rel="preconnect" href="https://fonts.googleapis.com/" />
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="preconnect" href="https://fonts.googleapis.com/" />
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap"
-    rel="stylesheet"
-  /> -->
-
+  <SideBar />
+  <RouterView />
   <SearchBar />
   <HeaderHead />
   <ContactButton />
@@ -63,10 +45,8 @@
 
 <style lang="scss">
   @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&display=swap%27');
-
   @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap%27');
 
-  // Sidebar scss
   :root {
     --grey-light: #a19595;
     --grey: #64748b;
@@ -82,29 +62,9 @@
   * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Karla', Fira sans, sans-serif, roboto;
   }
   body {
     background: var(--light);
-  }
-  button {
-    cursor: pointer;
-    appearance: none;
-    border: none;
-    outline: none;
-    background: none;
-  }
-  .app {
-    display: flex;
-    flex-direction: column;
-
-    main {
-      flex: 1 1 0;
-      padding: 2rem;
-      @media (max-width: 1024px) {
-        padding-left: 6rem;
-      }
-    }
   }
 </style>

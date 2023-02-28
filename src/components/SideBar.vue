@@ -8,8 +8,7 @@
     <div class="menu-toggle-wrap">
       <button class="menu-toggle" @click="ToggleMenu">
         <span class="material-symbols-outlined"
-          >keyboard_double_arrow_right</span
-        >
+          >keyboard_double_arrow_right</span>
       </button>
     </div>
 
@@ -40,7 +39,6 @@
         <span class="text">Help</span>
       </router-link>
     </div>
-
     <div class="menu">
       <router-link to="/" class="button">
         <span class="material-symbols-outlined">home</span>
@@ -88,13 +86,12 @@
     flex-direction: column;
     background-color: var(--lightB);
     color: var(--light);
-    width: calc(2rem + 32px);
+    width: calc(1rem + 20px);
     overflow: hidden;
     min-height: 100vh;
     padding: 1rem;
     transition: 0.2s ease-in-out;
     box-shadow: 1px 0 5px var(--grey-light);
-
     position: fixed;
     z-index: 2;
     .logo {
@@ -103,9 +100,16 @@
         width: 3rem;
       }
     }
+    button {
+      cursor: pointer;
+      appearance: none;
+      border: none;
+      outline: none;
+      background: none;
+  }
     .menu-toggle-wrap {
       display: flex;
-      justify-content: flex-end;
+      justify-content:flex-end;
       margin-bottom: 1rem;
       position: relative;
       top: 0;
@@ -141,6 +145,8 @@
       text-transform: uppercase;
     }
     .menu {
+      display: flex;
+      flex-direction: column;
       margin: 0 -1rem;
       .button {
         display: flex;
@@ -152,10 +158,14 @@
           font-size: 2.5rem;
           color: var(--darker);
           transition: 0.2s ease-in-out;
+
         }
         .text {
+          display: none;
+          font-size: 1.3rem;
           color: var(--darker);
           transition: 0.2s ease-in-out;
+          text-shadow: none;
         }
         &:hover {
           background-color: var(--lightB-darker);
@@ -168,8 +178,7 @@
           background-color: var(--grey-light);
           border-right: 5px solid var(--orange);
           box-shadow: 1px 1px 2px var(--lightB-darker);
-          .material-symbols-outlined,
-          .text {
+          .material-symbols-outlined {
             color: var(--dark);
           }
         }
@@ -180,6 +189,7 @@
     */
     .bottom-menu {
       margin-top: auto;
+      margin-bottom: 1.5em;
     }
     /*
       Changed by Jovan
@@ -188,7 +198,6 @@
       width: var(--sidebar-width);
       .menu-toggle-wrap {
         top: -3rem;
-
         .menu-toggle {
           transform: rotate(-180deg);
         }
@@ -196,6 +205,7 @@
       h3,
       .button .text {
         opacity: 1;
+        display: contents;
       }
       .button {
         .material-symbols-outlined {
