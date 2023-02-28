@@ -1,52 +1,64 @@
 <script>
   import HeaderHead from './components/HeaderHead.vue'
+  import CarouselSlide from './components/CarouselSlide.vue'
   import FooterComponent from './components/FooterComponent.vue'
   import FooterDesktop from './components/FooterDesktop.vue'
   import SideBar from './components/Sidebar.vue'
-<<<<<<< HEAD
-  import HomeViewVue from './views/HomeView.vue'
-=======
-  import ContactButton from './components/ContactButton.vue'
->>>>>>> e432fcb13efd3dbbcb6eb1b12d53e3f22ed0e8a5
+
 
   export default {
     components: {
       HeaderHead,
+      CarouselSlide,
       FooterComponent,
       SideBar,
-      FooterDesktop,
-      ContactButton
+      FooterDesktop
     },
     created() {
       this.$store.dispatch('getProducts')
     },
     data() {
-      return {
-        isMobile: false
-      }
+    return {
+      isMobile: false,
+    };
+  },
+  mounted() {
+    this.checkScreenSize();
+    window.addEventListener('resize', this.checkScreenSize);
+  },
+  methods: {
+    checkScreenSize() {
+      this.isMobile = window.innerWidth < 1024;
     },
-    mounted() {
-      this.checkScreenSize()
-      window.addEventListener('resize', this.checkScreenSize)
-    },
-    methods: {
-      checkScreenSize() {
-        this.isMobile = window.innerWidth < 980
-      }
-    }
+  },
   }
 </script>
 
 <template>
   <!--Sidebar-->
   <div class="app">
-    <SideBar />
-
+   <SideBar/>
     <RouterView />
   </div>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <HelloWorld msg="Hello World!" />
+  <CarouselSlide />
+  <SearchBar />
   <HeaderHead />
-  <ContactButton />
+  <SideBar />
 
   <FooterComponent v-if="isMobile" />
   <FooterDesktop v-else />
@@ -87,7 +99,8 @@
     background: none;
   }
   .app {
-    display: flex;
+    display:flex;
+    flex-direction:column;
     main {
       flex: 1 1 0;
       padding: 2rem;
