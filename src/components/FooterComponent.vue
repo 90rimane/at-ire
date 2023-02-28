@@ -180,7 +180,6 @@
 
   .wrapper {
     list-style: none;
-    background-color: #ffffff;
     border-radius: 4px;
     overflow: hidden;
     li {
@@ -192,13 +191,6 @@
         padding: 10px 0;
         text-indent: 20px;
       }
-    }
-  }
-
-  @media (min-width: 980px) {
-    .footer {
-      display: flex;
-      justify-content: space-around;
     }
   }
 </style>
