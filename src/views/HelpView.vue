@@ -49,6 +49,9 @@ function sendMessage() {
 <template>
   <main>
     <h1>Help Center</h1>
+    <p><span style="font-weight: bold;"> For developers: </span>
+      To test this chatroom, take a copy of link address
+      and paste it in another browser while project is runing (npm run dev).<br /> All users can chat each other anywhere when the project is runing.</p>
     <div class="panel">
       <div class="panel-title">
       <span class="material-symbols-outlined support-logo">forum</span>
@@ -95,7 +98,7 @@ function sendMessage() {
     );
     h1{
       text-align: left;
-      margin: 1em 5em;
+      margin: 1em 5em 0 5em;
     }
   }
 
