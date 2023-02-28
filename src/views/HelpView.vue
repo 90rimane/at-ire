@@ -3,10 +3,9 @@ import AgoraRTM from 'agora-rtm-sdk';
 import { v4 as uuidv4 } from 'uuid';
 import { ref, onMounted, nextTick, defineExpose } from 'vue';
 
-
 const APP_ID = '452f99a0814b44d29d9a446ec20356fc';
 // const APP_ID = '766b26b8564f4d22a1c6cc908547fd8f';
-const CHANNEL = 'atire';
+const CHANNEL = 'atire'; //uniq key for each user
 let client = AgoraRTM.createInstance(APP_ID);
 let uid = uuidv4();
 let text = ref('');
@@ -49,10 +48,11 @@ function sendMessage() {
 <template>
   <main>
     <div class="panel">
-      <h3>
-        <span class="material-symbols-outlined support-logo">support_agent</span>
-        Online support
-      </h3>
+      <div class="panel-title">
+      <span class="material-symbols-outlined support-logo">forum</span>
+        <h2>@ire forum</h2>
+      </div>
+      <p>Here you can talk about your favorites</p>
       <div class="messages" ref="messagesRef">
         <div class="inner">
           <div
@@ -104,8 +104,14 @@ function sendMessage() {
     box-shadow: 0 5px 20px 0 var(--darker);
     backdrop-filter: blur(4px);
     border-radius: 10px;
-    h3{
+    .panel-title{
+      display: flex;
+      flex-direction: row;
+      align-self: center;
       padding-bottom: 5px;
+    }
+    .support-logo{
+      font-size: 2em;
     }
   }
   .messages {
@@ -115,6 +121,7 @@ function sendMessage() {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     background-color: var(--light);
+    margin-top: 5px;
   }
   .inner {
     padding: 10px;

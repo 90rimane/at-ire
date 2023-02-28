@@ -184,14 +184,6 @@
     /*
       Changed by Jovan
     */
-    .footer {
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out;
-      p {
-        font-size: 0.875rem;
-        color: var(--grey);
-      }
-    }
     &.is-expanded {
       width: var(--sidebar-width);
       .menu-toggle-wrap {
@@ -209,15 +201,6 @@
         .material-symbols-outlined {
           margin-right: 1rem;
         }
-      }
-      .footer {
-        opacity: 0;
-      }
-    }
-    @media (max-width: 1024px) {
-      aside{
-        position: absolute;
-        z-index: 99;
       }
     }
   }
