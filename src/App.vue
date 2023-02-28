@@ -12,7 +12,6 @@
       FooterComponent,
       SideBar,
       FooterDesktop
-      FooterDesktop
     },
     created() {
       this.$store.dispatch('getProducts')
