@@ -1,17 +1,17 @@
 <script>
   import HeaderHead from './components/HeaderHead.vue'
-  import CarouselSlide from './components/CarouselSlide.vue'
   import FooterComponent from './components/FooterComponent.vue'
   import FooterDesktop from './components/FooterDesktop.vue'
   import SideBar from './components/Sidebar.vue'
+  import ContactButton from './components/ContactButton.vue'
 
   export default {
     components: {
       HeaderHead,
-      CarouselSlide,
       FooterComponent,
       SideBar,
-      FooterDesktop
+      FooterDesktop,
+      ContactButton
     },
     created() {
       this.$store.dispatch('getProducts')
@@ -54,12 +54,9 @@
     rel="stylesheet"
   />
 
-  <HelloWorld msg="Hello World!" />
-  <CarouselSlide />
   <SearchBar />
   <HeaderHead />
-  <Landing />
-
+  <ContactButton />
   <FooterComponent v-if="isMobile" />
   <FooterDesktop v-else />
 </template>
