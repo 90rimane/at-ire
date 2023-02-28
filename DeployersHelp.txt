@@ -1,10 +1,15 @@
 # Packages used for SideBar
-## 2023-03-21
+## 2023-02-21
+* npm add -D sass
+* npm i vue-router
 
-npm add -D sass
-npm i vue-router
+## extention:
+* Vetur / from Pine Wu
 
-extention:
-Vetur / from Pine Wu
+## bootstrap
+* Google font/icon
 
-Google font/icon
+# Packages used for Help page
+## 2023-02-26
+* npm i aqora-rtm-sdk uuid
+*

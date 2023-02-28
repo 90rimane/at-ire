@@ -147,7 +147,7 @@ import developers from '../../assets/developers.json';
   @media screen and (max-width: 1300px) {
       .about-section {
         padding: 1em;
-        margin: 5em 0em 1em 0;
+        margin: 5em 0em 1em 3em;
       }
       .row{
       margin: auto 1em;
@@ -166,7 +166,7 @@ import developers from '../../assets/developers.json';
   @media screen and (max-width: 1000px) {
       .about-section {
         padding: 1em;
-        margin: 2em 0em 1em -3.5em;
+        margin: 5em 0em 1em 0;
       }
       .row{
       margin: auto 0 2em -3.5em;
@@ -194,7 +194,7 @@ import developers from '../../assets/developers.json';
   @media screen and (max-width: 600px) {
     .about-section {
       background-color: var(--lightB);
-      margin: auto -2em 2em -6em;
+      margin: 2em -1em 3em -1em;
       p{
         text-justify: inter-word;
       }
@@ -202,6 +202,8 @@ import developers from '../../assets/developers.json';
     .row{
       .column {
         width: 100%;
+        margin-left: 2em;
+        margin-right: -1em;
       }
     }
     .photos-sponsor{
@@ -215,7 +217,7 @@ import developers from '../../assets/developers.json';
     margin: 10em 0 5em -5em;
     .photos-sponsor{
       flex-flow: column wrap;
-      margin: 2em 0;
+      margin: 2em -1em 2em 3em;
       img {
         margin-top: 1em;
         width: 8em ;
