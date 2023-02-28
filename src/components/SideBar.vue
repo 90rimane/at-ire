@@ -133,7 +133,7 @@
     h3,
     .button .text {
       opacity: 0;
-      transition: opacity 0.3s ease-in-out;
+      transition: opacity 0.1s ease-in-out;
     }
     #topmenu {
       color: var(--grey);
@@ -162,9 +162,9 @@
         }
         .text {
           display: none;
-          font-size: 1.3rem;
+          font-size: 1rem;
           color: var(--darker);
-          transition: 0.2s ease-in-out;
+          transition: 0.1s ease-in-out;
           text-shadow: none;
         }
         &:hover {
