@@ -14,13 +14,13 @@
     </div>
     <div class="margin-top">
       <ul class="wrapper">
-      <li v-for="(item, index) in list" :key="'item'+index">
-        <div class="title" @click="item.open = !item.open">
-          {{ item.title }}
-        </div>
-        <ListItem :list="item" />
-      </li>
-    </ul>
+        <li v-for="(item, index) in list" :key="'item' + index">
+          <div class="title" @click="item.open = !item.open">
+            {{ item.title }}
+          </div>
+          <ListItem :list="item" />
+        </li>
+      </ul>
     </div>
 
     <div class="register">
@@ -40,39 +40,37 @@
 </template>
 
 <script>
-  import ListItem from './ListItem.vue';
+  import ListItem from './ListItem.vue'
 
-    export default {
-      data: () => {
-        return {
-          email: '',
-          list: [
-            {
-              title: "SUPPORT",
-              open: false,
-              sublist: [
-                "Contact Us", "Return", "Terms", "Delivery"
-              ]
-            },
-            {
-              title: "OM @IRE",
-              open: false,
-              sublist: [ "Brand", "Collections" ]
-            },
-          ]
-        };
-      },
-      components: {
-        ListItem
-      },
-
-      methods : {
-        join() {
-        console.log('New E-mail', this.email);
-        // Ide!: Logic to send data to the back end, to get 20% discount
-    }
+  export default {
+    data: () => {
+      return {
+        email: '',
+        list: [
+          {
+            title: 'SUPPORT',
+            open: false,
+            sublist: ['Contact Us', 'Return', 'Terms', 'Delivery']
+          },
+          {
+            title: 'OM @IRE',
+            open: false,
+            sublist: ['Brand', 'Collections']
+          }
+        ]
       }
-    };
+    },
+    components: {
+      ListItem
+    },
+
+    methods: {
+      join() {
+        console.log('New E-mail', this.email)
+        // Ide!: Logic to send data to the back end, to get 20% discount
+      }
+    }
+  }
 </script>
 
 <style lang="scss" scoped>
@@ -120,7 +118,7 @@
   .margin-top {
     margin-top: 20px;
   }
-  
+
   h2 {
     font-size: 16px;
   }
@@ -182,19 +180,42 @@
   }
 
   .wrapper {
-      list-style: none;
-      background-color: #ffffff;
-      border-radius: 4px;
-      overflow: hidden;
-      li {
-        position: relative;
-        color: #282828;
-        border-top: 1px solid #dedede;
-        cursor: pointer;
-        .title {
-          padding: 10px 0;
-          text-indent: 20px;
-        }
+    list-style: none;
+    border-radius: 4px;
+    overflow: hidden;
+    li {
+      position: relative;
+      color: #282828;
+      border-top: 1px solid #dedede;
+      cursor: pointer;
+      .title {
+        padding: 10px 0;
+        text-indent: 20px;
       }
     }
+  }
+
+  @media (min-width: 1000px) {
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .margin-top {
+      flex-basis: 50%;
+      padding-right: 30px;
+    }
+
+    .register {
+      flex-basis: 30%;
+      margin-top: 0;
+      margin-left: auto;
+    }
+
+    .wrapper {
+      flex-wrap: nowrap;
+    }
+  }
 </style>
