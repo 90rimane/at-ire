@@ -12,7 +12,7 @@ import developers from '../../assets/developers.json';
 
 <template>
   <main>
-  <header class="about-section">
+  <header class="about-section" id="test">
     <h1>About @ire</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In mollitia ex
       soluta numquam assumenda officia velit reprehenderit natus ab. Neque quos
@@ -54,9 +54,9 @@ import developers from '../../assets/developers.json';
 </template>
 
 <style lang="scss" scoped>
-  .about-section {
+.about-section {
+    margin-top: 0;
     padding: 5em 4em 5em 6em;
-    margin: 5em;
     text-align: center;
     background-color: var(--lightB-darker);
     color: var(--darker);
@@ -146,8 +146,8 @@ import developers from '../../assets/developers.json';
   }
   @media screen and (max-width: 1300px) {
       .about-section {
-        padding: 1em;
-        margin: 5em 0em 1em 3em;
+        padding: 5em 1em 1em 1em;
+        margin: 0 0 1em 3em;
       }
       .row{
       margin: auto 1em;
@@ -165,8 +165,8 @@ import developers from '../../assets/developers.json';
   }
   @media screen and (max-width: 1000px) {
       .about-section {
-        padding: 1em;
-        margin: 5em 0em 1em 0;
+        padding: 5em 2em 1em 5em;
+        margin: auto;
       }
       .row{
       margin: auto 0 2em -3.5em;
@@ -194,7 +194,7 @@ import developers from '../../assets/developers.json';
   @media screen and (max-width: 600px) {
     .about-section {
       background-color: var(--lightB);
-      margin: 2em -1em 3em -1em;
+      margin: 0 auto;
       p{
         text-justify: inter-word;
         text-align: justify
