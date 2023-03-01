@@ -4,7 +4,7 @@
       <!-- spans to be made to breadcrumb-navigation  -->
       <span>{{ this.oneProduct.category }} --> </span>
       <span>{{ this.oneProduct.subcategory }}</span>
-
+      <!-- <------ -->
       <h1>{{ this.oneProduct.description }}</h1>
       <img
         id="product-img"
