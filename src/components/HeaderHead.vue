@@ -204,7 +204,7 @@
     width: fit-content;
     cursor: pointer;
     margin-left: 64px;
-    left: 245px;
+    left: 32%;
     height: fit-content;
   }
 
@@ -212,7 +212,7 @@
     position: absolute;
     width: 30px;
     height: 30px;
-    left: 43.8%;
+    left: 41.8%;
     top: 13px;
     cursor: pointer;
     color: #000000;
@@ -220,7 +220,7 @@
 
   .search-bar-mobile {
     position: fixed;
-    width: 62px;
+    width: 59px;
     height: 40px;
     left: 49%;
     top: 8px;
@@ -383,7 +383,7 @@
 
     .search-bar-desktop {
       position: absolute;
-      width: 66px;
+      width: 59px;
       height: 35px;
       left: 930px;
       top: 13px;
