@@ -29,7 +29,7 @@
     <div>
       <ul v-if="search" class="dropdown">
         <li v-for="item in searchResult" :key="item.id">
-          <a href="this.item.name">{{ item.description }}</a>
+          <a href="this.item.name"> {{ item.description }} </a>
         </li>
       </ul>
     </div>

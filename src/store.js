@@ -2,7 +2,10 @@ import { createStore } from 'vuex'
 
 const mutations = {
     SET_PRODUCTS(state, products) {
-      state.allProducts = products
+      state.allProducts = products.map((item) => ({
+        ...item,
+        quantity: 1
+      }))
     },
     SET_ACTIVEUSER(state) {
       state.activeUser =

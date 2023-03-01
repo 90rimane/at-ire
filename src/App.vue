@@ -27,33 +27,25 @@
     },
     methods: {
       checkScreenSize() {
-        this.isMobile = window.innerWidth < 980
+        this.isMobile = window.innerWidth < 1024
       }
     }
   }
 </script>
 
 <template>
-  <!--Sidebar-->
-  <div class="app">
-    <SideBar />
-
-    <RouterView />
-  </div>
-
+  <SideBar />
+  <RouterView />
+  <SearchBar />
   <HeaderHead />
   <ContactButton />
-
   <FooterComponent v-if="isMobile" />
   <FooterDesktop v-else />
 </template>
 
 <style lang="scss">
-  @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap%27');
 
-  @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
-
-  // Sidebar scss
   :root {
     --grey-light: #a19595;
     --grey: #64748b;
@@ -69,27 +61,9 @@
   * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Karla', Fira sans, sans-serif, roboto;
   }
   body {
     background: var(--light);
-  }
-  button {
-    cursor: pointer;
-    appearance: none;
-    border: none;
-    outline: none;
-    background: none;
-  }
-  .app {
-    display: flex;
-    main {
-      flex: 1 1 0;
-      padding: 2rem;
-      @media (max-width: 1024px) {
-        padding-left: 6rem;
-      }
-    }
   }
 </style>

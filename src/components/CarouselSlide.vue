@@ -74,7 +74,7 @@
   }
 </script>
 
-<style scooped>
+<style scoped>
   img {
     width: 70vw;
   }

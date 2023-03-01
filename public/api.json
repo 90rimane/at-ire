@@ -452,7 +452,7 @@
       },
       "material": {
         "cotton": "15%",
-        "organic-coton": "75%",
+        "organic-cotton": "75%",
         "polyester": "10%"
       },
       "star": "4",
