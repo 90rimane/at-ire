@@ -43,5 +43,8 @@
         :product="product"
       />
     </div>
+    <router-link to="/search" class="button">
+      <div style="width: 50px; height: 50px; background-color: red" />
+    </router-link>
   </main>
 </template>

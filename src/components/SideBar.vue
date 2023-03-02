@@ -12,9 +12,18 @@
         >
       </button>
     </div>
+    <div class="menu-toggle-wrap-mobile">
+      <button class="menu-toggle-mobile" @click="ToggleMenu">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
 
     <h3 id="topmenu">Menu</h3>
     <div class="menu">
+      <router-link to="/" class="button">
+        <span class="material-symbols-outlined">home</span>
+        <span class="text">Home</span>
+      </router-link>
       <router-link to="/checkout" class="button">
         <span class="material-symbols-outlined">shopping_cart_checkout</span>
         <span class="text">Shopping Cart</span>
@@ -37,16 +46,12 @@
       </router-link>
       <router-link to="/help" class="button">
         <span class="material-symbols-outlined">help</span>
-        <span class="text">Help</span>
+        <span class="text">Help center</span>
       </router-link>
     </div>
+    <!-- <div class="menu">
 
-    <div class="menu">
-      <router-link to="/" class="button">
-        <span class="material-symbols-outlined">home</span>
-        <span class="text">Home</span>
-      </router-link>
-    </div>
+    </div> -->
 
     <!--
       Changed by Jovan
@@ -54,13 +59,17 @@
 
     <div v-if="$store.state.activeUser == null" class="menu bottom-menu">
       <router-link to="/login" class="button">
-        <span class="material-symbols-outlined" style="color:forestgreen;">login</span>
+        <span class="material-symbols-outlined" style="color: forestgreen"
+          >login</span
+        >
         <span class="text">Login</span>
       </router-link>
     </div>
     <div v-else class="menu bottom-menu">
       <a @click="$store.dispatch('logout')" class="button">
-        <span class="material-symbols-outlined" style="color:brown;">logout</span>
+        <span class="material-symbols-outlined" style="color: brown"
+          >logout</span
+        >
         <span class="text">Logout</span>
       </a>
     </div>
@@ -88,13 +97,12 @@
     flex-direction: column;
     background-color: var(--lightB);
     color: var(--light);
-    width: calc(2rem + 32px);
+    width: calc(1rem + 20px);
     overflow: hidden;
     min-height: 100vh;
     padding: 1rem;
     transition: 0.2s ease-in-out;
     box-shadow: 1px 0 5px var(--grey-light);
-
     position: fixed;
     z-index: 2;
     .logo {
@@ -102,6 +110,19 @@
       img {
         width: 3rem;
       }
+    }
+    button {
+      cursor: pointer;
+      appearance: none;
+      border: none;
+      outline: none;
+      background: none;
+    }
+    button a:hover {
+      color: aqua;
+    }
+    .menu-toggle-wrap-mobile {
+      display: none;
     }
     .menu-toggle-wrap {
       display: flex;
@@ -115,7 +136,8 @@
         .material-symbols-outlined {
           font-size: 2rem;
           color: var(--dark);
-          transition: 0.2s ease-out;
+          transform: translateX(0.5rem);
+          // transition: 0.2s ease-out;
         }
 
         &:hover {
@@ -129,7 +151,7 @@
     h3,
     .button .text {
       opacity: 0;
-      transition: opacity 0.3s ease-in-out;
+      transition: opacity 0.1s ease-in-out;
     }
     #topmenu {
       color: var(--grey);
@@ -141,6 +163,8 @@
       text-transform: uppercase;
     }
     .menu {
+      display: flex;
+      flex-direction: column;
       margin: 0 -1rem;
       .button {
         display: flex;
@@ -154,8 +178,11 @@
           transition: 0.2s ease-in-out;
         }
         .text {
+          display: none;
+          font-size: 1rem;
           color: var(--darker);
-          transition: 0.2s ease-in-out;
+          transition: 0.1s ease-in-out;
+          text-shadow: none;
         }
         &:hover {
           background-color: var(--lightB-darker);
@@ -168,8 +195,7 @@
           background-color: var(--grey-light);
           border-right: 5px solid var(--orange);
           box-shadow: 1px 1px 2px var(--lightB-darker);
-          .material-symbols-outlined,
-          .text {
+          .material-symbols-outlined {
             color: var(--dark);
           }
         }
@@ -180,6 +206,7 @@
     */
     .bottom-menu {
       margin-top: auto;
+      margin-bottom: 1.5em;
     }
     /*
       Changed by Jovan
@@ -188,7 +215,6 @@
       width: var(--sidebar-width);
       .menu-toggle-wrap {
         top: -3rem;
-
         .menu-toggle {
           transform: rotate(-180deg);
         }
@@ -196,12 +222,18 @@
       h3,
       .button .text {
         opacity: 1;
+        display: contents;
       }
       .button {
         .material-symbols-outlined {
           margin-right: 1rem;
         }
       }
+    }
+  }
+  @media (max-width: 979px) {
+    aside {
+      display: none;
     }
   }
 </style>

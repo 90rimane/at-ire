@@ -3,7 +3,7 @@
     {
       "id": "01",
       "category": "Tops",
-      "subcategory": "Hoodies and Sweatshirts",
+      "subcategory": "Hoodies",
       "name": "Women's Premium Hoodie",
       "description": "AS Colour 4120 Women’s Premium Hoodie",
       "colors": ["Black", "Grey-Marble", "Mauve"],
@@ -26,7 +26,7 @@
     {
       "id": "02",
       "category": "Tops",
-      "subcategory": "Hoodies and Sweatshirts",
+      "subcategory": "Hoodies",
       "name": "Men's Zip Hood",
       "description": "AS Colour 5103 Men's Official Zip Hood",
       "colors": ["Black", "Navy", "White"],
@@ -49,7 +49,7 @@
     {
       "id": "03",
       "category": "Tops",
-      "subcategory": "Hoodies and Sweatshirts",
+      "subcategory": "Hoodies",
       "name": "Slammer Heavy Hoodie",
       "description": "Stanley/Stella Slammer Heavy Hoodie",
       "colors": ["Black", "Natural Raw", "French Navy"],
@@ -72,7 +72,7 @@
     {
       "id": "04",
       "category": "Tops",
-      "subcategory": "Hoodies and Sweatshirts",
+      "subcategory": "Sweatshirts",
       "name": "Crewneck Sweatshirt",
       "description": "Champion S149 Reverse Weave Crewneck Sweatshirt",
       "colors": ["Black", "Cardinal", "Silver-Grey"],
@@ -95,7 +95,7 @@
     {
       "id": "05",
       "category": "Tops",
-      "subcategory": "Hoodies and Sweatshirts",
+      "subcategory": "Sweatshirts",
       "name": "Hammer Crew Sweatshirt",
       "description": "Gildan HF000 Hammer Crew Sweatshirt",
       "colors": ["Black", "Ash", "Graphite-Heather"],
@@ -118,7 +118,7 @@
     {
       "id": "06",
       "category": "Tops",
-      "subcategory": "Hoodies and Sweatshirts",
+      "subcategory": "Sweatshirts",
       "name": "Heavy Fleece Sweatshirt",
       "description": "Los Angeles Apparel HF-07 Heavy Fleece Sweatshirt",
       "colors": ["Black", "White", "Ash"],
@@ -141,7 +141,7 @@
     {
       "id": "07",
       "category": "Tops",
-      "subcategory": "T-Shirts and Tops",
+      "subcategory": "T-Shirts",
       "name": "Pocket T-Shirt",
       "description": "American Apparel 2406 Fine Jersey Pocket T-Shirt",
       "colors": ["Black", "Asphalt", "Truffle"],
@@ -164,7 +164,7 @@
     {
       "id": "08",
       "category": "Tops",
-      "subcategory": "T-Shirts and Tops",
+      "subcategory": "T-Shirts",
       "name": "Triblend Streak T-Shirt",
       "description": "Anvil 6750ID Triblend Streak T-Shirt",
       "colors": ["Black", "ID-Orion", "Maroon"],
@@ -187,7 +187,7 @@
     {
       "id": "09",
       "category": "Tops",
-      "subcategory": "T-Shirts and Tops",
+      "subcategory": "T-Shirts",
       "name": "Triblend Henley Shirt",
       "description": "Bella + Canvas 3125 Triblend Henley Shirt",
       "colors": ["Black", "Navy-Triblend", "Grey-Triblend"],
@@ -210,7 +210,7 @@
     {
       "id": "10",
       "category": "Tops",
-      "subcategory": "T-Shirts and Tops",
+      "subcategory": "Tank-Tops",
       "name": "Tank Top",
       "description": "Comfort Colors 9360 Adult Tank Top",
       "colors": ["Black", "Violet", "Boysenberry"],
@@ -233,7 +233,7 @@
     {
       "id": "11",
       "category": "Tops",
-      "subcategory": "T-Shirts and Tops",
+      "subcategory": "Tank-Tops",
       "name": "Crop Tank",
       "description": "Los Angeles Apparel 4318 Sporty Baby Rip Crop Tank",
       "colors": ["Black", "Creme", "Brown", ""],
@@ -256,7 +256,7 @@
     {
       "id": "12",
       "category": "Tops",
-      "subcategory": "T-Shirts and Tops",
+      "subcategory": "Tank-Tops",
       "name": "Muscle Tank Top",
       "description": "Bella + Canvas Flowy Scoop Muscle Tank",
       "colors": ["Black", "Olive-Slub", "Heather-Deep-Teal"],
@@ -452,7 +452,7 @@
       },
       "material": {
         "cotton": "15%",
-        "organic-coton": "75%",
+        "organic-cotton": "75%",
         "polyester": "10%"
       },
       "star": "4",

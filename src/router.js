@@ -10,6 +10,7 @@ import MyPageView from './views/MyPageView.vue'
 import LoginView from './views/LoginPage.vue'
 import SignupView from './views/SignupPage.vue'
 import ProductView from './views/ProductView.vue'
+import FilterSearchView from './views/FilterSearchView.vue'
 
 export default createRouter({
   history: createWebHashHistory(),
@@ -53,6 +54,10 @@ export default createRouter({
     {
       component: ProductView,
       path: '/product'
+    },
+    {
+      component: FilterSearchView,
+      path: '/search/:filter'
     }
   ]
 })

@@ -50,7 +50,7 @@ function sendMessage() {
   <main>
     <h1>Help Center</h1>
     <p><span style="font-weight: bold;"> For developers: </span>
-      To test this chatroom, take a copy of link address
+      To test this chatroom, take a copy of the link
       and paste it in another browser while project is runing (npm run dev).<br /> All users can chat each other anywhere when the project is runing.</p>
     <div class="panel">
       <div class="panel-title">
@@ -69,7 +69,7 @@ function sendMessage() {
               You:&nbsp;
             </div>
             <div v-else class="user-them">Others:&nbsp;</div>
-            <div class="text">{{ message.text }}</div>
+            <div class="text-sent">{{ message.text }}</div>
           </div>
         </div>
       </div>
@@ -106,7 +106,7 @@ function sendMessage() {
     display: flex;
     flex-direction: column;
     padding: 1em;
-    margin: 5em auto;
+    margin: 4em auto;
     max-width: 25em;
     height: 30em;
     background: var(--lightB-darker);
@@ -156,7 +156,7 @@ function sendMessage() {
     width: 100%;
     border: none;
     height: 40px;
-    padding: 8px;
+    padding: .1em .5em;
     border-top: 1px solid #999;
     border-radius: 0px;
     outline: none;
@@ -180,25 +180,40 @@ function sendMessage() {
     border-radius: 30px;
   }
   @media (max-width: 600px) {
+    main{
+      h1{
+        padding-top: 1em;
+        font-size: 22px;
+      }
+    }
     .panel {
     padding: 1em;
-    margin: 5em auto;
-    max-width: 20em;
+    margin: 4em auto;
     height: 30em;
-    background: var(--lightB-darker);
-    box-shadow: 0 5px 20px 0 var(--darker);
-    backdrop-filter: blur(4px);
-    border-radius: 10px;
   }
+
   @media (max-width: 470px){
+    main{
+      margin-top: 3em;
+      padding: 0 0 9em 0;
+      h1{
+        padding-top: 1em;
+        font-size: 18px;
+      }
+    }
     .panel{
-      margin: 5em -2em 7em 2em;
+      display: block;
+      margin: 1em 0;
+    }
+
+    .messages{
+      height: 75%;
     }
     .message {
-    font-size: 14px;
+    font-size: 16px;
     }
     input{
-      font-size: 14px;
+      font-size: 16px;
     }
   }
 }
