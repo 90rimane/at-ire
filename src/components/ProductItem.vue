@@ -7,9 +7,9 @@
       }
     },
     created() {
-      setTimeout(() => {
-        console.log(this.$store.state.allProducts)
-      }, 2000)
+      // setTimeout(() => {
+      //   console.log(this.$store.state.allProducts)
+      // }, 2000)
     },
     methods: {
       setFavInAcc(currentItem) {
