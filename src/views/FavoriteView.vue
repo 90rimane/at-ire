@@ -3,15 +3,6 @@
   export default {
     components: {
       productItem
-    },
-    computed: {
-      getfavorites() {
-        // slice method to only display 4 items at once
-        if (this.$store.state.activeUser) {
-          return this.$store.state.activeUser.favorites
-        }
-        return null
-      }
     }
   }
 </script>
@@ -21,10 +12,17 @@
     <h2>My Favorites</h2>
     <div v-if="$store.state.activeUser != null" class="favorite-display">
       <productItem
-        v-for="product in getfavorites"
+        v-for="product in $store.state.activeUser.favorites"
         :key="product.id"
         :product="product"
       />
+    </div>
+    <div v-else>
+      <h3>
+        You are not logged in,
+        <RouterLink to="/login" class="nav-link">login in</RouterLink> to view
+        your favorites.
+      </h3>
     </div>
   </main>
 </template>
@@ -37,9 +35,20 @@
   }
   main {
     padding-top: 80px;
+    min-height: 100vh;
+
+    a {
+      color: rgb(44, 44, 44);
+    }
 
     h2 {
       margin-left: 40px;
+    }
+
+    h3 {
+      text-align: center;
+      color: rgb(112, 112, 112);
+      margin: 100px;
     }
 
     .favorite-display {
