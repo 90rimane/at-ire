@@ -79,6 +79,7 @@
   .item-container {
     font-family: 'Roboto', sans-serif;
     width: 300px;
+    min-height: 372px;
 
     a {
       text-decoration: none;
