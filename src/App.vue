@@ -37,10 +37,10 @@
   <SideBar />
   <RouterView />
   <SearchBar />
-  <HeaderHead />
   <ContactButton />
   <FooterComponent v-if="isMobile" />
   <FooterDesktop v-else />
+  <HeaderHead />
 </template>
 
 <style lang="scss">

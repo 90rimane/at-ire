@@ -11,6 +11,12 @@
           >keyboard_double_arrow_right</span>
       </button>
     </div>
+    <div class="menu-toggle-wrap-mobile">
+      <button class="menu-toggle-mobile" @click="ToggleMenu">
+        <span class="material-symbols-outlined"
+          >menu</span>
+      </button>
+    </div>
 
     <h3 id="topmenu">Menu</h3>
     <div class="menu">
@@ -107,6 +113,12 @@
       outline: none;
       background: none;
   }
+  button a:hover{
+    color: aqua;
+  }
+  .menu-toggle-wrap-mobile {
+    display: none;
+  }
     .menu-toggle-wrap {
       display: flex;
       justify-content:flex-end;
@@ -119,7 +131,8 @@
         .material-symbols-outlined {
           font-size: 2rem;
           color: var(--dark);
-          transition: 0.2s ease-out;
+          transform: translateX(0.5rem);
+          // transition: 0.2s ease-out;
         }
 
         &:hover {
@@ -214,4 +227,5 @@
       }
     }
   }
+  @media (max-width: 980px){aside {display: none;}}
 </style>

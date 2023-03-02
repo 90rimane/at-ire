@@ -69,7 +69,7 @@ function sendMessage() {
               You:&nbsp;
             </div>
             <div v-else class="user-them">Others:&nbsp;</div>
-            <div class="text">{{ message.text }}</div>
+            <div class="text-sent">{{ message.text }}</div>
           </div>
         </div>
       </div>
@@ -156,7 +156,7 @@ function sendMessage() {
     width: 100%;
     border: none;
     height: 40px;
-    padding: 8px;
+    padding: .1em .5em;
     border-top: 1px solid #999;
     border-radius: 0px;
     outline: none;

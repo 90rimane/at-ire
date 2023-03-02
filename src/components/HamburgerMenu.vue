@@ -1,0 +1,132 @@
+<script>
+  export default{
+    methods:{
+      actMenu(){
+        if (this.$refs.menuLinks.style.display === "block") {
+          this.$refs.menuLinks.style.display = "none";
+          this.$refs.menuIcon.style.display= "block";
+          this.$refs.menuIconClose.style.display= "none";
+        } else {
+          this.$refs.menuLinks.style.display = "block";
+          this.$refs.menuIconClose.style.display= "block";
+          this.$refs.menuIcon.style.display= "none";
+        }
+      }
+    }
+  }
+</script>
+<template>
+
+  <div class="mobile-container">
+
+    <button @click="actMenu()">
+      <span class="material-symbols-outlined" id="menuIcon" ref="menuIcon">menu</span>
+      <span class="material-symbols-outlined" id="menuIconClose" ref="menuIconClose">close</span>
+    </button>
+  <div class="topnav">
+    <div id="menuLinks" ref="menuLinks">
+      <router-link to="/checkout" @click="actMenu()">
+        <span class="material-symbols-outlined">shopping_cart_checkout</span>
+        <span class="link-text">Shopping Cart</span>
+      </router-link>
+      <router-link to="/favorite" @click="actMenu()">
+        <span class="material-symbols-outlined">favorite</span>
+        <span class="link-text">My Favorites</span>
+      </router-link>
+      <router-link to="/mypage" @click="actMenu()">
+        <span class="material-symbols-outlined">person</span>
+        <span class="link-text">Account</span>
+      </router-link>
+      <router-link to="/contact" @click="actMenu()">
+        <span class="material-symbols-outlined">email</span>
+        <span class="link-text">Contact</span>
+      </router-link>
+      <router-link to="/about" @click="actMenu()">
+        <span class="material-symbols-outlined">info</span>
+        <span class="link-text">About Us</span>
+      </router-link>
+      <router-link to="/help" @click="actMenu()">
+        <span class="material-symbols-outlined">help</span>
+        <span class="link-text">Help</span>
+      </router-link>
+      <router-link to="/" @click="actMenu()">
+        <span class="material-symbols-outlined">home</span>
+        <span class="link-text">Home</span>
+      </router-link>
+      <div v-if="$store.state.activeUser == null">
+        <router-link to="/login" @click="actMenu()">
+          <span class="material-symbols-outlined" style="color:forestgreen;">login</span>
+          <span class="link-text">Login</span>
+        </router-link>
+      </div>
+      <div v-else>
+        <a @click="$store.dispatch('logout'); actMenu()">
+          <span class="material-symbols-outlined" style="color:brown;">logout</span>
+          <span class="link-text">Logout</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</template>
+
+<style lang="scss" scoped>
+.mobile-container{
+  button{
+    background-color: var(--lightB-darker);
+    margin: 2px;
+    height: 4em;
+    width: 4em;
+    border: none;
+    #menuIcon{
+      font-size: 2.2em;
+    }
+    #menuIconClose{
+      display: none;
+      font-size: 2.2em;
+    }
+  }
+  button:hover{
+    background-color: var(--orange);
+  }
+}
+.link-text{
+  margin-left: 1em;
+  font-size: 1.1em;
+  vertical-align: super;
+}
+  .topnav {
+    overflow: hidden;
+    background-color: var(--lightB-darker);
+    position: relative;
+    .material-symbols-outlined{
+      font-size: 1.5em;
+      padding: 0;
+    }
+  }
+  .topnav #menuLinks {
+    display: none;
+  }
+  .topnav a {
+    color: var(--darker);
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+    border-bottom: solid 1px var(--lightB);
+  }
+
+  .topnav a.icon {
+    background: var(--orange);
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav a:hover {
+    background-color: var(--lightB);
+    color: var(--darker);
+  }
+</style>

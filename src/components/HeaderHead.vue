@@ -6,6 +6,7 @@
     crossorigin="anonymous"
   />
   <div class="header-mobile">
+
     <form>
       <input
         class="search-bar-mobile"
@@ -26,7 +27,9 @@
         />
       </svg>
     </form>
+
     <div>
+
       <ul v-if="search" class="dropdown">
         <li v-for="item in searchResult" :key="item.id">
           <a href="this.item.name"> {{ item.description }} </a>
@@ -36,18 +39,11 @@
     <router-link to="/" class="button">
       <h3>@IRE</h3>
     </router-link>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
-      fill="currentColor"
-      class="bi-bi-filter-left-mobile"
-      viewBox="0 0 16 16"
-    >
-      <path
-        d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"
-      />
-    </svg>
+
+  <!--#region HamburgerMenu component located here by Ali-->
+  <HamburgerMenu />
+  <!-- #endregion -->
+
     <router-link to="/favorite" class="button">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -65,6 +61,8 @@
     <router-link to="/checkout" class="button">
       <span class="material-symbols-outlined">shopping_cart_checkout</span>
     </router-link>
+
+
   </div>
   <div class="header-desktop">
     <router-link to="/" class="button">
@@ -134,7 +132,14 @@
 </template>
 
 <script>
+//#region Hamburger component imporeted by Ali
+import HamburgerMenu from './HamburgerMenu.vue'
+
   export default {
+    components:{
+      HamburgerMenu
+    },
+//#endregion
     data() {
       return {
         products: null,
