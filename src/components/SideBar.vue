@@ -49,13 +49,6 @@
         <span class="text">Help center</span>
       </router-link>
     </div>
-    <!-- <div class="menu">
-
-    </div> -->
-
-    <!--
-      Changed by Jovan
-    -->
 
     <div v-if="$store.state.activeUser == null" class="menu bottom-menu">
       <router-link to="/login" class="button">
