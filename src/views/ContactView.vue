@@ -11,7 +11,7 @@
 </script>
 
 <template>
-  <main>
+  <div class="margin-top">
     <div class="center-text">
       <h1>CONTACT</h1>
       <p>
@@ -35,23 +35,23 @@
           id=""
           cols="30"
           rows="10"
-          placeholder="Your Message"
-        />
+          placeholder="Your Message" />
       </div>
 
       <button>SEND</button>
     </form>
-  </main>
+    </div>
 </template>
 
 <style lang="scss" scoped>
-  .main {
-    width: 100%;
+  .margin-top {
+    padding-top: 70px;
   }
   .center-text {
     text-align: center;
 
     h1 {
+      margin-top: 20px;
       font-size: 20px;
       letter-spacing: normal;
       font-weight: 700;
@@ -81,13 +81,13 @@
   }
   .input-name {
     width: 300px;
-    height: 35px;
+    height: 15px;
     padding: 10px;
   }
 
   .input-number {
     width: 300px;
-    height: 35px;
+    height: 15px;
     padding: 10px;
   }
 
@@ -103,9 +103,10 @@
   }
 
   button {
-    width: 300px;
+    width: 322px;
     height: 40px;
     background-color: #f39256;
     margin-bottom: 10px;
+    border:none;
   }
 </style>

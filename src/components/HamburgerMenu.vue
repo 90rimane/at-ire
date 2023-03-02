@@ -74,7 +74,7 @@
 <style lang="scss" scoped>
 .mobile-container{
   button{
-    background-color: var(--lightB-darker);
+    background-color: #ecc8b2;
     margin: 2px;
     height: 3.9em;
     width: 3.9em;
