@@ -76,8 +76,8 @@
   button{
     background-color: var(--lightB-darker);
     margin: 2px;
-    height: 4em;
-    width: 4em;
+    height: 3.9em;
+    width: 3.9em;
     border: none;
     #menuIcon{
       font-size: 2.2em;
@@ -114,7 +114,7 @@
     text-decoration: none;
     font-size: 17px;
     display: block;
-    border-bottom: solid 1px var(--lightB);
+    border-top: solid 1px var(--lightB);
   }
 
   .topnav a.icon {
