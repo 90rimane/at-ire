@@ -99,7 +99,7 @@
   }
 </script>
 
-<style scooped>
+<style scoped>
   .home-container {
     display: flex;
     flex-wrap: wrap;
