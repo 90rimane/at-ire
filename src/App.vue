@@ -52,7 +52,6 @@
 <template>
   <SideBar />
   <RouterView />
-  <SearchBar />
   <ContactButton />
   <FooterComponent v-if="isMobile" />
   <FooterDesktop v-else />
