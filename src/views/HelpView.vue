@@ -4,8 +4,8 @@ import { v4 as uuidv4 } from 'uuid';
 import { ref, onMounted, nextTick, defineExpose } from 'vue';
 
 
-const APP_ID = '452f99a0814b44d29d9a446ec20356fc';
 // const APP_ID = '766b26b8564f4d22a1c6cc908547fd8f';
+const APP_ID = '452f99a0814b44d29d9a446ec20356fc';
 const CHANNEL = 'atire'; //uniq key for each user
 let client = AgoraRTM.createInstance(APP_ID);
 let uid = uuidv4();

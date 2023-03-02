@@ -17,6 +17,15 @@
       )
     },
     computed: {
+      headline() {
+        if (this.$route.params.filter === 'All') {
+          return 'Our Sortiment'
+        } else if (this.$route.params.filter.split('+').length == 1) {
+          return this.$route.params.filter
+        } else {
+          return 'Custom filter'
+        }
+      },
       searchable() {
         if (this.$store.state.allProducts) {
           return this.$store.state.allProducts.map((product) => ({
@@ -50,7 +59,8 @@
     data() {
       return {
         searchInput: '',
-        tags: []
+        tags: [],
+        isActive: false
       }
     },
     methods: {
@@ -68,8 +78,9 @@
         } else {
           this.$router.push('/search/All')
         }
-
-        console.log(this.tags)
+      },
+      toggleVisable() {
+        this.isActive = !this.isActive
       }
     }
   }
@@ -78,14 +89,19 @@
 <template>
   <div class="main-page">
     <div class="search-header">
-      <span class="material-symbols-outlined filter-icon"> filter_alt </span>
+      <span
+        @click="toggleVisable()"
+        class="material-symbols-outlined filter-icon"
+      >
+        filter_alt
+      </span>
       <div class="current-filter">
-        <span>Our Sortiment</span>
+        <span>{{ headline }}</span>
       </div>
     </div>
-    <div class="filter-container">
+    <div class="filter-container" :class="{ open: isActive }">
       <div class="filter">
-        <h2>Filter with tags!</h2>
+        <h2>Filter with tags</h2>
         <div class="categories">
           <h3>Categories</h3>
           <button
@@ -170,9 +186,10 @@
           </button>
         </div>
 
-        <div class="search-bar">
+        <div class="search-container">
+          <h3>Search</h3>
           <input
-            class="search-bar-desktop"
+            class="search-bar"
             type="text"
             v-model="searchInput"
             placeholder="Search products..."
@@ -186,19 +203,26 @@
         :key="product.id"
         :product="product"
       />
+      <p v-if="renderProducts.length == 0" style="text-align: center">
+        No products found
+      </p>
     </div>
     <p v-else style="text-align: center">Loading products...</p>
   </div>
 </template>
 
 <style scoped lang="scss">
+  @media only screen and (min-width: 980px) {
+    .main-page {
+      margin-left: 68px;
+    }
+  }
   .main-page {
     min-height: 100vh;
-    width: 100%;
     margin-top: 56px;
     font-family: 'roboto';
+
     .search-header {
-      width: 100%;
       background-color: #ecc8b2;
       padding: 18px 9px;
       display: flex;
@@ -218,6 +242,7 @@
         transform: translateY(-50%);
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         cursor: pointer;
+        user-select: none;
       }
 
       .current-filter {
@@ -225,7 +250,6 @@
         padding: 8px 27px;
         border-radius: 50px;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        cursor: pointer;
 
         span {
           font-size: 22px;
@@ -236,28 +260,57 @@
         }
       }
     }
+    .open {
+      height: 360px !important;
+    }
+
+    @media only screen and (min-width: 440px) {
+      .open {
+        height: 325px !important;
+      }
+    }
+
+    @media only screen and (min-width: 742px) {
+      .open {
+        height: 290px !important;
+      }
+    }
 
     .filter-container {
+      overflow: hidden;
+      height: 0;
+      box-shadow: inset 0px 11px 8px -10px #ccc, inset 0px -11px 8px -10px #ccc;
+      transition: all 0.5s ease-out;
+
       .filter {
         box-sizing: border-box;
         width: 100%;
-        border-radius: 16px;
-        background-color: white;
         padding: 20px;
+
+        h2 {
+          padding-bottom: 8px;
+        }
+
+        h3 {
+          padding-bottom: 8px;
+        }
 
         .categories {
           margin-bottom: 8px;
-
-          h3 {
-            padding-bottom: 8px;
-          }
         }
 
         .sub-category {
           margin-bottom: 8px;
+        }
 
-          h3 {
-            padding-bottom: 8px;
+        .search-container {
+          .search-bar {
+            box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.25);
+            padding: 8px 24px;
+            border-radius: 40px;
+            border: none;
+            width: 200px;
+            outline: none;
           }
         }
       }
@@ -286,9 +339,20 @@
     .product-display {
       display: flex;
       flex-direction: column;
-      gap: 40px;
+      gap: 24px;
       align-items: center;
-      padding-top: 16px;
+      padding: 40px 0 60px 0;
+      max-width: 990px;
+      margin: auto;
+    }
+
+    @media only screen and (min-width: 690px) {
+      .product-display {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+      }
     }
   }
 </style>

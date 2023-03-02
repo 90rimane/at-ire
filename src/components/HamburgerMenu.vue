@@ -23,44 +23,44 @@
       <span class="material-symbols-outlined" id="menuIcon" ref="menuIcon">menu</span>
       <span class="material-symbols-outlined" id="menuIconClose" ref="menuIconClose">close</span>
     </button>
-  <div class="topnav">
+  <div class="topnav" @click="actMenu()">
     <div id="menuLinks" ref="menuLinks">
-      <router-link to="/" @click="actMenu()">
+      <router-link to="/">
         <span class="material-symbols-outlined">home</span>
         <span class="link-text">Home</span>
       </router-link>
-      <router-link to="/checkout" @click="actMenu()">
+      <router-link to="/checkout">
         <span class="material-symbols-outlined">shopping_cart_checkout</span>
         <span class="link-text">Shopping Cart</span>
       </router-link>
-      <router-link to="/favorite" @click="actMenu()">
+      <router-link to="/favorite">
         <span class="material-symbols-outlined">favorite</span>
         <span class="link-text">My Favorites</span>
       </router-link>
-      <router-link to="/mypage" @click="actMenu()">
+      <router-link to="/mypage">
         <span class="material-symbols-outlined">person</span>
         <span class="link-text">Account</span>
       </router-link>
-      <router-link to="/contact" @click="actMenu()">
+      <router-link to="/contact">
         <span class="material-symbols-outlined">email</span>
         <span class="link-text">Contact</span>
       </router-link>
-      <router-link to="/about" @click="actMenu()">
+      <router-link to="/about">
         <span class="material-symbols-outlined">info</span>
         <span class="link-text">About Us</span>
       </router-link>
-      <router-link to="/help" @click="actMenu()">
+      <router-link to="/help">
         <span class="material-symbols-outlined">help</span>
         <span class="link-text">Help center</span>
       </router-link>
       <div v-if="$store.state.activeUser == null">
-        <router-link to="/login" @click="actMenu()">
+        <router-link to="/login">
           <span class="material-symbols-outlined" style="color:forestgreen;">login</span>
           <span class="link-text">Login</span>
         </router-link>
       </div>
       <div v-else>
-        <a @click="$store.dispatch('logout'); actMenu()">
+        <a @click="$store.dispatch('logout')">
           <span class="material-symbols-outlined" style="color:brown;">logout</span>
           <span class="link-text">Logout</span>
         </a>

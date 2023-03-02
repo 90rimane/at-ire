@@ -60,6 +60,7 @@ import developers from '../../assets/developers.json';
     text-align: center;
     background-color: var(--lightB-darker);
     color: var(--darker);
+
     h1{
       color: var(--orange);
       margin-bottom: 1em;

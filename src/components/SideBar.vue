@@ -49,13 +49,6 @@
         <span class="text">Help center</span>
       </router-link>
     </div>
-    <!-- <div class="menu">
-
-    </div> -->
-
-    <!--
-      Changed by Jovan
-    -->
 
     <div v-if="$store.state.activeUser == null" class="menu bottom-menu">
       <router-link to="/login" class="button">
@@ -105,6 +98,7 @@
     box-shadow: 1px 0 5px var(--grey-light);
     position: fixed;
     z-index: 2;
+    top: 0;
     .logo {
       margin-bottom: 1rem;
       img {
