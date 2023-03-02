@@ -98,6 +98,7 @@
     box-shadow: 1px 0 5px var(--grey-light);
     position: fixed;
     z-index: 2;
+    top: 0;
     .logo {
       margin-bottom: 1rem;
       img {
