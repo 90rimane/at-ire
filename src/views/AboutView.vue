@@ -56,7 +56,7 @@ import developers from '../../assets/developers.json';
 <style lang="scss" scoped>
 .about-section {
     margin-top: 0;
-    padding: 5em 4em 5em 6em;
+    padding: 8em 4em 5em 6em;
     text-align: center;
     background-color: var(--lightB-darker);
     color: var(--darker);
@@ -146,7 +146,6 @@ import developers from '../../assets/developers.json';
   }
   @media screen and (max-width: 1300px) {
       .about-section {
-        padding: 5em 1em 1em 1em;
         margin: 0 0 1em 3em;
       }
       .row{
@@ -165,8 +164,12 @@ import developers from '../../assets/developers.json';
   }
   @media screen and (max-width: 980px) {
       .about-section {
-        padding: 5em 2em 1em 2em;
+        padding: 8em 3em 5em 3em;
         margin: auto;
+        p{
+
+        text-align: justify;
+        }
       }
       .row{
         margin: auto;
@@ -194,17 +197,17 @@ import developers from '../../assets/developers.json';
   @media screen and (max-width: 600px) {
     .about-section {
       background-color: var(--lightB);
-      margin: 0 auto;
+      margin: auto;
+      padding: 8em 1em 3em 1em;
       p{
         text-justify: inter-word;
-        text-align: justify
+        text-align: justify;
       }
     }
     .row{
       margin: auto;
       .column {
         width: 80%;
-        margin: 0;
       }
     }
     .photos-sponsor{
@@ -215,15 +218,15 @@ import developers from '../../assets/developers.json';
       margin: 2em 0;
     }
     footer{
-    margin: 10em 0 5em 0em;
+    margin: 10em auto;
     .photos-sponsor{
       flex-flow: column wrap;
-      margin: 2em -1em 2em 3em;
+      // margin: 2em -1em 2em 3em;
       img {
         margin-top: 1em;
         width: 8em ;
         max-height: 8em ;
-        align-self: center;
+        align-self:center;
       }
     }
   }
