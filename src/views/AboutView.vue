@@ -163,9 +163,9 @@ import developers from '../../assets/developers.json';
       }
     }
   }
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 980px) {
       .about-section {
-        padding: 5em 2em 1em 5em;
+        padding: 5em 2em 1em 2em;
         margin: auto;
       }
       .row{
