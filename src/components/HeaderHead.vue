@@ -166,14 +166,6 @@
       // this.showSearchBar = !this.showSearchBar
       // }
     }
-
-    // openSearch() {
-    //  this.mySearchBar.style.display = 'block'
-    // },
-
-    // closeSearch() {
-    //   this.mySearchBar.style.display = 'none'
-    // }
   }
 </script>
 
@@ -185,30 +177,36 @@
     left: 0px;
     top: 0px;
     background: #ecc8b2;
-    /* margin-left: 64px; */
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   .dropdown li,
   .dropdown a {
-    background-color: #efded4;
+    background-color: hsl(22, 46%, 88%);
     width: 100%;
     color: black;
-    margin-bottom: 1px;
+    margin-bottom: 2px;
     border-radius: 5px;
     padding-left: 1px;
     list-style-type: none;
+    text-decoration: none;
+  }
+
+  .dropdown li:hover,
+  .dropdown a:hover {
+    color: white;
   }
 
   .dropdown {
     position: fixed;
     padding: 10px;
-    margin-top: 47px;
+    margin-top: 57px;
     width: fit-content;
     cursor: pointer;
     margin-left: 64px;
     left: 32%;
     height: fit-content;
+    background-color: hsla(0, 0%, 23%, 0.3);
   }
 
   .bi-bi-search-mobile {
@@ -243,26 +241,6 @@
     background: #fff5ef;
     z-index: 20;
   }
-
-  /* .v-enter-active {
-      animation: animate-para 1s;
-    }
-
-    .v-leave-active {
-      animation: animate-para 1s reverse;
-    }
-
-    @keyframes animate-para {
-      0% {
-        opacity: 0;
-        transform: translateX(0px);
-      }
-
-      25% {
-        opacity: 0.25;
-        transform: translateX(30px);
-      }
-    } */
 
   h3 {
     position: absolute;
@@ -408,10 +386,10 @@
 
     .dropdown li,
     .dropdown a {
-      background-color: #efded4;
+      background-color: hsl(22, 46%, 88%);
       width: 100%;
       color: black;
-      margin-bottom: 1px;
+      margin-bottom: 2px;
       border-radius: 5px;
       padding-left: 1px;
       list-style-type: none;
@@ -420,7 +398,7 @@
     .dropdown {
       position: absolute;
       padding: 10px;
-      margin-top: 47px;
+      margin-top: 57px;
       width: fit-content;
       cursor: pointer;
       margin-left: 60px;
