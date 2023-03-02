@@ -20,6 +20,10 @@
 
     <h3 id="topmenu">Menu</h3>
     <div class="menu">
+      <router-link to="/" class="button">
+        <span class="material-symbols-outlined">home</span>
+        <span class="text">Home</span>
+      </router-link>
       <router-link to="/checkout" class="button">
         <span class="material-symbols-outlined">shopping_cart_checkout</span>
         <span class="text">Shopping Cart</span>
@@ -42,15 +46,12 @@
       </router-link>
       <router-link to="/help" class="button">
         <span class="material-symbols-outlined">help</span>
-        <span class="text">Help</span>
+        <span class="text">Help center</span>
       </router-link>
     </div>
-    <div class="menu">
-      <router-link to="/" class="button">
-        <span class="material-symbols-outlined">home</span>
-        <span class="text">Home</span>
-      </router-link>
-    </div>
+    <!-- <div class="menu">
+
+    </div> -->
 
     <!--
       Changed by Jovan
@@ -230,7 +231,7 @@
       }
     }
   }
-  @media (max-width: 980px) {
+  @media (max-width: 979px) {
     aside {
       display: none;
     }

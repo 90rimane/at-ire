@@ -25,6 +25,10 @@
     </button>
   <div class="topnav">
     <div id="menuLinks" ref="menuLinks">
+      <router-link to="/" @click="actMenu()">
+        <span class="material-symbols-outlined">home</span>
+        <span class="link-text">Home</span>
+      </router-link>
       <router-link to="/checkout" @click="actMenu()">
         <span class="material-symbols-outlined">shopping_cart_checkout</span>
         <span class="link-text">Shopping Cart</span>
@@ -47,11 +51,7 @@
       </router-link>
       <router-link to="/help" @click="actMenu()">
         <span class="material-symbols-outlined">help</span>
-        <span class="link-text">Help</span>
-      </router-link>
-      <router-link to="/" @click="actMenu()">
-        <span class="material-symbols-outlined">home</span>
-        <span class="link-text">Home</span>
+        <span class="link-text">Help center</span>
       </router-link>
       <div v-if="$store.state.activeUser == null">
         <router-link to="/login" @click="actMenu()">

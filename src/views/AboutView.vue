@@ -77,16 +77,16 @@ import developers from '../../assets/developers.json';
     padding: 2em;
   }
   .row{
-    margin: auto 5em;
+    margin: auto 0 auto 2em;
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
     list-style: none;
     .column {
       float: left;
-      width: 25%;
-      margin-bottom: 16px;
+      width: 22%;
       padding: 0 8px;
+      margin-bottom: 2em;
       .card {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         margin: 8px;
@@ -150,9 +150,9 @@ import developers from '../../assets/developers.json';
         margin: 0 0 1em 3em;
       }
       .row{
-      margin: auto 1em;
+        margin: auto 0 auto 3em;
       .column {
-        width: 33.3%;
+        width: 31%;
         .card {
           .container {
             #email{
@@ -169,9 +169,9 @@ import developers from '../../assets/developers.json';
         margin: auto;
       }
       .row{
-      margin: auto 0 2em -3.5em;
+        margin: auto;
       .column {
-        width: 33.3%;
+        width: 31%;
         .card {
           .container {
             #email{
@@ -187,7 +187,7 @@ import developers from '../../assets/developers.json';
   @media screen and (max-width: 750px) {
       .row{
       .column {
-        width: 50%;
+        width: 47%;
       }
     }
   }
@@ -201,10 +201,10 @@ import developers from '../../assets/developers.json';
       }
     }
     .row{
+      margin: auto;
       .column {
-        width: 100%;
-        margin-left: 2em;
-        margin-right: -1em;
+        width: 80%;
+        margin: 0;
       }
     }
     .photos-sponsor{
@@ -215,7 +215,7 @@ import developers from '../../assets/developers.json';
       margin: 2em 0;
     }
     footer{
-    margin: 10em 0 5em -5em;
+    margin: 10em 0 5em 0em;
     .photos-sponsor{
       flex-flow: column wrap;
       margin: 2em -1em 2em 3em;
