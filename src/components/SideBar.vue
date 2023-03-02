@@ -8,13 +8,13 @@
     <div class="menu-toggle-wrap">
       <button class="menu-toggle" @click="ToggleMenu">
         <span class="material-symbols-outlined"
-          >keyboard_double_arrow_right</span>
+          >keyboard_double_arrow_right</span
+        >
       </button>
     </div>
     <div class="menu-toggle-wrap-mobile">
       <button class="menu-toggle-mobile" @click="ToggleMenu">
-        <span class="material-symbols-outlined"
-          >menu</span>
+        <span class="material-symbols-outlined">menu</span>
       </button>
     </div>
 
@@ -58,13 +58,17 @@
 
     <div v-if="$store.state.activeUser == null" class="menu bottom-menu">
       <router-link to="/login" class="button">
-        <span class="material-symbols-outlined" style="color:forestgreen;">login</span>
+        <span class="material-symbols-outlined" style="color: forestgreen"
+          >login</span
+        >
         <span class="text">Login</span>
       </router-link>
     </div>
     <div v-else class="menu bottom-menu">
       <a @click="$store.dispatch('logout')" class="button">
-        <span class="material-symbols-outlined" style="color:brown;">logout</span>
+        <span class="material-symbols-outlined" style="color: brown"
+          >logout</span
+        >
         <span class="text">Logout</span>
       </a>
     </div>
@@ -112,16 +116,16 @@
       border: none;
       outline: none;
       background: none;
-  }
-  button a:hover{
-    color: aqua;
-  }
-  .menu-toggle-wrap-mobile {
-    display: none;
-  }
+    }
+    button a:hover {
+      color: aqua;
+    }
+    .menu-toggle-wrap-mobile {
+      display: none;
+    }
     .menu-toggle-wrap {
       display: flex;
-      justify-content:flex-end;
+      justify-content: flex-end;
       margin-bottom: 1rem;
       position: relative;
       top: 0;
@@ -171,7 +175,6 @@
           font-size: 2.5rem;
           color: var(--darker);
           transition: 0.2s ease-in-out;
-
         }
         .text {
           display: none;
@@ -227,5 +230,9 @@
       }
     }
   }
-  @media (max-width: 980px){aside {display: none;}}
+  @media (max-width: 980px) {
+    aside {
+      display: none;
+    }
+  }
 </style>
