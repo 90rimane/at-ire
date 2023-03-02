@@ -59,5 +59,8 @@ export default createRouter({
       component: FilterSearchView,
       path: '/search/:filter'
     }
-  ]
+  ],
+  scrollBehavior() {
+    return { top: 0 }
+  }
 })
