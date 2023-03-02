@@ -1,12 +1,5 @@
 <template>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-    crossorigin="anonymous"
-  />
   <div class="header-mobile">
-
     <form>
       <input
         class="search-bar-mobile"
@@ -29,10 +22,13 @@
     </form>
 
     <div>
-
       <ul v-if="search" class="dropdown">
-        <li v-for="item in searchResult" :key="item.id">
-          <a href="this.item.name"> {{ item.description }} </a>
+        <li
+          v-for="item in searchResult"
+          :key="item.id"
+          @click="selectItem(item)"
+        >
+          <router-link to="/product"> {{ item.description }} </router-link>
         </li>
       </ul>
     </div>
@@ -40,9 +36,9 @@
       <h3>@IRE</h3>
     </router-link>
 
-  <!--#region HamburgerMenu component located here by Ali-->
-  <HamburgerMenu />
-  <!-- #endregion -->
+    <!--#region HamburgerMenu component located here by Ali-->
+    <HamburgerMenu />
+    <!-- #endregion -->
 
     <router-link to="/favorite" class="button">
       <svg
@@ -61,8 +57,6 @@
     <router-link to="/checkout" class="button">
       <span class="material-symbols-outlined">shopping_cart_checkout</span>
     </router-link>
-
-
   </div>
   <div class="header-desktop">
     <router-link to="/" class="button">
@@ -132,14 +126,14 @@
 </template>
 
 <script>
-//#region Hamburger component imporeted by Ali
-import HamburgerMenu from './HamburgerMenu.vue'
+  //#region Hamburger component imporeted by Ali
+  import HamburgerMenu from './HamburgerMenu.vue'
 
   export default {
-    components:{
+    components: {
       HamburgerMenu
     },
-//#endregion
+    //#endregion
     data() {
       return {
         products: null,
@@ -221,7 +215,7 @@ import HamburgerMenu from './HamburgerMenu.vue'
     position: absolute;
     width: 30px;
     height: 30px;
-    left: 41.8%;
+    left: 41%;
     top: 13px;
     cursor: pointer;
     color: #000000;
@@ -244,9 +238,10 @@ import HamburgerMenu from './HamburgerMenu.vue'
   }
 
   .search-bar-mobile:hover {
-    width: 170px;
+    width: 174px;
     cursor: pointer;
     background: #fff5ef;
+    z-index: 20;
   }
 
   /* .v-enter-active {
@@ -273,14 +268,13 @@ import HamburgerMenu from './HamburgerMenu.vue'
     position: absolute;
     width: 62px;
     height: 28px;
-    left: 12.33%;
+    left: 15.33%;
     top: 14px;
     font-family: 'Karla', roboto, sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
     line-height: 28px;
-    background: #ecc8b2;
     color: #000000;
     cursor: pointer;
   }
@@ -360,7 +354,7 @@ import HamburgerMenu from './HamburgerMenu.vue'
       position: absolute;
       width: 62px;
       height: 28px;
-      left: 683px;
+      left: 50%;
       top: 15px;
       font-family: 'Karla';
       font-style: normal;
@@ -384,7 +378,7 @@ import HamburgerMenu from './HamburgerMenu.vue'
       position: absolute;
       width: 30px;
       height: 30px;
-      left: 900px;
+      left: 64%;
       top: 15px;
       cursor: pointer;
       color: #000000;
@@ -394,7 +388,7 @@ import HamburgerMenu from './HamburgerMenu.vue'
       position: absolute;
       width: 59px;
       height: 35px;
-      left: 930px;
+      left: 67%;
       top: 13px;
       background: #ecc8b2;
       border-radius: 13px;
@@ -403,12 +397,12 @@ import HamburgerMenu from './HamburgerMenu.vue'
       font-size: 17px;
       transition: 0.9s;
       outline: none;
+      z-index: 20;
     }
 
     .search-bar-desktop:hover {
       width: 170px;
       cursor: pointer;
-      border: solid 1px;
       background-color: #fff5ef;
     }
 
@@ -430,7 +424,7 @@ import HamburgerMenu from './HamburgerMenu.vue'
       width: fit-content;
       cursor: pointer;
       margin-left: 60px;
-      left: 870px;
+      left: 62%;
       height: fit-content;
     }
 
@@ -438,7 +432,7 @@ import HamburgerMenu from './HamburgerMenu.vue'
       position: absolute;
       width: 30px;
       height: 30px;
-      left: 1108px;
+      left: 80%;
       top: 13px;
       cursor: pointer;
       color: #000000;
@@ -451,7 +445,7 @@ import HamburgerMenu from './HamburgerMenu.vue'
       position: absolute;
       width: 30px;
       height: 30px;
-      left: 1202px;
+      left: 87%;
       top: 13px;
       cursor: pointer;
       color: #000000;
@@ -466,7 +460,7 @@ import HamburgerMenu from './HamburgerMenu.vue'
       width: 30px;
       height: 30px;
       top: 13px;
-      left: 1296px;
+      left: 94%;
       cursor: pointer;
       color: #000000;
     }
@@ -480,6 +474,12 @@ import HamburgerMenu from './HamburgerMenu.vue'
       display: none;
     }
   }
+
+  /* @media (min-width: 980px) {
+    .header-desktop {
+      display: flex;
+    }
+  } */
 
   @media (min-width: 980px) {
     .header-mobile {
