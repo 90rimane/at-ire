@@ -46,7 +46,7 @@
       </router-link>
       <router-link to="/help" class="button">
         <span class="material-symbols-outlined">forum</span>
-        <span class="text">Help center</span>
+        <span class="text">Chatroom</span>
       </router-link>
     </div>
 

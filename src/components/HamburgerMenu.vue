@@ -51,7 +51,7 @@
       </router-link>
       <router-link to="/help">
         <span class="material-symbols-outlined">forum</span>
-        <span class="link-text">Help center</span>
+        <span class="link-text">Chatroom</span>
       </router-link>
       <div v-if="$store.state.activeUser == null">
         <router-link to="/login">
