@@ -50,7 +50,7 @@
         <span class="link-text">About Us</span>
       </router-link>
       <router-link to="/help">
-        <span class="material-symbols-outlined">help</span>
+        <span class="material-symbols-outlined">forum</span>
         <span class="link-text">Help center</span>
       </router-link>
       <div v-if="$store.state.activeUser == null">

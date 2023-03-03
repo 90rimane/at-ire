@@ -45,7 +45,7 @@
         <span class="text">About Us</span>
       </router-link>
       <router-link to="/help" class="button">
-        <span class="material-symbols-outlined">help</span>
+        <span class="material-symbols-outlined">forum</span>
         <span class="text">Help center</span>
       </router-link>
     </div>

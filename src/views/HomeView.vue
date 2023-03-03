@@ -89,5 +89,7 @@
     text-align: center;
     text-shadow: 2px 2px 4px #000000;
     text-decoration: none;
+    border: solid 2px white;
+    padding: 4%;
   }
 </style>
