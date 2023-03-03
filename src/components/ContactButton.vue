@@ -1,6 +1,6 @@
 <template>
   <RouterLink id="contact-icon" class="material-symbols-outlined" to="/contact">
-    contact_support
+    email
   </RouterLink>
 </template>
 
