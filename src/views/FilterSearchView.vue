@@ -264,13 +264,13 @@
       height: 360px !important;
     }
 
-    @media only screen and (min-width: 440px) {
+    @media only screen and (min-width: 438px) {
       .open {
         height: 325px !important;
       }
     }
 
-    @media only screen and (min-width: 742px) {
+    @media only screen and (min-width: 738px) {
       .open {
         height: 290px !important;
       }
