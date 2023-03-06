@@ -36,7 +36,7 @@
       <CartItem
         v-for="product in $store.state.activeUser.cart"
         :key="product.id"
-        :product="product"
+        :cartproduct="product"
       />
     </div>
   </main>
