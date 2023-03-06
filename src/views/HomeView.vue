@@ -92,4 +92,21 @@
     border: solid 2px white;
     padding: 4%;
   }
+
+
+  @media  screen and (min-width:778px) {
+
+    @media screen and (min-width: 978px) {
+  .home-container {
+    flex-wrap: nowrap;
+  }
+
+  .box {
+    width:48%;
+    margin-left:10px;
+  }
+}
+
+
+  }
 </style>

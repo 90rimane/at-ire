@@ -14,10 +14,8 @@
             alt="Image 1"
           />
           <div class="text-overlay">
-            <h2>@ire</h2>
+            <h2>Comfort</h2>
             <p>
-              Modern style is a design aesthetic that is characterized by clean
-              lines, minimalism, and a focus on function
             </p>
           </div>
         </div>
@@ -29,7 +27,7 @@
           />
           <div class="text-overlay">
             <h2>Simplicity</h2>
-            <p>Simplicity is the ultimate sophistication to achieve</p>
+            <p></p>
           </div>
         </div>
 
@@ -41,8 +39,6 @@
           <div class="text-overlay">
             <h2>Dynamic Nature</h2>
             <p>
-              Characterized by its dynamic and versatile nature, constantly
-              evolving to reflect the current taste
             </p>
           </div>
         </div>
@@ -54,7 +50,7 @@
           />
           <div class="text-overlay">
             <h2>Minimalism</h2>
-            <p>Less is more in design philosophy</p>
+            <p></p>
           </div>
         </div>
       </div>
@@ -151,4 +147,12 @@
 .banner button:hover {
     background-color: #0069d9;
 }
+
+@media  screen and (min-width:979px) {
+
+.trend-item{
+  width:35%;
+  }
+}
+
 </style>
