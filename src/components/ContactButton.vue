@@ -54,6 +54,19 @@
       top: 90vh;
       right: 5vw;
     }
+
+    #contact-icon:hover::before {
+      content: 'Go to Contact Page';
+      position: absolute;
+      right: 70px;
+      bottom: 40px;
+      font-size: 16px;
+      background-color: #f39256;
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px black solid;
+      box-shadow: 5px 5px 25px;
+    }
   }
 
   /* media queries for smaller squarer phones  */
