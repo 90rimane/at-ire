@@ -16,6 +16,11 @@
         :key="product.id"
         :product="product"
       />
+      <h3 v-if="$store.state.activeUser.favorites.length < 1">
+        It looks like you have no favorites yet, see our
+        <RouterLink to="/search/All" class="nav-link">sortiment </RouterLink> to
+        find something you like!
+      </h3>
     </div>
     <div v-else>
       <h3>

@@ -5,29 +5,6 @@
         type: Object,
         default: null
       }
-    },
-    created() {
-      // setTimeout(() => {
-      //   console.log(this.$store.state.allProducts)
-      // }, 2000)
-    },
-    methods: {
-      setFavInAcc(currentItem) {
-        const parsed = JSON.parse(sessionStorage.getItem('activeUser'))
-        // findIndex returns -1 if it can't find matching ID
-        const indexOfId = parsed.favorites.findIndex(
-          (item) => item.id == currentItem.id
-        )
-
-        if (indexOfId != -1) {
-          parsed.favorites.splice(indexOfId, 1)
-        } else {
-          parsed.favorites.push(currentItem)
-        }
-
-        sessionStorage.setItem('activeUser', JSON.stringify(parsed))
-        this.$store.dispatch('getLogged')
-      }
     }
   }
 </script>
@@ -48,7 +25,7 @@
 
       <div class="fav-btn-container" v-if="$store.state.activeUser != null">
         <svg
-          @click="setFavInAcc(product)"
+          @click="this.$store.dispatch('setFav', product)"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 96 960 960"
         >
