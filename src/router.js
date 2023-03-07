@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 import AboutView from './views/AboutView.vue'
 import ContactView from './views/ContactView.vue'
+import DeliveryView from './views/DeliveryView.vue'
 import HomeView from './views/HomeView.vue'
 import CheckoutView from './views/CheckoutView.vue'
 import FavoriteView from './views/FavoriteView.vue'
@@ -22,6 +23,10 @@ export default createRouter({
     {
       component: ContactView,
       path: '/contact'
+    },
+    {
+      component: DeliveryView,
+      path: '/delivery'
     },
     {
       component: HomeView,
