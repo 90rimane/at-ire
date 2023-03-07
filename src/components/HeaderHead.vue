@@ -5,7 +5,6 @@
         class="search-bar-mobile"
         type="text"
         v-model="search"
-        @focusout="search = ''"
         placeholder="Search products..."
       />
       <svg
@@ -23,7 +22,7 @@
     </form>
 
     <div>
-      <ul v-if="search" class="dropdown">
+      <ul v-if="search" class="dropdown" @focusout="search = ''">
         <li
           v-for="item in searchResult"
           :key="item.id"
@@ -335,7 +334,7 @@
   @media (min-width: 980px) {
     .header-desktop {
       box-sizing: border-box;
-      position: relative;
+      position: absolute;
       width: 100%;
       height: 56px;
       left: 0px;
