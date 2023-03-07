@@ -55,7 +55,7 @@
         />
       </svg>
     </router-link>
-    <router-link to="/checkout" class="button">
+    <router-link to="/cart" class="button">
       <span class="material-symbols-outlined">shopping_cart_checkout</span>
     </router-link>
   </div>
@@ -122,7 +122,7 @@
         />
       </svg>
     </router-link>
-    <router-link to="/checkout" class="button">
+    <router-link to="/cart" class="button">
       <span class="material-symbols-outlined">shopping_cart_checkout</span>
     </router-link>
   </div>

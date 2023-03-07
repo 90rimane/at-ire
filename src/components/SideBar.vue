@@ -24,7 +24,7 @@
         <span class="material-symbols-outlined">home</span>
         <span class="text">Home</span>
       </router-link>
-      <router-link to="/checkout" class="button">
+      <router-link to="/cart" class="button">
         <span class="material-symbols-outlined">shopping_cart_checkout</span>
         <span class="text">Shopping Cart</span>
       </router-link>
