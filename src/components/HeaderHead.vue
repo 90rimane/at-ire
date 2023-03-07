@@ -67,7 +67,6 @@
       type="text"
       v-model="search"
       placeholder="Search products..."
-      @focusout="search = ''"
     />
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +82,7 @@
     </svg>
     <div>
       <!-- if class .search-bar-mobile/input is :focus then dropdown should show -->
-      <ul v-if="search" class="dropdown">
+      <ul v-if="search" class="dropdown" @focusout="search = ''">
         <li
           v-for="item in searchResult"
           :key="item.id"
