@@ -287,7 +287,7 @@
       "img": {
         "Black": "/public/bilder/id13black.png",
         "Athletic-Heather": "/public/bilder/id13athleticheather.png",
-        "Dark-Grey-Heather": "/public/bilder/id13darkreyheather.png"
+        "Dark-Grey-Heather": "/public/bilder/id13darkgreyheather.png"
       },
       "material": {
         "cotton": "15%",
@@ -310,7 +310,7 @@
       "img": {
         "Black": "/public/bilder/id14black.png",
         "Asphalt": "/public/bilder/id14asphalt.png",
-        "Gold": "/public/bilder/id1gold.png"
+        "Gold": "/public/bilder/id14gold.png"
       },
       "material": {
         "cotton": "15%",

@@ -1,8 +1,10 @@
 <script>
   import productItem from '../components/ProductItem.vue'
+  import CartItem from '../components/CartItem.vue'
   export default {
     components: {
-      productItem
+      productItem,
+      CartItem
     }
   }
 </script>
@@ -28,6 +30,14 @@
         <RouterLink to="/login" class="nav-link">login in</RouterLink> to view
         your favorites.
       </h3>
+    </div>
+    <div v-if="$store.state.activeUser != null">
+      <h2>Cart items test</h2>
+      <CartItem
+        v-for="product in $store.state.activeUser.cart"
+        :key="product.id"
+        :cartproduct="product"
+      />
     </div>
   </main>
 </template>

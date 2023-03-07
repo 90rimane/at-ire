@@ -2,10 +2,7 @@ import { createStore } from 'vuex'
 
 const mutations = {
     SET_PRODUCTS(state, products) {
-      state.allProducts = products.map((item) => ({
-        ...item,
-        quantity: 1
-      }))
+      state.allProducts = products
     },
     SET_ACTIVEUSER(state) {
       state.activeUser =
@@ -61,22 +58,6 @@ const mutations = {
     },
     setOneProduct({ commit }, item) {
       commit('SET_ONEPRODUCT', item)
-    },
-    setFav({ dispatch }, currentItem) {
-      const parsed = JSON.parse(sessionStorage.getItem('activeUser'))
-      // findIndex returns -1 if it can't find matching ID
-      const indexOfId = parsed.favorites.findIndex(
-        (item) => item.id == currentItem.id
-      )
-
-      if (indexOfId != -1) {
-        parsed.favorites.splice(indexOfId, 1)
-      } else {
-        parsed.favorites.push(currentItem)
-      }
-
-      sessionStorage.setItem('activeUser', JSON.stringify(parsed))
-      dispatch('getLogged')
     }
   }
 

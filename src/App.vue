@@ -53,11 +53,12 @@
   <SideBar />
   <div class="components">
     <RouterView />
+    <HeaderHead />
     <ContactButton />
     <FooterComponent v-if="isMobile" />
     <FooterDesktop v-else />
   </div>
-  <HeaderHead />
+
 </template>
 
 <style lang="scss">

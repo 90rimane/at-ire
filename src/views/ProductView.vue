@@ -2,7 +2,7 @@
   <article id="article" v-if="oneProduct">
     <header>
       <!-- spans to be made to breadcrumb-navigation  -->
-      <span>{{ this.oneProduct.category }} --> </span>
+      <span>{{ this.oneProduct.category }} </span>
       <span>{{ this.oneProduct.subcategory }}</span>
       <h1>{{ this.oneProduct.description }}</h1>
       <img
@@ -48,17 +48,22 @@
     </section>
     <section id="price-cart">
       <h2 id="price">Price: {{ this.oneProduct.price }}:-</h2>
-      <button id="cart-button" @click="onAddToCart" :disabled="!bothSelected">
-        Add to cart
-        <span id="cart-icon" class="material-symbols-outlined"
-          >shopping_cart_checkout</span
-        >
-      </button>
+      <!-- Routerlink added by Andrea -->
+      <router-link to="/cart">
+        <button id="cart-button" @click="onAddToCart" :disabled="!bothSelected">
+          Add to cart
+          <span id="cart-icon" class="material-symbols-outlined"
+            >shopping_cart_checkout</span
+          >
+        </button></router-link
+      >
     </section>
   </article>
 </template>
 
 <script>
+  import { v4 as uuidv4 } from 'uuid'
+
   export default {
     computed: {
       oneProduct() {
@@ -80,13 +85,18 @@
     methods: {
       onAddToCart() {
         // to make an object with the specified color and size -->
+        // Changed by Jovan: Instead of spreading out the whole array I've resorted
+        // to only adding the parts needed for the cart to display, additionlly
+        // added a unique product id with uuid
         this.cartProduct = {
-          ...this.oneProduct,
+          id: uuidv4(),
+          name: this.oneProduct.name,
+          description: this.oneProduct.description,
+          price: this.oneProduct.price,
           colors: this.selectedColor,
           img: this.selectedColorImg,
           sizes: this.selectedSize
         }
-        console.log('cartProduct', this.cartProduct)
 
         this.activeUser = JSON.parse(sessionStorage.getItem('activeUser'))
         this.activeUser.cart.push(this.cartProduct)
@@ -160,6 +170,7 @@
     border-radius: 1rem;
     background-color: #fff9f5;
     box-shadow: 2px 3px 10px #b9ada6;
+    // text-decoration: none;
   }
 
   #cart-button:hover,

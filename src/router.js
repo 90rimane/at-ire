@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 import AboutView from './views/AboutView.vue'
 import ContactView from './views/ContactView.vue'
+import DeliveryView from './views/DeliveryView.vue'
 import HomeView from './views/HomeView.vue'
 import CheckoutView from './views/CheckoutView.vue'
 import FavoriteView from './views/FavoriteView.vue'
@@ -11,6 +12,7 @@ import LoginView from './views/LoginPage.vue'
 import SignupView from './views/SignupPage.vue'
 import ProductView from './views/ProductView.vue'
 import FilterSearchView from './views/FilterSearchView.vue'
+import CartView from './views/CartView.vue'
 
 export default createRouter({
   history: createWebHashHistory(),
@@ -22,6 +24,10 @@ export default createRouter({
     {
       component: ContactView,
       path: '/contact'
+    },
+    {
+      component: DeliveryView,
+      path: '/delivery'
     },
     {
       component: HomeView,
@@ -58,6 +64,10 @@ export default createRouter({
     {
       component: FilterSearchView,
       path: '/search/:filter'
+    },
+    {
+      component: CartView,
+      path: '/cart'
     }
   ],
   scrollBehavior() {
