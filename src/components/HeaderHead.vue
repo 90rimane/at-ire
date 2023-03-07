@@ -5,6 +5,7 @@
         class="search-bar-mobile"
         type="text"
         v-model="search"
+        @focusout="search = ''"
         placeholder="Search products..."
       />
       <svg
@@ -67,6 +68,7 @@
       type="text"
       v-model="search"
       placeholder="Search products..."
+      @focusout="search = ''"
     />
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -81,6 +83,7 @@
       />
     </svg>
     <div>
+      <!-- if class .search-bar-mobile/input is :focus then dropdown should show -->
       <ul v-if="search" class="dropdown">
         <li
           v-for="item in searchResult"
@@ -255,13 +258,6 @@
     display: inline-block;
   }
 
-  /* .search-bar-mobile:hover {
-    width: 174px;
-    cursor: pointer;
-    background: #fff5ef;
-    z-index: 20;
-  } */
-
   h3 {
     position: absolute;
     width: 62px;
@@ -339,7 +335,7 @@
   @media (min-width: 980px) {
     .header-desktop {
       box-sizing: border-box;
-      position: absolute;
+      position: relative;
       width: 100%;
       height: 56px;
       left: 0px;
@@ -384,7 +380,7 @@
 
     .search-bar-desktop {
       position: absolute;
-      width: 59px;
+      width: 1px;
       height: 35px;
       left: 67%;
       top: 13px;
@@ -402,6 +398,18 @@
       width: 170px;
       cursor: pointer;
       background-color: #fff5ef;
+    }
+
+    .header-desktop:hover .search-bar-desktop {
+      width: 174px;
+      cursor: pointer;
+      background: #fff5ef;
+      z-index: 20;
+    }
+
+    .search-bar-desktop:focus {
+      background: #fff5ef;
+      width: 174px;
     }
 
     .dropdown li,
