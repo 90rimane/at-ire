@@ -48,12 +48,15 @@
     </section>
     <section id="price-cart">
       <h2 id="price">Price: {{ this.oneProduct.price }}:-</h2>
-      <button id="cart-button" @click="onAddToCart" :disabled="!bothSelected">
-        Add to cart
-        <span id="cart-icon" class="material-symbols-outlined"
-          >shopping_cart_checkout</span
-        >
-      </button>
+      <!-- Routerlink added by Andrea -->
+      <router-link to="/checkout">
+        <button id="cart-button" @click="onAddToCart" :disabled="!bothSelected">
+          Add to cart
+          <span id="cart-icon" class="material-symbols-outlined"
+            >shopping_cart_checkout</span
+          >
+        </button></router-link
+      >
     </section>
   </article>
 </template>
@@ -160,6 +163,7 @@
     border-radius: 1rem;
     background-color: #fff9f5;
     box-shadow: 2px 3px 10px #b9ada6;
+    // text-decoration: none;
   }
 
   #cart-button:hover,
