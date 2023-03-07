@@ -12,6 +12,7 @@ import LoginView from './views/LoginPage.vue'
 import SignupView from './views/SignupPage.vue'
 import ProductView from './views/ProductView.vue'
 import FilterSearchView from './views/FilterSearchView.vue'
+import CartView from './views/CartView.vue'
 
 export default createRouter({
   history: createWebHashHistory(),
@@ -63,6 +64,10 @@ export default createRouter({
     {
       component: FilterSearchView,
       path: '/search/:filter'
+    },
+    {
+      component: CartView,
+      path: '/cart'
     }
   ],
   scrollBehavior() {

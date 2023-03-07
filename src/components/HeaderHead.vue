@@ -22,7 +22,7 @@
     </form>
 
     <div>
-      <ul v-if="search" class="dropdown">
+      <ul v-if="search" class="dropdown" @focusout="search = ''">
         <li
           v-for="item in searchResult"
           :key="item.id"
@@ -54,7 +54,7 @@
         />
       </svg>
     </router-link>
-    <router-link to="/checkout" class="button">
+    <router-link to="/cart" class="button">
       <span class="material-symbols-outlined">shopping_cart_checkout</span>
     </router-link>
   </div>
@@ -81,7 +81,8 @@
       />
     </svg>
     <div>
-      <ul v-if="search" class="dropdown">
+      <!-- if class .search-bar-mobile/input is :focus then dropdown should show -->
+      <ul v-if="search" class="dropdown" @focusout="search = ''">
         <li
           v-for="item in searchResult"
           :key="item.id"
@@ -119,7 +120,7 @@
         />
       </svg>
     </router-link>
-    <router-link to="/checkout" class="button">
+    <router-link to="/cart" class="button">
       <span class="material-symbols-outlined">shopping_cart_checkout</span>
     </router-link>
   </div>
@@ -209,11 +210,31 @@
     background-color: hsla(0, 0%, 23%, 0.3);
   }
 
+  /* add by Anna --> */
+
+  form {
+    position: relative;
+  }
+
+  form:hover .search-bar-mobile {
+    width: 174px;
+    cursor: pointer;
+    background: #fff5ef;
+    z-index: 20;
+  }
+
+  .search-bar-mobile:focus {
+    background: #fff5ef;
+    width: 174px;
+  }
+
+  /* <-- add by Anna + some changes related to this around here*/
+
   .bi-bi-search-mobile {
     position: absolute;
     width: 30px;
     height: 30px;
-    left: 41%;
+    left: 44%;
     top: 13px;
     cursor: pointer;
     color: #000000;
@@ -221,25 +242,18 @@
 
   .search-bar-mobile {
     position: fixed;
-    width: 59px;
+    width: 1px;
     height: 40px;
     left: 49%;
     top: 8px;
     background: #ecc8b2;
     border-radius: 13px;
     border: 1px;
-    padding-left: 8px;
+    padding-left: 0.8em;
     font-size: 17px;
     transition: 0.9s;
     outline: none;
     display: inline-block;
-  }
-
-  .search-bar-mobile:hover {
-    width: 174px;
-    cursor: pointer;
-    background: #fff5ef;
-    z-index: 20;
   }
 
   h3 {
@@ -364,7 +378,7 @@
 
     .search-bar-desktop {
       position: absolute;
-      width: 59px;
+      width: 1px;
       height: 35px;
       left: 67%;
       top: 13px;
@@ -382,6 +396,18 @@
       width: 170px;
       cursor: pointer;
       background-color: #fff5ef;
+    }
+
+    .header-desktop:hover .search-bar-desktop {
+      width: 174px;
+      cursor: pointer;
+      background: #fff5ef;
+      z-index: 20;
+    }
+
+    .search-bar-desktop:focus {
+      background: #fff5ef;
+      width: 174px;
     }
 
     .dropdown li,
