@@ -1,0 +1,83 @@
+{
+  "siterivew":[
+    {
+      "id":"01",
+      "title": "Excellent service from @ire",
+      "description": "@ire made buying stress free and easy experience.First time buying and I would buy again",
+      "rate": 5,
+      "datetime": "2023-03-02 10:15:30"
+    },
+    {
+      "id":"02",
+      "title": "Thank you",
+      "description":"Thank you, perfect watch and excellent customer service! This was my first purchase and my knew go to provider!",
+      "rate": 4,
+      "datetime": "2023-03-02 11:10:00"
+    },
+    {
+      "id":"03",
+      "title": "Really fast guys!",
+      "description":"100% recommended to shop and buy clothes online! They care about their customers.",
+      "rate": 5,
+      "datetime": "2023-03-03 14:01:20"
+    },
+    {
+      "id":"04",
+      "title": "Great experience!",
+      "description":"The company was quick to fill my order and ship in a timely manner. Product quality appears to be in good shape.",
+      "rate": 5,
+      "datetime": "2023-03-04 9:12:19"
+    },
+    {
+      "id":"05",
+      "title": "Ordering was easy",
+      "description":"Ordering was easy and delivery was prompt. I’m so glad this business exists for those of us who don’t want to buy full regalia packages when we just want a robe or a hat.",
+      "rate": 4,
+      "datetime": "2023-03-04 21:15:45"
+    },
+    {
+      "id":"06",
+      "title": "Great customer service",
+      "description":"I have used other companies and had terrible experiences. We used graduation outlet and received our order very quickly. Everything is beautiful and we couldn’t be happier.",
+      "rate": 5,
+      "datetime": "2023-03-05 12:55:34"
+    },
+    {
+      "id":"07",
+      "title": "I could not attend my graduation being…",
+      "description":"I could not attend my graduation being that my purchase was delivered to the wrong address. Never took the cap and gown out the box . I need to return it very soon .",
+      "rate": 1,
+      "datetime": "2023-03-06 15:32:12"
+    },
+    {
+      "id":"08",
+      "title": "Fast shipping and great customer…",
+      "description":"Fast shipping and great customer service.",
+      "rate": 4,
+      "datetime": "2023-03-07 12:00:29"
+    },
+    {
+      "id":"09",
+      "title": "I'm running out of words to describe…",
+      "description":"I've just bought the new blue and cream Hoodie, floral dress pink gingham shirt, camel jumper and pink rose top. Love them",
+      "rate": 5,
+      "datetime": "2023-03-08 19:03:00"
+    },
+    {
+      "id":"10",
+      "title": "Great value for money",
+      "description":"My wife had to exchange sizes this time, process was really smooth & easy to use. Loves the new purchases, great value for money.",
+      "rate": 4,
+      "datetime": "2023-03-08 22:14:54"
+    }
+  ],
+  "productrivew":[
+    {
+      "id":"001",
+      "title":"",
+      "description":"",
+      "rate": 5,
+      "satetime": ""
+    }
+  ]
+}
