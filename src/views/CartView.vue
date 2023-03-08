@@ -18,8 +18,8 @@
       >
       <span class="total">Total: {{ total }}Kr</span>
       <div class="button-container">
-        <button>Continue shopping</button>
-        <button>To checkout</button>
+        <router-link to="/"><button>Continue shopping</button></router-link>
+        <router-link to="/checkout"> <button>To checkout</button></router-link>
       </div>
     </div>
   </main>
@@ -96,7 +96,7 @@
   }
   @media only screen and (min-width: 980px) {
     main {
-      margin-left: 68px;
+      margin-left: 28px;
       padding-left: 32px;
       padding-right: 32px;
 

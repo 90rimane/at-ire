@@ -35,10 +35,16 @@
     <router-link to="/" class="button">
       <h3>@IRE</h3>
     </router-link>
+    <router-link to="/cart" id="cart-icon-mobile" class="button">
+      <!-- <span class="material-symbols-outlined">shopping_cart_checkout</span> -->
+      <CartIcon class="button-cart" />
+    </router-link>
 
-    <!--#region HamburgerMenu component located here by Ali-->
-    <HamburgerMenu />
-    <!-- #endregion -->
+    <div id="hamburgermenu">
+      <!--#region HamburgerMenu component located here by Ali-->
+      <HamburgerMenu />
+      <!-- #endregion -->
+    </div>
 
     <router-link to="/favorite" class="button">
       <svg
@@ -54,44 +60,42 @@
         />
       </svg>
     </router-link>
-    <router-link to="/cart" class="button">
-      <span class="material-symbols-outlined">shopping_cart_checkout</span>
-    </router-link>
   </div>
   <div class="header-desktop">
     <router-link to="/" class="button">
       <h2>@IRE</h2>
     </router-link>
-    <input
-      class="search-bar-desktop"
-      type="text"
-      v-model="search"
-      placeholder="Search products..."
-    />
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
-      fill="currentColor"
-      class="bi-bi-search-desktop"
-      viewBox="0 0 16 16"
-    >
-      <path
-        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+    <form>
+      <input
+        class="search-bar-desktop"
+        type="text"
+        v-model="search"
+        placeholder="Search products..."
       />
-    </svg>
-    <div>
-      <!-- if class .search-bar-mobile/input is :focus then dropdown should show -->
-      <ul v-if="search" class="dropdown" @focusout="search = ''">
-        <li
-          v-for="item in searchResult"
-          :key="item.id"
-          @click="selectItem(item)"
-        >
-          <router-link to="/product"> {{ item.description }} </router-link>
-        </li>
-      </ul>
-    </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi-bi-search-desktop"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+        />
+      </svg>
+      <div>
+        <ul v-if="search" class="dropdown" @focusout="search = ''">
+          <li
+            v-for="item in searchResult"
+            :key="item.id"
+            @click="selectItem(item)"
+          >
+            <router-link to="/product"> {{ item.description }} </router-link>
+          </li>
+        </ul>
+      </div>
+    </form>
     <router-link to="/mypage" class="button">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -120,19 +124,22 @@
         />
       </svg>
     </router-link>
-    <router-link to="/cart" class="button">
+    <!-- <router-link to="/cart" class="button">
       <span class="material-symbols-outlined">shopping_cart_checkout</span>
-    </router-link>
+    </router-link> -->
+    <router-link to="/cart" class="button-cart"> <CartIcon /> </router-link>
   </div>
 </template>
 
 <script>
   //#region Hamburger component imporeted by Ali
   import HamburgerMenu from './HamburgerMenu.vue'
+  import CartIcon from './CartIcon.vue'
 
   export default {
     components: {
-      HamburgerMenu
+      HamburgerMenu,
+      CartIcon
     },
     //#endregion
     data() {
@@ -170,7 +177,7 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   .header-mobile {
     position: fixed;
     width: 100%;
@@ -226,6 +233,17 @@
   .search-bar-mobile:focus {
     background: #fff5ef;
     width: 174px;
+  }
+
+  .button-cart {
+    position: absolute;
+    left: 86%;
+    top: 10px;
+  }
+
+  #hamburgermenu {
+    position: fixed;
+    top: 0px;
   }
 
   /* <-- add by Anna + some changes related to this around here*/
@@ -292,14 +310,14 @@
   }
 
   /* LÄGG IN EN 'NAV-LINK' I APP.VUE .bi-bi-list :hover:focus:active {
-    background-color: antiquewhite;
-  } */
+      background-color: antiquewhite;
+    } */
 
   .bi-bi-heart-mobile {
     position: absolute;
     width: 30px;
     height: 30px;
-    left: 81.11%;
+    left: 72%;
     right: 13.33%;
     top: 14px;
     bottom: 95.75%;
@@ -312,23 +330,31 @@
   }
 
   .material-symbols-outlined {
+    /* position: fixed; */
     position: absolute;
     width: 30px;
     height: 30px;
-    left: 90.11%;
+    left: 78%;
+    /* top: -43px; */
     top: 14px;
+    /* bottom: 95.75%; */
     color: #000000;
     cursor: pointer;
+  }
+
+  #cart-icon-mobile {
+    top: 0;
+    right: 0;
   }
 
   .material-symbols-outlined:hover {
     color: #fff5ef;
   }
   /* @media (max-width: 980px) {
-    .header-mobile {
-      display: flex;
-    }
-  } */
+      .header-mobile {
+        display: flex;
+      }
+    } */
 
   @media (min-width: 980px) {
     .header-desktop {
@@ -362,9 +388,9 @@
     }
 
     /* LÄGG IN EN "NAV-LINK" I APP.VUE
-    .bi-bi-list :hover:focus:active {
-      background-color: antiquewhite;
-    } */
+      .bi-bi-list :hover:focus:active {
+        background-color: antiquewhite;
+      } */
 
     .bi-bi-search-desktop {
       position: absolute;
@@ -392,18 +418,15 @@
       z-index: 20;
     }
 
-    .search-bar-desktop:hover {
-      width: 170px;
-      cursor: pointer;
-      background-color: #fff5ef;
-    }
-
-    .header-desktop:hover .search-bar-desktop {
+    /* added by Anna --> */
+    form:hover .search-bar-desktop {
       width: 174px;
       cursor: pointer;
       background: #fff5ef;
       z-index: 20;
     }
+
+    /* <-- added by Anna */
 
     .search-bar-desktop:focus {
       background: #fff5ef;
@@ -480,14 +503,69 @@
   }
 
   /* @media (min-width: 980px) {
-    .header-desktop {
-      display: flex;
+      .header-desktop {
+        display: flex;
+      }
+    } */
+
+  /* added by Anna --> */
+
+  @media (min-width: 480px) {
+    .material-symbols-outlined,
+    .button-cart {
+      position: absolute;
+      left: 88%;
+      top: 10px;
     }
-  } */
+
+    .bi-bi-heart-mobile {
+      position: absolute;
+      left: 75%;
+      right: 13.33%;
+    }
+  }
+
+  @media (min-width: 670px) {
+    .material-symbols-outlined,
+    .button-cart {
+      position: absolute;
+      left: 91%;
+    }
+
+    .bi-bi-heart-mobile {
+      position: absolute;
+      left: 81%;
+      right: 13.33%;
+    }
+  }
+
+  @media (min-width: 790px) {
+    .material-symbols-outlined,
+    .button-cart {
+      position: absolute;
+      left: 92%;
+    }
+
+    .bi-bi-heart-mobile {
+      position: absolute;
+      left: 83%;
+      right: 13.33%;
+    }
+  }
+
+  /* <-- added by Anna */
 
   @media (min-width: 980px) {
     .header-mobile {
       display: none;
     }
+
+    /* added by Anna --> */
+    .material-symbols-outlined,
+    .button-cart {
+      position: absolute;
+      left: 93.5%;
+    }
+    /* <-- added by Anna */
   }
 </style>
