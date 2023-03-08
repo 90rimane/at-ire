@@ -58,8 +58,12 @@
       >
         Add to cart
         <span id="cart-icon" class="material-symbols-outlined">
-          shopping_cart_checkout</span
-        >
+          shopping_cart_checkout
+        </span>
+
+        <div v-if="notification" class="notification">
+          <span>Product added to cart.</span>
+        </div>
       </button>
       <div v-else class="not-logged">
         <button class="not-logged-btn">
@@ -69,10 +73,6 @@
       </div>
     </section>
   </article>
-
-  <div v-if="notification" class="notification">
-    <span>Product added to cart.</span>
-  </div>
 </template>
 
 <script>
@@ -196,6 +196,7 @@
     box-shadow: 2px 3px 10px #b9ada6;
     // text-decoration: none;
     border: none;
+    position: relative;
   }
 
   #cart-button:hover,
@@ -266,14 +267,14 @@
   .notification {
     /*Added by Jovan */
     height: 60px;
-    width: 90%;
+    width: 230px;
     background-color: #fff9f5;
-    position: fixed;
+    position: absolute;
     z-index: 9999;
     top: 0;
-    left: 50%;
+    left: 0;
     transform: translate(-50%, 0);
-    margin-top: 50px;
+    margin-top: -80px;
     display: flex;
     align-items: center;
     justify-content: center;
