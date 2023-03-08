@@ -48,15 +48,12 @@
     </section>
     <section id="price-cart">
       <h2 id="price">Price: {{ this.oneProduct.price }}:-</h2>
-      <!-- Routerlink added by Andrea -->
-      <router-link to="/checkout">
-        <button id="cart-button" @click="onAddToCart" :disabled="!bothSelected">
-          Add to cart
-          <span id="cart-icon" class="material-symbols-outlined"
-            >shopping_cart_checkout</span
-          >
-        </button></router-link
-      >
+      <button id="cart-button" @click="onAddToCart" :disabled="!bothSelected">
+        Add to cart
+        <span id="cart-icon" class="material-symbols-outlined">
+          shopping_cart_checkout</span
+        >
+      </button>
     </section>
   </article>
 </template>
@@ -95,6 +92,10 @@
         this.activeUser.cart.push(this.cartProduct)
         sessionStorage.setItem('activeUser', JSON.stringify(this.activeUser))
         this.$store.dispatch('getLogged')
+        // console.log(
+        //   'this.$store.state.activeUser.cart.length',
+        //   this.$store.state.activeUser.cart.length
+        // )
       }
     }
   }

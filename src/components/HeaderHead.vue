@@ -55,43 +55,44 @@
       </svg>
     </router-link>
     <router-link to="/cart" class="button">
-      <span class="material-symbols-outlined">shopping_cart_checkout</span>
+      <CartIcon class="button-cart" />
     </router-link>
   </div>
   <div class="header-desktop">
     <router-link to="/" class="button">
       <h2>@IRE</h2>
     </router-link>
-    <input
-      class="search-bar-desktop"
-      type="text"
-      v-model="search"
-      placeholder="Search products..."
-    />
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
-      fill="currentColor"
-      class="bi-bi-search-desktop"
-      viewBox="0 0 16 16"
-    >
-      <path
-        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+    <form>
+      <input
+        class="search-bar-desktop"
+        type="text"
+        v-model="search"
+        placeholder="Search products..."
       />
-    </svg>
-    <div>
-      <!-- if class .search-bar-mobile/input is :focus then dropdown should show -->
-      <ul v-if="search" class="dropdown" @focusout="search = ''">
-        <li
-          v-for="item in searchResult"
-          :key="item.id"
-          @click="selectItem(item)"
-        >
-          <router-link to="/product"> {{ item.description }} </router-link>
-        </li>
-      </ul>
-    </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi-bi-search-desktop"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+        />
+      </svg>
+      <div>
+        <ul v-if="search" class="dropdown" @focusout="search = ''">
+          <li
+            v-for="item in searchResult"
+            :key="item.id"
+            @click="selectItem(item)"
+          >
+            <router-link to="/product"> {{ item.description }} </router-link>
+          </li>
+        </ul>
+      </div>
+    </form>
     <router-link to="/mypage" class="button">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -120,19 +121,22 @@
         />
       </svg>
     </router-link>
-    <router-link to="/cart" class="button">
+    <!-- <router-link to="/cart" class="button">
       <span class="material-symbols-outlined">shopping_cart_checkout</span>
-    </router-link>
+    </router-link> -->
+    <router-link to="/cart" class="button-cart"> <CartIcon /> </router-link>
   </div>
 </template>
 
 <script>
   //#region Hamburger component imporeted by Ali
   import HamburgerMenu from './HamburgerMenu.vue'
+  import CartIcon from './CartIcon.vue'
 
   export default {
     components: {
-      HamburgerMenu
+      HamburgerMenu,
+      CartIcon
     },
     //#endregion
     data() {
@@ -228,6 +232,13 @@
     width: 174px;
   }
 
+  .button-cart {
+    width: 100px;
+    margin-left: 20px;
+    margin-top: -3px;
+    padding-left: 10px;
+  }
+
   /* <-- add by Anna + some changes related to this around here*/
 
   .bi-bi-search-mobile {
@@ -311,7 +322,8 @@
     color: #fff5ef;
   }
 
-  .material-symbols-outlined {
+  .material-symbols-outlined,
+  .button-cart {
     position: absolute;
     width: 30px;
     height: 30px;
@@ -392,13 +404,20 @@
       z-index: 20;
     }
 
-    .search-bar-desktop:hover {
+    /* .search-bar-desktop:hover {
       width: 170px;
       cursor: pointer;
       background-color: #fff5ef;
-    }
-
+    } */
+    /*
     .header-desktop:hover .search-bar-desktop {
+      width: 174px;
+      cursor: pointer;
+      background: #fff5ef;
+      z-index: 20;
+    } */
+
+    form:hover .search-bar-desktop {
       width: 174px;
       cursor: pointer;
       background: #fff5ef;
