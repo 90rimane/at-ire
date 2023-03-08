@@ -1,19 +1,26 @@
 <template>
-  <main class="home-pages">
-    <router-link to="/product">To Product</router-link>
-    <h1>Shopping Cart</h1>
-    <p>Checkout here</p>
-    <div v-if="$store.state.activeUser != null" class="checkout-display">
+  <main>
+    <h2 class="page-lable">Shopping Cart</h2>
+    <div v-if="$store.state.activeUser != null" class="cart-display">
       <cartItem
         v-for="product in $store.state.activeUser.cart"
         :key="product.id"
         :cartproduct="product"
       />
       <h3 v-if="$store.state.activeUser.cart.length < 1">
-        It looks like you're cart is empty! Check out our
-        <RouterLink to="/search/All" class="nav-link">sortiment </RouterLink> to
-        find something you like!
+        Your cart is empty.
       </h3>
+    </div>
+
+    <div class="checkout-info">
+      <span class="item-count"
+        >item(s): {{ $store.state.activeUser.cart.length }}</span
+      >
+      <span class="total">Total: {{ total }}Kr</span>
+      <div class="button-container">
+        <button>Continue shopping</button>
+        <button>To checkout</button>
+      </div>
     </div>
   </main>
 </template>
@@ -23,24 +30,91 @@
   export default {
     components: {
       cartItem
+    },
+    computed: {
+      total() {
+        // Setting state activeuser cart to a variable for readability
+        const cartItems = this.$store.state.activeUser.cart
+
+        // return accumulated total with reduce function
+        return cartItems.reduce((sum, item) => {
+          return sum + Number(item.price)
+        }, 0)
+      }
     }
   }
 </script>
 
 <style scoped lang="scss">
+  main {
+    margin-top: 56px;
+    padding: 16px 8px;
+    min-height: 100vh;
+
+    .page-lable {
+      margin-bottom: 8px;
+    }
+
+    .cart-display {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-height: calc(100vh - 235px);
+      max-height: calc(100vh - 235px);
+      overflow-y: scroll;
+      padding-top: 8px;
+    }
+
+    .checkout-info {
+      border-top: 2px rgb(139, 139, 139) solid;
+      margin-top: 8px;
+      padding: 8px;
+
+      span {
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      .total {
+        float: right;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 8px;
+
+        button {
+          padding: 6px 12px;
+          background-color: #ecc8b2;
+          border-radius: 20px;
+          border: none;
+          font-size: 16px;
+        }
+      }
+    }
+  }
   @media only screen and (min-width: 980px) {
     main {
       margin-left: 68px;
-      padding-top: 80px;
-      min-height: 100vh;
-    }
+      padding-left: 32px;
+      padding-right: 32px;
 
-    h1 {
-      margin-left: 40px;
-    }
+      .cart-display {
+        max-width: 1400px;
+        margin: auto;
+        padding-left: 32px;
+        padding-right: 32px;
+      }
 
-    p {
-      margin-left: 40px;
+      .button-container {
+        justify-content: flex-end !important;
+        gap: 16px;
+
+        button {
+          font-size: 18px !important;
+        }
+      }
     }
   }
 </style>
