@@ -41,7 +41,7 @@ export default {
         this.showRespons = true
         setTimeout(() => {
           this.showRespons = false
-        }, 5000);
+        }, 4000);
       },
       ratedStars(index){
       console.log("Thanls you!")
