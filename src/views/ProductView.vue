@@ -5,9 +5,11 @@
       <span>{{ this.oneProduct.category }} </span>
       <span>{{ this.oneProduct.subcategory }}</span>
       <h1>{{ this.oneProduct.description }}</h1>
+
+      <!-- Added by Jovan: using OR operator to default between values -->
       <img
         id="product-img"
-        :src="oneProduct.img.Black"
+        :src="this.selectedColorImg || oneProduct.img.Black"
         :alt="this.oneProduct.description"
       />
     </header>
@@ -48,12 +50,23 @@
     </section>
     <section id="price-cart">
       <h2 id="price">Price: {{ this.oneProduct.price }}:-</h2>
-      <button id="cart-button" @click="onAddToCart" :disabled="!bothSelected">
+      <button
+        v-if="this.$store.state.activeUser"
+        id="cart-button"
+        @click="onAddToCart"
+        :disabled="!bothSelected"
+      >
         Add to cart
         <span id="cart-icon" class="material-symbols-outlined">
           shopping_cart_checkout</span
         >
       </button>
+      <div v-else class="not-logged">
+        <button class="not-logged-btn">
+          Login to <br />
+          add to cart
+        </button>
+      </div>
     </section>
   </article>
 
@@ -182,6 +195,7 @@
     background-color: #fff9f5;
     box-shadow: 2px 3px 10px #b9ada6;
     // text-decoration: none;
+    border: none;
   }
 
   #cart-button:hover,
@@ -227,12 +241,12 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    border: none;
   }
 
   #price-cart {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding-top: 40px;
     padding-bottom: 75px;
   }
@@ -256,10 +270,10 @@
     background-color: #fff9f5;
     position: fixed;
     z-index: 9999;
-    bottom: 0;
+    top: 0;
     left: 50%;
     transform: translate(-50%, 0);
-    margin-bottom: 30px;
+    margin-top: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -270,6 +284,15 @@
       font-size: 18px;
       font-weight: 500;
     }
+  }
+
+  .not-logged-btn {
+    font-size: 18px;
+    border-radius: 1rem;
+    background-color: #fff9f5;
+    box-shadow: 2px 3px 10px #b9ada6;
+    border: none;
+    padding: 5px 8px;
   }
 
   @media (min-width: 500px) {
