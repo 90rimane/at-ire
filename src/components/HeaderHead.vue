@@ -310,7 +310,7 @@
     position: absolute;
     width: 30px;
     height: 30px;
-    left: 81.11%;
+    left: 72%;
     right: 13.33%;
     top: 14px;
     bottom: 95.75%;
@@ -327,8 +327,8 @@
     position: absolute;
     width: 30px;
     height: 30px;
-    left: 90.11%;
-    top: 14px;
+    left: 78%;
+    top: -43px;
     color: #000000;
     cursor: pointer;
   }
@@ -404,25 +404,14 @@
       z-index: 20;
     }
 
-    /* .search-bar-desktop:hover {
-      width: 170px;
-      cursor: pointer;
-      background-color: #fff5ef;
-    } */
-    /*
-    .header-desktop:hover .search-bar-desktop {
-      width: 174px;
-      cursor: pointer;
-      background: #fff5ef;
-      z-index: 20;
-    } */
-
+    /* added by Anna --> */
     form:hover .search-bar-desktop {
       width: 174px;
       cursor: pointer;
       background: #fff5ef;
       z-index: 20;
     }
+    /* <-- added by Anna */
 
     .search-bar-desktop:focus {
       background: #fff5ef;
@@ -504,9 +493,67 @@
     }
   } */
 
+  /* added by Anna --> */
+
+  @media (min-width: 480px) {
+    .material-symbols-outlined,
+    .button-cart {
+      position: absolute;
+      left: 82%;
+      top: -43px;
+    }
+
+    .bi-bi-heart-mobile {
+      position: absolute;
+      left: 75%;
+      right: 13.33%;
+    }
+  }
+
+  @media (min-width: 670px) {
+    .material-symbols-outlined,
+    .button-cart {
+      position: absolute;
+      left: 86%;
+      top: -43px;
+    }
+
+    .bi-bi-heart-mobile {
+      position: absolute;
+      left: 81%;
+      right: 13.33%;
+    }
+  }
+
+  @media (min-width: 790px) {
+    .material-symbols-outlined,
+    .button-cart {
+      position: absolute;
+      left: 88%;
+      top: -43px;
+    }
+
+    .bi-bi-heart-mobile {
+      position: absolute;
+      left: 83%;
+      right: 13.33%;
+    }
+  }
+
+  /* <-- added by Anna */
+
   @media (min-width: 980px) {
     .header-mobile {
       display: none;
     }
+
+    /* added by Anna --> */
+    .material-symbols-outlined,
+    .button-cart {
+      position: absolute;
+      left: 90.11%;
+      top: 11px;
+    }
+    /* <-- added by Anna */
   }
 </style>
