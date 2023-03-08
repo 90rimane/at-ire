@@ -330,14 +330,11 @@
   }
 
   .material-symbols-outlined {
-    /* position: fixed; */
     position: absolute;
     width: 30px;
     height: 30px;
     left: 78%;
-    /* top: -43px; */
     top: 14px;
-    /* bottom: 95.75%; */
     color: #000000;
     cursor: pointer;
   }

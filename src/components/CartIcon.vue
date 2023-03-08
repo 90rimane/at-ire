@@ -11,7 +11,6 @@
   export default {
     computed: {
       counterNumber() {
-        // return '5'
         return this.$store.state.activeUser.cart.length
       }
     }
@@ -65,3 +64,5 @@
     }
   }
 </style>
+
+<!-- Things to fix: There should be no hover effect on the icon  in the hamburgermenu and the cart-icon should appear in differnet sizes accordingly to the respectipe place it's placed. -->
