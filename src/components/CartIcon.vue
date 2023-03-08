@@ -43,7 +43,7 @@
     height: 30px;
     top: 13px;
     padding-left: 3px;
-    font-size: 2rem;
+    font-size: 1.9rem;
     cursor: pointer;
     color: #000000;
     margin-top: -9px;

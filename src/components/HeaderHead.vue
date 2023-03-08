@@ -35,10 +35,16 @@
     <router-link to="/" class="button">
       <h3>@IRE</h3>
     </router-link>
+    <router-link to="/cart" id="cart-icon-mobile" class="button">
+      <!-- <span class="material-symbols-outlined">shopping_cart_checkout</span> -->
+      <CartIcon class="button-cart" />
+    </router-link>
 
-    <!--#region HamburgerMenu component located here by Ali-->
-    <HamburgerMenu />
-    <!-- #endregion -->
+    <div id="hamburgermenu">
+      <!--#region HamburgerMenu component located here by Ali-->
+      <HamburgerMenu />
+      <!-- #endregion -->
+    </div>
 
     <router-link to="/favorite" class="button">
       <svg
@@ -53,9 +59,6 @@
           d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"
         />
       </svg>
-    </router-link>
-    <router-link to="/cart" class="button">
-      <CartIcon class="button-cart" />
     </router-link>
   </div>
   <div class="header-desktop">
@@ -174,7 +177,7 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   .header-mobile {
     position: fixed;
     width: 100%;
@@ -233,10 +236,14 @@
   }
 
   .button-cart {
-    width: 100px;
-    margin-left: 20px;
-    margin-top: -3px;
-    padding-left: 10px;
+    position: absolute;
+    left: 86%;
+    top: 10px;
+  }
+
+  #hamburgermenu {
+    position: fixed;
+    top: 0px;
   }
 
   /* <-- add by Anna + some changes related to this around here*/
@@ -303,8 +310,8 @@
   }
 
   /* LÄGG IN EN 'NAV-LINK' I APP.VUE .bi-bi-list :hover:focus:active {
-    background-color: antiquewhite;
-  } */
+      background-color: antiquewhite;
+    } */
 
   .bi-bi-heart-mobile {
     position: absolute;
@@ -322,25 +329,32 @@
     color: #fff5ef;
   }
 
-  .material-symbols-outlined,
-  .button-cart {
+  .material-symbols-outlined {
+    /* position: fixed; */
     position: absolute;
     width: 30px;
     height: 30px;
     left: 78%;
-    top: -43px;
+    /* top: -43px; */
+    top: 14px;
+    /* bottom: 95.75%; */
     color: #000000;
     cursor: pointer;
+  }
+
+  #cart-icon-mobile {
+    top: 0;
+    right: 0;
   }
 
   .material-symbols-outlined:hover {
     color: #fff5ef;
   }
   /* @media (max-width: 980px) {
-    .header-mobile {
-      display: flex;
-    }
-  } */
+      .header-mobile {
+        display: flex;
+      }
+    } */
 
   @media (min-width: 980px) {
     .header-desktop {
@@ -374,9 +388,9 @@
     }
 
     /* LÄGG IN EN "NAV-LINK" I APP.VUE
-    .bi-bi-list :hover:focus:active {
-      background-color: antiquewhite;
-    } */
+      .bi-bi-list :hover:focus:active {
+        background-color: antiquewhite;
+      } */
 
     .bi-bi-search-desktop {
       position: absolute;
@@ -411,6 +425,7 @@
       background: #fff5ef;
       z-index: 20;
     }
+
     /* <-- added by Anna */
 
     .search-bar-desktop:focus {
@@ -488,10 +503,10 @@
   }
 
   /* @media (min-width: 980px) {
-    .header-desktop {
-      display: flex;
-    }
-  } */
+      .header-desktop {
+        display: flex;
+      }
+    } */
 
   /* added by Anna --> */
 
@@ -499,8 +514,8 @@
     .material-symbols-outlined,
     .button-cart {
       position: absolute;
-      left: 82%;
-      top: -43px;
+      left: 88%;
+      top: 10px;
     }
 
     .bi-bi-heart-mobile {
@@ -514,8 +529,7 @@
     .material-symbols-outlined,
     .button-cart {
       position: absolute;
-      left: 86%;
-      top: -43px;
+      left: 91%;
     }
 
     .bi-bi-heart-mobile {
@@ -529,8 +543,7 @@
     .material-symbols-outlined,
     .button-cart {
       position: absolute;
-      left: 88%;
-      top: -43px;
+      left: 92%;
     }
 
     .bi-bi-heart-mobile {
@@ -551,8 +564,7 @@
     .material-symbols-outlined,
     .button-cart {
       position: absolute;
-      left: 90.11%;
-      top: 11px;
+      left: 93.5%;
     }
     /* <-- added by Anna */
   }
