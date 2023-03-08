@@ -44,7 +44,6 @@ export default {
         }, 4000);
       },
       ratedStars(index){
-      console.log("Thanls you!")
       this.ratedStar= index+1
       }
     }
