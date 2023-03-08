@@ -56,6 +56,10 @@
       </button>
     </section>
   </article>
+
+  <div v-if="notification" class="notification">
+    <span>Product added to cart.</span>
+  </div>
 </template>
 
 <script>
@@ -76,15 +80,15 @@
         selectedColorImg: null,
         selectedSize: null,
         cartProduct: null,
-        activeUser: null
+        activeUser: null,
+        notification: false
       }
     },
     methods: {
       onAddToCart() {
         // to make an object with the specified color and size -->
-        // Changed by Jovan: Instead of spreading out the whole array I've resorted
-        // to only adding the parts needed for the cart to display, additionlly
-        // added a unique product id with uuid
+        // Changed by Jovan: Instead of spreading out the whole object I've resorted
+        // to only adding the parts needed, this way I can add an unique id key
         this.cartProduct = {
           id: uuidv4(),
           name: this.oneProduct.name,
@@ -103,6 +107,12 @@
         //   'this.$store.state.activeUser.cart.length',
         //   this.$store.state.activeUser.cart.length
         // )
+
+        // Added by Jovan: Set notification to true, which sends the div visible
+        this.notification = true
+        setTimeout(() => {
+          this.notification = false
+        }, 1700) // This number is the waiting time in milliseconds
       }
     }
   }
@@ -217,6 +227,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    border: none;
   }
 
   #price-cart {
@@ -236,6 +247,29 @@
     flex-direction: row;
     justify-content: space-evenly;
     padding-bottom: 10%;
+  }
+
+  .notification {
+    /*Added by Jovan */
+    height: 60px;
+    width: 90%;
+    background-color: #fff9f5;
+    position: fixed;
+    z-index: 9999;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    box-shadow: 2px 3px 10px #b9ada6;
+
+    span {
+      font-size: 18px;
+      font-weight: 500;
+    }
   }
 
   @media (min-width: 500px) {
