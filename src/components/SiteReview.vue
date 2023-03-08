@@ -1,84 +1,93 @@
 <template>
-  <div class="rating">
-    <ul class="list">
-      <li :key="star" v-for="star in maxStars" :class="{ 'active': star <= stars }" @click="rate(star)" class="star">
-        <icon scale="2" :name="star <= stars ? 'star' : 'star-o'"/>
-      </li>
-    </ul>
-    <span v-if="hasCounter">{{ stars }} of {{ maxStars }}</span>
-  </div>
+  <main>
+    <div class="top-title-form">
+      <h3 @click="toggleForm">
+      {{ showForm ? 'Close review panel' : 'Write a review' }}
+      </h3>
+    </div>
+    <div class="review-panel" v-show="showForm">
+      <div class="form-reviews">
+        <h3>form is here</h3>
+        <form action="">
+          <input type="text" />
+          <input type="text" />
+        </form>
+      </div>
+    </div>
+  </main>
+
 </template>
 
 <script>
-  import 'vue-awesome/icons/star'
-  import 'vue-awesome/icons/star-o'
-
-  import Icon from 'vue-awesome/components/Icon'
-
-  export default {
-    components: { Icon },
-    props: {
-      grade: {
-        type: Number,
-        required: true
-      },
-      maxStars: {
-        type: Number,
-        default: 5
-      },
-      hasCounter: {
-        type: Boolean,
-        default: true
-      }
-    },
+export default {
     data() {
       return {
-        stars: this.grade
-      }
+        showForm: false
+
+      };
     },
-    methods: {
-      rate(star) {
-        if (
-          typeof star === 'number' &&
-          star <= this.maxStars &&
-          star >= 0
-        )
-          this.stars = this.stars === star ? star - 1 : star
-      }
+    methods:{
+      toggleForm(){
+        this.showForm = !this.showForm
+      },
+      rate(){
+      console.log("thank u")
+    }
     }
   }
 </script>
-
 <style scoped lang="scss">
-  $active-color: #f3d23e;
-
-  .rating {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    font-size: 22px;
-    color: #a7a8a8;
-  }
-  .list {
-    margin: 0 0 5px 0;
-    padding: 0;
-    list-style-type: none;
-    &:hover {
-      .star {
-        color: $active-color;
-      }
+.top-title-form{
+  background: linear-gradient(
+      0deg,
+      var(--light) 0%,
+      var(--lightB) 60%,
+      var(--lightB) 100%
+    );
+  text-align: -webkit-center;
+  border-top:solid 1px var(--darker);
+  cursor: pointer;
+  margin-top: 12em;
+  & h3{
+    margin: 0;
+    padding: .8em;
+    &:hover{
+      color: var(--orange);
+      font-size: 20px;
     }
   }
-  .star {
-    display: inline-block;
-    cursor: pointer;
-    &:hover {
-      &~.star {
-        &:not(.active) {
-          color: inherit;
+}
+.review-panel{
+  display: flex;
+  flex-direction: row;
+  margin: 2em 2em;
+  align-items: center;
+  background-color:aqua ;
+  .rate-stars{
+    ul{
+      list-style-type: none;
+      overflow: hidden;
+      li{
+        float: left;
+        display: block;
+        padding: 14px 1px;
+        text-decoration: none;
+        .star-number{
+          font-size: 16px;
+        }
+        .material-symbols-outlined{
+          display: block;
+          font-size: 30px;
+          text-align: center;
+          text-decoration: none;
+          &:hover{
+            font-size: 35px;
+            color: rgb(252, 237, 24);
+          }
         }
       }
     }
   }
-  .active {
-    color: $active-color;
-  }
+}
+
 </style>

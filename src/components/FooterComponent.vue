@@ -1,4 +1,5 @@
 <template>
+  <StarRating />
   <div class="footer">
     <div class="center">
       <div id="name-email">
@@ -39,7 +40,7 @@
 
 <script>
   import ListItem from './ListItem.vue'
-
+  import StarRating from './StarRating.vue'
   export default {
     data: () => {
       return {
@@ -59,7 +60,8 @@
       }
     },
     components: {
-      ListItem
+      ListItem,
+      StarRating
     },
 
     methods: {
