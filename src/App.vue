@@ -43,7 +43,7 @@
     },
     methods: {
       checkScreenSize() {
-        this.isMobile = window.innerWidth < 1024
+        this.isMobile = window.innerWidth < 980
       }
     }
   }
@@ -51,12 +51,14 @@
 
 <template>
   <SideBar />
-  <RouterView />
-  <SearchBar />
-  <HeaderHead />
-  <ContactButton />
-  <FooterComponent v-if="isMobile" />
-  <FooterDesktop v-else />
+  <div class="components">
+    <RouterView />
+    <HeaderHead />
+    <ContactButton />
+    <FooterComponent v-if="isMobile" />
+    <FooterDesktop v-else />
+  </div>
+
 </template>
 
 <style lang="scss">
@@ -81,5 +83,11 @@
   }
   body {
     background: var(--light);
+  }
+  .components{
+    margin-left: 3em;
+    @media (max-width: 980px){
+      margin-left: 0;
+    }
   }
 </style>

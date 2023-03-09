@@ -1,106 +1,139 @@
 <script>
-  export default{
-    methods:{
-      actMenu(){
-        if (this.$refs.menuLinks.style.display === "block") {
-          this.$refs.menuLinks.style.display = "none";
-          this.$refs.menuIcon.style.display= "block";
-          this.$refs.menuIconClose.style.display= "none";
+  import CartIcon from './CartIcon.vue'
+
+  export default {
+    components: {
+      CartIcon
+    },
+    methods: {
+      actMenu() {
+        if (this.$refs.menuLinks.style.display === 'block') {
+          this.$refs.menuLinks.style.display = 'none'
+          this.$refs.menuIcon.style.display = 'block'
+          this.$refs.menuIconClose.style.display = 'none'
         } else {
-          this.$refs.menuLinks.style.display = "block";
-          this.$refs.menuIconClose.style.display= "block";
-          this.$refs.menuIcon.style.display= "none";
+          this.$refs.menuLinks.style.display = 'block'
+          this.$refs.menuIconClose.style.display = 'block'
+          this.$refs.menuIcon.style.display = 'none'
         }
       }
     }
   }
 </script>
 <template>
-
   <div class="mobile-container">
-
     <button @click="actMenu()">
-      <span class="material-symbols-outlined" id="menuIcon" ref="menuIcon">menu</span>
-      <span class="material-symbols-outlined" id="menuIconClose" ref="menuIconClose">close</span>
+      <span class="material-symbols-outlined" id="menuIcon" ref="menuIcon"
+        >menu</span
+      >
+      <span
+        class="material-symbols-outlined"
+        id="menuIconClose"
+        ref="menuIconClose"
+        >close</span
+      >
     </button>
-  <div class="topnav" @click="actMenu()">
-    <div id="menuLinks" ref="menuLinks">
-      <router-link to="/">
-        <span class="material-symbols-outlined">home</span>
-        <span class="link-text">Home</span>
-      </router-link>
-      <router-link to="/checkout">
-        <span class="material-symbols-outlined">shopping_cart_checkout</span>
-        <span class="link-text">Shopping Cart</span>
-      </router-link>
-      <router-link to="/favorite">
-        <span class="material-symbols-outlined">favorite</span>
-        <span class="link-text">My Favorites</span>
-      </router-link>
-      <router-link to="/mypage">
-        <span class="material-symbols-outlined">person</span>
-        <span class="link-text">Account</span>
-      </router-link>
-      <router-link to="/contact">
-        <span class="material-symbols-outlined">email</span>
-        <span class="link-text">Contact</span>
-      </router-link>
-      <router-link to="/about">
-        <span class="material-symbols-outlined">info</span>
-        <span class="link-text">About Us</span>
-      </router-link>
-      <router-link to="/help">
-        <span class="material-symbols-outlined">forum</span>
-        <span class="link-text">Chatroom</span>
-      </router-link>
-      <div v-if="$store.state.activeUser == null">
-        <router-link to="/login">
-          <span class="material-symbols-outlined" style="color:forestgreen;">login</span>
-          <span class="link-text">Login</span>
+    <div class="topnav" @click="actMenu()">
+      <div id="menuLinks" ref="menuLinks">
+        <router-link to="/">
+          <span class="material-symbols-outlined">home</span>
+          <span class="link-text">Home</span>
         </router-link>
-      </div>
-      <div v-else>
-        <a @click="$store.dispatch('logout')">
-          <span class="material-symbols-outlined" style="color:brown;">logout</span>
-          <span class="link-text">Logout</span>
-        </a>
+        <router-link id="cart" to="/checkout">
+          <CartIcon class="button-cart" />
+          <span id="cart-link-text" class="link-text">Shopping Cart</span>
+        </router-link>
+        <router-link to="/favorite">
+          <span class="material-symbols-outlined">favorite</span>
+          <span class="link-text">My Favorites</span>
+        </router-link>
+        <router-link to="/mypage">
+          <span class="material-symbols-outlined">person</span>
+          <span class="link-text">Account</span>
+        </router-link>
+        <router-link to="/contact">
+          <span class="material-symbols-outlined">email</span>
+          <span class="link-text">Contact</span>
+        </router-link>
+        <router-link to="/about">
+          <span class="material-symbols-outlined">info</span>
+          <span class="link-text">About Us</span>
+        </router-link>
+        <router-link to="/help">
+          <span class="material-symbols-outlined">forum</span>
+          <span class="link-text">Chatroom</span>
+        </router-link>
+        <div v-if="$store.state.activeUser == null">
+          <router-link to="/login">
+            <span class="material-symbols-outlined" style="color: forestgreen"
+              >login</span
+            >
+            <span class="link-text">Login</span>
+          </router-link>
+        </div>
+        <div v-else>
+          <a @click="$store.dispatch('logout')">
+            <span class="material-symbols-outlined" style="color: brown"
+              >logout</span
+            >
+            <span class="link-text">Logout</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
 </template>
 
 <style lang="scss" scoped>
-.mobile-container{
-  button{
-    background-color: #ecc8b2;
-    margin: 2px;
-    height: 3.9em;
-    width: 3.9em;
-    border: none;
-    #menuIcon{
-      font-size: 2.2em;
+  .mobile-container {
+    button {
+      background-color: #ecc8b2;
+      margin: 2px;
+      height: 3.9em;
+      width: 3.9em;
+      border: none;
+      #menuIcon {
+        font-size: 2.2em;
+      }
+      #menuIconClose {
+        display: none;
+        font-size: 2.2em;
+      }
     }
-    #menuIconClose{
-      display: none;
-      font-size: 2.2em;
+    button:hover {
+      background-color: var(--orange);
     }
   }
-  button:hover{
-    background-color: var(--orange);
+
+  /* added by Anna --> */
+  .button-cart {
+    margin-left: -7px;
+    margin-right: 1em;
+    padding-right: 14px;
   }
-}
-.link-text{
-  margin-left: 1em;
-  font-size: 1.1em;
-  vertical-align: super;
-}
+
+  #cart {
+    display: flex;
+    flex-direction: row;
+    height: calc(15px + 1em);
+  }
+
+  #cart-link-text {
+    padding-top: 5px;
+    padding-left: 2px;
+  }
+  /* <-- added by Anna */
+
+  .link-text {
+    margin-left: 1em;
+    font-size: 1.1em;
+    vertical-align: super;
+  }
   .topnav {
     overflow: hidden;
     background-color: var(--lightB-darker);
     position: relative;
-    .material-symbols-outlined{
+    .material-symbols-outlined {
       font-size: 1.5em;
       padding: 0;
     }

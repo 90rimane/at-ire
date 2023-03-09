@@ -51,7 +51,7 @@ function sendMessage() {
     <h1>Help Center</h1>
     <p><span style="font-weight: bold;"> For developers: </span>
       To test this chatroom, take a copy of the link
-      and paste it in another browser while project is runing (npm run dev).<br /> All users can chat each other anywhere when the project is runing.</p>
+      and paste it in another browser while project is runing (npm run dev).<br /><br /> Share your experiences/ Ask a question about shopping and products</p>
     <div class="panel">
       <div class="panel-title">
       <span class="material-symbols-outlined support-logo">forum</span>

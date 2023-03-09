@@ -1,4 +1,5 @@
 <template>
+  <StarRating />
   <div class="footer">
     <div class="center">
       <div id="name-email">
@@ -46,7 +47,12 @@
 </template>
 
 <script>
-  export default {}
+import StarRating from './StarRating.vue';
+  export default {
+    components:{
+      StarRating
+    }
+  }
 </script>
 
 <style lang="scss" scoped>
