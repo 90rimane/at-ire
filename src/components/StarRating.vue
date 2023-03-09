@@ -13,7 +13,8 @@
     <div class="ratingRespons" v-show="showRespons">
       <p>
         <span class="material-symbols-outlined">magic_button</span>
-        <span id="rated-star-number"> You rated us  {{ ratedStar }} stars</span>
+        <span id="rated-star-number"> You rated us  {{ ratedStar }} </span>
+         star<span v-if="isActive">s</span>
         <span class="material-symbols-outlined">magic_button</span>
       </p>
 
@@ -34,6 +35,7 @@ export default {
         responsMsg: "Thank you for Feedback!",
         stars: ["1", "2", "3", "4", "5"],
         ratedStar: null,
+        isActive: true
       };
     },
     methods:{
@@ -44,7 +46,11 @@ export default {
         }, 4000);
       },
       ratedStars(index){
-      this.ratedStar= index+1
+      this.ratedStar= index+1;
+      this.isActive = true;
+        if(index === 0){
+          this.isActive = false
+        }
       }
     }
   }
