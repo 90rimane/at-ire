@@ -185,7 +185,9 @@
         <span v-if="budbeeChoice">{{ budbeeChoice }}</span>
         <span v-else-if="postnordChoice">{{ postnordChoice }}</span>
       </p>
-      <button type="button" class="boldtext">Confirm and Continue</button>
+      <button type="button" class="boldtext" :disabled="!deliveryChoice">
+        Confirm and Continue
+      </button>
     </div>
   </main>
 </template>
