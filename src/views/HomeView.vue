@@ -2,7 +2,12 @@
   <div>
     <CarouselSlide v-if="allProducts" :images="allProducts" />
   </div>
-  <div class="home-container">
+  <div class="banner">
+  <h1>ELEVATE YOUR WARDROBE WITH OUR PREMIUM CLOTHING LINE </h1>
+  <span>SHOP NOW AND STAY AHEAD OF THE FASHION CURVE</span>
+</div>
+
+   <div class="home-container">
     <div class="box">
       <img
         src="https://i.pinimg.com/564x/a8/c1/55/a8c1552fc6e272a18faba1dc01fbf0f9.jpg"
@@ -34,6 +39,7 @@
     </div>
   </div>
 
+
   <TrendingSection />
 </template>
 
@@ -58,14 +64,13 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    margin-top: 80px;
+    margin-top:20px;
     padding-bottom: 100px;
   }
 
   .box {
     position: relative;
     width: 100%;
-    height: 0;
     padding-bottom: 100%;
   }
 
@@ -93,16 +98,43 @@
     padding: 4%;
   }
 
-  @media screen and (min-width: 778px) {
-    @media screen and (min-width: 978px) {
-      .home-container {
-        flex-wrap: nowrap;
-      }
+  .banner {
+  background-color:#ecc8b2;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  word-wrap:break-word;
+  margin-top:20px;
+}
+
+.banner h1 {
+  font-size: 33px;
+  margin: 0;
+}
+
+span{
+  font-size:20px;
+  font-weight:bold;
+}
+
+
+  @media screen and (min-width: 978px) {
+    .home-container {
+      flex-wrap: nowrap;
+    }
 
       .box {
         width: 48%;
         margin-left: 10px;
       }
     }
-  }
+
+    .box {
+      width: 48%;
+      margin-left: 10px;
+    }
+
+
+
+
 </style>
