@@ -71,6 +71,10 @@
         type="text"
         v-model="search"
         placeholder="Search products..."
+        @keydown.down="nextSearchItem()"
+        @keydown.up="prevSearchItem()"
+        @keydown.enter="goToProduct()"
+        @focusout="clearSearch()"
       />
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -85,13 +89,18 @@
         />
       </svg>
       <div>
-        <ul v-if="search" class="dropdown" @focusout="search = ''">
+        <ul v-if="search" class="dropdown">
           <li
-            v-for="item in searchResult"
+            v-for="(item, index) in searchResult"
             :key="item.id"
             @click="selectItem(item)"
           >
-            <router-link to="/product"> {{ item.description }} </router-link>
+            <router-link
+              to="/product"
+              :style="[index === activeNumber ? activeItem : '']"
+            >
+              {{ item.description }}
+            </router-link>
           </li>
         </ul>
       </div>
@@ -145,7 +154,13 @@
     data() {
       return {
         products: null,
-        search: ''
+        search: '',
+        activeItem: {
+          textDecoration: 'underline',
+          color: '#568885',
+          textTransform: 'uppercase'
+        },
+        activeNumber: 0
         // showSearchBar: true
       }
     },
@@ -168,11 +183,26 @@
       selectItem(item) {
         this.$store.dispatch('setOneProduct', item)
         this.search = ''
+      },
+      nextSearchItem() {
+        this.activeNumber++
+      },
+      prevSearchItem() {
+        this.activeNumber--
+      },
+      goToProduct() {
+        this.$router.push('/product')
+        this.selectItem(this.searchResult[this.activeNumber])
+        this.search = ''
+      },
+      clearSearch() {
+        this.search = ''
+        this.activeNumber = 0
       }
-      // <-- add by Anna
-      // onToggle() {
-      // this.showSearchBar = !this.showSearchBar
-      // }
+      // // <-- add by Anna
+      // // onToggle() {
+      // // this.showSearchBar = !this.showSearchBar
+      // // }
     }
   }
 </script>
