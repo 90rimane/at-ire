@@ -107,20 +107,15 @@
 
   /* added by Anna --> */
   .button-cart {
-    // font-size: 0.5em;
-    // width: 100px;
     margin-left: -7px;
     margin-right: 1em;
-    // margin-top: -3px;
     padding-right: 14px;
-    // width: 1px;
   }
 
   #cart {
     display: flex;
     flex-direction: row;
     height: calc(15px + 1em);
-    // font-size: 2px;
   }
 
   #cart-link-text {
