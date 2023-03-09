@@ -123,14 +123,18 @@ span{
       flex-wrap: nowrap;
     }
 
+      .box {
+        width: 48%;
+        margin-left: 10px;
+      }
+    }
+
     .box {
       width: 48%;
       margin-left: 10px;
     }
 
-    .box img {
-    }
-  }
+
 
 
 </style>

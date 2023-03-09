@@ -56,16 +56,17 @@
     }
 
     #contact-icon:hover::before {
+      background-color: #f39256;
+      border: 1px black solid;
+      border-radius: 10px;
+      bottom: 40px;
+      box-shadow: 5px 5px 25px;
       content: 'Go to Contact Page';
+      font-size: 12px;
+      font-weight: 600;
+      padding: 15px;
       position: absolute;
       right: 70px;
-      bottom: 40px;
-      font-size: 16px;
-      background-color: #f39256;
-      padding: 15px;
-      border-radius: 10px;
-      border: 1px black solid;
-      box-shadow: 5px 5px 25px;
     }
   }
 

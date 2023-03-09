@@ -24,8 +24,9 @@
         <span class="material-symbols-outlined">home</span>
         <span class="text">Home</span>
       </router-link>
-      <router-link to="/checkout" class="button">
-        <span class="material-symbols-outlined">shopping_cart_checkout</span>
+      <router-link to="/cart" class="button">
+        <CartIcon />
+        <!-- <span class="material-symbols-outlined">shopping_cart_checkout</span> -->
         <span class="text">Shopping Cart</span>
       </router-link>
       <router-link to="/favorite" class="button">
@@ -76,6 +77,7 @@
 <script setup>
   import { ref } from 'vue'
   import logoURL from '../../assets/logo-black.png'
+  import CartIcon from './CartIcon.vue'
 
   const is_expanded = ref(localStorage.getItem('is_expanded') === 'true')
   const ToggleMenu = () => {
@@ -225,6 +227,7 @@
       }
     }
   }
+
   @media (max-width: 979px) {
     aside {
       display: none;

@@ -1,7 +1,11 @@
 <script>
 import developers from '../../assets/developers.json';
+import SiteReview from '../components/SiteReview.vue';
 
   export default {
+    components:{
+      SiteReview,
+    },
     data(){
       return{
         users: developers
@@ -40,6 +44,11 @@ import developers from '../../assets/developers.json';
       </div>
     </div>
   </div>
+
+  <div class="siter-eview">
+    <SiteReview />
+  </div>
+
   <footer>
     <h3>Sponsors</h3>
       <div class="photos-sponsor">
@@ -147,7 +156,7 @@ import developers from '../../assets/developers.json';
   }
   @media screen and (max-width: 1300px) {
       .about-section {
-        margin: 0 0 1em 3em;
+        margin: 0 0 1em 1em;
       }
       .row{
         margin: auto 0 auto 3em;

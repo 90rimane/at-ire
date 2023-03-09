@@ -1,4 +1,5 @@
 <template>
+  <StarRating />
   <div class="footer">
     <div class="center">
       <div id="name-email">
@@ -39,7 +40,7 @@
 
 <script>
   import ListItem from './ListItem.vue'
-
+  import StarRating from './StarRating.vue'
   export default {
     data: () => {
       return {
@@ -59,7 +60,8 @@
       }
     },
     components: {
-      ListItem
+      ListItem,
+      StarRating
     },
 
     methods: {
@@ -183,7 +185,7 @@
     border-radius: 4px;
     overflow: hidden;
     li {
-      position: relative;
+      // position: relative;  Commented by Ali. Thats affecting HamburgareMenu
       color: #282828;
       border-top: 1px solid #dedede;
       cursor: pointer;

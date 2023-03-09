@@ -2,12 +2,14 @@
   <article id="article" v-if="oneProduct">
     <header>
       <!-- spans to be made to breadcrumb-navigation  -->
-      <span>{{ this.oneProduct.category }} --> </span>
+      <span>{{ this.oneProduct.category }} </span>
       <span>{{ this.oneProduct.subcategory }}</span>
       <h1>{{ this.oneProduct.description }}</h1>
+
+      <!-- Added by Jovan: using OR operator to default between values -->
       <img
         id="product-img"
-        :src="oneProduct.img.Black"
+        :src="this.selectedColorImg || oneProduct.img.Black"
         :alt="this.oneProduct.description"
       />
     </header>
@@ -48,18 +50,40 @@
     </section>
     <section id="price-cart">
       <h2 id="price">Price: {{ this.oneProduct.price }}:-</h2>
-      <button id="cart-button" @click="onAddToCart" :disabled="!bothSelected">
+      <button
+        v-if="this.$store.state.activeUser"
+        id="cart-button"
+        @click="onAddToCart"
+        :disabled="!bothSelected"
+      >
         Add to cart
-        <span id="cart-icon" class="material-symbols-outlined"
-          >shopping_cart_checkout</span
-        >
+        <span id="cart-icon" class="material-symbols-outlined">
+          shopping_cart_checkout
+        </span>
+
+        <div v-if="notification" class="notification">
+          <span>Product added to cart.</span>
+        </div>
       </button>
+      <div v-else class="not-logged">
+        <button class="not-logged-btn">
+          Login to <br />
+          add to cart
+        </button>
+      </div>
     </section>
   </article>
+  <ProductReview />
 </template>
 
 <script>
+  import ProductReview from '../components/ProductReview.vue'
+  import { v4 as uuidv4 } from 'uuid'
+
   export default {
+    components: {
+      ProductReview
+    },
     computed: {
       oneProduct() {
         return this.$store.state.oneProduct
@@ -74,24 +98,39 @@
         selectedColorImg: null,
         selectedSize: null,
         cartProduct: null,
-        activeUser: null
+        activeUser: null,
+        notification: false
       }
     },
     methods: {
       onAddToCart() {
         // to make an object with the specified color and size -->
+        // Changed by Jovan: Instead of spreading out the whole object I've resorted
+        // to only adding the parts needed, this way I can add an unique id key
         this.cartProduct = {
-          ...this.oneProduct,
+          id: uuidv4(),
+          name: this.oneProduct.name,
+          description: this.oneProduct.description,
+          price: this.oneProduct.price,
           colors: this.selectedColor,
           img: this.selectedColorImg,
           sizes: this.selectedSize
         }
-        console.log('cartProduct', this.cartProduct)
 
         this.activeUser = JSON.parse(sessionStorage.getItem('activeUser'))
         this.activeUser.cart.push(this.cartProduct)
         sessionStorage.setItem('activeUser', JSON.stringify(this.activeUser))
         this.$store.dispatch('getLogged')
+        // console.log(
+        //   'this.$store.state.activeUser.cart.length',
+        //   this.$store.state.activeUser.cart.length
+        // )
+
+        // Added by Jovan: Set notification to true, which sends the div visible
+        this.notification = true
+        setTimeout(() => {
+          this.notification = false
+        }, 1700) // This number is the waiting time in milliseconds
       }
     }
   }
@@ -160,6 +199,9 @@
     border-radius: 1rem;
     background-color: #fff9f5;
     box-shadow: 2px 3px 10px #b9ada6;
+    // text-decoration: none;
+    border: none;
+    position: relative;
   }
 
   #cart-button:hover,
@@ -210,6 +252,7 @@
   #price-cart {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding-top: 40px;
     padding-bottom: 75px;
   }
@@ -224,6 +267,38 @@
     flex-direction: row;
     justify-content: space-evenly;
     padding-bottom: 10%;
+  }
+
+  .notification {
+    /*Added by Jovan */
+    height: 60px;
+    width: 230px;
+    background-color: #fff9f5;
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, 0);
+    margin-top: -80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    box-shadow: 2px 3px 10px #b9ada6;
+
+    span {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+
+  .not-logged-btn {
+    font-size: 18px;
+    border-radius: 1rem;
+    background-color: #fff9f5;
+    box-shadow: 2px 3px 10px #b9ada6;
+    border: none;
+    padding: 5px 8px;
   }
 
   @media (min-width: 500px) {
