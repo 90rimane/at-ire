@@ -1,10 +1,10 @@
 <script>
 import developers from '../../assets/developers.json';
-// import SiteReview from '../components/SiteReview.vue';
+import SiteReview from '../components/SiteReview.vue';
 
   export default {
     components:{
-      // SiteReview,
+      SiteReview,
     },
     data(){
       return{
@@ -46,7 +46,7 @@ import developers from '../../assets/developers.json';
   </div>
 
   <div class="siter-eview">
-    <!-- <SiteReview /> -->
+    <SiteReview />
   </div>
 
   <footer>

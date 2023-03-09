@@ -5,7 +5,8 @@
       <div class="rate-stars" v-for="(star, index) in stars" :key="star">
         <ul>
           <li @click="ratedStars(index), toggleRespons()">
-            <span class="material-symbols-outlined">star</span><span class="star-number">{{ index+1 }}</span>
+            <span class="material-symbols-outlined">star</span>
+            <span class="star-number">{{ index+1 }}</span>
           </li>
         </ul>
       </div>
@@ -31,7 +32,6 @@ export default {
     data() {
       return {
         showRespons: false,
-        // showRespons: true,
         responsMsg: "Thank you for Feedback!",
         stars: ["1", "2", "3", "4", "5"],
         ratedStar: null,

@@ -133,6 +133,7 @@
     overflow: hidden;
     background-color: var(--lightB-darker);
     position: relative;
+    z-index: 3;
     .material-symbols-outlined {
       font-size: 1.5em;
       padding: 0;
