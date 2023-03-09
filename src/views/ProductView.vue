@@ -73,12 +73,17 @@
       </div>
     </section>
   </article>
+  <ProductReview />
 </template>
 
 <script>
+  import ProductReview from '../components/ProductReview.vue'
   import { v4 as uuidv4 } from 'uuid'
 
   export default {
+    components: {
+      ProductReview
+    },
     computed: {
       oneProduct() {
         return this.$store.state.oneProduct
