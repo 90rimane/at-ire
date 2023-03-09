@@ -37,7 +37,7 @@
     </router-link>
     <router-link to="/cart" id="cart-icon-mobile" class="button">
       <!-- <span class="material-symbols-outlined">shopping_cart_checkout</span> -->
-      <CartIcon class="button-cart" />
+      <CartIcon class="button-cart" hover-color="#fff5ef" icon-size="1.9rem" />
     </router-link>
 
     <div id="hamburgermenu">
@@ -124,10 +124,9 @@
         />
       </svg>
     </router-link>
-    <!-- <router-link to="/cart" class="button">
-      <span class="material-symbols-outlined">shopping_cart_checkout</span>
-    </router-link> -->
-    <router-link to="/cart" class="button-cart"> <CartIcon /> </router-link>
+    <router-link to="/cart" class="button-cart">
+      <CartIcon hover-color="#fff5ef" icon-size="1.9rem" />
+    </router-link>
   </div>
 </template>
 

@@ -1,6 +1,8 @@
 <template>
   <div id="counter-container">
-    <span class="material-symbols-outlined">shopping_cart_checkout</span>
+    <span class="material-symbols-outlined" :style="cssProps">
+      shopping_cart_checkout
+    </span>
     <div v-if="this.$store.state.activeUser" id="counter">
       {{ this.counterNumber }}
     </div>
@@ -12,12 +14,29 @@
     computed: {
       counterNumber() {
         return this.$store.state.activeUser.cart.length
+      },
+      cssProps() {
+        return {
+          '--icon-size': this.iconSize,
+          '--hover-color': this.hoverColor
+        }
+      }
+    },
+
+    props: {
+      hoverColor: {
+        type: String,
+        default: null
+      },
+      iconSize: {
+        type: String,
+        default: null
       }
     }
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   #counter-container {
     position: relative;
     height: 39px;
@@ -42,13 +61,14 @@
     height: 30px;
     top: 13px;
     padding-left: 3px;
-    font-size: 1.9rem;
+    // font-size: 1.9rem;
+    font-size: var(--icon-size);
     cursor: pointer;
     color: #000000;
     margin-top: -9px;
   }
   .material-symbols-outlined:hover {
-    color: #fff5ef;
+    color: var(--hover-color);
   }
 
   @media (min-width: 980px) {
@@ -59,9 +79,10 @@
       cursor: pointer;
       color: #000000;
     }
-    .material-symbols-outlined:hover {
-      color: #fff5ef;
-    }
+
+    // .material-symbols-outlined:hover {
+    //   color: var(--hover-color);
+    // }
   }
 </style>
 

@@ -40,8 +40,8 @@
           <span class="link-text">Home</span>
         </router-link>
         <router-link id="cart" to="/checkout">
-          <CartIcon class="button-cart" />
-          <span id="cart-link-text" class="link-text">Shopping Cart</span>
+          <CartIcon class="button-cart" icon-size="1.5rem" />
+          <span id="cart-link-text" class="link-text"> Shopping Cart </span>
         </router-link>
         <router-link to="/favorite">
           <span class="material-symbols-outlined">favorite</span>
@@ -107,9 +107,8 @@
 
   /* added by Anna --> */
   .button-cart {
-    margin-left: -7px;
-    margin-right: 1em;
-    padding-right: 14px;
+    margin-left: -3px;
+    margin-right: 1.6em;
   }
 
   #cart {
@@ -120,7 +119,7 @@
 
   #cart-link-text {
     padding-top: 5px;
-    padding-left: 2px;
+    padding-right: 7px;
   }
   /* <-- added by Anna */
 

@@ -25,9 +25,13 @@
         <span class="text">Home</span>
       </router-link>
       <router-link to="/cart" class="button">
-        <CartIcon />
+        <CartIcon
+          class="button-cart material-symbols-outlined"
+          hover-color="#64748b"
+          icon-size="2.3rem"
+        />
         <!-- <span class="material-symbols-outlined">shopping_cart_checkout</span> -->
-        <span class="text">Shopping Cart</span>
+        <span id="cart-link-text" class="text">Shopping Cart</span>
       </router-link>
       <router-link to="/favorite" class="button">
         <span class="material-symbols-outlined">favorite</span>
@@ -227,6 +231,20 @@
       }
     }
   }
+  /* added by Anna --> */
+  .button-cart {
+    margin-left: -4px;
+    margin-right: 1em;
+    margin-bottom: 9px;
+    padding-right: 14px;
+  }
+
+  #cart-link-text {
+    padding-top: 5px;
+    padding-left: 20px;
+    margin-left: 30px;
+  }
+  /* <-- added by Anna */
 
   @media (max-width: 979px) {
     aside {
