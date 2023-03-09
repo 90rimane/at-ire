@@ -56,10 +56,16 @@
       </button>
     </section>
   </article>
+  <ProductReview />
 </template>
 
 <script>
+  import ProductReview from '../components/ProductReview.vue'
+
   export default {
+    components: {
+      ProductReview
+    },
     computed: {
       oneProduct() {
         return this.$store.state.oneProduct

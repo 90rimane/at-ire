@@ -64,7 +64,7 @@
     overflow: hidden;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 980px) {
     .lista-av-items {
       height: auto;
       overflow: visible;
