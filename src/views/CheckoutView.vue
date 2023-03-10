@@ -36,7 +36,7 @@
           Country:
           <input type="text" v-model="country" required />
         </label>
-        <button type="submit">Next</button>
+        <button @click="saveInfo" type="submit">Next</button>
       </form>
     </div>
     <div v-if="step === 2">
@@ -139,6 +139,23 @@
         if (this.CardNumber) {
           this.$router.push('/delivery')
         }
+      },
+      saveInfo() {
+        const user = JSON.parse(sessionStorage.getItem('activeUser'))
+
+        user.details = {
+          firstName: this.firstName,
+          lastName: this.lastName,
+          email: this.email,
+          phoneNumber: this.phoneNumber,
+          shippingAddress: this.shippingAddress,
+          city: this.city,
+          zipCode: this.zipCode,
+          country: this.country
+        }
+
+        sessionStorage.setItem('activeUser', JSON.stringify(user))
+        this.$store.dispatch('getLogged')
       }
     },
     watch: {
