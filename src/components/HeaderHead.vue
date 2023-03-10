@@ -215,6 +215,7 @@
     top: 0px;
     background: #ecc8b2;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 100;
   }
 
   .dropdown li,

@@ -86,7 +86,6 @@
     align-items: center;
     background-color: #f5f5f5;
     padding: 3vh 0 3vh 0;
-    padding-left: 64px;
   }
 
   #carousel-button-prev,
