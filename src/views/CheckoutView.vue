@@ -136,8 +136,9 @@
         this.step++
       },
       submitPayment() {
-        console.log('hej')
-        this.$router.push('/delivery')
+        if (this.expirationYear && this.expirationMonth && this.CardNumber) {
+          this.$router.push('/delivery')
+        }
       }
     },
     watch: {
@@ -166,10 +167,11 @@
   .checkout-form {
     background-color: #fff5ef;
     max-width: 600px;
-    margin: 100px auto;
-    padding: 20px;
+    padding: 60px 16px;
     border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 10px rgba(59, 59, 59, 0.497);
+    min-height: 100vh;
+    border-radius: 16px;
   }
 
   h1 {
@@ -229,5 +231,14 @@
     width: 50px;
     height: 50px;
     margin-left: 10px;
+  }
+
+  @media only screen and (min-width: 630px) {
+    .checkout-form {
+      padding: 30px 16px;
+      margin: 90px auto auto auto;
+
+      min-height: auto;
+    }
   }
 </style>
