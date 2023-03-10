@@ -10,12 +10,18 @@
     <div class="review-panel" v-show="showForm">
       <div class="form-reviews">
         <h3>Leave a review</h3>
-        <form action="">
-          <label for="fname"> Your Name <span class="requered">*</span>:</label>
+
+        <form name="reviewForm">
+          <label for="fname"> Your Name <span class="required">*</span></label>
           <input type="text" v-model="form.userName" placeholder="..." required />
-          <label for="description">Review <span class="requered">*</span>:</label>
+
+          <label for="ftitle"> Title <span class="required">*</span></label>
+          <input type="text" v-model="form.title" placeholder="..." required />
+
+          <label for="freview">Review <span class="required">*</span></label>
           <textarea type="text" v-model="form.userReview" placeholder="Share your shopping expriencs." required />
-          <button @click="submitReview">Submit</button>
+
+          <button type="submit" @click="submitReview(), showReview(), toggleForm()">Submit</button>
         </form>
       </div>
     </div>
@@ -25,26 +31,66 @@
         <table>
             <thead>
               <tr>
-                <td>{{ review.athor }}</td>
+                <td>
+                  <span class="material-symbols-outlined">person</span>
+                  {{ review.athor }}
+                </td>
               </tr>
             </thead>
             <tbody>
               <tr>
-                  <th>{{ review.title }}</th>
-                  <td>{{ review.datetime }}</td>
+                <th>{{ review.title }}</th>
+                <td>{{ review.datetime }}</td>
               </tr>
             <tr>
                 <td>{{ review.description }}</td>
             </tr>
             <tr>
-              <button>Helpful</button>
-              <span> | <a>Report Abuse</a></span>
+              <button>
+                <span class="material-symbols-outlined">thumb_up</span>
+              </button>
+              <span> | </span>
+              <button>
+                <span class="material-symbols-outlined">thumb_down</span>
+              </button>
             </tr>
             </tbody>
           </table>
         </div>
-        <h3>Other says:</h3>
+
+        <div class="new-review old-review" v-show="myComment">
+        <table>
+            <thead>
+              <tr>
+                <td>
+                  <span class="material-symbols-outlined">person</span>
+                  {{ this.form.userName }}
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>{{ this.form.title }}</th>
+                <td>review.datetime</td>
+              </tr>
+            <tr>
+                <td>{{ this.form.userReview }}</td>
+            </tr>
+            <tr>
+              <button>
+                <span class="material-symbols-outlined">thumb_up</span>
+              </button>
+              <span> | </span>
+              <button>
+                <span class="material-symbols-outlined">thumb_down</span>
+              </button>
+            </tr>
+            </tbody>
+          </table>
+      </div>
+      <h3>Reviews:</h3>
     </div>
+
   </main>
 </template>
 <script>
@@ -54,31 +100,48 @@ export default {
     data() {
       return {
         showForm: false,
+        myComment: false,
         reviews: SiteReviews,
+        maxStars1: ["1","2","3","4","5"],
         form:{
-          userName:'',
+          userName: '',
           userReview: '',
-          maxStars1: ["1","2","3","4","5"]
+          title: '',
+          stars: ''
         }
       };
     },
+    computed:{},
+
     methods:{
       toggleForm(){
         this.showForm = !this.showForm
       },
-      submitReview(){
+      async submitReview(){
         this.$emit('submit', this.form)
+        localStorage.setItem('newUserName', this.form.userName)
+        localStorage.setItem('newReview', this.form.userReview)
+        localStorage.setItem('newTitle', this.form.title)
+        this.form.userName = localStorage.getItem('newUserName')
+        this.form.userReview = localStorage.getItem('newReview')
+        this.form.title = localStorage.getItem('newTitle')
 
-        console.log(this.form.userName)
+        document.reviewForm.reset();
       },
-      rate(){
-      console.log("thank u")
+      showReview(){
+        if(
+          this.form.userName !== ''
+          && this.form.userReview !== ''
+          && this.form.title !== ''
+          ){
+            this.myComment = !this.myComment
+        }
       }
     }
   }
 </script>
 <style scoped lang="scss">
-.requered{
+.required{
   color: red;
   font-size: larger;
 }
@@ -111,7 +174,7 @@ export default {
   margin: auto;
   min-width: 300px;
   max-width: 500px;
-  height: 330px;
+  height: auto;
   border:solid 1px;
   border-radius: 5px;
  .form-reviews{
