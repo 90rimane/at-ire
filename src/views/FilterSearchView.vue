@@ -17,6 +17,21 @@
       )
     },
     computed: {
+      categories() {
+        const main = [
+          //Set only takes in unique values, so when the map function returns
+          // an already existing value it gets ignored
+          ...new Set(
+            this.$store.state.allProducts.map((product) => product.category)
+          )
+        ]
+        const sub = [
+          ...new Set(
+            this.$store.state.allProducts.map((product) => product.subcategory)
+          )
+        ]
+        return { main, sub }
+      },
       headline() {
         if (this.$route.params.filter === 'All') {
           return 'Our Sortiment'
@@ -105,84 +120,25 @@
         <div class="categories">
           <h3>Categories</h3>
           <button
-            :class="[tags.includes('Tops') ? 'plus' : 'minus']"
-            @click="tagfilter('Tops')"
+            v-for="main in categories.main"
+            :key="main"
+            :class="[tags.includes(main) ? 'plus' : 'minus']"
+            @click="tagfilter(main)"
             type="button"
           >
-            Tops
-          </button>
-          <button
-            :class="[tags.includes('Bottoms') ? 'plus' : 'minus']"
-            @click="tagfilter('Bottoms')"
-            type="button"
-          >
-            Bottoms
-          </button>
-          <button
-            :class="[tags.includes('Accessories') ? 'plus' : 'minus']"
-            @click="tagfilter('Accessories')"
-            type="button"
-          >
-            Accessories
+            {{ main + ' ' }}
           </button>
         </div>
         <div class="sub-category">
           <h3>Sub Categories</h3>
           <button
-            :class="[tags.includes('Hoodies') ? 'plus' : 'minus']"
-            @click="tagfilter('Hoodies')"
+            v-for="sub in categories.sub"
+            :key="sub"
+            :class="[tags.includes(sub) ? 'plus' : 'minus']"
+            @click="tagfilter(sub)"
             type="button"
           >
-            Hoodies
-          </button>
-          <button
-            :class="[tags.includes('Sweatshirts') ? 'plus' : 'minus']"
-            @click="tagfilter('Sweatshirts')"
-            type="button"
-          >
-            Sweatshirts
-          </button>
-          <button
-            :class="[tags.includes('T-Shirts') ? 'plus' : 'minus']"
-            @click="tagfilter('T-Shirts')"
-            type="button"
-          >
-            T-Shirts
-          </button>
-          <button
-            :class="[tags.includes('Tank-Tops') ? 'plus' : 'minus']"
-            @click="tagfilter('Tank-Tops')"
-            type="button"
-          >
-            Tank-Tops
-          </button>
-          <button
-            :class="[tags.includes('Pants') ? 'plus' : 'minus']"
-            @click="tagfilter('Pants')"
-            type="button"
-          >
-            Pants
-          </button>
-          <button
-            :class="[tags.includes('Shorts') ? 'plus' : 'minus']"
-            @click="tagfilter('Shorts')"
-            type="button"
-          >
-            Shorts
-          </button>
-          <button
-            :class="[tags.includes('Hats') ? 'plus' : 'minus']"
-            @click="tagfilter('Hats')"
-            type="button"
-          >
-            Hats
-          </button>
-          <button
-            :class="[tags.includes('Bags') ? 'plus' : 'minus']"
-            @click="tagfilter('Bags')"
-            type="button"
-          >
-            Bags
+            {{ sub + ' ' }}
           </button>
         </div>
 
