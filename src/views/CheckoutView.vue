@@ -6,35 +6,83 @@
       <form @submit.prevent="nextStep">
         <label>
           First Name:
-          <input type="text" v-model="firstName" required />
+          <input
+            type="text"
+            v-model="firstName"
+            name="firstName"
+            autocomplete="first-name"
+            required
+          />
         </label>
         <label>
           Last Name:
-          <input type="text" v-model="lastName" required />
+          <input
+            type="text"
+            v-model="lastName"
+            name="lastName"
+            autocomplete="last-name"
+            required
+          />
         </label>
         <label>
           Email:
-          <input type="text" v-model="email" required />
+          <input
+            type="text"
+            v-model="email"
+            name="email"
+            autocomplete="email"
+            required
+          />
         </label>
         <label>
           Phone Number:
-          <input type="text" v-model="phoneNumber" required />
+          <input
+            type="text"
+            v-model="phoneNumber"
+            name="phoneNumber"
+            autocomplete="phone-number"
+            required
+          />
         </label>
         <label>
           Shipping Address:
-          <input type="text" v-model="shippingAddress" required />
+          <input
+            type="text"
+            v-model="shippingAddress"
+            name="shippingAddress"
+            autocomplete="shipping-address"
+            required
+          />
         </label>
         <label>
           City:
-          <input type="text" v-model="city" required />
+          <input
+            type="text"
+            v-model="city"
+            name="city"
+            autocomplete="city"
+            required
+          />
         </label>
         <label>
           Zip Code:
-          <input type="text" v-model="zipCode" required />
+          <input
+            type="text"
+            v-model="zipCode"
+            name="zipCode"
+            autocomplete="zip-code"
+            required
+          />
         </label>
         <label>
           Country:
-          <input type="text" v-model="country" required />
+          <input
+            type="text"
+            v-model="country"
+            name="country"
+            autocomplete="country"
+            required
+          />
         </label>
         <button @click="saveInfo" type="submit">Next</button>
       </form>
@@ -44,7 +92,13 @@
       <form @submit.prevent="submitPayment">
         <label>
           Card Number:
-          <input type="text" v-model="CardNumber" required />
+          <input
+            type="text"
+            v-model="CardNumber"
+            name="CardNumber"
+            autocomplete="card-number"
+            required
+          />
         </label>
         <label> Expiration Date: </label>
         <div class="expiration">
@@ -63,7 +117,13 @@
         </div>
         <label>
           CVC:
-          <input type="text" v-model="cvc" required />
+          <input
+            type="text"
+            v-model="cvc"
+            name="cvc"
+            autocomplete="cvc"
+            required
+          />
         </label>
         <div class="card-type">
           <img
@@ -84,7 +144,13 @@
         </div>
         <label>
           Name On Card:
-          <input type="text" v-model="nameOnCard" required />
+          <input
+            type="text"
+            v-model="nameOnCard"
+            name="nameOnCard"
+            autocomplete="name-on-card"
+            required
+          />
         </label>
         <button @click="submitPayment" type="submit">
           Submit Payment & Go To Delivery
@@ -254,7 +320,6 @@
     .checkout-form {
       padding: 30px 16px;
       margin: 90px auto auto auto;
-
       min-height: auto;
     }
   }
