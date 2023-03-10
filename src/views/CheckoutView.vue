@@ -136,7 +136,7 @@
         this.step++
       },
       submitPayment() {
-        if (this.expirationYear && this.expirationMonth && this.CardNumber) {
+        if (this.CardNumber) {
           this.$router.push('/delivery')
         }
       }
