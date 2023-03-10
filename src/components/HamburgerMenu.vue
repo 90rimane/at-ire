@@ -86,6 +86,7 @@
 
 <style lang="scss" scoped>
   .mobile-container {
+    width: 100vw;
     button {
       background-color: #ecc8b2;
       margin: 2px;

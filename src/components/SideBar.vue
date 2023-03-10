@@ -92,7 +92,7 @@
 
 <style lang="scss" scoped>
   aside {
-    display: none;
+    display: flex;
     flex-direction: column;
     background-color: var(--lightB);
     color: var(--light);
