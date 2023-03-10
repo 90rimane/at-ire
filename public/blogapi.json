@@ -1,0 +1,145 @@
+{
+  "data": [
+    {
+      "id": "77d6017c-ec7c-4415-ba94-7f0fcc44c92e",
+      "user": "Bob",
+      "title": "Sustainable Fashion: How to Build a Conscious Wardrobe",
+      "content": "Sustainability is an increasingly important consideration in fashion. In this post, we'll discuss how you can build a conscious wardrobe by investing in quality pieces that are made to last, choosing materials that are environmentally friendly, and supporting brands that prioritize ethical and sustainable practices. We'll also provide tips on how to care for your clothes to make them last longer and reduce your overall environmental impact.",
+      "created": { "date": "07/05/2022", "time": "12:42" },
+      "comments": [
+        {
+          "id": "c5867bcf-aa2a-4cb2-bb10-51efb027aebf",
+          "user": "Serah",
+          "content": "I love the idea of investing in quality pieces that are made to last. It might cost more upfront, but in the long run, its better for the environment and your wallet!",
+          "created": { "date": "07/05/2022", "time": "13:31" },
+          "replies": [
+            {
+              "id": "6820e586-5c07-431c-a397-bcc7785efea1",
+              "user": "The Chosen One",
+              "content": "Yeah, quite the insight!",
+              "created": { "date": "07/05/2022", "time": "14:31" },
+              "replies": []
+            }
+          ]
+        },
+        {
+          "id": "768dc50a-c004-446e-b7c2-249c0d3c5e76",
+          "user": "I-LOVE-PANCAKES",
+          "content": "Im so glad to see more and more brands prioritizing sustainability and ethical practices. Its about time!",
+          "created": { "date": "07/05/2022", "time": "13:31" },
+          "replies": [
+            {
+              "id": "98a76e3a-719c-4218-85ee-b6eb564fae63",
+              "user": "Bobs brother",
+              "content": "It sure is about time.",
+              "created": { "date": "07/05/2022", "time": "16:20" },
+              "replies": []
+            }
+          ]
+        },
+        {
+          "id": "80b90afb-49f8-4c40-881e-f050807941b6",
+          "user": "Turtles",
+          "content": "I had no idea that certain materials, like bamboo and hemp, are more environmentally friendly than others. Thanks for the tip!",
+          "created": { "date": "07/05/2022", "time": "15:11" },
+          "replies": [
+            {
+              "id": "0e024aaf-9c8f-4ab5-baec-c44912012351",
+              "user": "James",
+              "content": "Same, I was also surpised upon hearing that!",
+              "created": { "date": "07/05/2022", "time": "16:20" },
+              "replies": [
+                {
+                  "id": "c8fd7002-5584-47bc-81c2-c61675b66988",
+                  "user": "Golden-Potato",
+                  "content": "Same here :O",
+                  "created": { "date": "07/05/2022", "time": "16:45" },
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "933734ed-914e-419f-9697-b417f53e4dbd",
+      "user": "Alice",
+      "title": "Fashion Trends for Spring/Summer 2023",
+      "content": "As we approach the warmer months, it's time to start thinking about the fashion trends that will be dominating the runways and streets. In this post, we'll highlight some of the top trends for Spring/Summer 2023, including bold prints, oversized silhouettes, and pops of neon. We'll also provide styling tips and suggest affordable options for incorporating these trends into your ",
+      "created": { "date": "24/11/2022", "time": "09:14" },
+      "comments": [
+        {
+          "id": "9585dabe-06b3-497c-8158-76225b4b047c",
+          "user": "Ornstein",
+          "content": "It's crazy how quickly trends can come and go because of social media. It feels like there's always something new to buy!",
+          "created": { "date": "25/11/2022", "time": "09:20" },
+          "replies": [
+            {
+              "id": "5d8eef23-bda5-432a-9e8f-7d4268d3ade8",
+              "user": "Smough",
+              "content": "One could say there is too much to buy nowadays!",
+              "created": { "date": "25/11/2022", "time": "09:43" },
+              "replies": []
+            }
+          ]
+        },
+        {
+          "id": "62cff03d-7b17-47e8-b5c4-c07558b6aeb7",
+          "user": "Bern",
+          "content": "I appreciate that social media has made fashion more accessible and inclusive. It's great to see a wider variety of people represented in the industry.",
+          "created": { "date": "25/11/2022", "time": "09:21" },
+          "replies": [
+            {
+              "id": "4291faa5-c064-4f9c-9789-8f6736b3d987",
+              "user": "Smough",
+              "content": "The great age of inclusivity, woho!",
+              "created": { "date": "25/11/2022", "time": "09:54" },
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "93a4a357-6476-4dc0-8f2c-189a15257251",
+      "user": "League-addict",
+      "title": "The Evolution of Streetwear: From Niche to Mainstream",
+      "content": "Streetwear has come a long way from its humble beginnings in the 1980s and 90s. Once considered a niche style, it has now become a dominant force in the fashion world, with luxury brands like Gucci and Louis Vuitton releasing streetwear-inspired collections. In this post, we'll explore the evolution of streetwear and examine the factors that have contributed to its rise in popularity. We'll also take a closer look at some of the key elements of the streetwear aesthetic and provide tips on how to incorporate it into your own personal style.",
+      "created": { "date": "14/05/2022", "time": "09:14" },
+      "comments": [
+        {
+          "id": "0e002150-a916-4506-9986-b2f878d823d2",
+          "user": "Oliver",
+          "content": "Niche is the way for me! I might not fit in now but it feels like I'll do soon.",
+          "created": { "date": "15/05/2022", "time": "09:20" },
+          "replies": [
+            {
+              "id": "6488797d-ab8f-44a3-8ebe-e3b1c2634774",
+              "user": "Deepy",
+              "content": "Thats great positive thinking!",
+              "created": { "date": "16/05/2022", "time": "09:43" },
+              "replies": [
+                {
+                  "id": "b399e0fb-1d37-4182-9734-c1893d28a680",
+                  "user": "RandomJoe",
+                  "content": "We all could learn from Oliver!",
+                  "created": { "date": "16/05/2022", "time": "09:43" },
+                  "replies": [
+                    {
+                      "id": "b9b1654e-843f-43db-9ff0-caca27c1a682",
+                      "user": "Deepy",
+                      "content": "Yes definitely :)",
+                      "created": { "date": "16/05/2022", "time": "09:43" },
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

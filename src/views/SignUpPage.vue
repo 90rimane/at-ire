@@ -19,14 +19,15 @@
           if (this.password === this.confirmPassword) {
             //check if user already exists
             if (!parsed.some((userItem) => userItem.username === this.user)) {
-              const userObj = {
+              //Create the user object and push it into "database" array
+              parsed.push({
                 username: this.user,
                 password: this.password,
                 favorites: [],
                 cart: []
-              }
+              })
 
-              parsed.push(userObj)
+              //Update local storage
               localStorage.setItem('allUsers', JSON.stringify(parsed))
 
               // Trigger notification for successful login
