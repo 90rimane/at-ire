@@ -11,7 +11,7 @@
       <div class="form-reviews">
         <h3>Leave a review</h3>
 
-        <form name="reviewForm">
+        <form name="reviewForm" @submit.prevent="submitReview()">
           <label for="fname"> Your Name <span class="required">*</span></label>
           <input type="text" v-model="form.userName" placeholder="..." required />
 
@@ -21,7 +21,7 @@
           <label for="freview">Review <span class="required">*</span></label>
           <textarea type="text" v-model="form.userReview" placeholder="Share your shopping expriencs." required />
 
-          <button type="submit" @click="submitReview(), showReview(), toggleForm()">Submit</button>
+          <button type="submit" @click="showReview(), toggleForm()">Submit</button>
         </form>
       </div>
     </div>
