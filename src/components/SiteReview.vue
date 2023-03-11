@@ -188,7 +188,7 @@ export default {
   height: auto;
   border:solid 1px;
   border-radius: 5px;
-  animation: formBox .6s;  //@keyframes
+  animation: formBox .6s;  //@keyframes comment
 
  .form-reviews{
   padding: 10px;
@@ -242,7 +242,7 @@ export default {
     padding: 10px;
   }
   .new-review{
-    animation: formBox 1s;
+    animation: comment 1s;
     table{
       th{
         padding: 10px 0;
@@ -290,6 +290,14 @@ table{
   }
 }
 @keyframes formBox {
+  from {
+      transform: translate(0, -50%) ;
+    }
+    to{
+      transform: translate(0, 0);
+    }
+  }
+  @keyframes comment {
     from {
       transform: scale(0);
     }
