@@ -108,7 +108,7 @@ export default {
 }
 .ratingRespons{
   background-color: rgb(241, 64, 41);
-  animation: responsBox .25s;
+  animation: responsBox .30s;
   width: 250px;
   height: 100px;
   padding: 5px;

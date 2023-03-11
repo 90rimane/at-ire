@@ -38,21 +38,23 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr class="title-datetime-in-arow">
                 <th>{{ review.title }}</th>
-                <td>{{ review.datetime }}</td>
+                <td id="date-time">{{ review.datetime }}</td>
               </tr>
             <tr>
                 <td>{{ review.description }}</td>
             </tr>
-            <tr>
+            <tr class="like-dislike-comment">
               <button>
                 <span class="material-symbols-outlined">thumb_up</span>
               </button>
+              <span>{{ review.like }}</span>
               <span> | </span>
               <button>
                 <span class="material-symbols-outlined">thumb_down</span>
               </button>
+              <span>{{ review.dislike }}</span>
             </tr>
             </tbody>
           </table>
@@ -70,20 +72,22 @@
             </thead>
             <tbody>
               <tr>
-                <th>{{ this.form.title }}</th>
-                <td>review.datetime</td>
+                <th id="new-title-input">{{ this.form.title }}</th>
+                <td id="date-time">review.datetime</td>
               </tr>
             <tr>
                 <td>{{ this.form.userReview }}</td>
             </tr>
-            <tr>
-              <button>
+            <tr class="like-dislike-comment">
+              <button @click="countLikes()">
                 <span class="material-symbols-outlined">thumb_up</span>
               </button>
-              <span> | </span>
-              <button>
+              <span> {{ this.form.likes }}</span>
+              <span>|</span>
+              <button @click="countDisLikes()">
                 <span class="material-symbols-outlined">thumb_down</span>
               </button>
+              <span>{{ this.form.disLikes }}</span>
             </tr>
             </tbody>
           </table>
@@ -107,7 +111,9 @@ export default {
           userName: '',
           userReview: '',
           title: '',
-          stars: ''
+          stars: '',
+          likes: 0,
+          disLikes: 0
         }
       };
     },
@@ -116,6 +122,9 @@ export default {
     methods:{
       toggleForm(){
         this.showForm = !this.showForm
+        if(this.showForm){
+          this.myComment = false;
+        }
       },
       async submitReview(){
         this.$emit('submit', this.form)
@@ -126,16 +135,18 @@ export default {
         this.form.userReview = localStorage.getItem('newReview')
         this.form.title = localStorage.getItem('newTitle')
 
-        document.reviewForm.reset();
+        // this.resetFormField();
       },
       showReview(){
-        if(
-          this.form.userName !== ''
-          && this.form.userReview !== ''
-          && this.form.title !== ''
-          ){
-            this.myComment = !this.myComment
+        if(!this.myComment){
+            this.myComment = !this.myComment;
         }
+      },
+      countLikes(){
+        this.form.likes = this.form.likes+1
+      },
+      countDisLikes(){
+        this.form.disLikes = this.form.disLikes+1
       }
     }
   }
@@ -177,8 +188,11 @@ export default {
   height: auto;
   border:solid 1px;
   border-radius: 5px;
+  animation: formBox .6s;  //@keyframes
+
  .form-reviews{
   padding: 10px;
+
   & form{
     display: flex;
     flex-direction: column;
@@ -219,7 +233,7 @@ export default {
   flex-direction: column-reverse;
   align-items: normal;
   margin: 2em;
-  .old-review{
+  .old-review {
     text-align: left;
     max-width: 700px;
     height: auto;
@@ -227,5 +241,60 @@ export default {
     margin-top: 2em;
     padding: 10px;
   }
+  .new-review{
+    animation: formBox 1s;
+    table{
+      th{
+        padding: 10px 0;
+        font-size: 18px;
+      }
+    }
+  }
 }
+.like-dislike-comment{
+      display: flex;
+      flex-direction: row;
+      margin-top: 10px;
+      margin-left: 5px;
+      align-items: center;
+    }
+    span{
+      margin-left: 5px;
+    }
+    button{
+      background-color: var(--light);
+      border: none;
+      span{
+        color: var(--orange);
+        cursor:pointer;
+      }
+      & :hover{
+        color: var(--lightB-darker);
+      }
+    }
+table{
+  th{
+    font-size: 18px;
+  }
+  td{
+    text-align: justify;
+    span{
+      vertical-align: bottom;
+    }
+  }
+  #new-title-input{
+    width: 100%;
+  }
+  #date-time{
+    text-align: right;
+  }
+}
+@keyframes formBox {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
 </style>
