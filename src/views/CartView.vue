@@ -1,15 +1,18 @@
 <template>
   <main>
     <h2 class="page-lable">Shopping Cart</h2>
-    <div v-if="$store.state.activeUser !== null" class="cart-display">
-      <cartItem
-        v-for="product in $store.state.activeUser.cart"
-        :key="product.id"
-        :cartproduct="product"
-      />
-      <h3 v-if="$store.state.activeUser.cart.length < 1">
-        Your cart is empty.
-      </h3>
+    <div v-if="$store.state.activeUser !== null" class="cart-container">
+      <div class="display-container">
+        <cartItem
+          v-for="product in $store.state.activeUser.cart"
+          :key="product.id"
+          :cartproduct="product"
+        />
+        <h3 v-if="$store.state.activeUser.cart.length < 1">
+          Your cart is empty.
+        </h3>
+      </div>
+
       <div class="checkout-info">
         <span class="item-count"
           >item(s): {{ $store.state.activeUser.cart.length }}</span
@@ -23,6 +26,7 @@
         </div>
       </div>
     </div>
+
     <div v-else>
       <h3>
         You are not logged in,
@@ -65,17 +69,23 @@
     h3 {
       text-align: center;
       color: rgb(112, 112, 112);
-      margin: 100px;
+      text-align: center;
+      margin: 80px 0 300px 0;
     }
 
-    .cart-display {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
+    .cart-container {
       min-height: calc(100vh - 235px);
       max-height: calc(100vh - 235px);
-      overflow-y: scroll;
-      padding-top: 8px;
+
+      .display-container {
+        min-height: calc(100vh - 235px);
+        max-height: calc(100vh - 235px);
+        padding-top: 8px;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
     }
 
     .checkout-info {
@@ -113,7 +123,7 @@
       padding-left: 32px;
       padding-right: 32px;
 
-      .cart-display {
+      .cart-container {
         max-width: 1400px;
         margin: auto;
         padding-left: 32px;
