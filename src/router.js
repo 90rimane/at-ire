@@ -71,6 +71,7 @@ export default createRouter({
     }
   ],
   scrollBehavior() {
+    // When clicking on a router link - reset scroll to top
     return { top: 0 }
   }
 })

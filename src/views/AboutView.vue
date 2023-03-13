@@ -1,10 +1,10 @@
 <script>
 import developers from '../../assets/developers.json';
-// import SiteReview from '../components/SiteReview.vue';
+import SiteReview from '../components/SiteReview.vue';
 
   export default {
     components:{
-      // SiteReview,
+      SiteReview,
     },
     data(){
       return{
@@ -46,7 +46,7 @@ import developers from '../../assets/developers.json';
   </div>
 
   <div class="siter-eview">
-    <!-- <SiteReview /> -->
+    <SiteReview />
   </div>
 
   <footer>
@@ -64,11 +64,9 @@ import developers from '../../assets/developers.json';
 
 <style lang="scss" scoped>
 .about-section {
-    margin-top: 0;
-    padding: 8em 4em 5em 6em;
+    padding: 8em 4em 5em 4em;
     text-align: center;
-    background-color: var(--lightB-darker);
-    color: var(--darker);
+    background-color: var(--lightB);
 
     h1{
       color: var(--orange);
@@ -87,7 +85,7 @@ import developers from '../../assets/developers.json';
     padding: 2em;
   }
   .row{
-    margin: auto 0 auto 2em;
+    margin: 5em 2em 10em 2em;
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
@@ -156,7 +154,7 @@ import developers from '../../assets/developers.json';
   }
   @media screen and (max-width: 1300px) {
       .about-section {
-        margin: 0 0 1em 1em;
+        margin: 0;
       }
       .row{
         margin: auto 0 auto 3em;

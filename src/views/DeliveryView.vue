@@ -2,6 +2,8 @@
   <main>
     <h1>Delivery</h1>
     <h2>Choose your delivery method:</h2>
+
+    <!-- Choose a company -->
     <div class="choices">
       <input type="radio" v-model="deliveryChoice" value="Budbee" id="budbee" />
       <label for="budbee">Budbee</label>
@@ -32,7 +34,8 @@
       <label for="dhl">DHL</label>
     </div>
 
-    <!-- texts from bangerhead.se/vara-fraktalternativ, translated by Google -->
+    <!-- More information on the chosen company and if applicable, more choices -->
+    <!-- texts from "bangerhead.se/vara-fraktalternativ", translated by Google -->
     <div class="options">
       <div v-if="deliveryChoice === 'DHL'" class="optdescription">
         <h2>DHL</h2>
@@ -178,6 +181,7 @@
       </div>
     </div>
 
+    <!-- An reactive box for confirming the choice -->
     <div class="confirmBox">
       <h2>Please confirm your choice</h2>
       <p class="boldtext">
@@ -185,7 +189,9 @@
         <span v-if="budbeeChoice">{{ budbeeChoice }}</span>
         <span v-else-if="postnordChoice">{{ postnordChoice }}</span>
       </p>
-      <button type="button" class="boldtext">Confirm and Continue</button>
+      <button type="button" class="boldtext" :disabled="!deliveryChoice">
+        Confirm and Continue
+      </button>
     </div>
   </main>
 </template>
@@ -196,6 +202,7 @@
       return { deliveryChoice: '', budbeeChoice: '', postnordChoice: '' }
     },
     watch: {
+      //empties the second option if choice ofcompany changes
       deliveryChoice() {
         this.budbeeChoice = null
         this.postnordChoice = null

@@ -40,8 +40,12 @@
           <span class="link-text">Home</span>
         </router-link>
         <router-link id="cart" to="/checkout">
-          <CartIcon class="button-cart" />
-          <span id="cart-link-text" class="link-text">Shopping Cart</span>
+          <CartIcon
+            class="button-cart"
+            icon-size="1.5rem"
+            counter-location="19px"
+          />
+          <span id="cart-link-text" class="link-text"> Shopping Cart </span>
         </router-link>
         <router-link to="/favorite">
           <span class="material-symbols-outlined">favorite</span>
@@ -86,6 +90,7 @@
 
 <style lang="scss" scoped>
   .mobile-container {
+    width: 100vw;
     button {
       background-color: #ecc8b2;
       margin: 2px;
@@ -107,9 +112,7 @@
 
   /* added by Anna --> */
   .button-cart {
-    margin-left: -7px;
-    margin-right: 1em;
-    padding-right: 14px;
+    padding-top: 5px;
   }
 
   #cart {
@@ -120,7 +123,8 @@
 
   #cart-link-text {
     padding-top: 5px;
-    padding-left: 2px;
+    margin: 0;
+    padding-left: 7px;
   }
   /* <-- added by Anna */
 
@@ -133,6 +137,7 @@
     overflow: hidden;
     background-color: var(--lightB-darker);
     position: relative;
+    z-index: 3;
     .material-symbols-outlined {
       font-size: 1.5em;
       padding: 0;

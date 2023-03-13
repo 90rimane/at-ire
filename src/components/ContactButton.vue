@@ -62,7 +62,8 @@
       bottom: 40px;
       box-shadow: 5px 5px 25px;
       content: 'Go to Contact Page';
-      font-size: 16px;
+      font-size: 12px;
+      font-weight: 600;
       padding: 15px;
       position: absolute;
       right: 70px;

@@ -51,14 +51,12 @@
 
 <template>
   <SideBar />
-  <div class="components">
-    <RouterView />
-    <HeaderHead />
-    <ContactButton />
-    <FooterComponent v-if="isMobile" />
-    <FooterDesktop v-else />
-  </div>
 
+  <HeaderHead />
+  <RouterView />
+  <ContactButton />
+  <FooterComponent v-if="isMobile" />
+  <FooterDesktop v-else />
 </template>
 
 <style lang="scss">
@@ -83,11 +81,5 @@
   }
   body {
     background: var(--light);
-  }
-  .components{
-    margin-left: 3em;
-    @media (max-width: 980px){
-      margin-left: 0;
-    }
   }
 </style>

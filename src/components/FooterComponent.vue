@@ -185,7 +185,7 @@
     border-radius: 4px;
     overflow: hidden;
     li {
-      position: relative;
+      // position: relative;  Commented by Ali. Thats affecting HamburgareMenu
       color: #282828;
       border-top: 1px solid #dedede;
       cursor: pointer;

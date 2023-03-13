@@ -24,9 +24,20 @@
         <span class="material-symbols-outlined">home</span>
         <span class="text">Home</span>
       </router-link>
-      <router-link to="/cart" class="button">
-        <CartIcon />
-        <!-- <span class="material-symbols-outlined">shopping_cart_checkout</span> -->
+      <!-- both color and hover color of the icon change via props when hover the cart menu bar, in that way the icon practically sync color with the menu bar text -->
+      <router-link
+        to="/cart"
+        class="button"
+        @mouseover="hovCol = '#64748b'"
+        @mouseleave="hovCol = '#1e293b'"
+      >
+        <CartIcon
+          class="button-cart material-symbols-outlined"
+          :hover-color="hovCol"
+          icon-size="2.3rem"
+          :icon-color="hovCol"
+          counter-location="30px"
+        />
         <span class="text">Shopping Cart</span>
       </router-link>
       <router-link to="/favorite" class="button">
@@ -72,6 +83,10 @@
       Changed by Jovan
     -->
   </aside>
+
+  <button class="desktop-sidebar-btn" @click="ToggleMenu">
+    <span class="material-symbols-outlined"> menu </span>
+  </button>
 </template>
 
 <script setup>
@@ -84,22 +99,59 @@
     is_expanded.value = !is_expanded.value
     localStorage.setItem('is_expanded', is_expanded.value)
   }
+
+  let hovCol = ''
 </script>
 
 <style lang="scss" scoped>
+  /* added by Jovan START */
+  .desktop-sidebar-btn {
+    cursor: pointer;
+    background-color: transparent;
+    width: 43px;
+    aspect-ratio: 1;
+    border: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 8px 16px;
+    z-index: 101;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.381);
+    }
+
+    span {
+      font-size: 36px;
+      display: block;
+    }
+  }
+
+  @media (min-width: 980px) {
+    .desktop-sidebar-btn {
+      display: block;
+    }
+  }
+  /* added by Jovan END */
+
   aside {
     display: flex;
     flex-direction: column;
     background-color: var(--lightB);
     color: var(--light);
-    width: calc(1rem + 20px);
+    width: 0; // changed by Jovan
     overflow: hidden;
     min-height: 100vh;
-    padding: 1rem;
+    padding: 0; // changed by Jovan
     transition: 0.2s ease-in-out;
     box-shadow: 1px 0 5px var(--grey-light);
     position: fixed;
-    z-index: 2;
+    z-index: 99999; // added by Jovan
     top: 0;
     .logo {
       margin-bottom: 1rem;
@@ -209,6 +261,7 @@
     */
     &.is-expanded {
       width: var(--sidebar-width);
+      padding: 1rem; // added by Jovan
       .menu-toggle-wrap {
         top: -3rem;
         .menu-toggle {
@@ -227,6 +280,12 @@
       }
     }
   }
+  /* added by Anna --> */
+  .button-cart {
+    height: 40px;
+    padding: 2px 5px 2px 0;
+  }
+  /* <-- added by Anna */
 
   @media (max-width: 979px) {
     aside {
