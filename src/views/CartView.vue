@@ -55,8 +55,7 @@
 
 <style scoped lang="scss">
   main {
-    margin-top: 56px;
-    padding: 16px 8px;
+    padding-top: 80px;
     min-height: 100vh;
 
     .page-lable {

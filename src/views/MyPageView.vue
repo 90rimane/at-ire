@@ -1,5 +1,6 @@
 <template>
   <main class="home-pages">
+    <h2>Account</h2>
     <div v-if="user">
       <h1>Welcome to your page, {{ nameStartCapital }}</h1>
       <h2>Order history</h2>
@@ -22,7 +23,11 @@
     </div>
 
     <div v-else>
-      <h1>If you log in, you will find your information here</h1>
+      <h3>
+        You are not logged in,
+        <RouterLink to="/login" class="nav-link">login in</RouterLink> to view
+        your favorites.
+      </h3>
     </div>
   </main>
 </template>
@@ -37,8 +42,16 @@
     max-width: 60%;
     padding: 10px;
   }
+
+  h2 {
+    margin-left: 40px;
+  }
+
   h3 {
     margin-bottom: 20px;
+    text-align: center;
+    color: rgb(112, 112, 112);
+    margin: 100px;
   }
 
   li {
@@ -46,8 +59,9 @@
   }
 
   main {
-    margin-top: 100px;
+    padding-top: 80px;
     margin-left: 100px;
+    min-height: 100vh;
   }
 </style>
 
