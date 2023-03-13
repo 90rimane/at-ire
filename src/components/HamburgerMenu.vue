@@ -39,7 +39,7 @@
           <span class="material-symbols-outlined">home</span>
           <span class="link-text">Home</span>
         </router-link>
-        <router-link id="cart" to="/checkout">
+        <router-link id="cart" to="/cart">
           <CartIcon
             class="button-cart"
             icon-size="1.5rem"
