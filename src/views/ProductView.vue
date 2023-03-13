@@ -179,21 +179,21 @@
   }
 
   .size-for:active {
-    background-color: #f39256;
+    background-color: var(--main-strong-accent);
   }
 
   // temporary classes when selected -->
   .selected-size {
-    background-color: #f39256;
+    background-color: var(--main-strong-accent);
   }
 
   .selected-color {
-    border-color: #f39256;
+    border-color: var(--main-strong-accent);
     border-width: 4px;
   }
 
   #article {
-    margin-top: 30px;
+    margin-top: 80px;
   }
 
   #cart-button {
@@ -213,7 +213,7 @@
   .color-img:hover,
   .size-for:hover {
     cursor: pointer;
-    box-shadow: 2px 3px 15px #f39256;
+    box-shadow: 2px 3px 15px var(--main-strong-accent);
   }
 
   #cart-button:disabled:hover {

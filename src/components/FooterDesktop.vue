@@ -16,7 +16,9 @@
     <div class="margin-top">
       <h3 class="title-list">SUPPORT</h3>
       <ul>
-        <li><a href="#">CONTACT US</a></li>
+        <!-- Routerlinks to contact & FAQ added by Andrea -->
+        <router-link to="/contact"><li>CONTACT US</li></router-link>
+        <router-link to="/FAQ"><li>FAQ</li></router-link>
         <li><a href="#">RETURNS</a></li>
         <li><a href="#">TERMS</a></li>
         <li><a href="#">DELIVERY</a></li>
@@ -47,9 +49,9 @@
 </template>
 
 <script>
-import StarRating from './StarRating.vue';
+  import StarRating from './StarRating.vue'
   export default {
-    components:{
+    components: {
       StarRating
     }
   }
@@ -147,7 +149,7 @@ import StarRating from './StarRating.vue';
   #join-button {
     margin-top: 10px;
     margin-left: 5px;
-    background-color: #f39256;
+    background-color: var(--main-strong-accent);
     border: none;
     color: #282828;
     font-size: 12px;
@@ -163,7 +165,7 @@ import StarRating from './StarRating.vue';
     margin-top: 20px;
     width: 100%;
     height: 30px;
-    background-color: #ecc8b2;
+    background-color: var(--main-accent);
   }
 
   .title-list {

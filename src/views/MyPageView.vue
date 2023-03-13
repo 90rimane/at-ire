@@ -36,18 +36,18 @@
   </main>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
   button {
     margin-left: 20px;
     width: 322px;
     height: 40px;
-    background-color: #f39256;
+    background-color: var(--main-strong-accent);
     margin-bottom: 10px;
     border: none;
     margin-top: 15px;
   }
   .card {
-    box-shadow: 3px 3px 20px black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 40px 0;
     max-width: 60%;
     padding: 10px;

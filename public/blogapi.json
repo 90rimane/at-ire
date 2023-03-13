@@ -1,143 +1,296 @@
 {
   "data": [
     {
-      "id": "77d6017c-ec7c-4415-ba94-7f0fcc44c92e",
+      "id": "d837393a-e2ff-4e27-bffb-3d2e0137a9fd",
       "user": "Bob",
+      "type": "Share",
       "title": "Sustainable Fashion: How to Build a Conscious Wardrobe",
       "content": "Sustainability is an increasingly important consideration in fashion. In this post, we'll discuss how you can build a conscious wardrobe by investing in quality pieces that are made to last, choosing materials that are environmentally friendly, and supporting brands that prioritize ethical and sustainable practices. We'll also provide tips on how to care for your clothes to make them last longer and reduce your overall environmental impact.",
       "created": { "date": "07/05/2022", "time": "12:42" },
       "comments": [
         {
-          "id": "c5867bcf-aa2a-4cb2-bb10-51efb027aebf",
+          "id": "134f5f13-9712-4d1a-9bfb-9e609f7784fe",
           "user": "Serah",
           "content": "I love the idea of investing in quality pieces that are made to last. It might cost more upfront, but in the long run, its better for the environment and your wallet!",
-          "created": { "date": "07/05/2022", "time": "13:31" },
-          "replies": [
-            {
-              "id": "6820e586-5c07-431c-a397-bcc7785efea1",
-              "user": "The Chosen One",
-              "content": "Yeah, quite the insight!",
-              "created": { "date": "07/05/2022", "time": "14:31" },
-              "replies": []
-            }
-          ]
+          "created": { "date": "07/05/2022", "time": "13:31" }
         },
         {
-          "id": "768dc50a-c004-446e-b7c2-249c0d3c5e76",
+          "id": "223b5b97-b7fd-4802-9c7f-40fe0287199b",
+          "user": "The Chosen One",
+          "content": "Quite the insight!",
+          "created": { "date": "07/05/2022", "time": "14:31" }
+        },
+        {
+          "id": "63a272a2-1470-43a9-8610-a6e432ca798a",
           "user": "I-LOVE-PANCAKES",
           "content": "Im so glad to see more and more brands prioritizing sustainability and ethical practices. Its about time!",
-          "created": { "date": "07/05/2022", "time": "13:31" },
-          "replies": [
-            {
-              "id": "98a76e3a-719c-4218-85ee-b6eb564fae63",
-              "user": "Bobs brother",
-              "content": "It sure is about time.",
-              "created": { "date": "07/05/2022", "time": "16:20" },
-              "replies": []
-            }
-          ]
+          "created": { "date": "07/05/2022", "time": "13:31" }
         },
         {
-          "id": "80b90afb-49f8-4c40-881e-f050807941b6",
+          "id": "94f0f10e-7b8e-407b-bad3-9d1077e81bf8",
+          "user": "Bobs brother",
+          "content": "It sure is about time.",
+          "created": { "date": "07/05/2022", "time": "16:20" }
+        },
+        {
+          "id": "1187ed7f-572b-4ba0-bd39-cb20a7c06230",
           "user": "Turtles",
           "content": "I had no idea that certain materials, like bamboo and hemp, are more environmentally friendly than others. Thanks for the tip!",
-          "created": { "date": "07/05/2022", "time": "15:11" },
-          "replies": [
-            {
-              "id": "0e024aaf-9c8f-4ab5-baec-c44912012351",
-              "user": "James",
-              "content": "Same, I was also surpised upon hearing that!",
-              "created": { "date": "07/05/2022", "time": "16:20" },
-              "replies": [
-                {
-                  "id": "c8fd7002-5584-47bc-81c2-c61675b66988",
-                  "user": "Golden-Potato",
-                  "content": "Same here :O",
-                  "created": { "date": "07/05/2022", "time": "16:45" },
-                  "replies": []
-                }
-              ]
-            }
-          ]
+          "created": { "date": "07/05/2022", "time": "15:11" }
+        },
+        {
+          "id": "3bcde58b-0f2e-4030-b33f-2525e205a026",
+          "user": "James",
+          "content": "Same, I was also surpised upon hearing that!",
+          "created": { "date": "07/05/2022", "time": "16:20" }
         }
       ]
     },
     {
-      "id": "933734ed-914e-419f-9697-b417f53e4dbd",
+      "id": "a730898a-dd0e-4148-96cd-56e0d6215e59",
+      "user": "SocktomusPrime",
+      "type": "Ask",
+      "title": "Will @IRE ever sell socks on their e-commerce clothing shop?",
+      "content": "Hi everyone, Ive been a big fan of @IREs clothing line for a while now and have made a few purchases from their e-commerce shop. However, I noticed that they dont seem to sell socks, which is a bit of a disappointment since Id love to complete my outfits with matching @IRE socks. \n Does anyone know if @IRE has any plans to start selling socks in the near future? Or is there a reason why they dont sell them currently? Id love to hear from anyone who has more information on this topic.\n Thanks in advance!",
+      "created": { "date": "09/01/2023", "time": "11:35" },
+      "comments": [
+        {
+          "id": "c1ac48ba-e493-44f6-8a2e-0d85cafb15c2",
+          "user": "AvoidingThePuddle",
+          "content": "Honestly, Im not sure if socks are really considered part of fashion. I mean, sure, they can complete an outfit, but theyre mostly functional, right? Maybe @IRE just doesnt see the demand for them.",
+          "created": { "date": "09/01/2023", "time": "14:05" }
+        },
+        {
+          "id": "39bfeaab-eb65-4914-a485-5d298be9fa50",
+          "user": "Mia",
+          "content": "I think its a valid question. Socks can definitely be a part of fashion and can add a pop of color or pattern to an outfit. Maybe @IRE just hasnt found the right supplier or design to match their aesthetic.",
+          "created": { "date": "09/01/2023", "time": "15:15" }
+        },
+        {
+          "id": "5642e940-e413-468d-8124-df3949566c5a",
+          "user": "Sophie",
+          "content": "I personally don't care about matching socks to my outfits, so I'm not sure if it's a big deal for @IRE to start selling them. But if it's important to their customers, then they should consider adding them to their inventory.",
+          "created": { "date": "09/01/2023", "time": "16:00" }
+        }
+      ]
+    },
+    {
+      "id": "6d4d458c-193d-4650-b217-735bb17ffe4c",
       "user": "Alice",
+      "type": "Share",
       "title": "Fashion Trends for Spring/Summer 2023",
       "content": "As we approach the warmer months, it's time to start thinking about the fashion trends that will be dominating the runways and streets. In this post, we'll highlight some of the top trends for Spring/Summer 2023, including bold prints, oversized silhouettes, and pops of neon. We'll also provide styling tips and suggest affordable options for incorporating these trends into your ",
       "created": { "date": "24/11/2022", "time": "09:14" },
       "comments": [
         {
-          "id": "9585dabe-06b3-497c-8158-76225b4b047c",
+          "id": "04240b64-aeeb-4c22-8279-488b6997f844",
           "user": "Ornstein",
           "content": "It's crazy how quickly trends can come and go because of social media. It feels like there's always something new to buy!",
-          "created": { "date": "25/11/2022", "time": "09:20" },
-          "replies": [
-            {
-              "id": "5d8eef23-bda5-432a-9e8f-7d4268d3ade8",
-              "user": "Smough",
-              "content": "One could say there is too much to buy nowadays!",
-              "created": { "date": "25/11/2022", "time": "09:43" },
-              "replies": []
-            }
-          ]
+          "created": { "date": "25/11/2022", "time": "09:20" }
         },
         {
-          "id": "62cff03d-7b17-47e8-b5c4-c07558b6aeb7",
+          "id": "d28035ee-b10e-4ce6-8d53-53760c522833",
+          "user": "Smough",
+          "content": "One could say there is too much potato to buy nowadays!",
+          "created": { "date": "25/11/2022", "time": "09:43" }
+        },
+        {
+          "id": "ce1f1b7e-d60d-4d95-aef8-332f83ffc444",
           "user": "Bern",
           "content": "I appreciate that social media has made fashion more accessible and inclusive. It's great to see a wider variety of people represented in the industry.",
-          "created": { "date": "25/11/2022", "time": "09:21" },
-          "replies": [
-            {
-              "id": "4291faa5-c064-4f9c-9789-8f6736b3d987",
-              "user": "Smough",
-              "content": "The great age of inclusivity, woho!",
-              "created": { "date": "25/11/2022", "time": "09:54" },
-              "replies": []
-            }
-          ]
+          "created": { "date": "25/11/2022", "time": "09:21" }
+        },
+        {
+          "id": "9b76cc45-c02c-4cb7-94e0-c0788aaa2406",
+          "user": "SmoughAteTooMuchPotato",
+          "content": "The great age of inclusivity, woho!",
+          "created": { "date": "25/11/2022", "time": "09:54" }
         }
       ]
     },
     {
-      "id": "93a4a357-6476-4dc0-8f2c-189a15257251",
+      "id": "71b04b29-6956-4210-87b2-dfe69971b17b",
       "user": "League-addict",
+      "type": "Discuss",
       "title": "The Evolution of Streetwear: From Niche to Mainstream",
       "content": "Streetwear has come a long way from its humble beginnings in the 1980s and 90s. Once considered a niche style, it has now become a dominant force in the fashion world, with luxury brands like Gucci and Louis Vuitton releasing streetwear-inspired collections. In this post, we'll explore the evolution of streetwear and examine the factors that have contributed to its rise in popularity. We'll also take a closer look at some of the key elements of the streetwear aesthetic and provide tips on how to incorporate it into your own personal style.",
       "created": { "date": "14/05/2022", "time": "09:14" },
       "comments": [
         {
-          "id": "0e002150-a916-4506-9986-b2f878d823d2",
+          "id": "c60a6b68-1e04-4a88-8895-e9cacce8fe73",
           "user": "Oliver",
           "content": "Niche is the way for me! I might not fit in now but it feels like I'll do soon.",
-          "created": { "date": "15/05/2022", "time": "09:20" },
-          "replies": [
-            {
-              "id": "6488797d-ab8f-44a3-8ebe-e3b1c2634774",
-              "user": "Deepy",
-              "content": "Thats great positive thinking!",
-              "created": { "date": "16/05/2022", "time": "09:43" },
-              "replies": [
-                {
-                  "id": "b399e0fb-1d37-4182-9734-c1893d28a680",
-                  "user": "RandomJoe",
-                  "content": "We all could learn from Oliver!",
-                  "created": { "date": "16/05/2022", "time": "09:43" },
-                  "replies": [
-                    {
-                      "id": "b9b1654e-843f-43db-9ff0-caca27c1a682",
-                      "user": "Deepy",
-                      "content": "Yes definitely :)",
-                      "created": { "date": "16/05/2022", "time": "09:43" },
-                      "replies": []
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
+          "created": { "date": "15/05/2022", "time": "09:20" }
+        },
+        {
+          "id": "55c6a2bf-c280-478b-861e-37f28cde8a4f",
+          "user": "Deepy",
+          "content": "Hej Oliver, the replies dont work yet but thats great positive thinking!",
+          "created": { "date": "16/05/2022", "time": "09:43" }
+        },
+        {
+          "id": "aafbc537-f42e-4ccc-9ab4-057a5f0fb3b6",
+          "user": "RandomJoe",
+          "content": "We all could learn from Oliver!",
+          "created": { "date": "16/05/2022", "time": "10:23" }
+        },
+        {
+          "id": "1b2e260d-fb5d-4ac0-8f3d-f977114f58ef",
+          "user": "Deepy",
+          "content": "Yes definitely :)",
+          "created": { "date": "16/05/2022", "time": "11:55" }
+        }
+      ]
+    },
+    {
+      "id": "b975b711-492e-4700-b496-ea70c0b6efed",
+      "user": "Fashionista",
+      "type": "Share",
+      "title": "Why I Love @IRE's Tank Tops",
+      "content": "I have been a fan of @IRE's clothing for a while now, but their tank tops have really stolen my heart. Not only are they made with high-quality materials, but they come in a wide range of colors and styles that are perfect for any occasion. Whether I'm going for a casual look or dressing up for a night out, I always find myself reaching for one of their tank tops. They're versatile, comfortable, and stylish all at the same time. I can't recommend them enough!",
+      "created": { "date": "22/03/2023", "time": "14:30" },
+      "comments": [
+        {
+          "id": "598a8fc8-7214-4cf2-a17e-223643d6c6ff",
+          "user": "FashionEnthusiast",
+          "content": "I couldn't agree more! I recently purchased one of their tank tops and I love how it fits and feels. The quality is definitely worth the price.",
+          "created": { "date": "22/03/2023", "time": "15:10" }
+        },
+        {
+          "id": "4d27a03b-7743-472e-a2f3-9e21823d4c47",
+          "user": "StyleGuru",
+          "content": "I haven't tried their tank tops yet, but now I definitely will! Thanks for the recommendation.",
+          "created": { "date": "23/03/2023", "time": "09:45" }
+        },
+        {
+          "id": "3e030dc2-3ba5-4ea5-ae10-20f4d1e5c4cd",
+          "user": "Fashionista",
+          "content": "You're welcome, @StyleGuru! I'm sure you'll love them as much as I do.",
+          "created": { "date": "23/03/2023", "time": "11:20" }
+        }
+      ]
+    },
+    {
+      "id": "69e4b2b0-ee04-49a7-8c92-3948c97d9dd2",
+      "user": "Emily",
+      "type": "Discuss",
+      "title": "The Importance of Accessories in Completing Your Outfit",
+      "content": "Accessories can make or break an outfit. In this post, we'll discuss the importance of choosing the right accessories to complement your clothing and highlight your personal style. From statement jewelry to scarves and hats, we'll explore the various types of accessories and provide tips on how to incorporate them into your outfits. We'll also discuss the benefits of investing in quality accessories that will last you for years to come.",
+      "created": { "date": "03/11/2022", "time": "11:25" },
+      "comments": [
+        {
+          "id": "70cbd35b-7908-4ba2-920b-0fac1143d1ff",
+          "user": "Sarah",
+          "content": "I completely agree with this post. Accessories are often overlooked, but they can really elevate an outfit and make it unique!",
+          "created": { "date": "03/11/2022", "time": "12:02" }
+        },
+        {
+          "id": "2fa57de7-acf8-43c4-96c8-a573e7b40263",
+          "user": "John",
+          "content": "Ive always been a fan of watches as an accessory. Theyre functional and can really add a touch of sophistication to an outfit.",
+          "created": { "date": "03/11/2022", "time": "13:16" }
+        },
+        {
+          "id": "01fb3ca9-91b2-4942-b6a4-56aba2fedfe0",
+          "user": "Jane",
+          "content": "I love experimenting with different types of scarves! They're a versatile accessory that can be worn in so many different ways.",
+          "created": { "date": "03/11/2022", "time": "14:24" }
+        },
+        {
+          "id": "edffefa7-2a18-4567-b84b-5d7e748cd72b",
+          "user": "Max",
+          "content": "I've always struggled with choosing the right accessories for my outfits. Do you have any tips for how to match accessories with clothing?",
+          "created": { "date": "03/11/2022", "time": "15:40" }
+        },
+        {
+          "id": "e9bc996b-cc39-43b8-9472-7bcd05cb4e4c",
+          "user": "Emily",
+          "content": "Thanks for your question, Max! A good rule of thumb is to choose accessories that complement the colors and patterns in your clothing. You can also choose accessories that contrast with your outfit for a more bold and statement-making look. And dont be afraid to mix and match different types of accessories!",
+          "created": { "date": "03/11/2022", "time": "16:25" }
+        }
+      ]
+    },
+    {
+      "id": "67e1b58f-a9af-4d04-bf65-9bf898c26a7b",
+      "user": "Emily",
+      "type": "Discuss",
+      "title": "The Beauty of Minimalism: How Less is More",
+      "content": "Minimalism is more than just a design style. It is a way of life that emphasizes simplicity and the essentials. In this post, we explore the beauty of minimalism and how it can help us live a more fulfilling life. We discuss how to apply minimalist principles to our home, wardrobe, and daily routines. We also share tips on how to declutter our lives and simplify our possessions.",
+      "created": { "date": "09/01/2023", "time": "11:35" },
+      "comments": [
+        {
+          "id": "73761d8e-3760-4e0a-b06a-30bb18a96ccc",
+          "user": "Olivia",
+          "content": "I love the idea of minimalism! It helps me stay organized and focused on what truly matters.",
+          "created": { "date": "09/01/2023", "time": "13:10" }
+        },
+        {
+          "id": "a642eac5-3296-4fa4-825f-7656a596d4c3",
+          "user": "Lucas",
+          "content": "I agree with Olivia. Minimalism helps me avoid clutter and distractions, which allows me to be more productive.",
+          "created": { "date": "09/01/2023", "time": "14:05" }
+        },
+        {
+          "id": "a3bf3b0f-c9aa-42d9-b07d-12101d89f187",
+          "user": "Mia",
+          "content": "Minimalism is also great for the environment. By consuming less, we reduce our carbon footprint and waste less resources.",
+          "created": { "date": "09/01/2023", "time": "15:15" }
+        },
+        {
+          "id": "de5c7e1c-f392-4d6c-895d-ac32bcb036f3",
+          "user": "Sophie",
+          "content": "I'm curious to know more about minimalism. Can you recommend any books or documentaries on the topic?",
+          "created": { "date": "09/01/2023", "time": "16:00" }
+        }
+      ]
+    },
+    {
+      "id": "a45a9713-6c8d-4491-a671-4e4f3777c536",
+      "user": "HoodieLover",
+      "type": "Ask",
+      "title": "Will @IRE expand color selection for their hoodie lineup?",
+      "content": "Hey everyone, \n \nI've been eyeing @IRE's hoodie collection for a while now, and I really like the quality and style of their current offerings. However, I noticed that they only have a few colors available, and I was hoping to see more variety. \n \nDoes anyone know if @IRE has any plans to add more colors to their hoodie lineup? I'd love to see some more options, especially with fall and winter coming up. \n \nThanks in advance for any information!",
+      "created": { "date": "09/01/2023", "time": "11:35" },
+      "comments": [
+        {
+          "id": "087bafd9-8f43-4b2a-880c-2bacae60022b",
+          "user": "Pirate553",
+          "content": "Yes, I saw on @IRE's Instagram that they teased some new hoodie colors coming soon. I'm hoping for some bright and bold shades for the upcoming summer season.",
+          "created": { "date": "09/01/2023", "time": "13:10" }
+        },
+        {
+          "id": "44f42005-168d-45fd-9e30-ce7d55ec44f5",
+          "user": "HoodieLover",
+          "content": "Great, thanks!",
+          "created": { "date": "09/01/2023", "time": "14:05" }
+        }
+      ]
+    },
+    {
+      "id": "44997ec1-623d-49cb-9cfb-ee3b8819efe4",
+      "user": "Lisa",
+      "type": "Share",
+      "title": "Elevate Your Style with @IRE Bag Accessories",
+      "content": "Accessories are the perfect way to elevate any outfit, and @IRE has got you covered with their latest collection of bag accessories. From trendy keychains to stylish bag straps, @IRE's accessories are the perfect addition to any fashion-forward look. With @IRE, you can take your outfit to the next level and make a statement without breaking the bank. Whether you're looking to add a pop of color to your handbag or want to make a statement with a unique keychain, @IRE has something for everyone. Shop the collection now and elevate your style game!",
+      "created": { "date": "08/03/2023", "time": "11:30" },
+      "comments": [
+        {
+          "id": "1d2357d2-1117-4c83-b4aa-b01099b2b077",
+          "user": "Fashionista123",
+          "content": "I've been looking for some new bag accessories, can't wait to check out @IRE's collection!",
+          "created": { "date": "08/03/2023", "time": "12:05" }
+        },
+        {
+          "id": "d4f716d8-1e67-47d4-a963-70145d8d7a6e",
+          "user": "Trendsetter22",
+          "content": "Love the unique and stylish designs from @IRE, can definitely see myself rocking these accessories!",
+          "created": { "date": "08/03/2023", "time": "13:20" }
+        },
+        {
+          "id": "996daeb0-7b36-4448-b1b1-02fd0ebc9ff5",
+          "user": "FashionEnthusiast",
+          "content": "I'm always on the lookout for affordable and fashionable accessories, can't wait to try @IRE!",
+          "created": { "date": "08/03/2023", "time": "14:15" }
         }
       ]
     }

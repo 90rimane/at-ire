@@ -1,10 +1,9 @@
 <script>
   import productItem from '../components/ProductItem.vue'
-  import CartItem from '../components/CartItem.vue'
+
   export default {
     components: {
-      productItem,
-      CartItem
+      productItem
     }
   }
 </script>
@@ -31,14 +30,6 @@
         your favorites.
       </h3>
     </div>
-    <div v-if="$store.state.activeUser != null">
-      <h2>Cart items test</h2>
-      <CartItem
-        v-for="product in $store.state.activeUser.cart"
-        :key="product.id"
-        :cartproduct="product"
-      />
-    </div>
   </main>
 </template>
 
@@ -62,7 +53,7 @@
 
     h3 {
       text-align: center;
-      color: rgb(112, 112, 112);
+      color: var(--grey);
       margin: 100px;
     }
 

@@ -43,12 +43,6 @@
       <h3>@IRE</h3>
     </router-link>
 
-    <div id="hamburgermenu">
-      <!--#region HamburgerMenu component located here by Ali-->
-      <HamburgerMenu />
-      <!-- #endregion -->
-    </div>
-
     <router-link to="/favorite" class="button">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +66,13 @@
         icon-color="var(--dark)"
       />
     </router-link>
+    <div id="hamburgermenu">
+      <!--#region HamburgerMenu component located here by Ali-->
+      <HamburgerMenu />
+      <!-- #endregion -->
+    </div>
   </div>
+
   <div class="header-desktop">
     <router-link to="/" class="button">
       <h2>@IRE</h2>
@@ -108,7 +108,7 @@
             :key="item.id"
             @click="selectItem(item)"
           >
-            // activeNumber has class activeItem for css
+            <!-- activeNumber has class activeItem for css -->
             <router-link
               to="/product"
               :style="[index === activeNumber ? activeItem : '']"
@@ -180,7 +180,6 @@
           textTransform: 'uppercase'
         },
         activeNumber: 0
-        // showSearchBar: true
       }
     },
     computed: {
@@ -233,7 +232,7 @@
     height: 56px;
     left: 0px;
     top: 0px;
-    background: #ecc8b2;
+    background: var(--main-accent);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     z-index: 1;
   }
@@ -288,7 +287,11 @@
   .button-cart {
     position: absolute;
     left: 86%;
-    margin-top: -42px;
+    margin-top: 14px;
+  }
+
+  #hamburgermenu {
+    margin-top: -48.5px;
   }
 
   /* <-- add by Anna + some changes related to this around here*/
@@ -309,7 +312,7 @@
     height: 35px;
     left: 58%;
     top: 13px;
-    background: #ecc8b2;
+    background: var(--main-accent);
     border-radius: 13px;
     padding-left: 8px;
     border: 1px;
@@ -403,7 +406,7 @@
   @media (min-width: 980px) {
     .header-desktop {
       box-sizing: border-box;
-      position: absolute;
+      position: fixed;
       width: 100%;
       height: 56px;
       left: 0px;

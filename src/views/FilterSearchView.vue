@@ -34,7 +34,7 @@
       },
       headline() {
         if (this.$route.params.filter === 'All') {
-          return 'Our Sortiment'
+          return 'Our Products'
         } else if (this.$route.params.filter.split('+').length == 1) {
           return this.$route.params.filter
         } else {
@@ -168,18 +168,13 @@
 </template>
 
 <style scoped lang="scss">
-  @media only screen and (min-width: 980px) {
-    .main-page {
-      margin-left: 68px;
-    }
-  }
   .main-page {
     min-height: 100vh;
     margin-top: 56px;
     font-family: 'roboto';
 
     .search-header {
-      background-color: #ecc8b2;
+      background-color: var(--main-accent);
       padding: 18px 9px;
       display: flex;
       align-items: center;
@@ -274,14 +269,14 @@
 
     button {
       padding: 6px 12px;
-      background-color: #ecc8b2;
+      background-color: var(--main-accent);
       border-radius: 20px;
       border: none;
       margin: 4px;
     }
 
     .plus {
-      background-color: #f39256;
+      background-color: var(--main-strong-accent);
     }
 
     .plus::after {

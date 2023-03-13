@@ -56,7 +56,7 @@
       position: absolute;
       top: -5px;
       width: 15px;
-      background-color: rgb(161, 253, 167);
+      background-color: var(--cart-icon-color);
       border-radius: 50%;
       font-size: 0.8rem;
       padding: 1.5px;
