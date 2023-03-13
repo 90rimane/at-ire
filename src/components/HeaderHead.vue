@@ -6,6 +6,9 @@
         type="text"
         v-model="search"
         placeholder="Search products..."
+        @keydown.down="nextSearchItem()"
+        @keydown.up="prevSearchItem()"
+        @keydown.enter="goToProduct()"
       />
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -19,25 +22,25 @@
           d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
         />
       </svg>
+      <div>
+        <ul v-if="search" class="dropdown" @focusout="clearSearch()">
+          <li
+            v-for="(item, index) in searchResult"
+            :key="item.id"
+            @click="selectItem(item)"
+          >
+            <router-link
+              to="/product"
+              :style="[index === activeNumber ? activeItem : '']"
+            >
+              {{ item.description }}
+            </router-link>
+          </li>
+        </ul>
+      </div>
     </form>
-
-    <div>
-      <ul v-if="search" class="dropdown" @focusout="search = ''">
-        <li
-          v-for="item in searchResult"
-          :key="item.id"
-          @click="selectItem(item)"
-        >
-          <router-link to="/product"> {{ item.description }} </router-link>
-        </li>
-      </ul>
-    </div>
     <router-link to="/" class="button">
       <h3>@IRE</h3>
-    </router-link>
-    <router-link to="/cart" id="cart-icon-mobile" class="button">
-      <!-- <span class="material-symbols-outlined">shopping_cart_checkout</span> -->
-      <CartIcon class="button-cart" />
     </router-link>
 
     <div id="hamburgermenu">
@@ -60,6 +63,15 @@
         />
       </svg>
     </router-link>
+    <router-link to="/cart" id="cart-icon-mobile" class="button">
+      <CartIcon
+        class="button-cart"
+        counter-location="23px"
+        hover-color="var(--lightB)"
+        icon-size="1.9rem"
+        icon-color="var(--dark)"
+      />
+    </router-link>
   </div>
   <div class="header-desktop">
     <router-link to="/" class="button">
@@ -74,7 +86,6 @@
         @keydown.down="nextSearchItem()"
         @keydown.up="prevSearchItem()"
         @keydown.enter="goToProduct()"
-        @focusout="clearSearch()"
       />
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +100,7 @@
         />
       </svg>
       <div>
-        <ul v-if="search" class="dropdown">
+        <ul v-if="search" class="dropdown" @focusout="clearSearch()">
           <li
             v-for="(item, index) in searchResult"
             :key="item.id"
@@ -133,10 +144,15 @@
         />
       </svg>
     </router-link>
-    <!-- <router-link to="/cart" class="button">
-      <span class="material-symbols-outlined">shopping_cart_checkout</span>
-    </router-link> -->
-    <router-link to="/cart" class="button-cart"> <CartIcon /> </router-link>
+    <router-link to="/cart">
+      <CartIcon
+        class="button-cart"
+        counter-location="23px"
+        hover-color="var(--lightB)"
+        icon-size="1.9rem"
+        icon-color="var(--dark)"
+      />
+    </router-link>
   </div>
 </template>
 
@@ -199,10 +215,6 @@
         this.search = ''
         this.activeNumber = 0
       }
-      // // <-- add by Anna
-      // // onToggle() {
-      // // this.showSearchBar = !this.showSearchBar
-      // // }
     }
   }
 </script>
@@ -255,26 +267,21 @@
   }
 
   form:hover .search-bar-mobile {
-    width: 174px;
+    width: 38%;
     cursor: pointer;
-    background: #fff5ef;
+    background: var(--lightB);
     z-index: 20;
   }
 
   .search-bar-mobile:focus {
-    background: #fff5ef;
-    width: 174px;
+    background: var(--lightB);
+    width: 38%;
   }
 
   .button-cart {
     position: absolute;
     left: 86%;
-    top: 10px;
-  }
-
-  #hamburgermenu {
-    position: fixed;
-    top: 0px;
+    margin-top: -42px;
   }
 
   /* <-- add by Anna + some changes related to this around here*/
@@ -283,26 +290,26 @@
     position: absolute;
     width: 30px;
     height: 30px;
-    left: 44%;
+    left: 50%;
     top: 13px;
     cursor: pointer;
     color: #000000;
   }
 
   .search-bar-mobile {
-    position: fixed;
+    position: absolute;
     width: 1px;
-    height: 40px;
-    left: 49%;
-    top: 8px;
+    height: 35px;
+    left: 58%;
+    top: 13px;
     background: #ecc8b2;
     border-radius: 13px;
+    padding-left: 8px;
     border: 1px;
-    padding-left: 0.8em;
     font-size: 17px;
     transition: 0.9s;
     outline: none;
-    display: inline-block;
+    z-index: 20;
   }
 
   h3 {
@@ -321,7 +328,7 @@
   }
 
   h3:hover {
-    color: #fff5ef;
+    color: var(--lightB);
   }
 
   .bi-bi-filter-left-mobile {
@@ -337,7 +344,7 @@
   }
 
   .bi-bi-filter-left-mobile:hover {
-    color: #fff5ef;
+    color: var(--lightB);
   }
 
   /* LÄGG IN EN 'NAV-LINK' I APP.VUE .bi-bi-list :hover:focus:active {
@@ -348,7 +355,7 @@
     position: absolute;
     width: 30px;
     height: 30px;
-    left: 72%;
+    left: 68.5%;
     right: 13.33%;
     top: 14px;
     bottom: 95.75%;
@@ -357,7 +364,7 @@
   }
 
   .bi-bi-heart-mobile:hover {
-    color: #fff5ef;
+    color: var(--lightB);
   }
 
   .material-symbols-outlined {
@@ -373,10 +380,12 @@
   #cart-icon-mobile {
     top: 0;
     right: 0;
+    overflow: none;
+    margin: 0;
   }
 
   .material-symbols-outlined:hover {
-    color: #fff5ef;
+    color: var(--lightB);
   }
   /* @media (max-width: 980px) {
       .header-mobile {
@@ -413,7 +422,7 @@
     }
 
     h2:hover {
-      color: #fff5ef;
+      color: var(--lightB);
     }
 
     /* LÄGG IN EN "NAV-LINK" I APP.VUE
@@ -451,14 +460,14 @@
     form:hover .search-bar-desktop {
       width: 174px;
       cursor: pointer;
-      background: #fff5ef;
+      background: var(--lightB);
       z-index: 20;
     }
 
     /* <-- added by Anna */
 
     .search-bar-desktop:focus {
-      background: #fff5ef;
+      background: var(--lightB);
       width: 174px;
     }
 
@@ -495,7 +504,7 @@
     }
 
     .bi-bi-person-desktop:hover {
-      color: #fff5ef;
+      color: var(--lightB);
     }
     .bi-bi-heart-desktop {
       position: absolute;
@@ -508,7 +517,7 @@
     }
 
     .bi-bi-heart-desktop:hover {
-      color: #fff5ef;
+      color: var(--lightB);
     }
 
     .material-symbols-outlined {
@@ -521,7 +530,7 @@
       color: #000000;
     }
     .material-symbols-outlined:hover {
-      color: #fff5ef;
+      color: var(--lightB);
     }
   }
 
@@ -531,58 +540,22 @@
     }
   }
 
-  /* @media (min-width: 980px) {
-      .header-desktop {
-        display: flex;
-      }
-    } */
-
-  /* added by Anna --> */
-
-  @media (min-width: 480px) {
-    .material-symbols-outlined,
-    .button-cart {
-      position: absolute;
-      left: 88%;
-      top: 10px;
-    }
-
-    .bi-bi-heart-mobile {
-      position: absolute;
-      left: 75%;
-      right: 13.33%;
+  @media (min-width: 500px) {
+    .bi-bi-search-mobile {
+      left: 52%;
     }
   }
 
-  @media (min-width: 670px) {
-    .material-symbols-outlined,
-    .button-cart {
-      position: absolute;
-      left: 91%;
-    }
-
-    .bi-bi-heart-mobile {
-      position: absolute;
-      left: 81%;
-      right: 13.33%;
+  @media (min-width: 680px) {
+    .bi-bi-search-mobile {
+      left: 53%;
     }
   }
-
-  @media (min-width: 790px) {
-    .material-symbols-outlined,
-    .button-cart {
-      position: absolute;
-      left: 92%;
-    }
-
-    .bi-bi-heart-mobile {
-      position: absolute;
-      left: 83%;
-      right: 13.33%;
+  @media (min-width: 880px) {
+    .bi-bi-search-mobile {
+      left: 54%;
     }
   }
-
-  /* <-- added by Anna */
 
   @media (min-width: 980px) {
     .header-mobile {
@@ -595,6 +568,11 @@
       position: absolute;
       left: 93.5%;
     }
+
+    .button-cart {
+      margin-top: 14px;
+    }
+
     /* <-- added by Anna */
   }
 </style>

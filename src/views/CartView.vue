@@ -1,7 +1,7 @@
 <template>
   <main>
     <h2 class="page-lable">Shopping Cart</h2>
-    <div v-if="$store.state.activeUser != null" class="cart-display">
+    <div v-if="$store.state.activeUser !== null" class="cart-display">
       <cartItem
         v-for="product in $store.state.activeUser.cart"
         :key="product.id"
@@ -10,17 +10,25 @@
       <h3 v-if="$store.state.activeUser.cart.length < 1">
         Your cart is empty.
       </h3>
-    </div>
-
-    <div class="checkout-info">
-      <span class="item-count"
-        >item(s): {{ $store.state.activeUser.cart.length }}</span
-      >
-      <span class="total">Total: {{ total }}Kr</span>
-      <div class="button-container">
-        <router-link to="/"><button>Continue shopping</button></router-link>
-        <router-link to="/checkout"> <button>To checkout</button></router-link>
+      <div class="checkout-info">
+        <span class="item-count"
+          >item(s): {{ $store.state.activeUser.cart.length }}</span
+        >
+        <span class="total">Total: {{ total }}Kr</span>
+        <div class="button-container">
+          <router-link to="/"><button>Continue shopping</button></router-link>
+          <router-link to="/checkout">
+            <button>To checkout</button></router-link
+          >
+        </div>
       </div>
+    </div>
+    <div v-else>
+      <h3>
+        You are not logged in,
+        <RouterLink to="/login" class="nav-link">login in</RouterLink> to view
+        your cart.
+      </h3>
     </div>
   </main>
 </template>
@@ -53,6 +61,11 @@
 
     .page-lable {
       margin-bottom: 8px;
+    }
+    h3 {
+      text-align: center;
+      color: rgb(112, 112, 112);
+      margin: 100px;
     }
 
     .cart-display {

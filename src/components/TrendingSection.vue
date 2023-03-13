@@ -70,7 +70,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .trend-container {
     display: flex;
     flex-wrap: wrap;
@@ -144,7 +144,11 @@
     background-color: #0069d9;
   }
 
+
   @media screen and (min-width: 979px) {
+
+  @media (min-width: 979px) {
+
     .trend-item {
       width: 35%;
     }

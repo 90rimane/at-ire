@@ -66,14 +66,13 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    margin-top: 80px;
+    margin-top: 20px;
     padding-bottom: 100px;
   }
 
   .box {
     position: relative;
     width: 100%;
-    height: 0;
     padding-bottom: 100%;
   }
 
@@ -101,16 +100,38 @@
     padding: 4%;
   }
 
-  @media screen and (min-width: 778px) {
-    @media screen and (min-width: 978px) {
-      .home-container {
-        flex-wrap: nowrap;
-      }
+  .banner {
+    background-color: #ecc8b2;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    word-wrap: break-word;
+    margin-top: 20px;
+  }
 
-      .box {
-        width: 48%;
-        margin-left: 10px;
-      }
+  .banner h1 {
+    font-size: 33px;
+    margin: 0;
+  }
+
+  span {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  @media screen and (min-width: 978px) {
+    .home-container {
+      flex-wrap: nowrap;
     }
+
+    .box {
+      width: 48%;
+      margin-left: 10px;
+    }
+  }
+
+  .box {
+    width: 48%;
+    margin-left: 10px;
   }
 </style>
