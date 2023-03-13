@@ -39,6 +39,10 @@
           <span class="material-symbols-outlined">home</span>
           <span class="link-text">Home</span>
         </router-link>
+        <router-link to="/search/All">
+          <span class="material-symbols-outlined">view_cozy</span>
+          <span class="link-text">Our Products</span>
+        </router-link>
         <router-link id="cart" to="/cart">
           <CartIcon
             class="button-cart"

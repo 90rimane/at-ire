@@ -407,7 +407,7 @@
   @media (min-width: 980px) {
     .header-desktop {
       box-sizing: border-box;
-      position: absolute;
+      position: fixed;
       width: 100%;
       height: 56px;
       left: 0px;

@@ -53,7 +53,7 @@
 
     h3 {
       text-align: center;
-      color: rgb(112, 112, 112);
+      color: var(--grey);
       margin: 100px;
     }
 
