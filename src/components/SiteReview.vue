@@ -4,7 +4,7 @@
       <h3 @click="toggleForm()">
         <span class="material-symbols-outlined" v-show="!showForm">rate_review</span>
         <span class="material-symbols-outlined" v-show="showForm" @click="showReview()">edit_off</span>
-      {{ showForm ? '`${<p>Close</p>}`' : 'Write a review' }}
+      {{ showForm ? 'Close' : 'Write a review' }}
       </h3>
     </div>
     <div class="review-panel" v-show="showForm">
@@ -180,7 +180,7 @@ export default {
 
       },
       getTimeNow(){
-        this.form.moment= moment().format('MMMM Do YYYY, h:mm:ss a');
+        this.form.moment= moment().format();
         // return this.form.moment
       },
       resetFormField(){
