@@ -59,7 +59,7 @@
 
 <style scoped lang="scss">
   main {
-    padding-top: 80px;
+    padding: 80px 16px;
     min-height: 100vh;
 
     .page-lable {
@@ -73,9 +73,6 @@
     }
 
     .cart-container {
-      min-height: calc(100vh - 235px);
-      max-height: calc(100vh - 235px);
-
       .display-container {
         min-height: calc(100vh - 235px);
         max-height: calc(100vh - 235px);
@@ -118,12 +115,11 @@
   }
   @media only screen and (min-width: 980px) {
     main {
-      margin-left: 28px;
       padding-left: 32px;
       padding-right: 32px;
 
       .cart-container {
-        max-width: 1400px;
+        max-width: 1200px;
         margin: auto;
         padding-left: 32px;
         padding-right: 32px;
