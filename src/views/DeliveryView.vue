@@ -2,6 +2,11 @@
   <main>
     <h1>Delivery</h1>
     <h2>Choose your delivery method:</h2>
+    <p v-if="user">
+      ( ps. last time you chose {{ user.delivery[0] }} {{ user.delivery[1] }})
+    </p>
+
+    <!-- Choose a company -->
     <div class="choices">
       <input type="radio" v-model="deliveryChoice" value="Budbee" id="budbee" />
       <label for="budbee">Budbee</label>
@@ -32,7 +37,8 @@
       <label for="dhl">DHL</label>
     </div>
 
-    <!-- texts from bangerhead.se/vara-fraktalternativ, translated by Google -->
+    <!-- More information on the chosen company and if applicable, more choices -->
+    <!-- texts from "bangerhead.se/vara-fraktalternativ", translated by Google -->
     <div class="options">
       <div v-if="deliveryChoice === 'DHL'" class="optdescription">
         <h2>DHL</h2>
@@ -178,6 +184,7 @@
       </div>
     </div>
 
+    <!-- An reactive box for confirming the choice -->
     <div class="confirmBox">
       <h2>Please confirm your choice</h2>
       <p class="boldtext">
@@ -185,7 +192,12 @@
         <span v-if="budbeeChoice">{{ budbeeChoice }}</span>
         <span v-else-if="postnordChoice">{{ postnordChoice }}</span>
       </p>
-      <button type="button" class="boldtext" :disabled="!deliveryChoice">
+      <button
+        type="button"
+        class="boldtext"
+        :disabled="!deliveryChoice"
+        @click="saveDeliveryMethod(this.deliveryChoice)"
+      >
         Confirm and Continue
       </button>
     </div>
@@ -195,12 +207,31 @@
 <script>
   export default {
     data() {
-      return { deliveryChoice: '', budbeeChoice: '', postnordChoice: '' }
+      return {
+        deliveryChoice: '',
+        budbeeChoice: '',
+        postnordChoice: '',
+        user: this.$store.state.activeUser
+      }
     },
     watch: {
+      //empties the second option if choice ofcompany changes
       deliveryChoice() {
         this.budbeeChoice = null
         this.postnordChoice = null
+      }
+    },
+    methods: {
+      saveDeliveryMethod() {
+        const parsed = JSON.parse(sessionStorage.getItem('activeUser'))
+        parsed.delivery = []
+        parsed.delivery.push(this.deliveryChoice)
+
+        if (this.budbeeChoice) {
+          parsed.delivery.push(this.budbeeChoice)
+        }
+        sessionStorage.setItem('activeUser', JSON.stringify(parsed))
+        this.$store.dispatch('getLogged')
       }
     }
   }
@@ -210,13 +241,13 @@
   button {
     width: 322px;
     height: 40px;
-    background-color: #f39256;
+    background-color: var(--main-strong-accent);
     margin-bottom: 10px;
     border: none;
     margin-top: 15px;
   }
   .confirmBox {
-    background-color: #ecc8b2;
+    background-color: var(--main-accent);
     max-width: 100%;
     padding: 20px;
     margin-top: 30px;

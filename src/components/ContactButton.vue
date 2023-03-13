@@ -31,13 +31,16 @@
   }
 
   #contact-icon:hover {
-    background-color: #f39256;
+    background-color: var(--main-strong-accent);
     height: 55px;
     width: 57px;
     font-size: 60px;
-    box-shadow: 0px 0.2px 1.9px #f39256, 0px 0.5px 4.5px #f39256,
-      0px 0.8px 8.5px #f39256, 0px 1.4px 15.2px #f39256,
-      0px 2.4px 28.4px #f39256, 0px 5px 68px #f39256;
+    box-shadow: 0px 0.2px 1.9px var(--main-strong-accent),
+      0px 0.5px 4.5px var(--main-strong-accent),
+      0px 0.8px 8.5px var(--main-strong-accent),
+      0px 1.4px 15.2px var(--main-strong-accent),
+      0px 2.4px 28.4px var(--main-strong-accent),
+      0px 5px 68px var(--main-strong-accent);
   }
 
   /* media queries mainly for flipped mobile */
@@ -56,7 +59,7 @@
     }
 
     #contact-icon:hover::before {
-      background-color: #f39256;
+      background-color: var(--main-strong-accent);
       border: 1px black solid;
       border-radius: 10px;
       bottom: 40px;

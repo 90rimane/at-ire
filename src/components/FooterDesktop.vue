@@ -149,7 +149,7 @@
   #join-button {
     margin-top: 10px;
     margin-left: 5px;
-    background-color: #f39256;
+    background-color: var(--main-strong-accent);
     border: none;
     color: #282828;
     font-size: 12px;
@@ -165,7 +165,7 @@
     margin-top: 20px;
     width: 100%;
     height: 30px;
-    background-color: #ecc8b2;
+    background-color: var(--main-accent);
   }
 
   .title-list {

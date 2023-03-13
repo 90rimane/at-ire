@@ -69,21 +69,6 @@
       img {
         width: 100%;
       }
-
-      .fav-btn-container {
-        position: absolute;
-        bottom: 5%;
-        right: 5%;
-        width: 30px;
-        aspect-ratio: 1;
-        svg {
-          fill: #ecb2b2;
-
-          &:hover {
-            fill: #e87676;
-          }
-        }
-      }
     }
 
     .trash-icon {
@@ -121,7 +106,7 @@
     }
 
     .price-container {
-      background-color: #ecc8b2;
+      background-color: var(--main-accent);
     }
 
     @media only screen and (min-width: 500px) {

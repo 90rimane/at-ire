@@ -29,9 +29,7 @@
 
       <FavoriteButton :favproduct="product" />
     </div>
-
     <h3 class="product-title">{{ product.name }}</h3>
-
     <div class="details-container">
       <p class="product-desc">{{ product.description }}</p>
     </div>
@@ -59,7 +57,7 @@
       }
 
       .border {
-        background-color: #ecc8b2;
+        background-color: var(--main-accent);
         position: absolute;
         left: 0;
         bottom: 18px;
@@ -72,24 +70,10 @@
           font-family: 'Roboto', sans-serif;
         }
       }
-
-      .fav-btn-container {
-        position: absolute;
-        bottom: 5%;
-        right: 5%;
-        width: 30px;
-        aspect-ratio: 1;
-        svg {
-          fill: #ecb2b2;
-
-          &:hover {
-            fill: #e87676;
-          }
-        }
-      }
     }
 
     .product-title {
+      margin: 0;
       padding: 6px 8px 3px 8px;
       font-size: 20px;
       font-family: 'Roboto', sans-serif;
