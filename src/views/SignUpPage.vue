@@ -24,7 +24,8 @@
                 username: this.user,
                 password: this.password,
                 favorites: [],
-                cart: []
+                cart: [],
+                delivery: []
               })
 
               //Update local storage

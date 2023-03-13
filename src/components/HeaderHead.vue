@@ -108,7 +108,7 @@
             :key="item.id"
             @click="selectItem(item)"
           >
-            // activeNumber has class activeItem for css
+            <!-- activeNumber has class activeItem for css -->
             <router-link
               to="/product"
               :style="[index === activeNumber ? activeItem : '']"

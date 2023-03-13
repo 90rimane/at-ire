@@ -2,6 +2,9 @@
   <main>
     <h1>Delivery</h1>
     <h2>Choose your delivery method:</h2>
+    <p v-if="user.delivery">
+      ( ps. last time you chose {{ user.delivery[0] }} {{ user.delivery[1] }})
+    </p>
 
     <!-- Choose a company -->
     <div class="choices">
@@ -189,7 +192,12 @@
         <span v-if="budbeeChoice">{{ budbeeChoice }}</span>
         <span v-else-if="postnordChoice">{{ postnordChoice }}</span>
       </p>
-      <button type="button" class="boldtext" :disabled="!deliveryChoice">
+      <button
+        type="button"
+        class="boldtext"
+        :disabled="!deliveryChoice"
+        @click="saveDeliveryMethod(this.deliveryChoice)"
+      >
         Confirm and Continue
       </button>
     </div>
@@ -199,13 +207,31 @@
 <script>
   export default {
     data() {
-      return { deliveryChoice: '', budbeeChoice: '', postnordChoice: '' }
+      return {
+        deliveryChoice: '',
+        budbeeChoice: '',
+        postnordChoice: '',
+        user: this.$store.state.activeUser
+      }
     },
     watch: {
       //empties the second option if choice ofcompany changes
       deliveryChoice() {
         this.budbeeChoice = null
         this.postnordChoice = null
+      }
+    },
+    methods: {
+      saveDeliveryMethod() {
+        const parsed = JSON.parse(sessionStorage.getItem('activeUser'))
+        parsed.delivery = []
+        parsed.delivery.push(this.deliveryChoice)
+
+        if (this.budbeeChoice) {
+          parsed.delivery.push(this.budbeeChoice)
+        }
+        sessionStorage.setItem('activeUser', JSON.stringify(parsed))
+        this.$store.dispatch('getLogged')
       }
     }
   }
