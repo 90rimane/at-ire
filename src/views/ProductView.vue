@@ -193,7 +193,7 @@
   }
 
   #article {
-    margin-top: 30px;
+    margin-top: 80px;
   }
 
   #cart-button {

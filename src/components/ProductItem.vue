@@ -29,9 +29,7 @@
 
       <FavoriteButton :favproduct="product" />
     </div>
-
     <h3 class="product-title">{{ product.name }}</h3>
-
     <div class="details-container">
       <p class="product-desc">{{ product.description }}</p>
     </div>
@@ -75,6 +73,7 @@
     }
 
     .product-title {
+      margin: 0;
       padding: 6px 8px 3px 8px;
       font-size: 20px;
       font-family: 'Roboto', sans-serif;
