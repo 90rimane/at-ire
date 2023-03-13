@@ -10,12 +10,11 @@
     <div class="trend-container" v-show="showTrends">
       <div class="trend-item">
         <img
-          src="https://i.pinimg.com/564x/5e/2e/42/5e2e422898b554dec5a6e6fa1340ed08.jpg"
+          src="https://i.pinimg.com/564x/c6/d0/8f/c6d08fea13f40b56984ea95022dbf54d.jpg"
           alt="Image 1"
         />
         <div class="text-overlay">
           <h2>Comfort</h2>
-          <p></p>
         </div>
       </div>
 
@@ -26,7 +25,6 @@
         />
         <div class="text-overlay">
           <h2>Simplicity</h2>
-          <p></p>
         </div>
       </div>
 
@@ -37,7 +35,6 @@
         />
         <div class="text-overlay">
           <h2>Dynamic Nature</h2>
-          <p></p>
         </div>
       </div>
 
@@ -48,7 +45,6 @@
         />
         <div class="text-overlay">
           <h2>Minimalism</h2>
-          <p></p>
         </div>
       </div>
     </div>
@@ -144,7 +140,7 @@
     background-color: #0069d9;
   }
 
-  @media (min-width: 979px) {
+  @media screen and (min-width: 979px) {
     .trend-item {
       width: 35%;
     }

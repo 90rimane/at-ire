@@ -77,6 +77,7 @@
 <style scoped>
   img {
     width: 70vw;
+    max-width: 400px;
   }
 
   #carousel {
@@ -86,6 +87,8 @@
     align-items: center;
     background-color: #f5f5f5;
     padding: 3vh 0 3vh 0;
+    padding-left: 64px;
+    margin-top: 60px;
   }
 
   #carousel-button-prev,
@@ -95,10 +98,10 @@
   }
 
   #carousel-button-prev {
-    left: 22vw;
+    left: 15%;
   }
 
   #carousel-button-next {
-    right: 9vw;
+    right: 15%;
   }
 </style>

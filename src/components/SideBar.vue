@@ -24,14 +24,21 @@
         <span class="material-symbols-outlined">home</span>
         <span class="text">Home</span>
       </router-link>
-      <router-link to="/cart" class="button">
+      <!-- both color and hover color of the icon change via props when hover the cart menu bar, in that way the icon practically sync color with the menu bar text -->
+      <router-link
+        to="/cart"
+        class="button"
+        @mouseover="hovCol = '#64748b'"
+        @mouseleave="hovCol = '#1e293b'"
+      >
         <CartIcon
           class="button-cart material-symbols-outlined"
-          hover-color="#64748b"
+          :hover-color="hovCol"
           icon-size="2.3rem"
+          :icon-color="hovCol"
+          counter-location="30px"
         />
-        <!-- <span class="material-symbols-outlined">shopping_cart_checkout</span> -->
-        <span id="cart-link-text" class="text">Shopping Cart</span>
+        <span class="text">Shopping Cart</span>
       </router-link>
       <router-link to="/favorite" class="button">
         <span class="material-symbols-outlined">favorite</span>
@@ -92,6 +99,8 @@
     is_expanded.value = !is_expanded.value
     localStorage.setItem('is_expanded', is_expanded.value)
   }
+
+  let hovCol = ''
 </script>
 
 <style lang="scss" scoped>
@@ -273,16 +282,8 @@
   }
   /* added by Anna --> */
   .button-cart {
-    margin-left: -4px;
-    margin-right: 1em;
-    margin-bottom: 9px;
-    padding-right: 14px;
-  }
-
-  #cart-link-text {
-    padding-top: 5px;
-    padding-left: 20px;
-    margin-left: 30px;
+    height: 40px;
+    padding: 2px 5px 2px 0;
   }
   /* <-- added by Anna */
 

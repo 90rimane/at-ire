@@ -3,7 +3,7 @@
     <span class="material-symbols-outlined" :style="cssProps">
       shopping_cart_checkout
     </span>
-    <div v-if="this.$store.state.activeUser" id="counter">
+    <div id="counter" :style="cssProps" v-if="this.$store.state.activeUser">
       {{ this.counterNumber }}
     </div>
   </div>
@@ -15,20 +15,31 @@
       counterNumber() {
         return this.$store.state.activeUser.cart.length
       },
+      // makes the props values to css variable format to be used in the css down here -->
       cssProps() {
         return {
+          '--counter-location': this.counterLocation,
           '--icon-size': this.iconSize,
-          '--hover-color': this.hoverColor
+          '--hover-color': this.hoverColor,
+          '--icon-color': this.iconColor
         }
       }
     },
 
     props: {
+      counterLocation: {
+        type: String,
+        default: '0'
+      },
       hoverColor: {
         type: String,
         default: null
       },
       iconSize: {
+        type: String,
+        default: null
+      },
+      iconColor: {
         type: String,
         default: null
       }
@@ -39,33 +50,29 @@
 <style lang="scss" scoped>
   #counter-container {
     position: relative;
-    height: 39px;
-  }
-
-  #counter {
-    width: 15px;
-    background-color: rgb(161, 253, 167);
-    border-radius: 50%;
-    font-size: 0.8rem;
-    padding: 1.5px;
-    position: absolute;
-    top: -2px;
-    left: 28px;
-    display: flex;
-    justify-content: center;
+    width: 35px;
+    height: 35px;
+    #counter {
+      position: absolute;
+      top: -5px;
+      width: 15px;
+      background-color: rgb(161, 253, 167);
+      border-radius: 50%;
+      font-size: 0.8rem;
+      padding: 1.5px;
+      margin-left: var(--counter-location);
+      display: flex;
+      justify-content: center;
+    }
   }
 
   .material-symbols-outlined {
     position: absolute;
     width: 30px;
     height: 30px;
-    top: 13px;
-    padding-left: 3px;
-    // font-size: 1.9rem;
     font-size: var(--icon-size);
     cursor: pointer;
-    color: #000000;
-    margin-top: -9px;
+    color: var(--icon-color);
   }
   .material-symbols-outlined:hover {
     color: var(--hover-color);
@@ -77,13 +84,7 @@
       width: 30px;
       height: 30px;
       cursor: pointer;
-      color: #000000;
+      color: var(--icon-color);
     }
-
-    // .material-symbols-outlined:hover {
-    //   color: var(--hover-color);
-    // }
   }
 </style>
-
-<!-- Things to fix: There should be no hover effect on the icon  in the hamburgermenu and the cart-icon should appear in differnet sizes accordingly to the respectipe place it's placed. -->
