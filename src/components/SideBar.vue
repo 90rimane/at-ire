@@ -24,7 +24,7 @@
         <span class="material-symbols-outlined">home</span>
         <span class="text">Home</span>
       </router-link>
-      <!-- both color and hover color of the icon change via props when hover the cart menu bar, in that way the icon practically sync color with the menu bar text-->
+      <!-- color for the icon change via props when hover the cart menu bar, in that way the icon practically sync color with the menu bar text-->
       <router-link
         to="/cart"
         class="button"
