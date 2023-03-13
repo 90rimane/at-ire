@@ -137,6 +137,12 @@
 </script>
 
 <style scoped lang="scss">
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
   h1 {
     color: var(--dark);
     padding: 3vh;
@@ -188,7 +194,6 @@
 
   #article {
     margin-top: 30px;
-    margin-left: calc(2rem + 45px);
   }
 
   #cart-button {
@@ -259,7 +264,7 @@
 
   #product-img {
     width: 70vw;
-    margin-left: 10px;
+    max-width: 500px;
     margin-bottom: 2%;
   }
 

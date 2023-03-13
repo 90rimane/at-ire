@@ -1,11 +1,14 @@
 <template>
   <main class="home-pages">
-    <h2>Account</h2>
+    <!-- Pagename if not logged in -->
+    <h2 v-if="!user">Account</h2>
+
+    <!-- Fake order history when logged in -->
     <div v-if="user">
       <h1>Welcome to your page, {{ nameStartCapital }}</h1>
       <h2>Order history</h2>
       <div v-for="order in history" :key="order.id" class="card">
-        <h3>{{ order.date }}: {{ order.totalitems }} items in order</h3>
+        <p>{{ order.date }}: {{ order.totalitems }} items in order</p>
         <ul v-if="order.totalitems">
           <li v-for="item in order.items" :key="item">
             {{ item }}
@@ -22,6 +25,7 @@
       </div>
     </div>
 
+    <!-- Message is not logged in -->
     <div v-else>
       <h3>
         You are not logged in,
@@ -35,6 +39,12 @@
 <style scoped>
   button {
     margin-left: 20px;
+    width: 322px;
+    height: 40px;
+    background-color: #f39256;
+    margin-bottom: 10px;
+    border: none;
+    margin-top: 15px;
   }
   .card {
     box-shadow: 3px 3px 20px black;

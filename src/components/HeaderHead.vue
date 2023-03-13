@@ -100,12 +100,15 @@
         />
       </svg>
       <div>
+        <!-- list of search items if a search is entered, if tabbed out the search
+        is cleared -->
         <ul v-if="search" class="dropdown" @focusout="clearSearch()">
           <li
             v-for="(item, index) in searchResult"
             :key="item.id"
             @click="selectItem(item)"
           >
+            // activeNumber has class activeItem for css
             <router-link
               to="/product"
               :style="[index === activeNumber ? activeItem : '']"
@@ -181,6 +184,7 @@
       }
     },
     computed: {
+      //the search-function
       searchResult() {
         if (this.search) {
           return this.$store.state.allProducts.filter((i) => {
@@ -200,12 +204,15 @@
         this.$store.dispatch('setOneProduct', item)
         this.search = ''
       },
+      //moves the activeItem when arrow-down is pressed
       nextSearchItem() {
         this.activeNumber++
       },
+      //moves the activeItem when arrow-up is pressed
       prevSearchItem() {
         this.activeNumber--
       },
+      //goes to the page of activeItem when enter is pressed
       goToProduct() {
         this.$router.push('/product')
         this.selectItem(this.searchResult[this.activeNumber])
