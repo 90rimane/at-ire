@@ -43,12 +43,6 @@
       <h3>@IRE</h3>
     </router-link>
 
-    <div id="hamburgermenu">
-      <!--#region HamburgerMenu component located here by Ali-->
-      <HamburgerMenu />
-      <!-- #endregion -->
-    </div>
-
     <router-link to="/favorite" class="button">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +66,13 @@
         icon-color="var(--dark)"
       />
     </router-link>
+    <div id="hamburgermenu">
+      <!--#region HamburgerMenu component located here by Ali-->
+      <HamburgerMenu />
+      <!-- #endregion -->
+    </div>
   </div>
+
   <div class="header-desktop">
     <router-link to="/" class="button">
       <h2>@IRE</h2>
@@ -288,7 +288,11 @@
   .button-cart {
     position: absolute;
     left: 86%;
-    margin-top: -42px;
+    margin-top: 14px;
+  }
+
+  #hamburgermenu {
+    margin-top: -48.5px;
   }
 
   /* <-- add by Anna + some changes related to this around here*/
