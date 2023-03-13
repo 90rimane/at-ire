@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <h2>Comments</h2>
     <form @submit.prevent="addComment">
       <label for="comment">Add your comment:</label>
@@ -34,7 +34,7 @@
           {
             id: '1',
             text: 'Hello i really like this one',
-            username: 'Björn Zamora',
+            username: 'John Doe',
             timestamp: new Date().toLocaleString()
           },
           {
@@ -47,6 +47,13 @@
         newComment: '',
         newCommentUsername: '',
         id: 0
+      }
+    },
+    created() {
+      const comments = JSON.parse(localStorage.getItem('comments'))
+      if (comments) {
+        this.comments = comments
+        this.id = comments.length
       }
     },
     methods: {
@@ -63,16 +70,24 @@
           })
           this.newComment = ''
           this.newCommentUsername = ''
+          localStorage.setItem('comments', JSON.stringify(this.comments))
         }
       },
       deleteComment(id) {
         this.comments = this.comments.filter((comment) => comment.id !== id)
+        localStorage.setItem('comments', JSON.stringify(this.comments))
       }
     }
   }
 </script>
 
 <style scoped>
+  #comment {
+    width: 95%;
+  }
+  .container {
+    margin-left: 30px;
+  }
   ul {
     list-style: none;
     padding: 0;

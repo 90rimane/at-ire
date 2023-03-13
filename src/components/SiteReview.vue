@@ -21,7 +21,12 @@
           <label for="freview">Review <span class="required">*</span></label>
           <textarea type="text" v-model="form.userReview" placeholder="Share your shopping expriencs." required />
 
-          <button type="submit" @click="showReview(), toggleForm()">Submit</button>
+          <button
+            type="submit"
+            @click="showReview(), toggleForm()"
+            :disabled="isDisabled"
+            >Submit
+          </button>
         </form>
       </div>
     </div>
@@ -66,17 +71,17 @@
               <tr>
                 <td>
                   <span class="material-symbols-outlined">person</span>
-                  {{ this.form.userName }}
+                  {{ this.formCopy.userName }}
                 </td>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th id="new-title-input">{{ this.form.title }}</th>
+                <th id="new-title-input">{{ this.formCopy.title }}</th>
                 <td id="date-time">review.datetime</td>
               </tr>
             <tr>
-                <td>{{ this.form.userReview }}</td>
+                <td>{{ this.formCopy.userReview }}</td>
             </tr>
             <tr class="like-dislike-comment">
               <button @click="countLikes()">
@@ -105,6 +110,7 @@ export default {
       return {
         showForm: false,
         myComment: false,
+        submit: true,
         reviews: SiteReviews,
         maxStars1: ["1","2","3","4","5"],
         form:{
@@ -114,11 +120,32 @@ export default {
           stars: '',
           likes: 0,
           disLikes: 0
+        },
+        formCopy:{
+          userName: '',
+          userReview: '',
+          title: ''
         }
       };
     },
-    computed:{},
+    computed:{
+      isDisabled: function(){
+        if(this.form.userName && this.form.title && this.form.userReview){
+          return !this.submit
+        }else{
+          return this.submit
+        }
+      }
+    },
+    mounted(){
+      this.formCopy.userName = localStorage.getItem('newUserName')
+      this.formCopy.userReview = localStorage.getItem('newReview')
+      this.formCopy.title = localStorage.getItem('newTitle')
 
+      if(!this.myComment && this.formCopy.userName){
+            this.myComment = !this.myComment;
+        }
+    },
     methods:{
       toggleForm(){
         this.showForm = !this.showForm
@@ -131,11 +158,18 @@ export default {
         localStorage.setItem('newUserName', this.form.userName)
         localStorage.setItem('newReview', this.form.userReview)
         localStorage.setItem('newTitle', this.form.title)
-        this.form.userName = localStorage.getItem('newUserName')
-        this.form.userReview = localStorage.getItem('newReview')
-        this.form.title = localStorage.getItem('newTitle')
 
-        // this.resetFormField();
+        this.resetFormField();
+
+        this.formCopy.userName = localStorage.getItem('newUserName')
+        this.formCopy.userReview = localStorage.getItem('newReview')
+        this.formCopy.title = localStorage.getItem('newTitle')
+
+      },
+      resetFormField(){
+        this.form.userName = '',
+        this.form.userReview= '',
+        this.form.title= ''
       },
       showReview(){
         if(!this.myComment){

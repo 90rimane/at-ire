@@ -3,6 +3,12 @@
     <div>
       <CarouselSlide v-if="allProducts" :images="allProducts" />
     </div>
+    <div class="marquee">
+      <h1>@-ire</h1>
+      <h1>@-ire</h1>
+      <h1>@-ire</h1>
+    </div>
+
     <div class="home-container">
       <div class="box">
         <img
@@ -22,8 +28,8 @@
         <img
           src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
         />
-        <router-link to="/search/Accessories" class="text"
-          >ACCESSORIES</router-link
+        <router-link to="/search/Jewerly" class="text"
+          >JEWERLY</router-link
         >
       </div>
 
@@ -64,10 +70,11 @@
   }
   .home-container {
     display: flex;
-    flex-wrap: wrap;
+    justify-content:center;
     gap: 20px;
     margin-top: 20px;
     padding-bottom: 100px;
+
   }
 
   .box {
@@ -119,14 +126,50 @@
     font-weight: bold;
   }
 
-  @media screen and (min-width: 978px) {
+.marquee{
+  display:flex;
+  justify-content:flex-start;
+  background:lightgrey;
+  overflow:hidden;
+}
+
+h1{
+  font-size:48px;
+  text-transform:uppercase;
+  color:transparent;
+  white-space:nowrap;
+  padding:0 6rem;
+  letter-spacing:1px;
+  animation:move-rtl 4000ms linear infinite;
+  color:black;
+}
+
+@keyframes move-rtl{
+  0%{
+    transform:translateX(0);
+  }
+
+  100%{
+    transform:translateX(-100%);
+  }
+}
+  @media screen and (max-width: 700px) {
     .home-container {
-      flex-wrap: nowrap;
+      flex-direction:column;
+      justify-content:center;
     }
+
+
 
     .box {
       width: 48%;
       margin-left: 10px;
     }
+  }
+
+  .box {
+    display:flex;
+    justify-content:center;
+    width:100%;
   }
 </style>
