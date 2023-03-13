@@ -1,40 +1,42 @@
 <template>
-  <div>
-    <CarouselSlide v-if="allProducts" :images="allProducts" />
-  </div>
-  <div class="home-container">
-    <div class="box">
-      <img
-        src="https://i.pinimg.com/564x/a8/c1/55/a8c1552fc6e272a18faba1dc01fbf0f9.jpg"
-      />
-      <router-link to="/search/Tops" class="text">TOPS</router-link>
+  <main>
+    <div>
+      <CarouselSlide v-if="allProducts" :images="allProducts" />
+    </div>
+    <div class="home-container">
+      <div class="box">
+        <img
+          src="https://i.pinimg.com/564x/a8/c1/55/a8c1552fc6e272a18faba1dc01fbf0f9.jpg"
+        />
+        <router-link to="/search/Tops" class="text">TOPS</router-link>
+      </div>
+
+      <div class="box">
+        <img
+          src="https://i.pinimg.com/564x/f2/e8/13/f2e8134dac23fcb325f4772840a2a1d4.jpg"
+        />
+        <router-link to="/search/Bottoms" class="text">BOTTOMS</router-link>
+      </div>
+
+      <div class="box">
+        <img
+          src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+        />
+        <router-link to="/search/Accessories" class="text"
+          >ACCESSORIES</router-link
+        >
+      </div>
+
+      <div class="box">
+        <img
+          src="https://i.pinimg.com/564x/43/c2/a5/43c2a55207dd738d37dd3db5edffcc55.jpg"
+        />
+        <router-link to="/search/Pants" class="text">PANTS</router-link>
+      </div>
     </div>
 
-    <div class="box">
-      <img
-        src="https://i.pinimg.com/564x/f2/e8/13/f2e8134dac23fcb325f4772840a2a1d4.jpg"
-      />
-      <router-link to="/search/Bottoms" class="text">BOTTOMS</router-link>
-    </div>
-
-    <div class="box">
-      <img
-        src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-      />
-      <router-link to="/search/Accessories" class="text"
-        >ACCESSORIES</router-link
-      >
-    </div>
-
-    <div class="box">
-      <img
-        src="https://i.pinimg.com/564x/43/c2/a5/43c2a55207dd738d37dd3db5edffcc55.jpg"
-      />
-      <router-link to="/search/Pants" class="text">PANTS</router-link>
-    </div>
-  </div>
-
-  <TrendingSection />
+    <TrendingSection />
+  </main>
 </template>
 
 <script>
@@ -54,6 +56,12 @@
 </script>
 
 <style scoped>
+  main {
+    margin-left: calc(1rem);
+    margin-top: 100px;
+    max-width: 1000px;
+    margin: auto;
+  }
   .home-container {
     display: flex;
     flex-wrap: wrap;
