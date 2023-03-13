@@ -49,7 +49,7 @@
           {
             title: 'SUPPORT',
             open: false,
-            sublist: ['Contact Us', 'Return', 'Terms', 'Delivery']
+            sublist: ['Contact Us', 'FAQ', 'Return', 'Terms', 'Delivery']
           },
           {
             title: 'OM @IRE',

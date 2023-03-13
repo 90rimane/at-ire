@@ -16,7 +16,9 @@
     <div class="margin-top">
       <h3 class="title-list">SUPPORT</h3>
       <ul>
-        <li><a href="#">CONTACT US</a></li>
+        <!-- Routerlinks to contact & FAQ added by Andrea -->
+        <router-link to="/contact"><li>CONTACT US</li></router-link>
+        <router-link to="/FAQ"><li>FAQ</li></router-link>
         <li><a href="#">RETURNS</a></li>
         <li><a href="#">TERMS</a></li>
         <li><a href="#">DELIVERY</a></li>
@@ -47,9 +49,9 @@
 </template>
 
 <script>
-import StarRating from './StarRating.vue';
+  import StarRating from './StarRating.vue'
   export default {
-    components:{
+    components: {
       StarRating
     }
   }

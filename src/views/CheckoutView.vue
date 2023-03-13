@@ -1,8 +1,10 @@
 <template>
+  <!-- a form for personal information and address with a step-by-step process -->
   <div class="checkout-form">
     <h1>Checkout Form</h1>
     <div v-if="step === 1">
       <h2>Step 1: Personal Information & Address</h2>
+      <!-- When the form is submitted, the "nextStep" method is called, which advances the user to the next step in the checkout process -->
       <form @submit.prevent="nextStep">
         <label>
           First Name:
@@ -201,11 +203,13 @@
       nextStep() {
         this.step++
       },
+      // Checks if the "CardNumber" property is not empty and redirects the user to the delivery page.
       submitPayment() {
         if (this.CardNumber) {
           this.$router.push('/delivery')
         }
       },
+      // Saves the user's personal information and address to the session storage.
       saveInfo() {
         const user = JSON.parse(sessionStorage.getItem('activeUser'))
 
@@ -219,11 +223,12 @@
           zipCode: this.zipCode,
           country: this.country
         }
-
+        // saves the updated user object back to session storage using JSON.stringify, and dispatches an action called getLogged to update the user's logged-in state
         sessionStorage.setItem('activeUser', JSON.stringify(user))
         this.$store.dispatch('getLogged')
       }
     },
+    // Watch for changes in the CardNumber data property and triggers a function every time the property changes
     watch: {
       CardNumber() {
         console.log('card number changed:', this.CardNumber)

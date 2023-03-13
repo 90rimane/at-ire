@@ -177,7 +177,6 @@
           textTransform: 'uppercase'
         },
         activeNumber: 0
-        // showSearchBar: true
       }
     },
     computed: {
