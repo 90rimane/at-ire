@@ -24,16 +24,19 @@
         <span class="material-symbols-outlined">home</span>
         <span class="text">Home</span>
       </router-link>
-      <!-- both color and hover color of the icon change via props when hover the cart menu bar, in that way the icon practically sync color with the menu bar text -->
+      <!-- both color and hover color of the icon change via props when hover the cart menu bar, in that way the icon practically sync color with the menu bar text
+              @mouseover="hovCol = '#64748b'"
+        @mouseleave="hovCol = '#1e293b'"-->
       <router-link
         to="/cart"
         class="button"
-        @mouseover="hovCol = '#64748b'"
-        @mouseleave="hovCol = '#1e293b'"
+        @click="ToggleCartIconColor('active')"
+        @focusout="ToggleCartIconColor('inaktive')"
+        @mouseover="ToggleCartIconColor(true)"
+        @mouseout="ToggleCartIconColor(false)"
       >
         <CartIcon
           class="button-cart material-symbols-outlined"
-          :hover-color="hovCol"
           icon-size="2.3rem"
           :icon-color="hovCol"
           counter-location="30px"
@@ -100,7 +103,26 @@
     localStorage.setItem('is_expanded', is_expanded.value)
   }
 
-  let hovCol = ''
+  let hovCol = ref('')
+  const ToggleCartIconColor = (bool) => {
+    if (bool === 'active' && (bool === true || bool === false)) {
+      hovCol.value = 'var(--dark)'
+    } else if (bool === 'inactive' && (bool === true || bool === false)) {
+      if (bool === true) {
+        setTimeout(() => {
+          hovCol.value = 'var(--grey)'
+        }, 40)
+      } else if (bool === 'active') {
+        setTimeout(() => {
+          hovCol.value = 'var(--dark)'
+        }, 40)
+      } else {
+        setTimeout(() => {
+          hovCol.value = 'var(--dark)'
+        }, 40)
+      }
+    }
+  }
 </script>
 
 <style lang="scss" scoped>

@@ -39,7 +39,7 @@
           <span class="material-symbols-outlined">home</span>
           <span class="link-text">Home</span>
         </router-link>
-        <router-link id="cart" to="/checkout">
+        <router-link id="cart" to="/cart">
           <CartIcon
             class="button-cart"
             icon-size="1.5rem"
@@ -92,7 +92,7 @@
   .mobile-container {
     width: 100vw;
     button {
-      background-color: #ecc8b2;
+      background-color: var(--main-accent);
       margin: 2px;
       height: 3.9em;
       width: 3.9em;
@@ -106,7 +106,7 @@
       }
     }
     button:hover {
-      background-color: var(--orange);
+      background-color: var(--main-strong-accent);
     }
   }
 

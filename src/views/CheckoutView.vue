@@ -289,7 +289,7 @@
   }
 
   button[type='submit'] {
-    background-color: #ecc8b2;
+    background-color: var(--main-accent);
     color: black;
     padding: 10px;
     border: none;

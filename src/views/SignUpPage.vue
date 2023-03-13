@@ -183,7 +183,7 @@
     }
 
     button {
-      background-color: #ecc8b2;
+      background-color: var(--main-accent);
       color: #1e293b;
       padding: 12px 20px;
       margin: 24px 0 16px 0;

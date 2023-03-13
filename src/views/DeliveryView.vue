@@ -241,13 +241,13 @@
   button {
     width: 322px;
     height: 40px;
-    background-color: #f39256;
+    background-color: var(--main-strong-accent);
     margin-bottom: 10px;
     border: none;
     margin-top: 15px;
   }
   .confirmBox {
-    background-color: #ecc8b2;
+    background-color: var(--main-accent);
     max-width: 100%;
     padding: 20px;
     margin-top: 30px;

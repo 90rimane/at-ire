@@ -1,15 +1,18 @@
 <template>
   <main>
     <h2 class="page-lable">Shopping Cart</h2>
-    <div v-if="$store.state.activeUser !== null" class="cart-display">
-      <cartItem
-        v-for="product in $store.state.activeUser.cart"
-        :key="product.id"
-        :cartproduct="product"
-      />
-      <h3 v-if="$store.state.activeUser.cart.length < 1">
-        Your cart is empty.
-      </h3>
+    <div v-if="$store.state.activeUser !== null" class="cart-container">
+      <div class="display-container">
+        <cartItem
+          v-for="product in $store.state.activeUser.cart"
+          :key="product.id"
+          :cartproduct="product"
+        />
+        <h3 v-if="$store.state.activeUser.cart.length < 1">
+          Your cart is empty.
+        </h3>
+      </div>
+
       <div class="checkout-info">
         <span class="item-count"
           >item(s): {{ $store.state.activeUser.cart.length }}</span
@@ -23,6 +26,7 @@
         </div>
       </div>
     </div>
+
     <div v-else>
       <h3>
         You are not logged in,
@@ -53,9 +57,9 @@
   }
 </script>
 
-<style scoped lang="scss">
+<style scope lang="scss">
   main {
-    padding-top: 80px;
+    padding: 80px 16px;
     min-height: 100vh;
 
     .page-lable {
@@ -63,22 +67,25 @@
     }
     h3 {
       text-align: center;
-      color: rgb(112, 112, 112);
-      margin: 100px;
+      color: var(--grey);
+      text-align: center;
+      margin: 80px 0 300px 0;
     }
 
-    .cart-display {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      min-height: calc(100vh - 235px);
-      max-height: calc(100vh - 235px);
-      overflow-y: scroll;
-      padding-top: 8px;
+    .cart-container {
+      .display-container {
+        min-height: calc(100vh - 235px);
+        max-height: calc(100vh - 235px);
+        padding-top: 8px;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
     }
 
     .checkout-info {
-      border-top: 2px rgb(139, 139, 139) solid;
+      border-top: 2px var(--grey) solid;
       margin-top: 8px;
       padding: 8px;
 
@@ -98,7 +105,7 @@
 
         button {
           padding: 6px 12px;
-          background-color: #ecc8b2;
+          background-color: var(--main-accent);
           border-radius: 20px;
           border: none;
           font-size: 16px;
@@ -108,12 +115,11 @@
   }
   @media only screen and (min-width: 980px) {
     main {
-      margin-left: 28px;
       padding-left: 32px;
       padding-right: 32px;
 
-      .cart-display {
-        max-width: 1400px;
+      .cart-container {
+        max-width: 1200px;
         margin: auto;
         padding-left: 32px;
         padding-right: 32px;
