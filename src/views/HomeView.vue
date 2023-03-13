@@ -57,7 +57,7 @@
 
 <style scoped>
   main {
-    margin-left: calc(1rem);
+    margin-left: 1rem;
     margin-top: 100px;
     max-width: 1000px;
     margin: auto;
@@ -128,10 +128,5 @@
       width: 48%;
       margin-left: 10px;
     }
-  }
-
-  .box {
-    width: 48%;
-    margin-left: 10px;
   }
 </style>

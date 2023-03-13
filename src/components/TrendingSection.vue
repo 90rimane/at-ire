@@ -15,7 +15,6 @@
         />
         <div class="text-overlay">
           <h2>Comfort</h2>
-          <p />
         </div>
       </div>
 
@@ -26,7 +25,6 @@
         />
         <div class="text-overlay">
           <h2>Simplicity</h2>
-          <p />
         </div>
       </div>
 
@@ -37,7 +35,6 @@
         />
         <div class="text-overlay">
           <h2>Dynamic Nature</h2>
-          <p />
         </div>
       </div>
 
@@ -48,7 +45,6 @@
         />
         <div class="text-overlay">
           <h2>Minimalism</h2>
-          <p />
         </div>
       </div>
     </div>
