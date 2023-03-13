@@ -1,10 +1,10 @@
 <template>
   <main>
     <div class="top-title-form">
-      <h3 @click="toggleForm">
+      <h3 @click="toggleForm()">
         <span class="material-symbols-outlined" v-show="!showForm">rate_review</span>
-        <span class="material-symbols-outlined" v-show="showForm">edit_off</span>
-      {{ showForm ? 'Close review panel' : 'Write a review' }}
+        <span class="material-symbols-outlined" v-show="showForm" @click="showReview()">edit_off</span>
+      {{ showForm ? '`${<p>Close</p>}`' : 'Write a review' }}
       </h3>
     </div>
     <div class="review-panel" v-show="showForm">
@@ -23,7 +23,10 @@
 
           <button
             type="submit"
-            @click="showReview(), toggleForm()"
+            @click="
+            showReview(),
+            toggleForm(),
+            getTimeNow()"
             :disabled="isDisabled"
             >Submit
           </button>
@@ -71,14 +74,14 @@
               <tr>
                 <td>
                   <span class="material-symbols-outlined">person</span>
-                  {{ this.formCopy.userName }}
+                  {{ formCopy.userName }}
                 </td>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th id="new-title-input">{{ this.formCopy.title }}</th>
-                <td id="date-time">review.datetime</td>
+                <th id="new-title-input">{{ formCopy.title }}</th>
+                <td id="date-time">{{ formCopy.moment }}</td>
               </tr>
             <tr>
                 <td>{{ this.formCopy.userReview }}</td>
@@ -87,12 +90,12 @@
               <button @click="countLikes()">
                 <span class="material-symbols-outlined">thumb_up</span>
               </button>
-              <span> {{ this.form.likes }}</span>
+              <span> {{ form.likes }}</span>
               <span>|</span>
               <button @click="countDisLikes()">
                 <span class="material-symbols-outlined">thumb_down</span>
               </button>
-              <span>{{ this.form.disLikes }}</span>
+              <span>{{ form.disLikes }}</span>
             </tr>
             </tbody>
           </table>
@@ -104,6 +107,8 @@
 </template>
 <script>
 import SiteReviews from '../../assets/sitereview.json';
+import moment from 'moment'
+
 export default {
   emits:['submit'],
     data() {
@@ -119,17 +124,21 @@ export default {
           title: '',
           stars: '',
           likes: 0,
-          disLikes: 0
+          disLikes: 0,
+          moment: ''
         },
         formCopy:{
           userName: '',
           userReview: '',
-          title: ''
+          title: '',
+          likes: 0,
+          disLikes: 0,
+          moment: ''
         }
       };
     },
     computed:{
-      isDisabled: function(){
+      isDisabled(){
         if(this.form.userName && this.form.title && this.form.userReview){
           return !this.submit
         }else{
@@ -138,6 +147,7 @@ export default {
       }
     },
     mounted(){
+      this.$emit('submit', this.form)
       this.formCopy.userName = localStorage.getItem('newUserName')
       this.formCopy.userReview = localStorage.getItem('newReview')
       this.formCopy.title = localStorage.getItem('newTitle')
@@ -158,13 +168,20 @@ export default {
         localStorage.setItem('newUserName', this.form.userName)
         localStorage.setItem('newReview', this.form.userReview)
         localStorage.setItem('newTitle', this.form.title)
+        this.getTimeNow();
+        localStorage.setItem('commentedTime', this.form.moment )
 
         this.resetFormField();
 
         this.formCopy.userName = localStorage.getItem('newUserName')
         this.formCopy.userReview = localStorage.getItem('newReview')
         this.formCopy.title = localStorage.getItem('newTitle')
+        this.formCopy.moment = localStorage.getItem('commentedTime')
 
+      },
+      getTimeNow(){
+        this.form.moment= moment().format('MMMM Do YYYY, h:mm:ss a');
+        // return this.form.moment
       },
       resetFormField(){
         this.form.userName = '',
