@@ -57,7 +57,7 @@
   }
 </script>
 
-<style scope lang="scss">
+<style scoped lang="scss">
   main {
     padding: 80px 16px;
     min-height: 100vh;
