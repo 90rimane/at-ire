@@ -92,7 +92,7 @@
   .mobile-container {
     width: 100vw;
     button {
-      background-color: #ecc8b2;
+      background-color: var(--main-accent);
       margin: 2px;
       height: 3.9em;
       width: 3.9em;
@@ -106,7 +106,7 @@
       }
     }
     button:hover {
-      background-color: var(--orange);
+      background-color: var(--main-strong-accent);
     }
   }
 

@@ -118,6 +118,6 @@
     margin-left: 10px;
   }
   button:hover {
-    background-color: #f39256;
+    background-color: var(--main-strong-accent);
   }
 </style>

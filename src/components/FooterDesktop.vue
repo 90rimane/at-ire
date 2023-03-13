@@ -47,9 +47,9 @@
 </template>
 
 <script>
-import StarRating from './StarRating.vue';
+  import StarRating from './StarRating.vue'
   export default {
-    components:{
+    components: {
       StarRating
     }
   }
@@ -147,7 +147,7 @@ import StarRating from './StarRating.vue';
   #join-button {
     margin-top: 10px;
     margin-left: 5px;
-    background-color: #f39256;
+    background-color: var(--main-strong-accent);
     border: none;
     color: #282828;
     font-size: 12px;
@@ -163,7 +163,7 @@ import StarRating from './StarRating.vue';
     margin-top: 20px;
     width: 100%;
     height: 30px;
-    background-color: #ecc8b2;
+    background-color: var(--main-accent);
   }
 
   .title-list {

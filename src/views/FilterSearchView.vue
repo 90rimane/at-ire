@@ -179,7 +179,7 @@
     font-family: 'roboto';
 
     .search-header {
-      background-color: #ecc8b2;
+      background-color: var(--main-accent);
       padding: 18px 9px;
       display: flex;
       align-items: center;
@@ -274,14 +274,14 @@
 
     button {
       padding: 6px 12px;
-      background-color: #ecc8b2;
+      background-color: var(--main-accent);
       border-radius: 20px;
       border: none;
       margin: 4px;
     }
 
     .plus {
-      background-color: #f39256;
+      background-color: var(--main-strong-accent);
     }
 
     .plus::after {

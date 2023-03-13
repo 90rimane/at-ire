@@ -59,7 +59,7 @@
       }
 
       .border {
-        background-color: #ecc8b2;
+        background-color: var(--main-accent);
         position: absolute;
         left: 0;
         bottom: 18px;
@@ -70,21 +70,6 @@
           color: #1e293b;
           display: block;
           font-family: 'Roboto', sans-serif;
-        }
-      }
-
-      .fav-btn-container {
-        position: absolute;
-        bottom: 5%;
-        right: 5%;
-        width: 30px;
-        aspect-ratio: 1;
-        svg {
-          fill: #ecb2b2;
-
-          &:hover {
-            fill: #e87676;
-          }
         }
       }
     }

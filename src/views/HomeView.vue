@@ -28,9 +28,7 @@
         <img
           src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
         />
-        <router-link to="/search/Jewerly" class="text"
-          >JEWERLY</router-link
-        >
+        <router-link to="/search/Jewerly" class="text">JEWERLY</router-link>
       </div>
 
       <div class="box">
@@ -70,11 +68,10 @@
   }
   .home-container {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     gap: 20px;
     margin-top: 20px;
     padding-bottom: 100px;
-
   }
 
   .box {
@@ -108,7 +105,7 @@
   }
 
   .banner {
-    background-color: #ecc8b2;
+    background-color: var(--main-accent);
     color: #ffffff;
     text-align: center;
     padding: 20px;
@@ -126,40 +123,38 @@
     font-weight: bold;
   }
 
-.marquee{
-  display:flex;
-  justify-content:flex-start;
-  background:lightgrey;
-  overflow:hidden;
-}
-
-h1{
-  font-size:48px;
-  text-transform:uppercase;
-  color:transparent;
-  white-space:nowrap;
-  padding:0 6rem;
-  letter-spacing:1px;
-  animation:move-rtl 4000ms linear infinite;
-  color:black;
-}
-
-@keyframes move-rtl{
-  0%{
-    transform:translateX(0);
+  .marquee {
+    display: flex;
+    justify-content: flex-start;
+    background: lightgrey;
+    overflow: hidden;
   }
 
-  100%{
-    transform:translateX(-100%);
+  h1 {
+    font-size: 48px;
+    text-transform: uppercase;
+    color: transparent;
+    white-space: nowrap;
+    padding: 0 6rem;
+    letter-spacing: 1px;
+    animation: move-rtl 4000ms linear infinite;
+    color: black;
   }
-}
-  @media screen and (max-width: 700px) {
-    .home-container {
-      flex-direction:column;
-      justify-content:center;
+
+  @keyframes move-rtl {
+    0% {
+      transform: translateX(0);
     }
 
-
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  @media screen and (max-width: 700px) {
+    .home-container {
+      flex-direction: column;
+      justify-content: center;
+    }
 
     .box {
       width: 48%;
@@ -168,8 +163,8 @@ h1{
   }
 
   .box {
-    display:flex;
-    justify-content:center;
-    width:100%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 </style>

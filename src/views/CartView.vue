@@ -57,7 +57,7 @@
   }
 </script>
 
-<style scoped lang="scss">
+<style scope lang="scss">
   main {
     padding: 80px 16px;
     min-height: 100vh;
@@ -67,7 +67,7 @@
     }
     h3 {
       text-align: center;
-      color: rgb(112, 112, 112);
+      color: var(--grey);
       text-align: center;
       margin: 80px 0 300px 0;
     }
@@ -85,7 +85,7 @@
     }
 
     .checkout-info {
-      border-top: 2px rgb(139, 139, 139) solid;
+      border-top: 2px var(--grey) solid;
       margin-top: 8px;
       padding: 8px;
 
@@ -105,7 +105,7 @@
 
         button {
           padding: 6px 12px;
-          background-color: #ecc8b2;
+          background-color: var(--main-accent);
           border-radius: 20px;
           border: none;
           font-size: 16px;

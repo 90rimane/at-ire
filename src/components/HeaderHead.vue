@@ -233,7 +233,7 @@
     height: 56px;
     left: 0px;
     top: 0px;
-    background: #ecc8b2;
+    background: var(--main-accent);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     z-index: 1;
   }
@@ -309,7 +309,7 @@
     height: 35px;
     left: 58%;
     top: 13px;
-    background: #ecc8b2;
+    background: var(--main-accent);
     border-radius: 13px;
     padding-left: 8px;
     border: 1px;
