@@ -57,7 +57,7 @@
         />
       </svg>
     </router-link>
-    <router-link to="/cart" id="cart-icon-mobile" class="button">
+    <router-link to="/cart">
       <CartIcon
         class="button-cart"
         counter-location="23px"
@@ -147,7 +147,7 @@
         />
       </svg>
     </router-link>
-    <router-link to="/cart">
+    <router-link to="/cart" id="cart-routerlink-dt">
       <CartIcon
         class="button-cart"
         counter-location="23px"
@@ -386,14 +386,6 @@
     color: #000000;
     cursor: pointer;
   }
-
-  #cart-icon-mobile {
-    top: 0;
-    right: 0;
-    overflow: none;
-    margin: 0;
-  }
-
   .material-symbols-outlined:hover {
     color: var(--lightB);
   }
@@ -403,7 +395,33 @@
       }
     } */
 
+  @media (max-width: 979px) {
+    .header-desktop {
+      display: none;
+    }
+  }
+
+  @media (min-width: 500px) {
+    .bi-bi-search-mobile {
+      left: 52%;
+    }
+  }
+
+  @media (min-width: 680px) {
+    .bi-bi-search-mobile {
+      left: 53%;
+    }
+  }
+  @media (min-width: 880px) {
+    .bi-bi-search-mobile {
+      left: 54%;
+    }
+  }
+
   @media (min-width: 980px) {
+    .header-mobile {
+      display: none;
+    }
     .header-desktop {
       box-sizing: border-box;
       position: fixed;
@@ -436,9 +454,9 @@
     }
 
     /* LÄGG IN EN "NAV-LINK" I APP.VUE
-      .bi-bi-list :hover:focus:active {
-        background-color: antiquewhite;
-      } */
+  .bi-bi-list :hover:focus:active {
+    background-color: antiquewhite;
+  } */
 
     .bi-bi-search-desktop {
       position: absolute;
@@ -530,59 +548,36 @@
       color: var(--lightB);
     }
 
-    .material-symbols-outlined {
+    #cart-routerlink-dt {
+      display: flex;
+      justify-content: end;
+      width: 100vw;
+      height: 0px;
+    }
+
+    .material-symbols-outlined .button-cart {
       position: absolute;
       width: 30px;
       height: 30px;
       top: 13px;
-      left: 94%;
+      left: 93.5%;
       cursor: pointer;
       color: #000000;
+    }
+
+    .button-cart {
+      margin-top: 13.5px;
+      left: 0%;
+      margin-right: 3%;
     }
     .material-symbols-outlined:hover {
       color: var(--lightB);
     }
   }
 
-  @media (max-width: 979px) {
-    .header-desktop {
-      display: none;
-    }
-  }
-
-  @media (min-width: 500px) {
-    .bi-bi-search-mobile {
-      left: 52%;
-    }
-  }
-
-  @media (min-width: 680px) {
-    .bi-bi-search-mobile {
-      left: 53%;
-    }
-  }
-  @media (min-width: 880px) {
-    .bi-bi-search-mobile {
-      left: 54%;
-    }
-  }
-
-  @media (min-width: 980px) {
-    .header-mobile {
-      display: none;
-    }
-
-    /* added by Anna --> */
-    .material-symbols-outlined,
+  @media (min-width: 1450px) {
     .button-cart {
-      position: absolute;
-      left: 93.5%;
+      margin-right: 4%;
     }
-
-    .button-cart {
-      margin-top: 14px;
-    }
-
-    /* <-- added by Anna */
   }
 </style>
