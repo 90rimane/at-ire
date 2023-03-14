@@ -90,8 +90,10 @@
   }
 
   .carousel {
-    margin-top: 10px;
-    padding: 4vh 0 1vh 0;
+    margin-top: 30px;
+    padding: 4vh 0 0.2vh 0;
+    display: flex;
+    justify-content: center;
   }
 
   .text {

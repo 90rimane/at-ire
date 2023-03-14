@@ -88,14 +88,15 @@
   #carousel {
     position: relative;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: start;
     background-color: #f5f5f5;
-    width: 100%;
+    width: 380px;
   }
 
   #carousel-button-prev,
   #carousel-button-next {
+    margin-top: 110px;
     position: absolute;
     background-color: #fff5ef;
   }
