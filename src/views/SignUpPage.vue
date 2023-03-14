@@ -25,7 +25,8 @@
                 password: this.password,
                 favorites: [],
                 cart: [],
-                delivery: []
+                delivery: [],
+                orders: []
               })
 
               //Update local storage

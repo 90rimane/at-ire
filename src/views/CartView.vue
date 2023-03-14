@@ -23,7 +23,7 @@
 
           <button
             @click="this.$router.push('/checkout')"
-            :disabled="validCheckout"
+            :disabled="!validCheckout"
           >
             To checkout
           </button>
@@ -62,9 +62,9 @@
         // the "?" at the end of active user checks if active user exicsts,
         // if not - return undefined
         if (this.$store.state.activeUser?.cart.length >= 1) {
-          return false
+          return true
         }
-        return true
+        return false
       }
     }
   }
