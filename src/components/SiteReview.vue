@@ -187,7 +187,7 @@ export default {
 
       },
       getTimeNow(){
-        this.form.moment= moment().format();
+        this.form.moment= moment().format('L') +' '+ moment().format('LTS');
       },
       resetFormField(){
         this.form.userName = '',
