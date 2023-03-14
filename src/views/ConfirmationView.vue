@@ -63,13 +63,21 @@
         <button @click="saveOrder">Finalize purchase</button>
       </div>
     </div>
-    <div v-else>
-      <h1>Finalizing order....</h1>
+    <div class="popup" v-else>
+      <div v-if="!successful" class="notif">
+        <h2>Finalizing order....</h2>
+        <img src="/assets/loading.gif" alt="loading" />
+      </div>
+      <div v-else class="notif">
+        <h2>Order complete!</h2>
+        <img src="/assets/checkmark.png" alt="loading" />
+      </div>
     </div>
   </main>
 </template>
 
 <script>
+  import { v4 as uuidv4 } from 'uuid'
   export default {
     computed: {
       details() {
@@ -88,14 +96,18 @@
     },
     data() {
       return {
-        confirmation: false
+        confirmation: false,
+        successful: false
       }
     },
     methods: {
       saveOrder() {
+        // get user from session storage
         const parsed = JSON.parse(sessionStorage.getItem('activeUser'))
 
+        // Push in the new order
         parsed.orders.push({
+          id: uuidv4(),
           details: {
             shippingMethod: this.$store.state.activeUser.delivery.join(' '),
             shippingAddress: this.details.shippingAddress,
@@ -106,12 +118,29 @@
           products: [...this.items]
         })
 
-        this.$store.state.activeUser.cart = []
+        // Empty out cart because products are being purchase
+        parsed.cart = []
 
+        // update sessions storage and vuex
         sessionStorage.setItem('activeUser', JSON.stringify(parsed))
         this.$store.dispatch('getLogged')
 
+        // Run fake loading animations and redirect
+        this.finalize()
+      },
+      finalize() {
+        // Switch to finalize animation
         this.confirmation = true
+
+        // display successful after 2 seconds
+        setTimeout(() => {
+          this.successful = true
+
+          // send the user to my page after 1.2 seconds
+          setTimeout(() => {
+            this.$router.push('/mypage')
+          }, 1200)
+        }, 2000)
       }
     }
   }
@@ -209,6 +238,23 @@
           border: none;
           font-size: 16px;
           cursor: pointer;
+        }
+      }
+    }
+
+    .popup {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100dvh;
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 100px;
         }
       }
     }

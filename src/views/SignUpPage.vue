@@ -12,11 +12,10 @@
     },
     methods: {
       makeUser() {
-        if (this.user != '' && this.password != '') {
-          let parsed = JSON.parse(localStorage.getItem('allUsers') || '[]')
-
+        if (this.user && this.password && this.confirmPassword) {
           // confirm if passwords match
           if (this.password === this.confirmPassword) {
+            let parsed = JSON.parse(localStorage.getItem('allUsers') || '[]')
             //check if user already exists
             if (!parsed.some((userItem) => userItem.username === this.user)) {
               //Create the user object and push it into "database" array
@@ -124,7 +123,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 50px;
+    padding-top: 90px;
     height: 100vh;
 
     img {
