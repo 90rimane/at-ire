@@ -56,6 +56,10 @@
         return this.$store.state.allProducts
       }
     }
+    // methods: {
+    //   productSelect(productId) {
+    //     this.$router.push({ path: '/product/' + productId })
+    //   }
   }
 </script>
 
