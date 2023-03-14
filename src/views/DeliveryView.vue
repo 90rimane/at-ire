@@ -241,7 +241,7 @@
       }
     },
     watch: {
-      //empties the second option if choice ofcompany changes
+      //empties the second option if choice of company changes
       deliveryChoice() {
         this.budbeeChoice = null
         this.postnordChoice = null

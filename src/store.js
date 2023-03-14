@@ -13,7 +13,6 @@ const mutations = {
     },
     SET_ONEPRODUCT(state, item) {
       state.oneProduct = item
-      console.log('item', item)
     }
   },
   state = {

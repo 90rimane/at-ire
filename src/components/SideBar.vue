@@ -65,6 +65,11 @@
         <span class="material-symbols-outlined">forum</span>
         <span class="text">Chatroom</span>
       </router-link>
+      <!-- Routerlink to FAQ and span class added by Andrea -->
+      <router-link to="/FAQ" class="button">
+        <span class="material-symbols-outlined"> quiz </span>
+        <span class="text">FAQ</span>
+      </router-link>
     </div>
 
     <div v-if="$store.state.activeUser == null" class="menu bottom-menu">

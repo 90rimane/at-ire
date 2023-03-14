@@ -1,18 +1,3 @@
-<script>
-  import FavoriteButton from './FavoriteButton.vue'
-  export default {
-    components: {
-      FavoriteButton
-    },
-    props: {
-      product: {
-        type: Object,
-        default: null
-      }
-    }
-  }
-</script>
-
 <template>
   <div class="item-container">
     <div class="img-container">
@@ -35,6 +20,21 @@
     </div>
   </div>
 </template>
+
+<script>
+  import FavoriteButton from './FavoriteButton.vue'
+  export default {
+    components: {
+      FavoriteButton
+    },
+    props: {
+      product: {
+        type: Object,
+        default: null
+      }
+    }
+  }
+</script>
 
 <style lang="scss" scoped>
   .item-container {

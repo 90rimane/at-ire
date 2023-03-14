@@ -1,8 +1,9 @@
 <template>
   <div id="carousel" v-if="images">
-    <img
+    <ProductItem
       :src="images[currentIndex].img.Black"
       :alt="images[currentIndex].description"
+      :product="images[currentIndex]"
     />
     <button
       id="carousel-button-prev"
@@ -22,7 +23,11 @@
 </template>
 
 <script>
+  import ProductItem from '../components/ProductItem.vue'
   export default {
+    components: {
+      ProductItem
+    },
     props: {
       images: {
         type: Array,
@@ -45,15 +50,6 @@
     },
 
     methods: {
-      startAutoplay() {
-        this.timer = setInterval(() => {
-          this.moveToNextImage()
-        }, this.autoplayInterval)
-      },
-      stopAutoplay() {
-        clearInterval(this.timer)
-        this.timer = null
-      },
       moveToNextImage() {
         // console.log('this.images alt', this.images[0].description)
         // console.log('this.images One', this.images[0].img.Black)
@@ -62,6 +58,20 @@
       moveToPreviousImage() {
         this.currentIndex =
           (this.currentIndex + this.images.length - 1) % this.images.length
+      },
+
+      // selectProduct(index) {
+      //   const selectedProduct = this.images[index]
+      //   this.$emit('productSelected', selectedProduct.id)
+      // },
+      startAutoplay() {
+        this.timer = setInterval(() => {
+          this.moveToNextImage()
+        }, this.autoplayInterval)
+      },
+      stopAutoplay() {
+        clearInterval(this.timer)
+        this.timer = null
       }
     },
 
@@ -88,7 +98,6 @@
     background-color: #f5f5f5;
     padding: 3vh 0 3vh 0;
     padding-left: 64px;
-    margin-top: 60px;
   }
 
   #carousel-button-prev,
