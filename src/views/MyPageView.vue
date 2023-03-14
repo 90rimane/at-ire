@@ -23,6 +23,18 @@
         <p>E-mail:</p>
         <p>Payment details:</p>
       </div>
+
+      <h2>Where is my order?</h2>
+      <div class="card">
+        <label for="ordernumber">Enter your ordernumber</label>
+        <input type="text" id="ordernumber" placeholder="12" />
+        <button @click="checkorder()">Check</button>
+      </div>
+
+      <div v-if="postnord" id="ordercheck">
+        <img src="/public/bilder/postnord.jpg" alt="" />
+        <button @click="checkorder()" id="postnordbtn">Stäng</button>
+      </div>
     </div>
 
     <!-- Message is not logged in -->
@@ -40,6 +52,7 @@
   button {
     margin-left: 20px;
     width: 322px;
+    max-width: 70%;
     height: 40px;
     background-color: var(--main-strong-accent);
     margin-bottom: 10px;
@@ -73,12 +86,46 @@
     margin-left: 100px;
     min-height: 100vh;
   }
+
+  #ordernumber {
+    width: 100%;
+  }
+
+  #ordercheck {
+    background-color: white;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #ordercheck img {
+    max-width: 100%;
+  }
+
+  #postnordbtn {
+    background-color: #025d91;
+    color: #eee;
+    border-radius: 50px;
+    height: 50px;
+    font-size: 18px;
+  }
 </style>
 
 <script>
   export default {
     data() {
-      return { user: this.$store.state.activeUser, history: null }
+      return {
+        user: this.$store.state.activeUser,
+        history: null,
+        postnord: false
+      }
     },
     computed: {
       nameStartCapital() {
@@ -94,6 +141,11 @@
         .then((result) => {
           this.history = result.data
         })
+    },
+    methods: {
+      checkorder() {
+        this.postnord = !this.postnord
+      }
     }
   }
 </script>
