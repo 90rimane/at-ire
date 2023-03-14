@@ -132,7 +132,7 @@
         return this.user.username
           .charAt(0)
           .toUpperCase()
-          .concat(this.user.username.slice(1))
+          .concat(this.user.username.slice(1).toLowerCase())
       }
     },
     created() {

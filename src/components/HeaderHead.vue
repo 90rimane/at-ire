@@ -178,14 +178,14 @@
         search: '',
         activeItem: {
           textDecoration: 'underline',
-          color: '#568885',
+          color: 'var (--dark)',
           textTransform: 'uppercase'
         },
         activeNumber: 0
       }
     },
     computed: {
-      //the search-function
+      //the search-function, inspired by "https://stackoverflow.com/questions/52558770/vuejs-search-filter"
       searchResult() {
         if (this.search) {
           return this.$store.state.allProducts.filter((i) => {

@@ -4,7 +4,7 @@
       <h3 @click="toggleForm()">
         <span class="material-symbols-outlined" v-show="!showForm">rate_review</span>
         <span class="material-symbols-outlined" v-show="showForm" @click="showReview()">edit_off</span>
-      {{ showForm ? 'Close' : 'Write a review' }}
+      {{ showForm ? '' : 'Write a review' }}
       </h3>
     </div>
     <div class="review-panel" v-show="showForm">
@@ -23,10 +23,8 @@
 
           <button
             type="submit"
-            @click="
-            showReview(),
-            toggleForm(),
-            getTimeNow()"
+            @submit="showReview(), toggleForm(), getTimeNow()"
+            @click="showReview(), toggleForm(), getTimeNow()"
             :disabled="isDisabled"
             >Submit
           </button>
@@ -117,7 +115,7 @@ export default {
         myComment: false,
         submit: true,
         reviews: SiteReviews,
-        maxStars1: ["1","2","3","4","5"],
+        // maxStars: ["1","2","3","4","5"],
         form:{
           userName: '',
           userReview: '',
@@ -247,7 +245,7 @@ export default {
   height: auto;
   border:solid 1px;
   border-radius: 5px;
-  animation: formBox .6s;  //@keyframes comment
+  animation: formBox .6s;  //@keyframes
 
  .form-reviews{
   padding: 10px;
@@ -364,4 +362,9 @@ table{
       transform: scale(1);
     }
   }
+@media screen and (max-width: 600px) {
+  .user-reviews{
+    margin: 2em 0;
+  }
+}
 </style>

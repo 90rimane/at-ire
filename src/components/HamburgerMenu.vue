@@ -6,6 +6,7 @@
       CartIcon
     },
     methods: {
+      // Open/close menu
       actMenu() {
         if (this.$refs.menuLinks.style.display === 'block') {
           this.$refs.menuLinks.style.display = 'none'
