@@ -178,7 +178,7 @@
         search: '',
         activeItem: {
           textDecoration: 'underline',
-          color: '#568885',
+          color: 'var (--dark)',
           textTransform: 'uppercase'
         },
         activeNumber: 0
