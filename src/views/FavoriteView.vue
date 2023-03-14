@@ -34,6 +34,13 @@
 </script>
 
 <style scoped lang="scss">
+  .home-pages {
+    width: 100%;
+  }
+
+  h3 {
+    padding: 20px 7px 0 7px;
+  }
   @media only screen and (min-width: 980px) {
     main {
       margin-left: 68px;
