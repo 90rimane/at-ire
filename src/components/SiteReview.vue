@@ -84,18 +84,18 @@
                 <td id="date-time">{{ formCopy.moment }}</td>
               </tr>
             <tr>
-                <td>{{ this.formCopy.userReview }}</td>
+                <td>{{ formCopy.userReview }}</td>
             </tr>
             <tr class="like-dislike-comment">
               <button @click="countLikes()">
                 <span class="material-symbols-outlined">thumb_up</span>
               </button>
-              <span> {{ form.likes }}</span>
+              <span> {{ formCopy.likes }}</span>
               <span>|</span>
               <button @click="countDisLikes()">
                 <span class="material-symbols-outlined">thumb_down</span>
               </button>
-              <span>{{ form.disLikes }}</span>
+              <span>{{ formCopy.disLikes }}</span>
             </tr>
             </tbody>
           </table>
@@ -151,6 +151,10 @@ export default {
       this.formCopy.userName = localStorage.getItem('newUserName')
       this.formCopy.userReview = localStorage.getItem('newReview')
       this.formCopy.title = localStorage.getItem('newTitle')
+      this.formCopy.likes = localStorage.getItem('likes')
+      this.formCopy.disLikes = localStorage.getItem('disLikes')
+
+      this.formCopy.moment = localStorage.getItem('commentedTime')
 
       if(!this.myComment && this.formCopy.userName){
             this.myComment = !this.myComment;
@@ -168,6 +172,9 @@ export default {
         localStorage.setItem('newUserName', this.form.userName)
         localStorage.setItem('newReview', this.form.userReview)
         localStorage.setItem('newTitle', this.form.title)
+        this.formCopy.likes = 0;
+        this.formCopy.disLikes = 0;
+
         this.getTimeNow();
         localStorage.setItem('commentedTime', this.form.moment )
 
@@ -181,7 +188,6 @@ export default {
       },
       getTimeNow(){
         this.form.moment= moment().format();
-        // return this.form.moment
       },
       resetFormField(){
         this.form.userName = '',
@@ -195,9 +201,13 @@ export default {
       },
       countLikes(){
         this.form.likes = this.form.likes+1
+        localStorage.setItem('likes', this.form.likes)
+        this.formCopy.likes = localStorage.getItem('likes')
       },
       countDisLikes(){
         this.form.disLikes = this.form.disLikes+1
+        localStorage.setItem('disLikes', this.form.disLikes)
+        this.formCopy.disLikes = localStorage.getItem('disLikes')
       }
     }
   }
