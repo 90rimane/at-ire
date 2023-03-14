@@ -31,6 +31,11 @@
         <li><a href="#">COLLECTIONS</a></li>
         <li><a href="#">BRAND</a></li>
         <li><a href="#">WORK WITH US</a></li>
+        <!-- Link to feedback page Add by Ali -->
+        <li>
+          <router-link to="/about" class="link-to-feedback"> Feedback</router-link>
+        </li>
+        <!-- end -->
       </ul>
     </div>
 
@@ -61,6 +66,14 @@
   * {
     color: #282828;
   }
+  // Add by Ali
+  .link-to-feedback{
+    border-bottom: 1px solid black;
+    font-size: 13px;
+    font-weight: bold;
+
+  }
+  // end Add by Ali
   .footer {
     width: 100%;
     margin-bottom: 20px;
