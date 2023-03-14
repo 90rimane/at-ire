@@ -23,7 +23,9 @@
         />
       </svg>
       <div>
+        <!-- focusout event listener is used to clear the search results when the user clicks outside of the dropdown -->
         <ul v-if="search" class="dropdown" @focusout="clearSearch()">
+          <!-- v-for is used to loop through each item in the searchResult array and render a li element for each one -->
           <li
             v-for="(item, index) in searchResult"
             :key="item.id"
@@ -389,11 +391,6 @@
   .material-symbols-outlined:hover {
     color: var(--lightB);
   }
-  /* @media (max-width: 980px) {
-      .header-mobile {
-        display: flex;
-      }
-    } */
 
   @media (max-width: 979px) {
     .header-desktop {
@@ -452,11 +449,6 @@
     h2:hover {
       color: var(--lightB);
     }
-
-    /* LÄGG IN EN "NAV-LINK" I APP.VUE
-  .bi-bi-list :hover:focus:active {
-    background-color: antiquewhite;
-  } */
 
     .bi-bi-search-desktop {
       position: absolute;

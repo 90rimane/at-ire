@@ -2,7 +2,7 @@
   <main>
     <h1>Checkout Form</h1>
     <h2>Step 3: Choose your delivery method:</h2>
-    <p v-if="user">
+    <p v-if="user?.delivery">
       ( ps. last time you chose {{ user.delivery[0] }} {{ user.delivery[1] }})
     </p>
 
