@@ -110,6 +110,8 @@
 
         sessionStorage.setItem('activeUser', JSON.stringify(parsed))
         this.$store.dispatch('getLogged')
+
+        this.confirmation = true
       }
     }
   }
