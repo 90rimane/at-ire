@@ -147,13 +147,11 @@ export default {
       }
     },
     mounted(){
-      this.$emit('submit', this.form)
       this.formCopy.userName = localStorage.getItem('newUserName')
       this.formCopy.userReview = localStorage.getItem('newReview')
       this.formCopy.title = localStorage.getItem('newTitle')
       this.formCopy.likes = localStorage.getItem('likes')
       this.formCopy.disLikes = localStorage.getItem('disLikes')
-
       this.formCopy.moment = localStorage.getItem('commentedTime')
 
       if(!this.myComment && this.formCopy.userName){
