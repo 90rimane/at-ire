@@ -70,6 +70,7 @@
       </div>
       <div v-else class="notif">
         <h2>Order complete!</h2>
+        <h2>Thank you for your order!</h2>
         <img src="/assets/checkmark.png" alt="loading" />
       </div>
     </div>
