@@ -266,15 +266,6 @@
 </script>
 
 <style scoped lang="scss">
-  // button {
-  //   width: 322px;
-  //   max-width: 70%;
-  //   background-color: var(--main-accent);
-  //   margin-bottom: 10px;
-  //   border: none;
-  //   margin-top: 15px;
-  // }
-
   button {
     width: 322px;
     max-width: 70%;

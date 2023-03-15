@@ -41,7 +41,7 @@
           class="button-cart material-symbols-outlined"
           icon-size="1.7rem"
           :icon-color="hovCol"
-          counter-location="30px"
+          counter-location="22px"
         />
         <span class="text">Shopping Cart</span>
       </router-link>

@@ -303,7 +303,7 @@
     font-size: 14px;
     border-radius: 1rem;
     background-color: #fff9f5;
-    box-shadow: 2px 3px 10px #b9ada6;
+    box-shadow: 12px 3px 10px #b9ada6;
     border: none;
     padding: 9px 14px;
   }
