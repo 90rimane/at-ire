@@ -37,6 +37,7 @@
   <div class="comment-section">
     <div class="comment-title">Comments</div>
     <div v-for="comment in post.comments" :key="comment.id" class="comment-container">
+      <div class="comment-user">{{comment.user}}</div>
       <div class="comment-content">{{comment.content}}</div>
     </div>
   </div>
@@ -196,8 +197,9 @@ export default {
 
 }
 
-
-
-
+.comment-user{
+  font-weight:bold;
+  padding:5px;
+}
 
 </style>
