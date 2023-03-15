@@ -11,7 +11,7 @@
     },
     methods: {
       login() {
-        if (this.user != '' && this.password != '') {
+        if (this.user && this.password) {
           let parsed = JSON.parse(localStorage.getItem('allUsers') || '[]')
 
           //check if user exists and check if passwords match
@@ -115,7 +115,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 50px;
+    padding-top: 90px;
     height: 100vh;
 
     img {

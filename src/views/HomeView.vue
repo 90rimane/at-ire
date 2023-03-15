@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div>
+    <div class="carousel">
       <CarouselSlide v-if="allProducts" :images="allProducts" />
     </div>
     <div class="marquee">
@@ -56,17 +56,13 @@
         return this.$store.state.allProducts
       }
     }
-    // methods: {
-    //   productSelect(productId) {
-    //     this.$router.push({ path: '/product/' + productId })
-    //   }
   }
 </script>
 
 <style scoped>
   main {
     margin-left: 1rem;
-    margin-top: 100px;
+    margin-top: 1000px;
     max-width: 1000px;
     margin: auto;
   }
@@ -91,6 +87,13 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  .carousel {
+    margin-top: 30px;
+    padding: 4vh 0 0.2vh 0;
+    display: flex;
+    justify-content: center;
   }
 
   .text {

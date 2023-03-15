@@ -35,6 +35,9 @@
       <input type="email" v-model="email" id="email-input" />
       <button @click="join" id="join-button">JOIN</button>
     </div>
+    <!-- Link to feedback page Add by Ali -->
+    <router-link to="/about" class="link-to-feedback"> Feedback</router-link>
+        <!-- end -->
   </div>
 </template>
 
@@ -77,6 +80,14 @@
   * {
     color: #282828;
   }
+    // Add by Ali
+    .link-to-feedback{
+    font-size: 13px;
+    font-weight: bold;
+    padding: 15px;
+    display: flow-root;
+  }
+  // end Add by Ali
   .footer {
     width: 100%;
   }

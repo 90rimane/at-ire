@@ -13,7 +13,9 @@ import SignupView from './views/SignupPage.vue'
 import ProductView from './views/ProductView.vue'
 import FilterSearchView from './views/FilterSearchView.vue'
 import CartView from './views/CartView.vue'
+import BlogView from './views/BlogView.vue'
 import FAQView from './views/FAQView.vue'
+import ConfirmationView from './views/ConfirmationView.vue'
 
 export default createRouter({
   history: createWebHashHistory(),
@@ -70,9 +72,19 @@ export default createRouter({
       component: CartView,
       path: '/cart'
     },
+
+    {
+      component: BlogView,
+      path: '/blog'
+    },
+
     {
       component: FAQView,
       path: '/FAQ'
+    },
+    {
+      component: ConfirmationView,
+      path: '/confirm'
     }
   ],
   scrollBehavior() {

@@ -258,6 +258,8 @@
         }
         sessionStorage.setItem('activeUser', JSON.stringify(parsed))
         this.$store.dispatch('getLogged')
+
+        this.$router.push('/confirm')
       }
     }
   }
