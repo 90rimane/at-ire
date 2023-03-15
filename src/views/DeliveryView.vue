@@ -266,13 +266,35 @@
 </script>
 
 <style scoped lang="scss">
+  // button {
+  //   width: 322px;
+  //   max-width: 70%;
+  //   background-color: var(--main-accent);
+  //   margin-bottom: 10px;
+  //   border: none;
+  //   margin-top: 15px;
+  // }
+
   button {
     width: 322px;
     max-width: 70%;
-    background-color: var(--main-accent);
     margin-bottom: 10px;
-    border: none;
     margin-top: 15px;
+    padding: 6px 12px;
+    background-color: var(--main-accent);
+    border-radius: 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    &:hover {
+      color: white;
+    }
+    &:disabled {
+      cursor: auto;
+      &:hover {
+        color: rgb(111, 111, 111);
+      }
+    }
   }
   .confirmBox {
     max-width: 80%;

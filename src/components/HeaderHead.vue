@@ -32,7 +32,7 @@
             @click="selectItem(item)"
           >
             <router-link
-              to="/product"
+              :to="`/product/${item.id}`"
               :style="[index === activeNumber ? activeItem : '']"
             >
               {{ item.description }}
@@ -202,7 +202,7 @@
     // add by Anna -->
     methods: {
       selectItem(item) {
-        this.$store.dispatch('setOneProduct', item)
+        this.$router.push(`/product/${item.id}`)
         this.search = ''
       },
       //moves the activeItem when arrow-down is pressed
@@ -215,7 +215,6 @@
       },
       //goes to the page of activeItem when enter is pressed
       goToProduct() {
-        this.$router.push('/product')
         this.selectItem(this.searchResult[this.activeNumber])
         this.search = ''
       },

@@ -133,8 +133,8 @@
 
   #cart-link-text {
     padding-top: 5px;
-    margin: 0;
-    padding-left: 7px;
+    margin-left: 1rem;
+    // padding-left: -5px;
   }
   /* <-- added by Anna */
 
