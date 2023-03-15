@@ -431,7 +431,7 @@
       position: absolute;
       width: 62px;
       height: 28px;
-      left: 50%;
+      left: 49%;
       top: 15px;
       font-family: 'Karla';
       font-style: normal;
@@ -563,9 +563,29 @@
     }
   }
 
-  @media (min-width: 1450px) {
+  @media (min-width: 1100px) {
+    h2 {
+      left: 49.4%;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    h2 {
+      left: 49.6%;
+    }
+  }
+  @media (min-width: 1310px) {
+    h2 {
+      left: 49.8%;
+    }
+  }
+
+  @media (min-width: 1400px) {
     .button-cart {
       margin-right: 4%;
+    }
+    h2 {
+      left: 50.2%;
     }
   }
 </style>
