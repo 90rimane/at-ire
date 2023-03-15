@@ -179,7 +179,7 @@
     transition: 0.2s ease-in-out;
     box-shadow: 1px 0 5px var(--grey-light);
     position: fixed;
-    z-index: 9; // added by Jovan
+    z-index: 102; // added by Jovan
     top: 0;
     .logo {
       margin-bottom: 1rem;

@@ -98,7 +98,7 @@
             </tbody>
           </table>
       </div>
-      <h3>Reviews:</h3>
+      <h3 id="reviews-text">Reviews:</h3>
     </div>
 
   </main>
@@ -284,6 +284,10 @@ export default {
     }
   }
  }
+}
+#reviews-text{
+  padding-left: 10px;
+  margin-bottom: -15px;
 }
 .user-reviews{
   display: flex;

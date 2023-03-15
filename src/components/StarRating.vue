@@ -1,15 +1,16 @@
 <template>
   <div class="main-rate">
     <div class="rating">
-      <p>Rate us</p>
+      <!-- <p>Rate us</p> -->
       <div class="rate-stars" v-for="(star, index) in stars" :key="star">
         <ul>
-          <li @click="ratedStars(index), toggleRespons()">
+          <li @click="ratedStars(index), toggleRespons(), countAverage(index)">
             <span class="material-symbols-outlined">star</span>
             <span class="star-number">{{ index+1 }}</span>
           </li>
         </ul>
       </div>
+      <button :class="{satisfied : colorActiv, disSatisfied :!colorActiv}">{{ average }}</button>
     </div>
     <div class="ratingRespons" v-show="showRespons">
       <p>
@@ -28,6 +29,7 @@
  </div>
 </template>
 <script>
+
 export default {
     data() {
       return {
@@ -35,7 +37,11 @@ export default {
         responsMsg: "Thank you for Feedback!",
         stars: ["1", "2", "3", "4", "5"],
         ratedStar: null,
-        isActive: true
+        isActive: true,
+        siteStars:[],
+        sum : 0,
+        average: 4.7,
+        colorActiv: true,
       };
     },
     methods:{
@@ -51,11 +57,28 @@ export default {
         if(index === 0){
           this.isActive = false
         }
+      },
+      countAverage(index){
+        this.siteStars.push(index+1);
+        this.sum = this.sum + (index+1);
+        this.average = this.sum / (this.siteStars.length);
+        this.average = this.average.toFixed(1);
+        this.watchAverage();
+
+      },
+      watchAverage(){
+        if(this.average < 3){
+          this.colorActiv = false
+        }else{
+          this.colorActiv = true
+        }
       }
     }
   }
 </script>
 <style lang="scss" scoped>
+.satisfied{background-color: rgb(111, 194, 3) }
+.disSatisfied{background-color: rgb(218, 79, 60) }
 .main-rate{
   display: flex;
   flex-direction: column-reverse;
@@ -73,14 +96,21 @@ export default {
   text-align: center;
   align-items: center ;
   justify-content: center;
-  cursor: pointer;
   margin: auto;
+  button{
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+  }
   .rate-stars{
     ul{
       list-style-type: none;
       overflow: hidden;
       li{
-        // float: left;
         display: block;
         padding: 14px 1px;
         text-decoration: none;
@@ -92,10 +122,11 @@ export default {
           font-size: 30px;
           text-align: center;
           text-decoration: none;
-          color: rgb(233, 219, 21);
+          color: rgb(232, 216, 0);
+          cursor: pointer;
           &:hover{
             font-size: 35px;
-            color: red;
+            color: rgb(252, 54, 54);
           }
         }
       }
