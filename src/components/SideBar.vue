@@ -70,6 +70,11 @@
         <span class="material-symbols-outlined"> quiz </span>
         <span class="text">FAQ</span>
       </router-link>
+      <!-- Routerlink to BLOG and span class added by Andrea -->
+      <router-link to="/blog" class="button">
+        <span class="material-symbols-outlined"> feed </span>
+        <span class="text">BLOG</span>
+      </router-link>
     </div>
 
     <div v-if="$store.state.activeUser == null" class="menu bottom-menu">
