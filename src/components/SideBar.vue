@@ -143,7 +143,7 @@
     top: 0;
     left: 0;
     margin: 8px 16px;
-    z-index: 102;
+    z-index: 101;
     border-radius: 4px;
     display: flex;
     align-items: center;
@@ -179,7 +179,7 @@
     transition: 0.2s ease-in-out;
     box-shadow: 1px 0 5px var(--grey-light);
     position: fixed;
-    z-index: 9; // added by Jovan
+    z-index: 102; // added by Jovan
     top: 0;
     .logo {
       margin-bottom: 1rem;
