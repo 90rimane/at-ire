@@ -359,10 +359,6 @@
     color: var(--lightB);
   }
 
-  /* LÄGG IN EN 'NAV-LINK' I APP.VUE .bi-bi-list :hover:focus:active {
-      background-color: antiquewhite;
-    } */
-
   .bi-bi-heart-mobile {
     position: absolute;
     width: 30px;

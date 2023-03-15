@@ -93,9 +93,6 @@
         } else {
           this.$router.push('/search/All')
         }
-      },
-      toggleVisable() {
-        this.isActive = !this.isActive
       }
     }
   }
@@ -105,7 +102,7 @@
   <div class="main-page">
     <div class="search-header">
       <span
-        @click="toggleVisable()"
+        @click="this.isActive = !this.isActive"
         class="material-symbols-outlined filter-icon"
       >
         filter_alt

@@ -70,6 +70,7 @@
       </div>
       <div v-else class="notif">
         <h2>Order complete!</h2>
+        <h2>Thank you for your order!</h2>
         <img src="/assets/checkmark.png" alt="loading" />
       </div>
     </div>
@@ -139,7 +140,7 @@
           // send the user to my page after 1.2 seconds
           setTimeout(() => {
             this.$router.push('/mypage')
-          }, 1200)
+          }, 2000)
         }, 2000)
       }
     }
