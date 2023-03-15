@@ -88,7 +88,6 @@
         <span class="text">Logout</span>
       </a>
     </div>
-
   </aside>
 
   <button class="desktop-sidebar-btn" @click="ToggleMenu">
@@ -144,7 +143,7 @@
     top: 0;
     left: 0;
     margin: 8px 16px;
-    z-index: 101;
+    z-index: 102;
     border-radius: 4px;
     display: flex;
     align-items: center;
