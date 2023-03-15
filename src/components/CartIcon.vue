@@ -50,8 +50,8 @@
 <style lang="scss" scoped>
   #counter-container {
     position: relative;
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     #counter {
       position: absolute;
       top: -5px;

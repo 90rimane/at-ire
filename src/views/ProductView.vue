@@ -1,5 +1,5 @@
 <template>
-  <article id="article" v-if="oneProduct">
+  <article id="article" v-if="this.$store.state.allProducts">
     <header>
       <!-- spans to be made to breadcrumb-navigation  -->
       <span>{{ this.oneProduct.category }} </span>
@@ -86,7 +86,9 @@
     },
     computed: {
       oneProduct() {
-        return this.$store.state.oneProduct
+        return this.$store.state.allProducts.find(
+          (post) => post.id === this.$route.params.id
+        )
       },
       bothSelected() {
         return this.selectedColor && this.selectedSize

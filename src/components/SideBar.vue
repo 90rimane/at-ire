@@ -33,13 +33,13 @@
         to="/cart"
         class="button"
         @click="ToggleCartIconColor('active')"
-        @focusout="ToggleCartIconColor('inaktive')"
+        @focusout="ToggleCartIconColor('inactive')"
         @mouseover="ToggleCartIconColor(true)"
         @mouseout="ToggleCartIconColor(false)"
       >
         <CartIcon
           class="button-cart material-symbols-outlined"
-          icon-size="2.3rem"
+          icon-size="1.7rem"
           :icon-color="hovCol"
           counter-location="30px"
         />
@@ -182,7 +182,7 @@
     z-index: 102; // added by Jovan
     top: 0;
     .logo {
-      margin-bottom: 1rem;
+      // margin-bottom: -20px;
       img {
         width: 3rem;
       }
@@ -199,11 +199,12 @@
     }
     .menu-toggle-wrap-mobile {
       display: none;
+      margin-bottom: -20px;
     }
     .menu-toggle-wrap {
       display: flex;
       justify-content: flex-end;
-      margin-bottom: 1rem;
+      margin-bottom: -20px;
       position: relative;
       top: 0;
       transition: 0.2s ease-in-out;
@@ -231,6 +232,7 @@
     }
     #topmenu {
       color: var(--grey);
+      // margin-top: -10%;
     }
     h3 {
       color: var(--dark-alt);
@@ -249,7 +251,7 @@
         transition: 0.2s ease-in-out;
         padding: 0.5rem 0.9rem;
         .material-symbols-outlined {
-          font-size: 2.5rem;
+          font-size: 1.7rem;
           color: var(--darker);
           transition: 0.2s ease-in-out;
         }
@@ -289,9 +291,9 @@
     */
     &.is-expanded {
       width: var(--sidebar-width);
-      padding: 1rem; // added by Jovan
+      padding: 1rem 1rem 0 1rem; // added by Jovan
       .menu-toggle-wrap {
-        top: -3rem;
+        top: -3.2rem;
         .menu-toggle {
           transform: rotate(-180deg);
         }
@@ -310,8 +312,9 @@
   }
   /* added by Anna --> */
   .button-cart {
-    height: 40px;
-    padding: 2px 5px 2px 0;
+    height: 30px;
+    margin-right: 0;
+    // padding: 2px 5px 2px 0;
   }
   /* <-- added by Anna */
 

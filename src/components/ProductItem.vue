@@ -2,7 +2,7 @@
   <div class="item-container">
     <div class="img-container">
       <router-link
-        to="/product"
+        :to="`/product/${product.id}`"
         @click="$store.dispatch('setOneProduct', product)"
         class="button"
       >

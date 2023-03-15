@@ -112,7 +112,7 @@
           >
             <!-- activeNumber has class activeItem for css -->
             <router-link
-              to="/product"
+              :to="`/product/${item.id}`"
               :style="[index === activeNumber ? activeItem : '']"
             >
               {{ item.description }}
@@ -293,7 +293,7 @@
   }
 
   #hamburgermenu {
-    margin-top: -48.5px;
+    margin-top: -42.5px;
   }
 
   /* <-- add by Anna + some changes related to this around here*/
