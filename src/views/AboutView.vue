@@ -21,7 +21,7 @@
       <p>
         Welcome to @IRE, your online destination for the latest fashion items.
         We offer high-quality products at affordable prices, including clothing,
-        shoes, and accessories. Our inventory is constantly updated with the
+        hats, and accessories. Our inventory is constantly updated with the
         latest trends, and our website is easy to use. We also provide fast and
         reliable shipping, and our friendly customer service team is always
         ready to assist you. Shop with us today and discover your new favorite
