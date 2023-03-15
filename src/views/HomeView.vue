@@ -1,7 +1,9 @@
 <template>
   <main>
-    <div class="carousel">
-      <CarouselSlide v-if="allProducts" :images="allProducts" />
+    <div class="carousel-container">
+      <div class="carousel">
+        <CarouselSlide v-if="allProducts" :images="allProducts" />
+      </div>
     </div>
     <div class="marquee">
       <h1 class="margueeh1">@ire</h1>
@@ -93,10 +95,15 @@
   }
 
   .carousel {
-    margin-top: 30px;
+    margin-top: 40px;
     padding: 4vh 0 0.2vh 0;
     display: flex;
     justify-content: center;
+  }
+
+  .carousel-container {
+    background-color: #f5f5f5;
+    width: 100%;
   }
 
   .text {
