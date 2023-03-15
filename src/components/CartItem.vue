@@ -77,6 +77,7 @@
       top: 0;
       padding: 8px;
       color: rgb(95, 95, 95);
+      cursor: pointer;
 
       &:hover {
         color: rgb(196, 0, 0);
