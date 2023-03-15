@@ -6,6 +6,7 @@
       CartIcon
     },
     methods: {
+      // Open/close menu
       actMenu() {
         if (this.$refs.menuLinks.style.display === 'block') {
           this.$refs.menuLinks.style.display = 'none'
@@ -70,6 +71,11 @@
         <router-link to="/help">
           <span class="material-symbols-outlined">forum</span>
           <span class="link-text">Chatroom</span>
+        </router-link>
+        <!-- Routerlink to FAQ and span class added by Andrea -->
+        <router-link to="/FAQ">
+          <span class="material-symbols-outlined">quiz</span>
+          <span class="link-text">FAQ</span>
         </router-link>
         <div v-if="$store.state.activeUser == null">
           <router-link to="/login">

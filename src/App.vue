@@ -62,18 +62,6 @@
 <style lang="scss">
   @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap%27');
 
-  :root {
-    --grey-light: #a19595;
-    --grey: #64748b;
-    --dark-alt: #334155;
-    --dark: #1e293b;
-    --darker: #020202;
-    --light: #ffffff;
-    --lightB: #fff5ef;
-    --lightB-darker: #ebd5c9;
-    --orange: #f39256;
-    --sidebar-width: 300px;
-  }
   * {
     margin: 0;
     padding: 0;

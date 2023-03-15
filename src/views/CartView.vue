@@ -19,10 +19,14 @@
         >
         <span class="total">Total: {{ total }}Kr</span>
         <div class="button-container">
-          <router-link to="/"><button>Continue shopping</button></router-link>
-          <router-link to="/checkout">
-            <button>To checkout</button></router-link
+          <button @click="this.$router.push('/')">Continue shopping</button>
+
+          <button
+            @click="this.$router.push('/checkout')"
+            :disabled="!validCheckout"
           >
+            To checkout
+          </button>
         </div>
       </div>
     </div>
@@ -52,6 +56,15 @@
         return cartItems.reduce((sum, item) => {
           return sum + Number(item.price)
         }, 0)
+      },
+      //Check for if user is logged in and cart at least has 1 item
+      validCheckout() {
+        // the "?" at the end of active user checks if active user exicsts,
+        // if not - return undefined
+        if (this.$store.state.activeUser?.cart.length >= 1) {
+          return true
+        }
+        return false
       }
     }
   }
@@ -109,6 +122,12 @@
           border-radius: 20px;
           border: none;
           font-size: 16px;
+          cursor: pointer;
+
+          &:disabled {
+            background-color: rgb(185, 185, 185);
+            cursor: auto;
+          }
         }
       }
     }

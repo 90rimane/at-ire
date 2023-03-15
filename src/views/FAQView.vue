@@ -1,12 +1,14 @@
 <template>
   <h1>FAQ</h1>
   <div class="faq">
+    <!-- v-for is used to iterate through the faq array and create a button and answer section for each faq object -->
     <div v-for="(item, f) in faq" :key="f" class="faq-item">
       <button @click="toggle(f)" class="faq-question">
         {{ item.question }}
         <span v-if="item.isOpen" class="arrow-up" />
         <span v-else class="arrow-down" />
       </button>
+      <!-- v-if is used to render the answer section based on the isOpen property of the faq object -->
       <div v-if="item.isOpen" class="faq-answer">
         {{ item.answer }}
       </div>
@@ -16,6 +18,7 @@
 
 <script>
   export default {
+    // a function that returns an object containing the faq array of faq objects
     data() {
       return {
         faq: [
@@ -50,6 +53,7 @@
         ]
       }
     },
+    // object contains a toggle function that toggles the value of the isOpen property for the faq object that corresponds to the clicked button
     methods: {
       toggle(f) {
         this.faq[f].isOpen = !this.faq[f].isOpen

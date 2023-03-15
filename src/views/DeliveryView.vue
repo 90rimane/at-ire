@@ -1,40 +1,62 @@
 <template>
   <main>
-    <h1>Delivery</h1>
-    <h2>Choose your delivery method:</h2>
-    <p v-if="user">
+    <h1>Checkout Form</h1>
+    <h2>Step 3: Choose your delivery method:</h2>
+    <p v-if="user?.delivery">
       ( ps. last time you chose {{ user.delivery[0] }} {{ user.delivery[1] }})
     </p>
 
     <!-- Choose a company -->
     <div class="choices">
-      <input type="radio" v-model="deliveryChoice" value="Budbee" id="budbee" />
-      <label for="budbee">Budbee</label>
+      <div>
+        <input
+          type="radio"
+          v-model="deliveryChoice"
+          value="Budbee"
+          id="budbee"
+        />
+        <label for="budbee">Budbee</label>
+      </div>
 
-      <input
-        type="radio"
-        v-model="deliveryChoice"
-        value="Instabox"
-        id="instabox"
-      />
-      <label for="instabox">Instabox</label>
+      <div>
+        <input
+          type="radio"
+          v-model="deliveryChoice"
+          value="Instabox"
+          id="instabox"
+        />
+        <label for="instabox">Instabox</label>
+      </div>
 
-      <input type="radio" v-model="deliveryChoice" value="Airmee" id="airmee" />
-      <label for="airmee">Airmee</label>
+      <div>
+        <input
+          type="radio"
+          v-model="deliveryChoice"
+          value="Airmee"
+          id="airmee"
+        />
+        <label for="airmee">Airmee</label>
+      </div>
 
-      <input type="radio" v-model="deliveryChoice" value="Best" id="best" />
-      <label for="best">Best</label>
+      <div>
+        <input type="radio" v-model="deliveryChoice" value="Best" id="best" />
+        <label for="best">Best</label>
+      </div>
 
-      <input
-        type="radio"
-        v-model="deliveryChoice"
-        value="Postnord"
-        id="postnord"
-      />
-      <label for="postnord">Postnord</label>
+      <div>
+        <input
+          type="radio"
+          v-model="deliveryChoice"
+          value="Postnord"
+          id="postnord"
+        />
+        <label for="postnord">Postnord</label>
+      </div>
 
-      <input type="radio" v-model="deliveryChoice" value="DHL" id="dhl" />
-      <label for="dhl">DHL</label>
+      <div>
+        <input type="radio" v-model="deliveryChoice" value="DHL" id="dhl" />
+        <label for="dhl">DHL</label>
+      </div>
     </div>
 
     <!-- More information on the chosen company and if applicable, more choices -->
@@ -142,21 +164,25 @@
         <p>Delivery with Budbee is also 100% fossil-free.</p>
 
         <p>Budbee has two options</p>
-        <input
-          type="radio"
-          v-model="budbeeChoice"
-          value="Home"
-          id="budbeeHome"
-        />
-        <label for="budbeeHome">Home Delivery</label>
+        <div>
+          <input
+            type="radio"
+            v-model="budbeeChoice"
+            value="Home"
+            id="budbeeHome"
+          />
+          <label for="budbeeHome">Home Delivery</label>
+        </div>
 
-        <input
-          type="radio"
-          v-model="budbeeChoice"
-          value="BudbeeBox"
-          id="budbeeBox"
-        />
-        <label for="budbeeBox">Budbee Box</label>
+        <div>
+          <input
+            type="radio"
+            v-model="budbeeChoice"
+            value="BudbeeBox"
+            id="budbeeBox"
+          />
+          <label for="budbeeBox">Budbee Box</label>
+        </div>
 
         <div v-if="budbeeChoice === 'Home'">
           <p>
@@ -215,7 +241,7 @@
       }
     },
     watch: {
-      //empties the second option if choice ofcompany changes
+      //empties the second option if choice of company changes
       deliveryChoice() {
         this.budbeeChoice = null
         this.postnordChoice = null
@@ -232,6 +258,8 @@
         }
         sessionStorage.setItem('activeUser', JSON.stringify(parsed))
         this.$store.dispatch('getLogged')
+
+        this.$router.push('/confirm')
       }
     }
   }
@@ -240,18 +268,21 @@
 <style scoped lang="scss">
   button {
     width: 322px;
-    height: 40px;
-    background-color: var(--main-strong-accent);
+    max-width: 70%;
+    background-color: var(--main-accent);
     margin-bottom: 10px;
     border: none;
     margin-top: 15px;
   }
   .confirmBox {
-    background-color: var(--main-accent);
-    max-width: 100%;
+    max-width: 80%;
     padding: 20px;
-    margin-top: 30px;
+    margin: 30px auto auto auto;
     text-align: center;
+  }
+
+  .choices > div {
+    display: inline;
   }
 
   .boldtext {
@@ -268,29 +299,39 @@
   }
 
   label {
-    background-color: #64748b;
-    color: #fff5ef;
+    background-color: var(--main-accent);
     padding: 3px;
   }
 
   main {
-    padding-top: 80px;
+    background-color: var(--lightB);
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(59, 59, 59, 0.497);
+    border-radius: 16px;
+    padding: 60px 16px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: start;
-    align-items: center;
-    margin: auto;
+    align-items: flex-start;
+    margin: 90px auto auto auto;
     width: 600px;
     max-width: 80%;
   }
 
   .options {
     min-height: 350px;
-    width: 100%;
+    width: 80%;
+    margin: auto;
   }
 
   p {
     margin-top: 15px;
+  }
+
+  @media only screen and (max-width: 700px) {
+    .choices > div {
+      display: block;
+    }
   }
 </style>

@@ -1,4 +1,3 @@
-// eslint-disable-next-line vue/multi-word-component-names
 <template>
   <aside :class="`${is_expanded ? 'is-expanded' : ''}`">
     <div class="logo">
@@ -28,7 +27,8 @@
         <span class="material-symbols-outlined"> view_cozy </span>
         <span class="text">Our Products</span>
       </router-link>
-      <!-- color for the icon change via props when hover the cart menu bar, in that way the icon practically sync color with the menu bar text-->
+      <!-- color for the icon change via props when hover the cart menu bar,
+        in that way the icon practically sync color with the menu bar text-->
       <router-link
         to="/cart"
         class="button"
@@ -65,6 +65,11 @@
         <span class="material-symbols-outlined">forum</span>
         <span class="text">Chatroom</span>
       </router-link>
+      <!-- Routerlink to FAQ and span class added by Andrea -->
+      <router-link to="/FAQ" class="button">
+        <span class="material-symbols-outlined"> quiz </span>
+        <span class="text">FAQ</span>
+      </router-link>
     </div>
 
     <div v-if="$store.state.activeUser == null" class="menu bottom-menu">
@@ -84,9 +89,6 @@
       </a>
     </div>
 
-    <!--
-      Changed by Jovan
-    -->
   </aside>
 
   <button class="desktop-sidebar-btn" @click="ToggleMenu">
@@ -178,7 +180,7 @@
     transition: 0.2s ease-in-out;
     box-shadow: 1px 0 5px var(--grey-light);
     position: fixed;
-    z-index: 99999; // added by Jovan
+    z-index: 9; // added by Jovan
     top: 0;
     .logo {
       margin-bottom: 1rem;

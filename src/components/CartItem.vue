@@ -7,11 +7,11 @@
       }
     },
     methods: {
-      deleteItem(targetitem) {
+      deleteItem(targetId) {
         const parsed = JSON.parse(sessionStorage.getItem('activeUser'))
 
         // find the index of target product to delete
-        const indexOfId = parsed.cart.findIndex((item) => item.id == targetitem)
+        const indexOfId = parsed.cart.findIndex((item) => item.id == targetId)
 
         // slice away where the index is
         parsed.cart.splice(indexOfId, 1)

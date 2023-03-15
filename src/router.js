@@ -15,6 +15,7 @@ import FilterSearchView from './views/FilterSearchView.vue'
 import CartView from './views/CartView.vue'
 import BlogView from './views/BlogView.vue'
 import FAQView from './views/FAQView.vue'
+import ConfirmationView from './views/ConfirmationView.vue'
 
 export default createRouter({
   history: createWebHashHistory(),
@@ -80,6 +81,10 @@ export default createRouter({
     {
       component: FAQView,
       path: '/FAQ'
+    },
+    {
+      component: ConfirmationView,
+      path: '/confirm'
     }
   ],
   scrollBehavior() {
