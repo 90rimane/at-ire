@@ -140,7 +140,7 @@
           // send the user to my page after 1.2 seconds
           setTimeout(() => {
             this.$router.push('/mypage')
-          }, 1200)
+          }, 2000)
         }, 2000)
       }
     }
