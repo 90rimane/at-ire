@@ -111,7 +111,11 @@
         <span>{{ headline }}</span>
       </div>
     </div>
-    <div class="filter-container" :class="{ open: isActive }">
+    <div
+      v-if="this.$store.state.allProducts"
+      class="filter-container"
+      :class="{ open: isActive }"
+    >
       <div class="filter">
         <h2>Filter with tags</h2>
         <div class="categories">

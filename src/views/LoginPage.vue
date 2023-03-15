@@ -16,13 +16,12 @@
 
           //check if user exists and check if passwords match
           const logUser = parsed.some(
-            (userItem) => userItem.username === this.user
-          )
-          const logPass = parsed.some(
-            (userItem) => userItem.password === this.password
+            (userItem) =>
+              userItem.username === this.user ||
+              userItem.password === this.password
           )
 
-          if (logUser && logPass) {
+          if (logUser) {
             let indexOfUser
 
             for (let i = 0; i < parsed.length; i++) {
