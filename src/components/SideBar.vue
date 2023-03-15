@@ -73,7 +73,7 @@
       <!-- Routerlink to BLOG and span class added by Andrea -->
       <router-link to="/blog" class="button">
         <span class="material-symbols-outlined"> feed </span>
-        <span class="text">BLOG</span>
+        <span class="text">Blog</span>
       </router-link>
     </div>
 
