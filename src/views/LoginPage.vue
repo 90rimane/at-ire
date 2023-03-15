@@ -15,14 +15,11 @@
           let parsed = JSON.parse(localStorage.getItem('allUsers') || '[]')
 
           //check if user exists and check if passwords match
-          const logUser = parsed.some(
+          const logUser = parsed.find(
             (userItem) => userItem.username === this.user
           )
-          const logPass = parsed.some(
-            (userItem) => userItem.password === this.password
-          )
 
-          if (logUser && logPass) {
+          if (logUser?.password === this.password) {
             let indexOfUser
 
             for (let i = 0; i < parsed.length; i++) {

@@ -77,6 +77,11 @@
           <span class="material-symbols-outlined">quiz</span>
           <span class="link-text">FAQ</span>
         </router-link>
+        <!-- Routerlink to BLOG and span class added by Andrea -->
+        <router-link to="/blog">
+          <span class="material-symbols-outlined"> feed </span>
+          <span class="link-text">Blog</span>
+        </router-link>
         <div v-if="$store.state.activeUser == null">
           <router-link to="/login">
             <span class="material-symbols-outlined" style="color: forestgreen"
@@ -133,8 +138,8 @@
 
   #cart-link-text {
     padding-top: 5px;
-    margin: 0;
-    padding-left: 7px;
+    margin-left: 1rem;
+    // padding-left: -5px;
   }
   /* <-- added by Anna */
 

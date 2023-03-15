@@ -98,7 +98,10 @@
   #carousel-button-next {
     margin-top: 110px;
     position: absolute;
-    background-color: #fff5ef;
+    padding: 6px;
+    background-color: rgba(0, 0, 0, 0.107);
+    border: none;
+    border-radius: 100%;
   }
 
   #carousel-button-prev {

@@ -1,11 +1,7 @@
 <template>
   <div class="item-container">
     <div class="img-container">
-      <router-link
-        to="/product"
-        @click="$store.dispatch('setOneProduct', product)"
-        class="button"
-      >
+      <router-link :to="`/product/${product.id}`" class="button">
         <img :src="product.img.Black" :alt="product.name" />
       </router-link>
       <div class="border">

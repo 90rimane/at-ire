@@ -10,15 +10,11 @@ const mutations = {
     },
     SET_OUT(state) {
       state.activeUser = null
-    },
-    SET_ONEPRODUCT(state, item) {
-      state.oneProduct = item
     }
   },
   state = {
     allProducts: null,
-    activeUser: null,
-    oneProduct: null
+    activeUser: null
   },
   actions = {
     getProducts({ commit }) {
@@ -54,9 +50,6 @@ const mutations = {
 
       sessionStorage.removeItem('activeUser')
       localStorage.removeItem('rememberUser')
-    },
-    setOneProduct({ commit }, item) {
-      commit('SET_ONEPRODUCT', item)
     }
   }
 

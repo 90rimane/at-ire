@@ -32,7 +32,7 @@
             @click="selectItem(item)"
           >
             <router-link
-              to="/product"
+              :to="`/product/${item.id}`"
               :style="[index === activeNumber ? activeItem : '']"
             >
               {{ item.description }}
@@ -112,7 +112,7 @@
           >
             <!-- activeNumber has class activeItem for css -->
             <router-link
-              to="/product"
+              :to="`/product/${item.id}`"
               :style="[index === activeNumber ? activeItem : '']"
             >
               {{ item.description }}
@@ -202,7 +202,7 @@
     // add by Anna -->
     methods: {
       selectItem(item) {
-        this.$store.dispatch('setOneProduct', item)
+        this.$router.push(`/product/${item.id}`)
         this.search = ''
       },
       //moves the activeItem when arrow-down is pressed
@@ -215,7 +215,6 @@
       },
       //goes to the page of activeItem when enter is pressed
       goToProduct() {
-        this.$router.push('/product')
         this.selectItem(this.searchResult[this.activeNumber])
         this.search = ''
       },
@@ -293,7 +292,7 @@
   }
 
   #hamburgermenu {
-    margin-top: -48.5px;
+    margin-top: -42.5px;
   }
 
   /* <-- add by Anna + some changes related to this around here*/
@@ -358,10 +357,6 @@
   .bi-bi-filter-left-mobile:hover {
     color: var(--lightB);
   }
-
-  /* LÄGG IN EN 'NAV-LINK' I APP.VUE .bi-bi-list :hover:focus:active {
-      background-color: antiquewhite;
-    } */
 
   .bi-bi-heart-mobile {
     position: absolute;
@@ -435,7 +430,7 @@
       position: absolute;
       width: 62px;
       height: 28px;
-      left: 50%;
+      left: 49%;
       top: 15px;
       font-family: 'Karla';
       font-style: normal;
@@ -567,9 +562,29 @@
     }
   }
 
-  @media (min-width: 1450px) {
+  @media (min-width: 1100px) {
+    h2 {
+      left: 49.4%;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    h2 {
+      left: 49.6%;
+    }
+  }
+  @media (min-width: 1310px) {
+    h2 {
+      left: 49.8%;
+    }
+  }
+
+  @media (min-width: 1400px) {
     .button-cart {
       margin-right: 4%;
+    }
+    h2 {
+      left: 50.2%;
     }
   }
 </style>

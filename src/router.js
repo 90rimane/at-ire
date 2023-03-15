@@ -62,7 +62,7 @@ export default createRouter({
     },
     {
       component: ProductView,
-      path: '/product'
+      path: '/product/:id'
     },
     {
       component: FilterSearchView,

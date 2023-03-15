@@ -93,9 +93,6 @@
         } else {
           this.$router.push('/search/All')
         }
-      },
-      toggleVisable() {
-        this.isActive = !this.isActive
       }
     }
   }
@@ -105,7 +102,7 @@
   <div class="main-page">
     <div class="search-header">
       <span
-        @click="toggleVisable()"
+        @click="this.isActive = !this.isActive"
         class="material-symbols-outlined filter-icon"
       >
         filter_alt
@@ -114,7 +111,11 @@
         <span>{{ headline }}</span>
       </div>
     </div>
-    <div class="filter-container" :class="{ open: isActive }">
+    <div
+      v-if="this.$store.state.allProducts"
+      class="filter-container"
+      :class="{ open: isActive }"
+    >
       <div class="filter">
         <h2>Filter with tags</h2>
         <div class="categories">

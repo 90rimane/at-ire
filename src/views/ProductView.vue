@@ -1,5 +1,5 @@
 <template>
-  <article id="article" v-if="oneProduct">
+  <article id="article" v-if="this.$store.state.allProducts">
     <header>
       <!-- spans to be made to breadcrumb-navigation  -->
       <span>{{ this.oneProduct.category }} </span>
@@ -86,7 +86,9 @@
     },
     computed: {
       oneProduct() {
-        return this.$store.state.oneProduct
+        return this.$store.state.allProducts.find(
+          (post) => post.id === this.$route.params.id
+        )
       },
       bothSelected() {
         return this.selectedColor && this.selectedSize
@@ -298,12 +300,12 @@
   }
 
   .not-logged-btn {
-    font-size: 18px;
+    font-size: 14px;
     border-radius: 1rem;
     background-color: #fff9f5;
-    box-shadow: 2px 3px 10px #b9ada6;
+    box-shadow: 12px 3px 10px #b9ada6;
     border: none;
-    padding: 5px 8px;
+    padding: 9px 14px;
   }
 
   @media (min-width: 500px) {
