@@ -65,7 +65,7 @@
         counter-location="23px"
         hover-color="var(--lightB)"
         icon-size="1.9rem"
-        icon-color="var(--dark)"
+        icon-color="#000000"
       />
     </router-link>
     <div id="hamburgermenu">
@@ -155,7 +155,7 @@
         counter-location="23px"
         hover-color="var(--lightB)"
         icon-size="1.9rem"
-        icon-color="var(--dark)"
+        icon-color="#000000"
       />
     </router-link>
   </div>

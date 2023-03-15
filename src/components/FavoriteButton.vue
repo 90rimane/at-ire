@@ -14,12 +14,14 @@
           (item) => item.id == currentItem.id
         )
 
+        // findIndex returns -1 - remove favorite, if not push favorite in
         if (indexOfId != -1) {
           parsed.favorites.splice(indexOfId, 1)
         } else {
           parsed.favorites.push(currentItem)
         }
 
+        // update as usual
         sessionStorage.setItem('activeUser', JSON.stringify(parsed))
         this.$store.dispatch('getLogged')
       }
@@ -34,6 +36,7 @@
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 96 960 960"
     >
+      <!-- Run some function to check if current item is favorited. The icon switches accordingly-->
       <path
         v-if="
           !$store.state.activeUser.favorites.some((i) => i.id == favproduct.id)

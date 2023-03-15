@@ -85,32 +85,27 @@
 </script>
 
 <style scoped>
-  img {
-    width: 70vw;
-    max-width: 400px;
-  }
-
   #carousel {
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     background-color: #f5f5f5;
-    padding: 3vh 0 3vh 0;
-    padding-left: 64px;
+    width: 380px;
   }
 
   #carousel-button-prev,
   #carousel-button-next {
+    margin-top: 110px;
     position: absolute;
     background-color: #fff5ef;
   }
 
   #carousel-button-prev {
-    left: 15%;
+    left: 7%;
   }
 
   #carousel-button-next {
-    right: 15%;
+    right: 7%;
   }
 </style>
