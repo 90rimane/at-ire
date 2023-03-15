@@ -13,6 +13,7 @@ import SignupView from './views/SignupPage.vue'
 import ProductView from './views/ProductView.vue'
 import FilterSearchView from './views/FilterSearchView.vue'
 import CartView from './views/CartView.vue'
+import BlogView from './views/BlogView.vue'
 import FAQView from './views/FAQView.vue'
 
 export default createRouter({
@@ -70,6 +71,12 @@ export default createRouter({
       component: CartView,
       path: '/cart'
     },
+
+    {
+      component: BlogView,
+      path: '/blog'
+    },
+
     {
       component: FAQView,
       path: '/FAQ'

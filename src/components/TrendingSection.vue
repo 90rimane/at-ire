@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div class="banner">
       <h1>Trending Now</h1>
       <button @click="toggleTrends">
@@ -8,48 +7,15 @@
     </div>
 
     <div class="trend-container" v-show="showTrends">
-      <div class="trend-item">
-        <img
-          src="https://i.pinimg.com/564x/c6/d0/8f/c6d08fea13f40b56984ea95022dbf54d.jpg"
-          alt="Image 1"
-        />
-        <div class="text-overlay">
-          <h2>Comfort</h2>
-
-        </div>
-      </div>
-
-      <div class="trend-item">
-        <img
-          src="https://i.pinimg.com/564x/ae/85/3a/ae853ab6f2f57f45786e5bd5b86f11df.jpg"
-          alt="Image 2"
-        />
-        <div class="text-overlay">
-          <h2>Simplicity</h2>
-
-        </div>
-      </div>
-
-      <div class="trend-item">
-        <img
-          src="https://i.pinimg.com/564x/ee/97/8f/ee978f8a579466a75915e9fd028489e0.jpg"
-          alt="Image 3"
-        />
-        <div class="text-overlay">
-          <h2>Dynamic Nature</h2>
-
-        </div>
-      </div>
-
-      <div class="trend-item">
-        <img
-          src="https://i.pinimg.com/564x/8a/ce/c1/8acec18e0eaa1e6f66eb7b57853bd75e.jpg"
-          alt="Image 4"
-        />
-        <div class="text-overlay">
-          <h2>Minimalism</h2>
-
-        </div>
+    <div class="trend-item"
+         v-for="(trend, index) in trends"
+         :key="index"
+         @mouseover="toggleHover(index, true)"
+         @mouseleave="toggleHover(index, false)"
+         :class="{ 'hover': trend.hover }">
+      <img :src="trend.imageSrc" :alt="trend.altText" />
+      <div class="text-overlay">
+        <h2>{{ trend.title }}</h2>
       </div>
     </div>
   </div>
@@ -68,6 +34,8 @@
       }
     }
   }
+
+
 </script>
 
 <style scoped>
