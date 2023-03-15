@@ -19,7 +19,7 @@
             (userItem) => userItem.username === this.user
           )
 
-          if (logUser.password === this.password) {
+          if (logUser?.password === this.password) {
             let indexOfUser
 
             for (let i = 0; i < parsed.length; i++) {
