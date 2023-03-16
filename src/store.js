@@ -31,19 +31,14 @@ const mutations = {
       commit('SET_ACTIVEUSER')
 
       const currentUser = JSON.parse(sessionStorage.getItem('activeUser'))
-      const allUsers = JSON.parse(localStorage.getItem('allUsers') || '[]')
-      let indexOfUser
-      if (currentUser != null) {
-        for (let i = 0; i < allUsers.length; i++) {
-          if (allUsers[i].username == currentUser.username) {
-            indexOfUser = i
-            break
-          }
-        }
+      const allUsers = JSON.parse(localStorage.getItem('allUsers'))
 
-        allUsers[indexOfUser] = currentUser
-        localStorage.setItem('allUsers', JSON.stringify(allUsers))
-      }
+      const indexOfUser = allUsers.findIndex(
+        (el) => el.username === currentUser.username
+      )
+
+      allUsers[indexOfUser] = currentUser
+      localStorage.setItem('allUsers', JSON.stringify(allUsers))
     },
     logout({ commit }) {
       commit('SET_OUT')
