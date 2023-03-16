@@ -77,7 +77,6 @@ export default createRouter({
       component: BlogView,
       path: '/blog'
     },
-
     {
       component: FAQView,
       path: '/FAQ'

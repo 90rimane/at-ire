@@ -21,6 +21,10 @@
 
           //check if user exists and if so, check if the passwords match
           if (logUser?.password === this.password) {
+            sessionStorage.setItem('activeUser', JSON.stringify(logUser))
+
+            this.$store.dispatch('getLogged')
+
             let indexOfUser
 
             for (let i = 0; i < parsed.length; i++) {
@@ -30,12 +34,9 @@
               }
             }
 
-            sessionStorage.setItem(
-              'activeUser',
-              JSON.stringify(parsed[indexOfUser])
-            )
-
-            this.$store.dispatch('getLogged')
+            // const indexOfUser = parsed.findIndex(
+            //   (element) => element.username === this.user
+            // )
 
             // If Remember me checkbox is checked then send the user "token"
             // as a reference when retrieving the remembered user on page load
