@@ -19,6 +19,7 @@
             (userItem) => userItem.username === this.user
           )
 
+          //check if user exists and if so, check if the passwords match
           if (logUser?.password === this.password) {
             let indexOfUser
 
