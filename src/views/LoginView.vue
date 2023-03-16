@@ -25,22 +25,22 @@
 
             this.$store.dispatch('getLogged')
 
-            let indexOfUser
-
-            for (let i = 0; i < parsed.length; i++) {
-              if (parsed[i].username == this.user) {
-                indexOfUser = i
-                break
-              }
-            }
-
-            // const indexOfUser = parsed.findIndex(
-            //   (element) => element.username === this.user
-            // )
-
             // If Remember me checkbox is checked then send the user "token"
             // as a reference when retrieving the remembered user on page load
             if (this.checked) {
+              let indexOfUser
+
+              for (let i = 0; i < parsed.length; i++) {
+                if (parsed[i].username == this.user) {
+                  indexOfUser = i
+                  break
+                }
+              }
+
+              // const indexOfUser = parsed.findIndex(
+              //   (element) => element.username === this.user
+              // )
+
               localStorage.setItem('rememberUser', indexOfUser)
             }
 
