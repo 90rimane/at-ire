@@ -5,8 +5,7 @@ const mutations = {
       state.allProducts = products
     },
     SET_ACTIVEUSER(state) {
-      state.activeUser =
-        JSON.parse(sessionStorage.getItem('activeUser')) || null
+      state.activeUser = JSON.parse(sessionStorage.getItem('activeUser'))
     },
     SET_OUT(state) {
       state.activeUser = null
