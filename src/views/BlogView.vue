@@ -15,44 +15,44 @@
         <h2>Posts</h2>
       </div>
       <div class="allpost-container">
-        <div v-for="post in allPosts" :key="post" class="post-container">
-          <div class="outer-post">
-            <div class="post-details">
-              <div class="posted-by">Posted by: {{ post.user }}</div>
-              <div class="posted-at">
-                Posted at: {{ post.created.time }} | {{ post.created.date }}
-              </div>
-            </div>
-            <div class="post-title">
-              <span class="type">{{ post.type }}: </span>
-              <span class="title">{{ post.title }}</span>
-            </div>
-            <div class="post-comment">
-              <span class="comment">Comments ({{ post.comments.length }})</span>
-            </div>
-          </div>
+    <div v-for="post in allPosts" class="post-container">
 
-          <div class="post-content">
-            <div class="content-border">{{ post.content }}</div>
-            <div class="comment-section">
-              <div class="comment-title">Comments</div>
-              <div
-                v-for="comment in post.comments"
-                :key="comment.id"
-                class="comment-container"
-              >
-                <div class="comment-content">{{ comment.content }}</div>
-              </div>
-            </div>
-          </div>
-        </div>
+
+      <div class="outer-post">
+  <div class="post-details">
+    <div class="posted-by">Posted by: {{ post.user }}</div>
+    <div class="posted-at">Posted at: {{ post.created.time }} | {{ post.created.date }}</div>
+  </div>
+  <div class="post-title">
+    <span class="type">{{ post.type }}: </span>
+    <span class="title">{{ post.title }}</span>
+  </div>
+  <div class="post-comment">
+    <span class="comment">Comments ({{ post.comments.length }})</span>
+  </div>
+</div>
+
+<div class="post-content">
+  <div class="content-border">{{ post.content }}</div>
+  <div class="comment-section">
+    <div class="comment-title">Comments</div>
+    <div v-for="comment in post.comments" :key="comment.id" class="comment-container">
+      <div class="comment-user">{{comment.user}}</div>
+      <div class="comment-content">{{comment.content}}</div>
+    </div>
+  </div>
+</div>
+
+
+  </div>
       </div>
     </div>
   </main>
 </template>
 
+
 <script>
-  export default {
+export default {
     created() {
       fetch('blogapi.json')
         .then((response) => response.json())
@@ -67,11 +67,13 @@
         allPosts: null
       }
     },
-    methods: {}
+    methods: {
+    }
   }
 </script>
 
 <style scoped lang="scss">
+
   * {
     box-sizing: border-box;
   }
@@ -118,79 +120,86 @@
     }
   }
   .outer-post {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
 
-  .post-details {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.post-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .posted-by,
-  .posted-at {
-    font-size: 12px;
-    color: gray;
-  }
+.posted-by,
+.posted-at {
+  font-size: 12px;
+  color: gray;
+}
 
-  .post-title {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
+.post-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
-  .post-title .type {
-    font-weight: bold;
-    margin-right: 4px;
-  }
+.post-title .type {
+  font-weight: bold;
+  margin-right: 4px;
+}
 
-  .post-comment .comment {
-    font-size: 12px;
-    color: gray;
-  }
+.post-comment .comment {
+  font-size: 12px;
+  color: gray;
+}
 
-  .post-content {
-    margin-top: 16px;
-  }
+.post-content {
+  margin-top: 16px;
+}
 
-  .content-border {
-    border: 3px solid #ccc;
-    padding: 8px;
-    margin-bottom: 16px;
-    font-weight: bold;
-  }
+.content-border {
+  border: 3px solid #ccc;
+  padding: 8px;
+  margin-bottom: 16px;
+  font-weight:bold;
+}
 
-  .comment-section {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
+.comment-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
-  .comment-title {
-    font-size: 16px;
-    font-weight: bold;
-  }
+.comment-title {
+  font-size: 16px;
+  font-weight: bold;
+}
 
-  .comment-container {
-    border: 1px solid #ccc;
-    padding: 8px;
-  }
+.comment-container {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
 
-  .comment-content {
-    font-size: 14px;
-    margin-bottom: 8px;
-  }
+.comment-content {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
 
-  .title {
-    font-size: 20px;
-    font-weight: bold;
-  }
+.title{
+  font-size:20px;
+  font-weight:bold;
+}
 
-  .post-container {
-    border: 3px solid #ccc;
-    margin-bottom: 16px;
-    padding: 16px;
-  }
+.post-container {
+  border: 3px solid #ccc;
+  margin-bottom: 16px;
+  padding: 16px;
+
+}
+
+.comment-user{
+  font-weight:bold;
+  padding:5px;
+}
+
 </style>

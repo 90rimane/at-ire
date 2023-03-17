@@ -8,8 +8,8 @@ import CheckoutView from './views/CheckoutView.vue'
 import FavoriteView from './views/FavoriteView.vue'
 import HelpView from './views/HelpView.vue'
 import MyPageView from './views/MyPageView.vue'
-import LoginView from './views/LoginPage.vue'
-import SignupView from './views/SignupPage.vue'
+import LoginView from './views/LoginView.vue'
+import SignupView from './views/SignUpView.vue'
 import ProductView from './views/ProductView.vue'
 import FilterSearchView from './views/FilterSearchView.vue'
 import CartView from './views/CartView.vue'
@@ -77,7 +77,6 @@ export default createRouter({
       component: BlogView,
       path: '/blog'
     },
-
     {
       component: FAQView,
       path: '/FAQ'
