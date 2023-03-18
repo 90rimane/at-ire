@@ -6,10 +6,10 @@
         <h1 id="at-ire">AT-IRE</h1>
         <p id="center-p">atire@example.com</p>
         <div class="logos">
-          <img src="../../public/bilder/instagram-logo.png" alt="instagram-logo" />
-          <img src="../../public/bilder/twitter-logo.png" alt="twitter-logo" />
-          <img src="../../public/bilder/youtube-logo.png" alt="youtube-logo" />
-          <img src="../../public/bilder/messenger-logo.png" alt="messenger-logo" />
+          <img src="/public/Bilder/instagram-logo.png" alt="instagram-logo" />
+          <img src="/public/Bilder/twitter-logo.png" alt="twitter-logo" />
+          <img src="/public/Bilder/youtube-logo.png" alt="youtube-logo" />
+          <img src="/public/Bilder/messenger-logo.png" alt="messenger-logo" />
         </div>
       </div>
     </div>
