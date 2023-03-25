@@ -1,3 +1,12 @@
+<template>
+  <SideBar />
+  <HeaderHead />
+  <RouterView />
+  <ContactButton />
+  <FooterComponent v-if="isMobile" />
+  <FooterDesktop v-else />
+</template>
+
 <script>
   import HeaderHead from './components/HeaderHead.vue'
   import FooterComponent from './components/FooterComponent.vue'
@@ -48,16 +57,6 @@
     }
   }
 </script>
-
-<template>
-  <SideBar />
-
-  <HeaderHead />
-  <RouterView />
-  <ContactButton />
-  <FooterComponent v-if="isMobile" />
-  <FooterDesktop v-else />
-</template>
 
 <style lang="scss">
   @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap%27');

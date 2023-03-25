@@ -44,15 +44,11 @@
     },
 
     created() {
-      // console.log('this.images alt', this.images[0].description)
-      // console.log('this.images One', this.images[0].img.Black)
       this.startAutoplay()
     },
 
     methods: {
       moveToNextImage() {
-        // console.log('this.images alt', this.images[0].description)
-        // console.log('this.images One', this.images[0].img.Black)
         this.currentIndex = (this.currentIndex + 1) % this.images.length
       },
       moveToPreviousImage() {
@@ -60,10 +56,6 @@
           (this.currentIndex + this.images.length - 1) % this.images.length
       },
 
-      // selectProduct(index) {
-      //   const selectedProduct = this.images[index]
-      //   this.$emit('productSelected', selectedProduct.id)
-      // },
       startAutoplay() {
         this.timer = setInterval(() => {
           this.moveToNextImage()

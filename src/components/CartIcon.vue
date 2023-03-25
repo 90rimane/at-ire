@@ -3,7 +3,11 @@
     <span class="material-symbols-outlined" :style="cssProps">
       shopping_cart_checkout
     </span>
-    <div id="counter" :style="cssProps" v-if="this.$store.state.activeUser">
+    <div
+      id="counter"
+      :style="cssProps"
+      v-if="this.$store.state.activeUser && this.counterNumber !== 0"
+    >
       {{ this.counterNumber }}
     </div>
   </div>

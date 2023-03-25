@@ -4,7 +4,10 @@
       <!-- spans to be made to breadcrumb-navigation  -->
       <span>{{ this.oneProduct.category }} </span>
       <span>{{ this.oneProduct.subcategory }}</span>
-      <h1>{{ this.oneProduct.description }}</h1>
+      <h1>
+        {{ this.oneProduct.description
+        }}<FavoriteButton class="fav-btn" :favproduct="oneProduct" />
+      </h1>
 
       <!-- Added by Jovan: using OR operator to default between values -->
       <img
@@ -79,15 +82,17 @@
 <script>
   import ProductReview from '../components/ProductReview.vue'
   import { v4 as uuidv4 } from 'uuid'
+  import FavoriteButton from '../components/FavoriteButton.vue'
 
   export default {
     components: {
-      ProductReview
+      ProductReview,
+      FavoriteButton
     },
     computed: {
       oneProduct() {
         return this.$store.state.allProducts.find(
-          (post) => post.id === this.$route.params.id
+          (product) => product.id === this.$route.params.id
         )
       },
       bothSelected() {
@@ -155,6 +160,11 @@
     // padding-top: 4px;
     padding-left: 5px;
     margin: 0;
+  }
+
+  .fav-btn {
+    display: inline;
+    margin-left: 12px;
   }
 
   .heading {

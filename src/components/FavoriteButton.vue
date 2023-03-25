@@ -55,8 +55,8 @@
 <style lang="scss" scoped>
   .fav-btn-container {
     position: absolute;
-    bottom: 5%;
-    right: 5%;
+    // bottom: 5%;
+    // right: 5%;
     width: 30px;
     aspect-ratio: 1;
     svg {

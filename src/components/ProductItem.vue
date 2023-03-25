@@ -8,7 +8,7 @@
         <span class="product-price">{{ product.price }} kr</span>
       </div>
 
-      <FavoriteButton :favproduct="product" />
+      <FavoriteButton class="fav-btn" :favproduct="product" />
     </div>
     <h3 class="product-title">{{ product.name }}</h3>
     <div class="details-container">
@@ -33,6 +33,10 @@
 </script>
 
 <style lang="scss" scoped>
+  .fav-btn {
+    bottom: 5%;
+    right: 5%;
+  }
   .item-container {
     font-family: 'Roboto', sans-serif;
     width: 300px;
