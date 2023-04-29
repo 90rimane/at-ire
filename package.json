@@ -20,5 +20,6 @@
     "dev": "vite",
     "preview": "vite preview"
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "homepage": "."
 }
