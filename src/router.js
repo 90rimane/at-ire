@@ -1,5 +1,4 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-
 import AboutView from './views/AboutView.vue'
 import ContactView from './views/ContactView.vue'
 import DeliveryView from './views/DeliveryView.vue'
@@ -16,6 +15,8 @@ import CartView from './views/CartView.vue'
 import BlogView from './views/BlogView.vue'
 import FAQView from './views/FAQView.vue'
 import ConfirmationView from './views/ConfirmationView.vue'
+import SingleBlogView from './views/SingleBlogView.vue'
+import QuizView from './views/QuizView.vue'
 
 export default createRouter({
   history: createWebHashHistory(),
@@ -27,6 +28,10 @@ export default createRouter({
     {
       component: ContactView,
       path: '/contact'
+    },
+    {
+      component: SingleBlogView,
+      path: '/post/:id'
     },
     {
       component: DeliveryView,
@@ -72,10 +77,13 @@ export default createRouter({
       component: CartView,
       path: '/cart'
     },
-
     {
       component: BlogView,
       path: '/blog'
+    },
+    {
+      component: QuizView,
+      path: '/quiz'
     },
     {
       component: FAQView,

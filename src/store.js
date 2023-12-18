@@ -4,6 +4,20 @@ const mutations = {
     SET_PRODUCTS(state, products) {
       state.allProducts = products
     },
+    SET_POSTS(state, posts) {
+      state.allPosts = posts
+    },
+    SET_NEW_POST(state, post) {
+      state.allPosts.unshift(post)
+    },
+    SET_NEW_COMMENT(state, payload) {
+      state.allPosts = state.allPosts.map((post) => {
+        if (post.id == payload.id) {
+          post.comments.unshift(payload.comment)
+        }
+        return post
+      })
+    },
     SET_ACTIVEUSER(state) {
       state.activeUser = JSON.parse(sessionStorage.getItem('activeUser'))
     },
@@ -13,7 +27,8 @@ const mutations = {
   },
   state = {
     allProducts: null,
-    activeUser: null
+    activeUser: null,
+    allPosts: null
   },
   actions = {
     getProducts({ commit }) {
@@ -25,6 +40,19 @@ const mutations = {
             commit('SET_PRODUCTS', result.data)
           }, 100)
         })
+    },
+    getPosts({ commit }) {
+      fetch('blogapi.json')
+        .then((response) => response.json())
+        .then((result) => {
+          commit('SET_POSTS', result.data)
+        })
+    },
+    setNewPost({ commit }, payload) {
+      commit('SET_NEW_POST', payload)
+    },
+    setNewComment({ commit }, payload) {
+      commit('SET_NEW_COMMENT', payload)
     },
     getLogged({ commit }) {
       commit('SET_ACTIVEUSER')

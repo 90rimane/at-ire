@@ -12,68 +12,65 @@
 
     <div class="outer-post-container">
       <div class="post-headline">
-        <h2>Posts</h2>
+        <span>Posts</span>
+        <button class="add-button" @click="toggleModal">Create Post</button>
       </div>
-      <div class="allpost-container">
-    <div v-for="post in allPosts" class="post-container">
 
+      <div v-if="this.$store.state?.allPosts" class="allpost-container">
+        <div v-for="post in this.$store.state.allPosts" class="post-container">
+          <router-link :to="'/post/' + post.id" class="outer-post">
+            <div class="post-details">
+              <div class="posted-by">Posted by: {{ post.user }}</div>
+              <div class="posted-at">
+                Posted at: {{ post.created.time }} | {{ post.created.date }}
+              </div>
+            </div>
 
-      <div class="outer-post">
-  <div class="post-details">
-    <div class="posted-by">Posted by: {{ post.user }}</div>
-    <div class="posted-at">Posted at: {{ post.created.time }} | {{ post.created.date }}</div>
-  </div>
-  <div class="post-title">
-    <span class="type">{{ post.type }}: </span>
-    <span class="title">{{ post.title }}</span>
-  </div>
-  <div class="post-comment">
-    <span class="comment">Comments ({{ post.comments.length }})</span>
-  </div>
-</div>
+            <div class="post-title">
+              <span :class="'type ' + post.type">{{ post.type }}: </span>
+              <span class="title">{{ post.title }}</span>
+            </div>
 
-<div class="post-content">
-  <div class="content-border">{{ post.content }}</div>
-  <div class="comment-section">
-    <div class="comment-title">Comments</div>
-    <div v-for="comment in post.comments" :key="comment.id" class="comment-container">
-      <div class="comment-user">{{comment.user}}</div>
-      <div class="comment-content">{{comment.content}}</div>
-    </div>
-  </div>
-</div>
-
-
-  </div>
+            <span class="comment">Comments ({{ post.comments.length }})</span>
+          </router-link>
+        </div>
       </div>
+
+      <div v-else>Loading posts...</div>
     </div>
+
+    <AddPostModal @close="toggleModal()" v-if="showModal" />
   </main>
 </template>
 
-
 <script>
-export default {
-    created() {
-      fetch('blogapi.json')
-        .then((response) => response.json())
-        .then((result) => {
-          setTimeout(() => {
-            this.allPosts = result.data
-          }, 100)
-        })
+  import AddPostModal from '../components/AddPostModal.vue'
+  export default {
+    components: {
+      AddPostModal
     },
+
     data() {
       return {
-        allPosts: null
+        showModal: false
       }
     },
+
+    created() {
+      if (!this.$store.state?.allPosts) {
+        this.$store.dispatch('getPosts')
+      }
+    },
+
     methods: {
+      toggleModal() {
+        this.showModal = !this.showModal
+      }
     }
   }
 </script>
 
 <style scoped lang="scss">
-
   * {
     box-sizing: border-box;
   }
@@ -107,6 +104,13 @@ export default {
         display: flex;
         justify-content: space-between;
         border-bottom: 2px rgb(196, 196, 196) solid;
+        display: flex;
+        align-items: center;
+
+        span {
+          font-size: 23px;
+          font-weight: bold;
+        }
       }
     }
 
@@ -120,86 +124,116 @@ export default {
     }
   }
   .outer-post {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
 
-.post-details {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  .post-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-.posted-by,
-.posted-at {
-  font-size: 12px;
-  color: gray;
-}
+  .posted-by,
+  .posted-at {
+    font-size: 12px;
+    color: gray;
+  }
 
-.post-title {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
+  .post-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 
-.post-title .type {
-  font-weight: bold;
-  margin-right: 4px;
-}
+  .post-title .type {
+    font-weight: bold;
+    margin-right: 4px;
+  }
 
-.post-comment .comment {
-  font-size: 12px;
-  color: gray;
-}
+  .comment {
+    font-size: 12px;
+    color: gray;
+  }
 
-.post-content {
-  margin-top: 16px;
-}
+  .post-content {
+    margin-top: 16px;
+  }
 
-.content-border {
-  border: 3px solid #ccc;
-  padding: 8px;
-  margin-bottom: 16px;
-  font-weight:bold;
-}
+  .content-border {
+    border: 2px solid #cccccc85;
+    padding: 8px;
+    margin-bottom: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+  }
 
-.comment-section {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
+  .comment-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
 
-.comment-title {
-  font-size: 16px;
-  font-weight: bold;
-}
+  .comment-title {
+    font-size: 16px;
+    font-weight: bold;
+  }
 
-.comment-container {
-  border: 1px solid #ccc;
-  padding: 8px;
-}
+  .comment-container {
+    border: 1px solid #cccccc83;
+    padding: 8px;
+    border-radius: 6px;
+  }
 
-.comment-content {
-  font-size: 14px;
-  margin-bottom: 8px;
-}
+  .comment-content {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
 
-.title{
-  font-size:20px;
-  font-weight:bold;
-}
+  .title {
+    font-size: 20px;
+    font-weight: bold;
+  }
 
-.post-container {
-  border: 3px solid #ccc;
-  margin-bottom: 16px;
-  padding: 16px;
+  .post-container {
+    border: 2px solid #cccccc7c;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 12px;
+    padding: 12px 16px;
+    border-radius: 13px;
+  }
 
-}
+  .comment-user {
+    font-weight: bold;
+    padding: 5px;
+  }
 
-.comment-user{
-  font-weight:bold;
-  padding:5px;
-}
+  .add-button {
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccccccc4;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    cursor: pointer;
 
+    &:hover {
+      background-color: rgb(216, 216, 216);
+    }
+  }
+
+  .Share {
+    color: rgb(216, 131, 3);
+  }
+
+  .Ask {
+    color: rgb(81, 216, 3);
+  }
+
+  .Discuss {
+    color: rgb(3, 138, 216);
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 </style>

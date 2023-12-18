@@ -82,6 +82,10 @@
           <span class="material-symbols-outlined"> feed </span>
           <span class="link-text">Blog</span>
         </router-link>
+        <router-link to="/quiz" class="button">
+          <span class="material-symbols-outlined">live_help</span>
+          <span class="text">Quiz</span>
+        </router-link>
         <div v-if="$store.state.activeUser == null">
           <router-link to="/login">
             <span class="material-symbols-outlined" style="color: forestgreen"
