@@ -61,7 +61,6 @@
       font-size: 13px;
     }
   }
-
   .support {
     display: flex;
     justify-content: center;

@@ -261,7 +261,8 @@ export default {
       padding-left: 5px;
       font-size: 16px;
       height: 30px;
-      border: none;border-bottom: solid 2px var(--lightB-darker);
+      border: none;
+      border-bottom: solid 2px var(--lightB-darker);
     }
     & textarea{
       height: 80px;
